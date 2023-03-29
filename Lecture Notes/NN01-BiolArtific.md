@@ -65,9 +65,11 @@ Myelin sheath is a poor conductor. At the nodes of Ranvier, the sheath is thin.
 -----
 For a given artificial neuron k, let there be m + 1 inputs with signals $x_0$ through $x_m$ and weights $w_{k0}$ through $w_{km}$. Usually, the $x_0$ input is assigned the value +1, which makes it a bias input with $w_{k0} = b_k$. This leaves only m actual inputs to the neuron: from $x_1$ to $x_m$.
 
-The output of the kth neuron is:
+The output of the $k^{th}$ neuron is:
 
-$\displaystyle y_{k}=\varphi \left(\sum _{{j=0}}^{m}w_{{kj}}x_{j}\right)$
+$$
+\displaystyle y_{k}=\varphi \left(\sum _{{j=0}}^{m}w_{{kj}}x_{j}\right)
+$$
 
 
 Where 
@@ -86,6 +88,50 @@ $\varphi$  (phi) is the transfer function (commonly a threshold function).
 
  * The notation above is uses the combination of the threshold into the equation by adding a bias input $x_0 = +1$ with a weight $w_0 = \theta$. hence;  
     $y_{k}= \left(\sum _{{j=0}}^{m}w_{{kj}}x_{j}\right)$
+ * The vector notation is as follows:  
+    $y_{k} = w^Tx + \theta$
+ * Here, the $j^{th}$ element of the weight vector is $w_j$ and the $j^{th}$ element of the input vector is $x_j$. Both of these vectors are m-dimensional.
+
+### Output Functions ###
+-----
+ The output of the neuron is a function of the input vector and the weight vector. The function is called the **transfer function**.
+
+*  some neuron output functions are:
+     - step/threshold function
+        - if $y_k \geq 0$ then $y_k = 1$
+     - sigmoid function
+        - $y_k = \frac{1}{1 + e^{-y_k}}$
+     - hyperbolic tangent function
+        - $y_k = \frac{e^{y_k} - e^{-y_k}}{e^{y_k} + e^{-y_k}}$
+     - ramp function
+        - $y_k = ky_k$
+     - linear function
+        - $y_k = y_k$
+     - radial basis function
+        - $y_k = e^{-\frac{y_k^2}{2\sigma^2}}$
+     - gaussian function
+        - $y_k = e^{-\frac{y_k^2}{2\sigma^2}}$
+
+ \- Logic Functions with Artificial Neurons -
+
+ ![](https://www.researchgate.net/publication/333678544/figure/fig2/AS:768431922094081@1560219855521/Artificial-neurons-are-models-that-demonstrate-the-way-in-which-a-neuron-is-able-to.png)
+
+### Network of Neurons ###
+-----
+A network of neurons is called a **neural network**. The network is a directed graph, where the nodes are the neurons and the edges are the synapses.
+
+For a neural network we can define a state vector $x$ in which the $i^{th}$ element is the output of the $i^{th}$ neuron. A weight matrix $W$ is defined such that the $j^{th}$ row and $i^{th}$ column element is the weight of the synapse from neuron $j$ to neuron $i$.
+
+The system is represented as follows:
+    $$x = f(W^Tx + \theta)$$
+Here, $\theta$ is a vector of biases, and $f$ is the transfer function, which is applied to $i^{th}$ element of the vector.
+
+The XOR implementation in neural network is as follows:
+
+![XOR](figures/xor.png)
+
+
+
 
 
 
