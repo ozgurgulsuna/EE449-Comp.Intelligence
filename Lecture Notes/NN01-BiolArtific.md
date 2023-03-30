@@ -81,13 +81,13 @@ $\varphi$  (phi) is the transfer function (commonly a threshold function).
  * It has m + 1 weights, denoted as $w_0$ through $w_m$.
  * a treshold of $\theta$ can be added to the result of sum.
  * the activation is given by,  
-    $ y_{k}= \left(\sum _{{j=0}}^{m}w_{{kj}}x_{j}\right) + \theta$
+    $ y_{k}= \left(\sum {}\_{{j=0}}^{m}w_{{kj}}x_{j}\right) + \theta$
  * A positive weight indicates excitatory synapse, while a negative weight indicates inhibitory synapse.
 
  * $\theta$ is negative for biological neurons, we will use positive $\theta$ fro artificial neurons. Which is also referred as **bias**.
 
  * The notation above is uses the combination of the threshold into the equation by adding a bias input $x_0 = +1$ with a weight $w_0 = \theta$. hence;  
-    $y_{k}= \left(\sum _{{j=0}}^{m}w_{{kj}}x_{j}\right)$
+    $y_{k}= \left(\sum {}\_{j=0}^{m} w_{{kj}}x_{j}\right)$
  * The vector notation is as follows:  
     $y_{k} = w^Tx + \theta$
  * Here, the $j^{th}$ element of the weight vector is $w_j$ and the $j^{th}$ element of the input vector is $x_j$. Both of these vectors are m-dimensional.
