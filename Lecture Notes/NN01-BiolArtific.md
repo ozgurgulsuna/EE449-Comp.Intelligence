@@ -130,6 +130,57 @@ The XOR implementation in neural network is as follows:
 
 ![XOR](figures/xor.png)
 
+```
+      x_1┌─┐           -1
+         │ ├────────────────────────┐
+         └─┤                        │
+           └──────────┐             │
+                1     │             │
+                    ┌─┴─┐         ┌─┴─┐
+                    │   │   1.1   │   │
+                    │x_3├─────────┤x_4├─────────
+                    │   │         │   │
+                    └─┬─┘         └─┬─┘
+                1     │             │
+           ┌──────────┘             │
+         ┌─┤                        │
+      x_2│ ├────────────────────────┘
+         └─┘            -1
+```
+
+$$ 
+
+\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\x_4 \end{bmatrix} = f(\begin{bmatrix}
+ 0 & 0 & 1 & -1  \\
+ 0 & 0 & 1 & -1  \\
+ 0 & 0 & 0 & 1.1 \\
+ 0 & 0 & 0 & 0   \\
+\end{bmatrix}^T
+\cdot 
+\begin{bmatrix}
+ x_1 \\ x_2 \\ x_3 \\x_4 
+\end{bmatrix}
+  + 
+\begin{bmatrix}
+ u_1 \\ u_2 \\ 0 \\ 0 
+\end{bmatrix}
+)
+$$
+
+Diagonal elements of the weight matrix are zero, because there is no **self-feedback** in the network.
+
+ ### Network Architecture ###
+-----
+
+![network architecture](figures\NN01_layered_nonlayered.png)
+
+In feedforward neural networks, the information flows in one direction, from the input layer, through the hidden layers, to the output layer. The information does not flow backwards. This is called **feedforward**.
+
+If there exist one or more hidden layer, the network is called a **multilayer network**.
+
+For a feed-forward network always exists an assignment of indices to neurons resulting in a triangular weight matrix.
+
+**Recurrent networks** are networks 'n which it is not possible to obtain a triangular weight matrix. The information flows in both directions.
 
 
 
