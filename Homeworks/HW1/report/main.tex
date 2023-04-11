@@ -1,4 +1,3 @@
-% Template for Elsevier CRC journal article
 % version 1.2 dated 09 May 2011
 
 % This file (c) 2009-2011 Elsevier Ltd.  Modifications may be freely made,
@@ -37,24 +36,26 @@
 
 %% The `ecrc' package must be called to make the CRC functionality available
 \usepackage{ecrc}
-%\usepackage{amsmath}
+%\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{ragged2e}
 
 
 %% The ecrc package defines commands needed for running heads and logos.
 %% For running heads, you can set the journal name, the volume, the starting page and the authors
 
 %% set the volume if you know. Otherwise `00'
-\volume{00}
+%%\volume{}
 
 %% set the starting page if not 1
 \firstpage{1}
 
 %% Give the name of the journal
-\journalname{Procedia Computer Science}
+\journalname{Computational Intelligence, Spring 2022}
 
 %% Give the author list to appear in the running head
 %% Example \runauth{C.V. Radhakrishnan et al.}
-\runauth{Author name}
+\runauth{}
 
 %% The choice of journal logo is determined by the \jid and \jnltitlelogo commands.
 %% A user-supplied logo with the name <\jid>logo.pdf will be inserted if present.
@@ -62,7 +63,7 @@
 %% Otherwise the content of \jnltitlelogo will be set between horizontal lines as a default logo
 
 %% Give the abbreviation of the Journal.
-\jid{procs}
+%% \jid{}
 
 %% Give a short journal name for the dummy logo (if needed)
 %\jnltitlelogo{Computer Science}
@@ -153,7 +154,7 @@
 %% \dochead can also be used to include a conference title, if directed by the editors
 %% e.g. \dochead{17th International Conference on Dynamical Processes in Excited States of Solids}
 
-\title{Training Artificial Neural Network}
+\title{Training Artificial Neural Networks}
 
 %% use optional labels to link authors explicitly to addresses:
 %% \author[label1,label2]{<author name>}
@@ -198,7 +199,7 @@ Type your keywords here, separated by semicolons ;
 %% main text
 
 \enlargethispage{10mm}
-\section{Basic Concepts}
+\section{\textbf{Basic Concepts}}
 \label{main}
 
 Here introduce the paper, and put a nomenclature if necessary, in a box with the same font size as the rest of the paper. The paragraphs continue from here and are only separated by headings, subheadings, images and formulae. The section headings are arranged by numbers, bold and 10 pt. Here follows further instructions for authors.
@@ -211,31 +212,41 @@ Here introduce the paper, and put a nomenclature if necessary, in a box with the
 % \end{deflist}
 % \end{nomenclature}
 
-\subsection{ Which Function ?}
+\subsection{\textbf{Which Function ?}}
 
+An ANNs classifier that is trained with cross-entropy loss approximates the conditional probability distribution function.
+More specifically, for an input data, the output of the classifier is a probability distribution for the classes.
+The cross-entorpy loss function is a measure between the predicted probability distribution and the true distribution.
+The form of the loss function is decreasing, smooth and differentiable, which makes it easier to optimize using gradient-based methods.
+This form is also known as the negative log-like function.
 
+% An ANNs classifier trained with cross-entropy loss approximates a conditional probability distribution. Specifically, given an input vector, the classifier outputs a probability distribution over the possible classes that the input could belong to. The cross-entropy loss is defined as the negative log-likelihood of the correct class given the input.
+% The reason why cross-entropy loss is used to approximate this function is that it is well-suited for optimizing models that output probability distributions. The loss encourages the model to assign a high probability to the correct class and low probabilities to the incorrect classes, which is exactly what we want from a classifier. The negative log-likelihood also has desirable properties such as being continuous and differentiable, making it easier to optimize using gradient-based methods.
 
-Files must be in LaTeX format only and should be formatted for direct printing, using the CRC LaTeX template provided. Figures and tables should be embedded and not supplied separately. 
+% Bulleted lists may be included and should look like this:
+% \begin{itemize}[]
+% \item First point
+% \item Second point
+% \item And so on
+% \end{itemize}
 
-Please make sure that you use as much as possible normal fonts in your documents. Special fonts, such as fonts used in the Far East (Japanese, Chinese, Korean, etc.) may cause problems during processing. To avoid unnecessary errors you are strongly advised to use the `spellchecker' function of TeX Editor. Follow this order when typing manuscripts: Title, Authors, Affiliations, Abstract, Keywords, Main text (including figures and tables), Acknowledgements, References, Appendix. Collate acknowledgements in a separate section at the end of the article and do not include them on the title page, as a footnote to the title or otherwise.
-
-Bulleted lists may be included and should look like this:
-\begin{itemize}[]
-\item First point
-\item Second point
-\item And so on
-\end{itemize}
-
-Ensure that you return to the `Els-body-text' style, the style that you will mainly be using for large blocks of text, when you have completed your bulleted list. 
-
-Please do not alter the formatting and style layouts which have been set up in this template document. As indicated in the template, papers should be prepared in single column format suitable for direct printing onto paper with trim size $192 \times 262$ mm. Do not number pages on the front, as page numbers will be added separately for the preprints and the Proceedings. Leave a line clear between paragraphs. All the required style templates are provided in the file ``LaTeX Template'' with the appropriate name supplied, e.g. choose 1. Els1st-order-head for your first order heading text, els-abstract-text for the abstract text etc.
-
-\subsection{ Tables}
+\subsection{\textbf{Gradient Computation}}
+\subsection{\textbf{Some Training Parameters and Basic Parameter Calculations}}
+\begin{enumerate}
+    \item First point
+    \item Second point
+    \item And so on
+\end{enumerate}
+\subsection{\textbf{Computing Number of Parameters of ANN Classifiers}}
+\begin{enumerate}
+    \item First point
+    \item Second point
+\end{enumerate}
 
 All tables should be numbered with Arabic numerals. Every table should have a caption. Headings should be placed above tables, left justified. Only horizontal lines should be used within a table, to distinguish the column headings from the body of the table, and immediately above and below the table. Tables must be embedded into the text and not supplied separately. Below is an example which the authors may find useful.
 
 \begin{table}[h]
-\caption{An example of a table.}
+\caption{ An example of a table.}
 \begin{tabular*}{\hsize}{@{\extracolsep{\fill}}lll@{}}
 \toprule
 An example of a column heading & Column A ({\it{t}}) & Column B ({\it{t}})\\
@@ -249,7 +260,9 @@ And another entry &  5 &  6\\
 
 %\enlargethispage{12pt}
 
-\subsection{ Construction of references}
+\subsection{Implementing a Convolutional Layer with NumPy}
+
+
 
 References must be listed at the end of the paper. Do not begin them on a new page unless this is absolutely necessary. Authors should ensure that every reference in the text appears in the list of references and vice versa. Indicate references by \cite{Massimo2011} or \cite{Massimo2012} or \cite{Thomas2015} in the text. 
 

@@ -250,11 +250,11 @@
 
 \def\ps@headings{%
     \def\@oddhead{{\itshape\fontsize{8}{8}\selectfont%
-         \hfil\@runauth~/~\@journalname~00~(2018)~%
-         000--000\hfil}{\fontsize{8}{8}\selectfont\thepage}}
+         \hfil\@runauth~-~\@journalname%
+         \hfil}{\fontsize{8}{8}\selectfont\thepage}}
     \def\@evenhead{{\fontsize{8}{8}\selectfont\thepage}{\hfil{\itshape\fontsize{8}{8}\selectfont%
-         \@runauth~/~\@journalname~00~(2018)~%
-         000--000}}\hfil}%
+         \@runauth~~\@journalname%
+         }}\hfil}%
     \let\@evenfoot\@empty%
     \let\@evenfoot\@oddfoot}
 
@@ -299,7 +299,7 @@
 \vskip-1.5pt\parindent9pt
   \noindent\unskip{\fontsize{9}{11}\selectfont\bfseries Introduction\par}\vspace*{6.8pt}%
   \elsarticle@absfont\par\unskip\noindent\ignorespaces}
- {\if@copyrightline\@CopyrightLine\unskip.\fi\egroup}
+ {\egroup}
 
 \def\keyword{%
 \vskip0.5pt
