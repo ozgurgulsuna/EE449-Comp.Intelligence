@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  11 APR 2023 17:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  12 APR 2023 16:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -648,29 +648,24 @@ LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <10> not available
 (Font)              Font shape `OT1/txr/bx/n' tried instead on input line 202.
 LaTeX Font Info:    Font shape `OT1/txr/b/it' in size <10> not available
 (Font)              Font shape `OT1/txr/bx/it' tried instead on input line 215.
-
-Underfull \hbox (badness 10000) detected at line 249
-[]
- []
-
 <figures/odtu-py.pdf, id=1, 119.50162pt x 79.66772pt>
 File: figures/odtu-py.pdf Graphic file (type pdf)
 <use figures/odtu-py.pdf>
-Package pdftex.def Info: figures/odtu-py.pdf  used on input line 259.
+Package pdftex.def Info: figures/odtu-py.pdf  used on input line 243.
 (pdftex.def)             Requested size: 77.67511pt x 51.78339pt.
 <figures/SDlogo-3p.pdf, id=2, 119.52159pt x 52.265pt>
 File: figures/SDlogo-3p.pdf Graphic file (type pdf)
 <use figures/SDlogo-3p.pdf>
-Package pdftex.def Info: figures/SDlogo-3p.pdf  used on input line 259.
+Package pdftex.def Info: figures/SDlogo-3p.pdf  used on input line 243.
 (pdftex.def)             Requested size: 143.42517pt x 62.71767pt.
 <figures/HW1-ART.png, id=3, 234.1247pt x 194.97844pt>
 File: figures/HW1-ART.png Graphic file (type png)
 <use figures/HW1-ART.png>
-Package pdftex.def Info: figures/HW1-ART.png  used on input line 259.
+Package pdftex.def Info: figures/HW1-ART.png  used on input line 243.
 (pdftex.def)             Requested size: 81.94485pt x 68.24347pt.
 File: figures/odtu-py.pdf Graphic file (type pdf)
 <use figures/odtu-py.pdf>
-Package pdftex.def Info: figures/odtu-py.pdf  used on input line 259.
+Package pdftex.def Info: figures/odtu-py.pdf  used on input line 243.
 (pdftex.def)             Requested size: 77.67511pt x 51.78339pt.
 
 Overfull \hbox (20.0pt too wide) has occurred while \output is active
@@ -679,11 +674,11 @@ Overfull \hbox (20.0pt too wide) has occurred while \output is active
 
 File: figures/SDlogo-3p.pdf Graphic file (type pdf)
 <use figures/SDlogo-3p.pdf>
-Package pdftex.def Info: figures/SDlogo-3p.pdf  used on input line 259.
+Package pdftex.def Info: figures/SDlogo-3p.pdf  used on input line 243.
 (pdftex.def)             Requested size: 143.42517pt x 62.71767pt.
 File: figures/HW1-ART.png Graphic file (type png)
 <use figures/HW1-ART.png>
-Package pdftex.def Info: figures/HW1-ART.png  used on input line 259.
+Package pdftex.def Info: figures/HW1-ART.png  used on input line 243.
 (pdftex.def)             Requested size: 81.94485pt x 68.24347pt.
 
 Overfull \hbox (27.5pt too wide) has occurred while \output is active
@@ -693,7 +688,7 @@ Overfull \hbox (27.5pt too wide) has occurred while \output is active
 
 Overfull \vbox (44.71767pt too high) has occurred while \output is active []
 
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 259.
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 243.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
@@ -704,7 +699,12 @@ Overfull \vbox (15.45999pt too high) has occurred while \output is active []
 {C:/Users/ozgur/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./figures/odtu-py.pdf> <./figures/SDlogo-3p.pdf
 
 pdfTeX warning: pdflatex (file ./figures/SDlogo-3p.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./figures/HW1-ART.png>] [2] [3]
+> <./figures/HW1-ART.png>]
+Underfull \hbox (badness 10000) detected at line 249
+[]
+ []
+
+[2] [3]
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <8> not available
 (Font)              Font shape `OT1/txr/bx/n' tried instead on input line 380.
  [4]
@@ -731,13 +731,13 @@ Package natbib Warning: Citation(s) may have changed.
 Here is how much of TeX's memory you used:
  5097 strings out of 476334
  75170 string characters out of 5787972
- 1860382 words of memory out of 5000000
+ 1861382 words of memory out of 5000000
  25401 multiletter control sequences out of 15000+600000
  567720 words of font info for 160 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,15n,76p,919b,381s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,15n,76p,919b,429s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtcxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txex.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 538341 bytes).
+Output written on main.pdf (5 pages, 538826 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
