@@ -7,7 +7,7 @@ from torchvision.utils import make_grid
 
 # utility function to create performance plots for part 2
 def part2Plots(out, nmax=64, save_dir='', filename=''):
-    out = torch.tensor(out)
+    out = torch.tensor(out).reshape(-1,1,25,25)
     fig, ax = plt.subplots(figsize=(8, 8))
     ax.set_xticks([]); ax.set_yticks([])
     ax.imshow(make_grid((out.detach()[:nmax]), nrow=8).permute(1, 2, 0))
