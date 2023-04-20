@@ -105,7 +105,7 @@ class mlp_2(nn.Module):
             nn.Linear(input_size, 32),                      # 1024x32
             nn.ReLU(),
             nn.Linear(32, 64))                              # 32x64
-        self.prediction_layer = nn.Linear(32, output_size)  # 32x10
+        self.prediction_layer = nn.Linear(64, output_size)  # 64x10
     
     def forward(self, x):
         x = x.view(-1, self.input_size)
@@ -116,7 +116,7 @@ class mlp_2(nn.Module):
 # Training --------------------------------------------------------------------------------------------------------------------------------------------#
 
 # initialize your model
-model = mlp_1(input_size=32*32, output_size=10)
+model = mlp_2(input_size=32*32, output_size=10)
 
 # create loss: use cross entropy loss)
 criterion = torch.nn.CrossEntropyLoss()
@@ -158,8 +158,8 @@ def train(model, iterator, optimizer, criterion, device):
         step_loss += loss.item()
         step_acc += acc.item()
         if i % 10 == 9:                                                          # print every 10 mini-batches
-            # print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
-            # print('training accuracy: %.2f' % (step_acc*100 / (10)) )            # printed at 10 step intervals
+            print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
+            print('training accuracy: %.2f' % (step_acc*100 / (10)) )            # printed at 10 step intervals
             step_loss = 0
             step_acc = 0        
 # TODO: save data in a file
@@ -185,8 +185,8 @@ def evaluate(model, iterator, criterion, device):
             step_loss += loss.item()
             step_acc += acc.item()
             if i % 10 == 9:                                                          # print every 10 mini-batches
-                # print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
-                # print('validation accuracy: %.2f' % (step_acc*100 / (10)) )          # printed at 10 step intervals
+                print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
+                print('validation accuracy: %.2f' % (step_acc*100 / (10)) )          # printed at 10 step intervals
                 step_loss = 0
                 step_acc = 0
 # TODO: save data in a file
