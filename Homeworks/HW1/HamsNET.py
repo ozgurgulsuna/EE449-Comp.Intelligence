@@ -133,8 +133,12 @@ def calculate_accuracy(y_pred, y):
 def train(model, iterator, optimizer, criterion, device):
     epoch_loss = 0
     epoch_acc = 0
+    step_loss = 0
+    step_acc = 0
     model.train()
+    i = 0
     for (x, y) in tqdm(iterator, disable=True):
+        i += 1
         x = x.to(device)
         y = y.to(device)
         optimizer.zero_grad()
@@ -145,15 +149,26 @@ def train(model, iterator, optimizer, criterion, device):
         optimizer.step()
         epoch_loss += loss.item()
         epoch_acc += acc.item()
+        step_loss += loss.item()
+        step_acc += acc.item()
+        if i % 10 == 9:                                                          # print every 10 mini-batches
+            print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
+            print('training accuracy: %.2f' % (step_acc*100 / (10)) )            # printed at 10 step intervals
+            step_loss = 0
+            step_acc = 0        
 
     return epoch_loss / len(iterator), epoch_acc / len(iterator)
 
 def evaluate(model, iterator, criterion, device):
     epoch_loss = 0
     epoch_acc = 0
+    step_loss = 0
+    step_acc = 0
     model.eval()
     with torch.no_grad():
+        i = 0
         for (x, y) in tqdm(iterator, disable=True):
+            i += 1
             x = x.to(device)
             y = y.to(device)
             y_pred = model(x)
@@ -161,6 +176,14 @@ def evaluate(model, iterator, criterion, device):
             acc = calculate_accuracy(y_pred, y)
             epoch_loss += loss.item()
             epoch_acc += acc.item()
+            step_loss += loss.item()
+            step_acc += acc.item()
+            if i % 10 == 9:                                                          # print every 10 mini-batches
+                print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
+                print('validation accuracy: %.2f' % (step_acc*100 / (10)) )          # printed at 10 step intervals
+                step_loss = 0
+                step_acc = 0
+
 
     return epoch_loss / len(iterator), epoch_acc / len(iterator)
 
