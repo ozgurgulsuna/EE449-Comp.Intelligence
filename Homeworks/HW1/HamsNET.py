@@ -97,19 +97,26 @@ class mlp_1(nn.Module):
         return x
     
 # "mlp_2" is a simple multi-layer perceptron
-
-
-
+class mlp_2(nn.Module):
+    def __init__(self, input_size, output_size):
+        super(mlp_2,self).__init__()
+        self.input_size = input_size
+        self.fc = nn.Sequential(
+            nn.Linear(input_size, 32),                      # 1024x32
+            nn.ReLU(),
+            nn.Linear(32, 64))                              # 32x64
+        self.prediction_layer = nn.Linear(32, output_size)  # 32x10
     
+    def forward(self, x):
+        x = x.view(-1, self.input_size)
+        x = self.fc(x)
+        x = self.prediction_layer(x)
+        return x
 
 # Training --------------------------------------------------------------------------------------------------------------------------------------------#
 
 # initialize your model
 model = mlp_1(input_size=32*32, output_size=10)
-
-# get the parameters 1024x32 layer as numpy array
-# we used sequential model, so we can access the layers by index: model_mlp.fc[0].weight.data.numpy()
-params_1024x32 = model.fc[0].weight.data.numpy()
 
 # create loss: use cross entropy loss)
 criterion = torch.nn.CrossEntropyLoss()
@@ -120,7 +127,6 @@ optimizer = torch.optim.Adam(model.parameters(), lr = 0.001)
 
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
 model = model.to(device)
 criterion = criterion.to(device)
 
@@ -152,11 +158,11 @@ def train(model, iterator, optimizer, criterion, device):
         step_loss += loss.item()
         step_acc += acc.item()
         if i % 10 == 9:                                                          # print every 10 mini-batches
-            print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
-            print('training accuracy: %.2f' % (step_acc*100 / (10)) )            # printed at 10 step intervals
+            # print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
+            # print('training accuracy: %.2f' % (step_acc*100 / (10)) )            # printed at 10 step intervals
             step_loss = 0
             step_acc = 0        
-
+# TODO: save data in a file
     return epoch_loss / len(iterator), epoch_acc / len(iterator)
 
 def evaluate(model, iterator, criterion, device):
@@ -179,12 +185,11 @@ def evaluate(model, iterator, criterion, device):
             step_loss += loss.item()
             step_acc += acc.item()
             if i % 10 == 9:                                                          # print every 10 mini-batches
-                print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
-                print('validation accuracy: %.2f' % (step_acc*100 / (10)) )          # printed at 10 step intervals
+                # print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
+                # print('validation accuracy: %.2f' % (step_acc*100 / (10)) )          # printed at 10 step intervals
                 step_loss = 0
                 step_acc = 0
-
-
+# TODO: save data in a file
     return epoch_loss / len(iterator), epoch_acc / len(iterator)
 
 def epoch_time(start_time, end_time):
@@ -211,114 +216,28 @@ for epoch in trange(epoch_size,disable=True):
     end_time = time.monotonic()
 
     epoch_mins, epoch_secs = epoch_time(start_time, end_time)
-
+    print(f'+-----------------------------------------+')
     print(f'Epoch:         {epoch+1:02} | Epoch Time: {epoch_mins}m {epoch_secs}s')
     print(f'Train Loss: {train_loss:.3f} |  Train Acc: {train_acc*100:.2f}%')
     print(f'Val. Loss:  {valid_loss:.3f} |   Val. Acc: {valid_acc*100:.2f}%')
-    print(f'+-----------------------------------------------------------------------------+')
+    print(f'+-----------------------------------------+')
 
+# Testing --------------------------------------------------------------------------------------------------------------------------------------------#
 
-# for epoch in range(epoch_size):  # loop over the dataset multiple times
-#     running_loss = 0.0
-#     training_accuracy = 0.0
-#     validation_accuracy = 0.0
-#     for i, data in enumerate(train_generator, 0):
-#         # get the inputs
-#         inputs, labels = data
+# Load the best model
+model.load_state_dict(torch.load('mlp_1-model.pt'))
 
-#         # zero the parameter gradients
-#         optimizer.zero_grad()
+# Evaluate the model on the test set
+test_loss, test_acc = evaluate(model, test_generator, criterion, device)
+print(f'Test Loss: {test_loss:.3f} | Test Acc: {test_acc*100:.2f}%')
 
-#         # forward + backward + optimize
-#         outputs = model_mlp(inputs)
-#         loss_size = criterion(outputs, labels)
-#         loss_size.backward()
-#         optimizer.step()
-        
-#         # print statistics
-#         training_accuracy += (outputs.argmax(1) == labels).sum().item()
+# get the weights of first layer [1024x32] as numpy array
+# we used sequential model, so we can access the layers by index: model_mlp.fc[0].weight.data.numpy()
+# we added the .cpu() to move the tensor to cpu memory
+params_first_1024x32 = model.fc[0].weight.cpu().data.numpy()
 
-#         running_loss += loss_size.item()
-#         if i % 2000 == 1999:    # print every 2000 mini-batches
-#             print('[%d, %5d] loss: %.3f' %
-#                   (epoch + 1, i + 1, running_loss / 2000))
-#             running_loss = 0.0
-#             print('Training accuracy: ', training_accuracy / (batch_size * 2000))
-#             print('Validation accuracy: ', validation_accuracy / (batch_size * 2000))
-#             training_accuracy = 0.0
-
-# print('Finished Training')
-
-# save your model
 PATH = './cifar_net.pth'
 torch.save(model.state_dict(), PATH)
-
-
-
-
-
-# # transfer your model to train mode
-# model_mlp.train()
-
-# # transfer your model to eval mode
-# model_mlp.eval()
-
-
-
-# dataiter = iter(test_generator)
-# images, labels = next(dataiter)
-# imshow(torchvision.utils.make_grid(images))
-# print(' '.join('%5s' % classes[labels[j]] for j in range(batch_size)))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# class FullyConnected(torch.nn.Module):
-#     def __init__(self, input_size, hidden_size, num_classes):
-#         super(FullyConnected, self).__init__()
-#         self.input_size = input_size
-#         self.fc1 = torch.nn.Linear(input_size, hidden_size)
-#         self.fc2 = torch.nn.Linear(hidden_size, num_classes)
-#         self.relu = torch.nn.ReLU()
-
-#     def forward(self, x):
-#         x = x.view(-1, self.input_size)
-#         hidden = self.fc1(x)
-#         relu = self.relu(hidden)
-#         output = self.fc2(relu)
-#         return output
-
-# # initialize your model
-# model_mlp = FullyConnected(1024,128,10)
-
-# # get the parameters 1024x128 layer as numpy array
-# params_784x128 = model_mlp.fc1.weight.data.numpy()
-
-# # create loss: use cross entropy loss)
-# loss = torch.nn.CrossEntropyLoss()
-
-# # create optimizer
-# # optimizer = torch.optim.SGD(model_mlp.parameters(), lr = 0.01, momentum = 0.0)
-# optimizer = torch.optim.Adam(model_mlp.parameters(), lr = 0.001)
-
-
-# # transfer your model to train mode
-# model_mlp.train()
-
-# # transfer your model to eval mode
-# model_mlp.eval()
 
 # FMI : for my information
 # https://stackoverflow.com/questions/72724452/mat1-and-mat2-shapes-cannot-be-multiplied-128x4-and-128x64
