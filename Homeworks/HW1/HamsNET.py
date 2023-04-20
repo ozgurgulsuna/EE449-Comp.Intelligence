@@ -17,6 +17,7 @@
                                                     
 # CUDA tutorial: https://www.youtube.com/watch?v=EMXfZB8FVUA&list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4
 # PyTorch MLP tutorial: https://colab.research.google.com/github/bentrevett/pytorch-image-classification/blob/master/1_mlp.ipynb#scrollTo=FTvjOcbLREwM
+# PyTorch CNN tutorial: https://github.com/bentrevett/pytorch-image-classification/blob/master/2_lenet.ipynb
 
 
 # Imports --------------------------------------------------------------------------------------------------------------------------------------------#
@@ -112,11 +113,47 @@ class mlp_2(nn.Module):
         x = self.fc(x)
         x = self.prediction_layer(x)
         return x
+    
+# "cnn_3" is a simple convolutional neural network
+class cnn_3(nn.Module):
+    def __init__(self, output_size):
+        super(cnn_3,self).__init__()
+        self.conv1 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, padding=1)
+        self.relu1 = nn.ReLU(inplace=True)
+
+        # Conv-5x5x8
+        self.conv2 = nn.Conv2d(in_channels=16, out_channels=8, kernel_size=5, padding=2)
+        self.relu2 = nn.ReLU(inplace=True)
+        self.maxpool1 = nn.MaxPool2d(kernel_size=2)
+
+        # Conv-7x7x16
+        self.conv3 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=7, padding=3)
+        self.maxpool2 = nn.MaxPool2d(kernel_size=2)
+
+        # Prediction layer
+        self.prediction_layer = nn.Linear(16 * 8 * 8, output_size)
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.relu1(x)
+
+        x = self.conv2(x)
+        x = self.relu2(x)
+        x = self.maxpool1(x)
+
+        x = self.conv3(x)
+        x = self.maxpool2(x)
+
+        x = x.view(x.size(0), -1)
+        x = self.prediction_layer(x)
+
+        return x
 
 # Training --------------------------------------------------------------------------------------------------------------------------------------------#
 
 # initialize your model
-model = mlp_2(input_size=32*32, output_size=10)
+# model = mlp_2(input_size=32*32, output_size=10)
+model = cnn_3(output_size=10)
 
 # create loss: use cross entropy loss)
 criterion = torch.nn.CrossEntropyLoss()
