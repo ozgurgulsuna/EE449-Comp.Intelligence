@@ -167,12 +167,52 @@ class cnn_4(nn.Module):
         x = x.view(x.size(0), -1)
         x = self.prediction_layer(x)
         return x
+    
+# "cnn_5" is a simple convolutional neural network with six convolutional layers
+class cnn_5(nn.Module):
+    def __init__(self, output_size):
+        super(cnn_5,self).__init__()
+        self.conv1 = nn.Conv2d(in_channels=1, out_channels=8, kernel_size=3, padding=1)   # 1x32x32 -> 8x32x32
+        self.relu1 = nn.ReLU()
+        self.conv2 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=3, padding=1)  # 8x32x32 -> 16x32x32
+        self.relu2 = nn.ReLU()
+        self.conv3 = nn.Conv2d(in_channels=16, out_channels=8, kernel_size=3, padding=1)  # 16x32x32 -> 8x32x32
+        self.relu3 = nn.ReLU()
+        self.conv4 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=3, padding=1)  # 8x32x32 -> 16x32x32
+        self.relu4 = nn.ReLU()
+        self.maxpool1 = nn.MaxPool2d(kernel_size=2)                                       # 16x32x32 -> 16x16x16
+        self.conv5 = nn.Conv2d(in_channels=16, out_channels=16, kernel_size=3, padding=1) # 16x16x16 -> 16x16x16
+        self.relu5 = nn.ReLU()
+        self.conv6 = nn.Conv2d(in_channels=16, out_channels=8, kernel_size=3, padding=1)  # 16x16x16 -> 8x16x16 
+        self.relu6 = nn.ReLU()
+        self.maxpool2 = nn.MaxPool2d(kernel_size=2)                                       # 8x16x16 -> 8x8x8
+        self.prediction_layer = nn.Linear(8 * 8 * 8, output_size)                         # 8x8x8 -> 10
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.relu1(x)
+        x = self.conv2(x)
+        x = self.relu2(x)
+        x = self.conv3(x)
+        x = self.relu3(x)
+        x = self.conv4(x)
+        x = self.relu4(x)
+        x = self.maxpool1(x)
+        x = self.conv5(x)
+        x = self.relu5(x)
+        x = self.conv6(x)
+        x = self.relu6(x)
+        x = self.maxpool2(x)
+        x = x.view(x.size(0), -1)
+        x = self.prediction_layer(x)
+        return x
+
 
 # Training --------------------------------------------------------------------------------------------------------------------------------------------#
 
 # initialize your model
 # model = mlp_2(input_size=32*32, output_size=10)
-model = cnn_4(output_size=10)
+model = cnn_5(output_size=10)
 
 # create loss: use cross entropy loss)
 criterion = torch.nn.CrossEntropyLoss()
