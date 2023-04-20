@@ -30,7 +30,11 @@ import numpy as np
 import time
 
 batch_size = 2
+epoch_size = 15
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
+
+
+
 
 # functions to show an image
 def imshow(img):
@@ -121,8 +125,10 @@ optimizer = torch.optim.Adam(model_mlp.parameters(), lr = 0.001)
 # criterion = criterion.to(device)
 
 
-for epoch in range(2):  # loop over the dataset multiple times
+for epoch in range(epoch_size):  # loop over the dataset multiple times
     running_loss = 0.0
+    training_accuracy = 0.0
+    validation_accuracy = 0.0
     for i, data in enumerate(train_generator, 0):
         # get the inputs
         inputs, labels = data
@@ -135,20 +141,21 @@ for epoch in range(2):  # loop over the dataset multiple times
         loss_size = criterion(outputs, labels)
         loss_size.backward()
         optimizer.step()
-
-        # shuffling the data
-        # train_generator = torch.utils.data.DataLoader(train_data, batch_size = batch_size, shuffle = True)
-
-
-
         
         # print statistics
+        training_accuracy += (outputs.argmax(1) == labels).sum().item()
+        validation_accuracy += (outputs.argmax(1) == labels).sum().item()
+
         running_loss += loss_size.item()
         if i % 2000 == 1999:    # print every 2000 mini-batches
             print('[%d, %5d] loss: %.3f' %
                   (epoch + 1, i + 1, running_loss / 2000))
             running_loss = 0.0
-        
+            print('Training accuracy: ', training_accuracy / (batch_size * 2000))
+            print('Validation accuracy: ', validation_accuracy / (batch_size * 2000))
+            training_accuracy = 0.0
+            validation_accuracy = 0.0
+
 print('Finished Training')
 
 # save your model
