@@ -81,7 +81,7 @@ val_generator = torch.utils.data.DataLoader(val_data, batch_size = batch_size)
 test_generator = torch.utils.data.DataLoader(test_data, batch_size = batch_size)
 
 # Architectures ---------------------------------------------------------------------------------------------------------------------------------------#
-# "mlp_1" is a simple multi-layer perceptron
+# "mlp_1" is a simple multi-layer perceptron with one hidden layer
 class mlp_1(nn.Module):
     def __init__(self, input_size, output_size):
         super(mlp_1,self).__init__()
@@ -97,7 +97,7 @@ class mlp_1(nn.Module):
         x = self.prediction_layer(x)
         return x
     
-# "mlp_2" is a simple multi-layer perceptron
+# "mlp_2" is a simple multi-layer perceptron with two hidden layers
 class mlp_2(nn.Module):
     def __init__(self, input_size, output_size):
         super(mlp_2,self).__init__()
@@ -114,46 +114,65 @@ class mlp_2(nn.Module):
         x = self.prediction_layer(x)
         return x
     
-# "cnn_3" is a simple convolutional neural network
+# "cnn_3" is a simple convolutional neural network with three convolutional layers
 class cnn_3(nn.Module):
     def __init__(self, output_size):
         super(cnn_3,self).__init__()
-        self.conv1 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, padding=1)
-        self.relu1 = nn.ReLU(inplace=True)
-
-        # Conv-5x5x8
-        self.conv2 = nn.Conv2d(in_channels=16, out_channels=8, kernel_size=5, padding=2)
-        self.relu2 = nn.ReLU(inplace=True)
-        self.maxpool1 = nn.MaxPool2d(kernel_size=2)
-
-        # Conv-7x7x16
-        self.conv3 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=7, padding=3)
-        self.maxpool2 = nn.MaxPool2d(kernel_size=2)
-
-        # Prediction layer
-        self.prediction_layer = nn.Linear(16 * 8 * 8, output_size)
+        self.conv1 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, padding=1)  # 1x32x32 -> 16x32x32
+        self.relu1 = nn.ReLU()
+        self.conv2 = nn.Conv2d(in_channels=16, out_channels=8, kernel_size=5, padding=2)  # 16x32x32 -> 8x32x32
+        self.relu2 = nn.ReLU()
+        self.maxpool1 = nn.MaxPool2d(kernel_size=2)                                       # 8x32x32 -> 8x16x16                        
+        self.conv3 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=7, padding=3)  # 8x16x16 -> 16x16x16
+        self.maxpool2 = nn.MaxPool2d(kernel_size=2)                                       # 16x16x16 -> 16x8x8
+        self.prediction_layer = nn.Linear(16 * 8 * 8, output_size)                        # 16x8x8 -> 10
 
     def forward(self, x):
         x = self.conv1(x)
         x = self.relu1(x)
-
         x = self.conv2(x)
         x = self.relu2(x)
         x = self.maxpool1(x)
-
         x = self.conv3(x)
         x = self.maxpool2(x)
-
         x = x.view(x.size(0), -1)
         x = self.prediction_layer(x)
+        return x
+    
+# "cnn_4" is a simple convolutional neural network with four convolutional layers
+class cnn_4(nn.Module):
+    def __init__(self, output_size):
+        super(cnn_4,self).__init__()
+        self.conv1 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, padding=1)  # 1x32x32 -> 16x32x32
+        self.relu1 = nn.ReLU()
+        self.conv2 = nn.Conv2d(in_channels=16, out_channels=8, kernel_size=3, padding=1)  # 16x32x32 -> 8x32x32
+        self.relu2 = nn.ReLU()
+        self.conv3 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=5, padding=2)  # 8x32x32 -> 16x32x32
+        self.relu3 = nn.ReLU()
+        self.maxpool1 = nn.MaxPool2d(kernel_size=2)                                       # 16x32x32 -> 16x16x16
+        self.conv4 = nn.Conv2d(in_channels=16, out_channels=16, kernel_size=5, padding=2) # 16x16x16 -> 16x16x16
+        self.maxpool2 = nn.MaxPool2d(kernel_size=2)                                       # 16x16x16 -> 16x8x8
+        self.prediction_layer = nn.Linear(16 * 8 * 8, output_size)                        # 16x8x8 -> 10
 
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.relu1(x)
+        x = self.conv2(x)
+        x = self.relu2(x)
+        x = self.conv3(x)
+        x = self.relu3(x)
+        x = self.maxpool1(x)
+        x = self.conv4(x)
+        x = self.maxpool2(x)
+        x = x.view(x.size(0), -1)
+        x = self.prediction_layer(x)
         return x
 
 # Training --------------------------------------------------------------------------------------------------------------------------------------------#
 
 # initialize your model
 # model = mlp_2(input_size=32*32, output_size=10)
-model = cnn_3(output_size=10)
+model = cnn_4(output_size=10)
 
 # create loss: use cross entropy loss)
 criterion = torch.nn.CrossEntropyLoss()
@@ -271,7 +290,8 @@ print(f'Test Loss: {test_loss:.3f} | Test Acc: {test_acc*100:.2f}%')
 # get the weights of first layer [1024x32] as numpy array
 # we used sequential model, so we can access the layers by index: model_mlp.fc[0].weight.data.numpy()
 # we added the .cpu() to move the tensor to cpu memory
-params_first_1024x32 = model.fc[0].weight.cpu().data.numpy()
+# params_first_1024x32 = model.fc[0].weight.cpu().data.numpy()
+params_first_1024x32 = model.conv1.weight.cpu().data.numpy()
 
 PATH = './cifar_net.pth'
 torch.save(model.state_dict(), PATH)
