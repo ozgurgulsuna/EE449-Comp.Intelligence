@@ -387,7 +387,7 @@ def visualizeWeights(weights, save_dir, filename='weigths'):
     # use global min / max to ensure all weights are shown on the same scale
     vmin, vmax = weights.min(), weights.max()
     for coef, ax in zip(weights.T, axes[:num_weights].ravel()):
-        coef = np.squeeze(coef).T if len(weights.shape) > 2 else coef.reshape(28, 28)
+        coef = np.squeeze(coef).T if len(weights.shape) > 2 else coef.reshape(32, 32)
         ax.matshow(coef, cmap=plt.cm.gray, vmin=.5 * vmin,
                    vmax=.5 * vmax)
 

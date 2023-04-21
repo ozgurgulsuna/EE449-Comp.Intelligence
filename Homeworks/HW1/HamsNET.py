@@ -37,8 +37,8 @@ import time
 # Parameters ------------------------------------------------------------------------------------------------------------------------------------#
 validation_ratio = 0.1
 batch_size = 50
-epoch_size = 3
-runs = 5
+epoch_size = 15
+runs = 10
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 
 DISPLAY = False
@@ -224,8 +224,8 @@ class cnn_5(nn.Module):
 # Training --------------------------------------------------------------------------------------------------------------------------------------------#
 
 # initialize your model
-# model = mlp_2(input_size=32*32, output_size=10)
-model = cnn_5(output_size=10)
+model = mlp_1(input_size=32*32, output_size=10)
+# model = cnn_5(output_size=10)
 
 # create loss: use cross entropy loss)
 criterion = torch.nn.CrossEntropyLoss()
@@ -332,7 +332,7 @@ for run in range(runs):
 
         if valid_loss < best_valid_loss:
             best_valid_loss = valid_loss
-            torch.save(model.state_dict(), 'cnn_5-model.pt')
+            torch.save(model.state_dict(), 'mlp_1.pt')
 
         end_time = time.monotonic()
 
@@ -346,7 +346,7 @@ for run in range(runs):
 # Testing --------------------------------------------------------------------------------------------------------------------------------------------#
 
 # Load the best model
-model.load_state_dict(torch.load('cnn_5-model.pt'))
+model.load_state_dict(torch.load('mlp_1.pt'))
 
 # Evaluate the model on the test set
 test_loss, test_acc = evaluate(model, test_generator, criterion, device)
@@ -355,8 +355,8 @@ print(f'Test Loss: {test_loss:.3f} | Test Acc: {test_acc*100:.2f}%')
 # get the weights of first layer [1024x32] as numpy array
 # we used sequential model, so we can access the layers by index: model_mlp.fc[0].weight.data.numpy()
 # we added the .cpu() to move the tensor to cpu memory
-# params_first_1024x32 = model.fc[0].weight.cpu().data.numpy()
-params_first_1024x32 = model.conv1.weight.cpu().data.numpy()
+params_first_1024x32 = model.fc[0].weight.cpu().data.numpy()
+# params_first_1024x32 = model.conv1.weight.cpu().data.numpy()
 
 PATH = './cifar_net.pth'
 torch.save(model.state_dict(), PATH)
