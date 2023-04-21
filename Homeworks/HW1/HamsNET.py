@@ -273,7 +273,9 @@ def train(model, iterator, optimizer, criterion, device):
             training_loss_record[run].append(step_loss / 10)                          # save training loss with 10 step intervals
             training_acc_record[run].append(step_acc*100 / 10)                        # save training accuracy with 10 step intervals
             step_loss = 0
-            step_acc = 0        
+            step_acc = 0 
+        if i % 100 == 99:
+            evaluate(model, val_generator, criterion, device)       
 # TODO: save data in a file
     return epoch_loss / len(iterator), epoch_acc / len(iterator)
 
@@ -298,10 +300,10 @@ def evaluate(model, iterator, criterion, device):
             step_acc += acc.item()
             if i % 10 == 9:
                 if DISPLAY is True:                                                      # print every 10 mini-batches
-                    print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
-                    print('validation accuracy: %.2f' % (step_acc*100 / (10)) )          # printed at 10 step intervals
-                validation_loss_record[run].append(step_loss / 10)                        # save validation loss with 10 step intervals
-                validation_acc_record[run].append(step_acc*100 / 10)                      # save validation accuracy with 10 step intervals
+                    print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss/10))    # each epoch has 5000/50 = 100 steps
+                    print('validation accuracy: %.2f' % (step_acc*100/10) )          # printed at 10 step intervals
+                validation_loss_record[run].append(step_loss/10 )                        # save validation loss with 10 step intervals
+                validation_acc_record[run].append(step_acc*100/10 )                      # save validation accuracy with 10 step intervals
                 step_loss = 0
                 step_acc = 0
 # TODO: save data in a file
