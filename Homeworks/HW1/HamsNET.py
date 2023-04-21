@@ -37,8 +37,21 @@ import time
 # Parameters ------------------------------------------------------------------------------------------------------------------------------------#
 validation_ratio = 0.1
 batch_size = 50
-epoch_size = 15
+epoch_size = 3
+runs = 5
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
+
+DISPLAY = False
+
+# Record ----------------------------------------------------------------------------------------------------------------------------------------------#
+save = True
+save_path = './HamsNET.pt'
+training_loss_record = []
+validation_loss_record = []
+training_acc_record = []
+validation_acc_record = []
+
+
 
 # Transformations ------------------------------------------------------------------------------------------------------------------------------------#
 transform = transforms.Compose([
@@ -253,9 +266,12 @@ def train(model, iterator, optimizer, criterion, device):
         epoch_acc += acc.item()
         step_loss += loss.item()
         step_acc += acc.item()
-        if i % 10 == 9:                                                          # print every 10 mini-batches
-            print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
-            print('training accuracy: %.2f' % (step_acc*100 / (10)) )            # printed at 10 step intervals
+        if i % 10 == 9:
+            if DISPLAY is True:                                                          # print every 10 mini-batches
+                print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
+                print('training accuracy: %.2f' % (step_acc*100 / (10)) )            # printed at 10 step intervals
+            training_loss_record[run].append(step_loss / 10)                          # save training loss with 10 step intervals
+            training_acc_record[run].append(step_acc*100 / 10)                        # save training accuracy with 10 step intervals
             step_loss = 0
             step_acc = 0        
 # TODO: save data in a file
@@ -280,9 +296,12 @@ def evaluate(model, iterator, criterion, device):
             epoch_acc += acc.item()
             step_loss += loss.item()
             step_acc += acc.item()
-            if i % 10 == 9:                                                          # print every 10 mini-batches
-                print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
-                print('validation accuracy: %.2f' % (step_acc*100 / (10)) )          # printed at 10 step intervals
+            if i % 10 == 9:
+                if DISPLAY is True:                                                      # print every 10 mini-batches
+                    print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
+                    print('validation accuracy: %.2f' % (step_acc*100 / (10)) )          # printed at 10 step intervals
+                validation_loss_record[run].append(step_loss / 10)                        # save validation loss with 10 step intervals
+                validation_acc_record[run].append(step_acc*100 / 10)                      # save validation accuracy with 10 step intervals
                 step_loss = 0
                 step_acc = 0
 # TODO: save data in a file
@@ -296,32 +315,38 @@ def epoch_time(start_time, end_time):
 
 # Training loop ---------------------------------------------------------------------------------------------------------------------------------------#
 
+torch.save(model.state_dict(), 'empty.pt')
 best_valid_loss = float('inf')
+for run in range(runs):
+    model.load_state_dict(torch.load('empty.pt'))
+    training_acc_record.append([])
+    training_loss_record.append([])
+    validation_acc_record.append([])
+    validation_loss_record.append([])
+    for epoch in trange(epoch_size,disable=True):
 
-for epoch in trange(epoch_size,disable=True):
+        start_time = time.monotonic()
 
-    start_time = time.monotonic()
+        train_loss, train_acc = train(model, train_generator, optimizer, criterion, device)
+        valid_loss, valid_acc = evaluate(model, val_generator, criterion, device)
 
-    train_loss, train_acc = train(model, train_generator, optimizer, criterion, device)
-    valid_loss, valid_acc = evaluate(model, val_generator, criterion, device)
+        if valid_loss < best_valid_loss:
+            best_valid_loss = valid_loss
+            torch.save(model.state_dict(), 'cnn_5-model.pt')
 
-    if valid_loss < best_valid_loss:
-        best_valid_loss = valid_loss
-        torch.save(model.state_dict(), 'mlp_1-model.pt')
+        end_time = time.monotonic()
 
-    end_time = time.monotonic()
-
-    epoch_mins, epoch_secs = epoch_time(start_time, end_time)
-    print(f'+-----------------------------------------+')
-    print(f'Epoch:         {epoch+1:02} | Epoch Time: {epoch_mins}m {epoch_secs}s')
-    print(f'Train Loss: {train_loss:.3f} |  Train Acc: {train_acc*100:.2f}%')
-    print(f'Val. Loss:  {valid_loss:.3f} |   Val. Acc: {valid_acc*100:.2f}%')
-    print(f'+-----------------------------------------+')
-
+        epoch_mins, epoch_secs = epoch_time(start_time, end_time)
+        print(f'+-----------------------------------------+')
+        print(f'Run: {run+1:02}  Epoch: {epoch+1:02} | Epoch Time: {epoch_mins}m {epoch_secs}s')
+        print(f'Train Loss: {train_loss:.3f} |  Train Acc: {train_acc*100:.2f} %')
+        print(f'Val.  Loss: {valid_loss:.3f} |   Val. Acc: {valid_acc*100:.2f} %')
+        print(f'+-----------------------------------------+')
+                
 # Testing --------------------------------------------------------------------------------------------------------------------------------------------#
 
 # Load the best model
-model.load_state_dict(torch.load('mlp_1-model.pt'))
+model.load_state_dict(torch.load('cnn_5-model.pt'))
 
 # Evaluate the model on the test set
 test_loss, test_acc = evaluate(model, test_generator, criterion, device)
