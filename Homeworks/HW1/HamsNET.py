@@ -41,7 +41,7 @@ batch_size = 50
 epoch_size = 15
 runs = 5
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
-model_name = 'cnn_3'
+model_name = 'cnn_4'
 
 DISPLAY = False
 
@@ -235,6 +235,8 @@ elif model_name == "cnn_3":
     model = cnn_3(output_size=10)
 elif model_name == "cnn_4":
     model = cnn_4(output_size=10)
+elif model_name == "cnn_5":
+    model = cnn_5(output_size=10)
 else:
     print("Error: model name is not correct!")
 
@@ -360,7 +362,8 @@ for run in range(runs):
         print(f'Train Loss: {train_loss:.3f} |  Train Acc: {train_acc*100:.2f} %')
         print(f'Val.  Loss: {valid_loss:.3f} |   Val. Acc: {valid_acc*100:.2f} %')
         print(f'+---------------------------------------+')
-#---Testing-----------------------------------------------------------------------------------------------------------------------------------------------#
+    
+    # Testing-----------------------------------------------------------------------------------------------------------------------------------------------#
     # Load the best model in run
     model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'[' +str(run)+'].pt'))
 
@@ -371,6 +374,7 @@ for run in range(runs):
     print(f'+---------------------------------------+')
     test_acc_record[run].append(test_acc*100)
 
+# End of training loop ----------------------------------------------------------------------------------------------------------------------------------#
 
 # Load the best model in run -----------------------------------------------------------------------------------------------------------------------------#
 model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'[' +str(np.array(test_acc_record).argmax())+'].pt'))
@@ -388,7 +392,8 @@ elif model_name == 'cnn_3':
     weights = model.conv1.weight.cpu().data.numpy()
 elif model_name == 'cnn_4':
     weights = model.conv1.weight.cpu().data.numpy()
-# params_first_1024x32 = model.conv1.weight.cpu().data.numpy()
+elif model_name == 'cnn_5':
+    weights = model.conv1.weight.cpu().data.numpy()
 
 # Save the results ----------------------------------------------------------------------------------------------------------------------------------#
 with open("./results/["+ model_name +']training_loss_record', "w") as fp:
