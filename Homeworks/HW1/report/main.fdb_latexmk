@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1682185683 "d:/2022-23/Okul/Dersler/EE449/Homeworks/HW1/report/main.tex" "main.pdf" "main" 1682185684 0
+["pdflatex"] 1682190205 "d:/2022-23/Okul/Dersler/EE449/Homeworks/HW1/report/main.tex" "main.pdf" "main" 1682190206 0
   "C:/Users/ozgur/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1681208976 84186 fb563f689df077002752e2a77b332dca ""
   "C:/Users/ozgur/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1680704521 23176373 b5cfb6c2a0c3d45ceafb0e8aef465910 ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -66,6 +66,7 @@
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/base/ifthen.sty" 1669844196 5319 48d7f3cfa322abd2788e3c09d624b922 ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo" 1669844196 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1623003186 13886 d1306dcf79a944f6988e688c1785f9ce ""
+  "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/float/float.sty" 1469023953 6916 16d2656a1984957e674b149555f1ea1d ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg" 1578053545 1104 7ac475a4e3466b0b43e138e9356bda83 ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.sty" 1578053545 42759 9cf6c5257b1bc7af01a58859749dd37a ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/graphics-cfg/graphics.cfg" 1465894292 1224 978390e9c2234eab29404bc21b268d1e ""
@@ -90,16 +91,17 @@
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/txfonts/utxexa.fd" 977342760 310 1b00b0b05685b816e4c6caccce437e0d ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/txfonts/utxmia.fd" 977342760 334 87436a82076ca2e35cd305f852507afc ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/txfonts/utxsyc.fd" 977342760 310 4b5d6fe830337242ef847b3bff48ba21 ""
-  "d:/2022-23/Okul/Dersler/EE449/Homeworks/HW1/report/main.tex" 1682185682 24405 2d571bf2a485f51b97e31dc28b91bb72 ""
+  "d:/2022-23/Okul/Dersler/EE449/Homeworks/HW1/report/main.tex" 1682190202 25046 3799d751f2486ba78682ab14b629249e ""
   "ecrc.sty" 1681224817 15719 4bc2b743710aaf3b5fec3305fdbda8cd ""
   "elsarticle.cls" 1682176808 30860 c9f3167ecd064a3bf228b1721173e6c0 ""
   "figures/HW1-ART.png" 1681134054 134106 c3ec1cb51ba3606316f26797221ef78f ""
   "figures/SDlogo-3p.pdf" 1681134054 81518 d6ebc5f77105bceaafbb8e45c230a750 ""
   "figures/odtu-py.pdf" 1681134054 233712 db850dfc545f3db4154175eabf96da91 ""
+  "figures/output.png" 1681740161 105775 fdaf877d2c6b079fdc5378cfc1738362 ""
   "framed.sty" 1681134044 22449 7ec15c16d0d66790f28e90343c5434a3 ""
-  "main.aux" 1682185684 2657 cbbf2c0b6610a2942d408fa468dc4315 "pdflatex"
-  "main.spl" 1682185683 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1682185682 24405 2d571bf2a485f51b97e31dc28b91bb72 ""
+  "main.aux" 1682190206 2989 70a44036bf34e486c29941cd09c1c4b6 "pdflatex"
+  "main.spl" 1682190205 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1682190202 25046 3799d751f2486ba78682ab14b629249e ""
   (generated)
   "main.aux"
   "main.log"

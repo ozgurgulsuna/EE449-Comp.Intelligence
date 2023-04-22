@@ -39,6 +39,8 @@
 %\usepackage{parskip}
 \usepackage{amsmath}
 \usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{float}
 
 
 %% The ecrc package defines commands needed for running heads and logos.
@@ -154,7 +156,7 @@
 %% \dochead can also be used to include a conference title, if directed by the editors
 %% e.g. \dochead{17th International Conference on Dynamical Processes in Excited States of Solids}
 
-\title{Training Artificial Neural Networks}
+\title{\textbf{Training Artificial Neural Networks}}
 
 %% use optional labels to link authors explicitly to addresses:
 %% \author[label1,label2]{<author name>}
@@ -312,7 +314,7 @@ each neuron. Therefore, the number of parameters of the each layer is,
 
 % %\enlargethispage{12pt}
 
-\section{Implementing a Convolutional Layer with NumPy}
+\section{\textbf{Implementing a Convolutional Layer with NumPy}}
 
 The section involves implementing conv2d function using NumPy for forward propagation and testing it on a small batch of MNIST dataset.
 We downloaded and loaded input and kernel files, and created an output image using the part2Plots function.
@@ -330,9 +332,27 @@ We confirmed the correctness of our implementation by the output image.
 
 
 
-\subsection{Section headings}
-Section headings should be left justified, bold, with the first letter capitalized and numbered consecutively, starting with the Introduction. Sub-section headings should be in capital and lower-case italic letters, numbered 1.1, 1.2, etc,~and left justified, with second~and subsequent lines indented. All headings should have a minimum of two text lines after them before a page or column break.
-Ensure the text area is not blank except for the last page.
+\subsection{\textbf{Experimental Work}}
+The generated output for the convolution over the MNIST dataset is shown in Figure \ref{fig:output}.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth, trim={0 5cm 0 5cm}]{figures/output.png}
+    \caption{Convolution over the number 8 of the MNIST dataset}
+    \label{fig:output}
+\end{figure}
+
+\vspace{-0.5cm}
+\subsection{\textbf{Results and Discussion}}
+\begin{enumerate}
+    \item The Convolutional Neural Networks are important for couple of reasons.
+    First of all, when the input shape of the CNN is selected as 2D, it is well suited image processing.
+    Second, the CNN is able to learn the spatial features of the input image. This also means that the CNN is able to learn and extract the features of the input image without any manual work.
+    CNN's are also able to recognize the features of the input image even if the input image is rotated or scaled.
+    Since the features are extracted from image, partial occlusion of the image affect the performance of the CNN less.
+\end{enumerate}
 
 \subsection{General guidelines for the preparation of your text}
 Avoid hyphenation at the end of a line. Symbols denoting vectors and matrices should be indicated in bold type. Scalar variable names should normally be expressed using italics. Weights and measures should be expressed in SI units. All non-standard abbreviations or symbols must be defined when first mentioned, or a glossary provided.
