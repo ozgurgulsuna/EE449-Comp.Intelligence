@@ -233,11 +233,12 @@ elif model_name == "mlp_2":
     model = mlp_2(input_size=32*32, output_size=10)
 elif model_name == "cnn_3":
     model = cnn_3(output_size=10)
+elif model_name == "cnn_4":
+    model = cnn_4(output_size=10)
 else:
     print("Error: model name is not correct!")
-# model = cnn_5(output_size=10)
 
-# create loss: use cross entropy loss)
+# create loss: use cross entropy loss
 criterion = torch.nn.CrossEntropyLoss()
 
 # create optimizer
@@ -385,6 +386,8 @@ elif model_name == 'mlp_2':
     weights = model.fc[0].weight.cpu().data.numpy()
 elif model_name == 'cnn_3':
     weights = model.conv1.weight.cpu().data.numpy()
+elif model_name == 'cnn_4':
+    weights = model.conv1.weight.cpu().data.numpy()
 # params_first_1024x32 = model.conv1.weight.cpu().data.numpy()
 
 # Save the results ----------------------------------------------------------------------------------------------------------------------------------#
@@ -400,10 +403,6 @@ with open("./results/["+ model_name +']test_acc_record', "w") as fp:
     json.dump(test_acc_record, fp)
 with open("./results/["+ model_name +']weights.npy', "wb") as fp:
     np.save(fp, weights)
-
-
-
-
 
 
 # FMI : for my information
