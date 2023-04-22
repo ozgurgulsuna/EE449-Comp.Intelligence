@@ -33,13 +33,15 @@ import matplotlib.pyplot as plt
 from tqdm.notebook import trange, tqdm
 
 import time
+import json
 
 # Parameters ------------------------------------------------------------------------------------------------------------------------------------#
 validation_ratio = 0.1
 batch_size = 50
 epoch_size = 15
-runs = 10
+runs = 5
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
+model_name = 'mlp_1'
 
 DISPLAY = False
 
@@ -50,6 +52,7 @@ training_loss_record = []
 validation_loss_record = []
 training_acc_record = []
 validation_acc_record = []
+test_acc_record = []
 
 
 
@@ -224,7 +227,12 @@ class cnn_5(nn.Module):
 # Training --------------------------------------------------------------------------------------------------------------------------------------------#
 
 # initialize your model
-model = mlp_1(input_size=32*32, output_size=10)
+if model_name == "mlp_1":
+    model = mlp_1(input_size=32*32, output_size=10)
+elif model_name == "mlp_2":
+    model = mlp_2(input_size=32*32, output_size=10)
+else:
+    print("Error: model name is not correct!")
 # model = cnn_5(output_size=10)
 
 # create loss: use cross entropy loss)
@@ -275,11 +283,12 @@ def train(model, iterator, optimizer, criterion, device):
             step_loss = 0
             step_acc = 0 
         if i % 100 == 99:
-            evaluate(model, val_generator, criterion, device)       
+            evaluate(model, val_generator, criterion, device, sv=1)       
 # TODO: save data in a file
     return epoch_loss / len(iterator), epoch_acc / len(iterator)
 
-def evaluate(model, iterator, criterion, device):
+def evaluate(model, iterator, criterion, device,sv=0):
+    global best_valid_loss
     epoch_loss = 0
     epoch_acc = 0
     step_loss = 0
@@ -302,8 +311,12 @@ def evaluate(model, iterator, criterion, device):
                 if DISPLAY is True:                                                      # print every 10 mini-batches
                     print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss/10))    # each epoch has 5000/50 = 100 steps
                     print('validation accuracy: %.2f' % (step_acc*100/10) )          # printed at 10 step intervals
-                validation_loss_record[run].append(step_loss/10 )                        # save validation loss with 10 step intervals
-                validation_acc_record[run].append(step_acc*100/10 )                      # save validation accuracy with 10 step intervals
+                if sv == 1:
+                    validation_loss_record[run].append(step_loss/10 )                        # save validation loss with 10 step intervals
+                    validation_acc_record[run].append(step_acc*100/10 )                      # save validation accuracy with 10 step intervals
+                    if (step_loss/10) < best_valid_loss:
+                        best_valid_loss = (step_loss/10)
+                        torch.save(model.state_dict(),'./results/trained_models/'+ model_name+'[' +str(run)+'].pt')
                 step_loss = 0
                 step_acc = 0
 # TODO: save data in a file
@@ -316,52 +329,76 @@ def epoch_time(start_time, end_time):
     return elapsed_mins, elapsed_secs
 
 # Training loop ---------------------------------------------------------------------------------------------------------------------------------------#
-
 torch.save(model.state_dict(), 'empty.pt')
-best_valid_loss = float('inf')
+
 for run in range(runs):
+
+    best_valid_loss = float('inf')
     model.load_state_dict(torch.load('empty.pt'))
+
     training_acc_record.append([])
     training_loss_record.append([])
     validation_acc_record.append([])
     validation_loss_record.append([])
+    test_acc_record.append([])
+
     for epoch in trange(epoch_size,disable=True):
 
         start_time = time.monotonic()
 
         train_loss, train_acc = train(model, train_generator, optimizer, criterion, device)
-        valid_loss, valid_acc = evaluate(model, val_generator, criterion, device)
-
-        if valid_loss < best_valid_loss:
-            best_valid_loss = valid_loss
-            torch.save(model.state_dict(), 'mlp_1.pt')
+        valid_loss, valid_acc = evaluate(model, val_generator, criterion, device, sv=0)
 
         end_time = time.monotonic()
 
         epoch_mins, epoch_secs = epoch_time(start_time, end_time)
-        print(f'+-----------------------------------------+')
+        print(f'+---------------------------------------+')
         print(f'Run: {run+1:02}  Epoch: {epoch+1:02} | Epoch Time: {epoch_mins}m {epoch_secs}s')
         print(f'Train Loss: {train_loss:.3f} |  Train Acc: {train_acc*100:.2f} %')
         print(f'Val.  Loss: {valid_loss:.3f} |   Val. Acc: {valid_acc*100:.2f} %')
-        print(f'+-----------------------------------------+')
-                
-# Testing --------------------------------------------------------------------------------------------------------------------------------------------#
+        print(f'+---------------------------------------+')
+#---Testing-----------------------------------------------------------------------------------------------------------------------------------------------#
+    # Load the best model in run
+    model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'[' +str(run)+'].pt'))
 
-# Load the best model
-model.load_state_dict(torch.load('mlp_1.pt'))
+    # Evaluate the model on the test set
+    test_loss, test_acc = evaluate(model, test_generator, criterion, device, sv=0)
+    print(f'+---------------------------------------+')
+    print(f'Test Loss: {test_loss:.3f} | Test Acc: {test_acc*100:.2f}%')
+    print(f'+---------------------------------------+')
+    test_acc_record[run].append(test_acc*100)
 
-# Evaluate the model on the test set
-test_loss, test_acc = evaluate(model, test_generator, criterion, device)
-print(f'Test Loss: {test_loss:.3f} | Test Acc: {test_acc*100:.2f}%')
 
+# Load the best model in run -----------------------------------------------------------------------------------------------------------------------------#
+model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'[' +str(np.array(test_acc_record).argmax())+'].pt'))
+
+# Save the first layer weights ---------------------------------------------------------------------------------------------------------------------#
 # get the weights of first layer [1024x32] as numpy array
 # we used sequential model, so we can access the layers by index: model_mlp.fc[0].weight.data.numpy()
 # we added the .cpu() to move the tensor to cpu memory
-params_first_1024x32 = model.fc[0].weight.cpu().data.numpy()
+
+if model_name == 'mlp_1':
+    weights = model.fc[0].weight.cpu().data.numpy()
 # params_first_1024x32 = model.conv1.weight.cpu().data.numpy()
 
-PATH = './cifar_net.pth'
-torch.save(model.state_dict(), PATH)
+# Save the results ----------------------------------------------------------------------------------------------------------------------------------#
+with open("./results/["+ model_name +']training_loss_record', "w") as fp:
+    json.dump(training_loss_record, fp)
+with open("./results/["+ model_name +']training_acc_record', "w") as fp:
+    json.dump(training_acc_record, fp)
+with open("./results/["+ model_name +']validation_loss_record', "w") as fp:
+    json.dump(validation_loss_record, fp)
+with open("./results/["+ model_name +']validation_acc_record', "w") as fp:
+    json.dump(validation_acc_record, fp)
+with open("./results/["+ model_name +']test_acc_record', "w") as fp:
+    json.dump(test_acc_record, fp)
+with open("./results/["+ model_name +']weights.npy', "wb") as fp:
+    np.save(fp, weights)
+
+
+
+
+
 
 # FMI : for my information
 # https://stackoverflow.com/questions/72724452/mat1-and-mat2-shapes-cannot-be-multiplied-128x4-and-128x64
