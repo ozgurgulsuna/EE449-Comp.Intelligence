@@ -41,7 +41,7 @@ batch_size = 50
 epoch_size = 15
 runs = 5
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
-model_name = 'mlp_1'
+model_name = 'cnn_3'
 
 DISPLAY = False
 
@@ -231,6 +231,8 @@ if model_name == "mlp_1":
     model = mlp_1(input_size=32*32, output_size=10)
 elif model_name == "mlp_2":
     model = mlp_2(input_size=32*32, output_size=10)
+elif model_name == "cnn_3":
+    model = cnn_3(output_size=10)
 else:
     print("Error: model name is not correct!")
 # model = cnn_5(output_size=10)
@@ -379,6 +381,10 @@ model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'[' +st
 
 if model_name == 'mlp_1':
     weights = model.fc[0].weight.cpu().data.numpy()
+elif model_name == 'mlp_2':
+    weights = model.fc[0].weight.cpu().data.numpy()
+elif model_name == 'cnn_3':
+    weights = model.conv1.weight.cpu().data.numpy()
 # params_first_1024x32 = model.conv1.weight.cpu().data.numpy()
 
 # Save the results ----------------------------------------------------------------------------------------------------------------------------------#
