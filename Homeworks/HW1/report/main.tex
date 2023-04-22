@@ -242,52 +242,91 @@ This form is also known as the negative log-like function.
 \begin{enumerate}
     \item Starting from the initial layer of the MLP, we have $D_{in}$ number of input neurons and $H_1$ number of neurons in first hidden layer. Also there are biases associated with 
 each neuron. Therefore, the number of parameters of the each layer is,
-    \vspace{-0.75cm}
+    \vspace{-0.5cm}
     \begin{equation*}
     \begin{array}{r}
-    \textrm{Input Layer} = D_{in} \cdotp H_{1} \ +\ H_{1} \\
-    \textrm{Hidden Layers}= H_1 \cdot H_2 + H_2\\
+    \textrm{Input Layer} = D_{in} \times H_{1} \ +\ H_{1} \\
+    \textrm{Hidden Layers}= H_1 \times H_2 + H_2\\
     \cdot \cdot \cdot \hspace{2em} \\
-    \textrm{More Hidden Layers} = H_{k-1} \cdot H_k + H_k\\
-    \textrm{Output Layer} = H_{k} \cdotp D_{out} \ +\ D_{out} \\
+    \textrm{More Hidden Layers} = H_{k-1} \times H_k + H_k\\
+    \textrm{Output Layer} = H_{k} \times D_{out} \ +\ D_{out} \\
     \end{array}
     \end{equation*}
 
-    The total sum can be written as, $D_{in}\cdot H_1 + \sum_{k=2}^{K} (H_{k-1} \cdot H_k + H_k) + H_k \cdot D_{out} +  D_{out}$, where $K$ is the number of hidden layers.
-    \item Second point
+    \vspace{-0.25cm}
+    The total sum can be written as, where $K$ is the number of hidden layers.
+    \vspace{-0.5cm}
+    \begin{equation*}
+        \textrm{Total Number of Parameters} = D_{in}\times H_1 + \sum_{k=2}^{K} (H_{k-1} \times H_k + H_k) + H_k \times D_{out} +  D_{out}
+    \end{equation*}
+    \vspace{-0.25cm}
+
+    \item CNN structure is more complicated. The number of parameters of a CNN layer is calculated as follows:
+    
+    For the input layer, the number of parameters is,
+    \vspace{-0.5cm}
+    \begin{equation*}
+        \textrm{Input Layer} = (H_{in} \times W_{in} \times C_{in} \times C_1 )+ C_1
+    \end{equation*}
+
+    \vspace{-0.25cm}
+    where $H_{in}$ and $W_{in}$ are the height and width of the input image, and $C_{in}$ is the number of channels of the input image.
+    Each input of layer is the output of the previous layer.
+    For the convolutional layers, the number of parameters is calculated as,
+    \vspace{-0.5cm}
+    \begin{equation*}
+        \begin{array}{c}
+            \displaystyle \textrm{Convolutional Layer} = H_k \times W_k \times C_{k-1} \times C_k + C_k \\
+            \\
+            \displaystyle \textrm{Combination of all layers is,} \\
+            \displaystyle \textrm{Convolutional Layers} = \sum_{k=2}^{K} H_k \times W_k \times C_{k-1} \times C_k + C_k \\ 
+        \end{array}
+    \end{equation*}
+
+    \vspace{-0.25cm}
+    Here all the parameters are summed up. The output is assumed to be the last index of the array.
+    The final equation for the total number of parameters is,
+    \vspace{-0.5cm}
+    \begin{equation*}
+        \textrm{Total Number of Parameters} = (H_{in} \times W_{in} \times C_{in} \times C_1 )+ C_1 + \sum_{k=1}^{K} H_k \times W_k \times C_{k-1} \times C_k + C_k
+    \end{equation*}
+
+    \vspace{-0.25cm}
+
 \end{enumerate}
 
-All tables should be numbered with Arabic numerals. Every table should have a caption. Headings should be placed above tables, left justified. Only horizontal lines should be used within a table, to distinguish the column headings from the body of the table, and immediately above and below the table. Tables must be embedded into the text and not supplied separately. Below is an example which the authors may find useful.
+% All tables should be numbered with Arabic numerals. Every table should have a caption. Headings should be placed above tables, left justified. Only horizontal lines should be used within a table, to distinguish the column headings from the body of the table, and immediately above and below the table. Tables must be embedded into the text and not supplied separately. Below is an example which the authors may find useful.
 
-\begin{table}[h]
-\caption{ An example of a table.}
-\begin{tabular*}{\hsize}{@{\extracolsep{\fill}}lll@{}}
-\toprule
-An example of a column heading & Column A ({\it{t}}) & Column B ({\it{t}})\\
-\colrule
-And an entry &   1 &  2\\
-And another entry  & 3 &  4\\
-And another entry &  5 &  6\\
-\botrule
-\end{tabular*}
-\end{table}
+% \begin{table}[h]
+% \caption{ An example of a table.}
+% \begin{tabular*}{\hsize}{@{\extracolsep{\fill}}lll@{}}
+% \toprule
+% An example of a column heading & Column A ({\it{t}}) & Column B ({\it{t}})\\
+% \colrule
+% And an entry &   1 &  2\\
+% And another entry  & 3 &  4\\
+% And another entry &  5 &  6\\
+% \botrule
+% \end{tabular*}
+% \end{table}
 
-%\enlargethispage{12pt}
+% %\enlargethispage{12pt}
 
-\subsection{Implementing a Convolutional Layer with NumPy}
+\section{Implementing a Convolutional Layer with NumPy}
 
+The section involves implementing conv2d function using NumPy for forward propagation and testing it on a small batch of MNIST dataset.
+We downloaded and loaded input and kernel files, and created an output image using the part2Plots function.
+The implementation code can be found in the appendix named my\_conv2d.py.
+We confirmed the correctness of our implementation by the output image.
+% References must be listed at the end of the paper. Do not begin them on a new page unless this is absolutely necessary. Authors should ensure that every reference in the text appears in the list of references and vice versa. Indicate references by \cite{Massimo2011} or \cite{Massimo2012} or \cite{Thomas2015} in the text.
+% Some examples of how your references should be listed are given at the end of this template in the `References' section, which will allow you to assemble your reference list according to the correct format and font size.
 
+% Reference generation by using bibliography style commands for LaTeX template only.
 
-References must be listed at the end of the paper. Do not begin them on a new page unless this is absolutely necessary. Authors should ensure that every reference in the text appears in the list of references and vice versa. Indicate references by \cite{Massimo2011} or \cite{Massimo2012} or \cite{Thomas2015} in the text. 
+% The author may use ``elsarticle-harv.bst'' as per the style required in document. The sample bib file could be referred. 
+% If the author may using bibstyle for providing references author must comment the bibliography section in TeX file, Bibtex will generate the reference automatically.
 
-Some examples of how your references should be listed are given at the end of this template in the `References' section, which will allow you to assemble your reference list according to the correct format and font size.
-
-Reference generation by using bibliography style commands for LaTeX template only.
-
-The author may use ``elsarticle-harv.bst'' as per the style required in document. The sample bib file could be referred. 
-If the author may using bibstyle for providing references author must comment the bibliography section in TeX file, Bibtex will generate the reference automatically.
-
-If the author may not able to view the references in output same could be done by copying the bibliography section from ``filename.bbl'' file and paste in TeX file.
+% If the author may not able to view the references in output same could be done by copying the bibliography section from ``filename.bbl'' file and paste in TeX file.
 
 
 

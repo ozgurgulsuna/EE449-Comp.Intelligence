@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  22 APR 2023 18:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  22 APR 2023 20:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -699,21 +699,16 @@ Overfull \vbox (15.45999pt too high) has occurred while \output is active []
 {C:/Users/ozgur/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./figures/odtu-py.pdf> <./figures/SDlogo-3p.pdf
 
 pdfTeX warning: pdflatex (file ./figures/SDlogo-3p.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./figures/HW1-ART.png>]
-Underfull \hbox (badness 10000) detected at line 263
-[]
- []
-
-[2] [3]
+> <./figures/HW1-ART.png>] [2] [3]
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <8> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 394.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 433.
  [4]
-Underfull \hbox (badness 10000) in alignment at lines 434--437
+Underfull \hbox (badness 10000) in alignment at lines 473--476
 [][]
  []
 
 
-Overfull \hbox (2.0pt too wide) in paragraph at lines 434--438
+Overfull \hbox (2.0pt too wide) in paragraph at lines 473--477
 []| [] 
  []
 
@@ -731,13 +726,13 @@ Package natbib Warning: Citation(s) may have changed.
 Here is how much of TeX's memory you used:
  5095 strings out of 476334
  75158 string characters out of 5787972
- 1861382 words of memory out of 5000000
+ 1860382 words of memory out of 5000000
  25401 multiletter control sequences out of 15000+600000
  566404 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,16n,76p,919b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtcxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txex.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 540695 bytes).
+Output written on main.pdf (5 pages, 540041 bytes).
 PDF statistics:
  94 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
