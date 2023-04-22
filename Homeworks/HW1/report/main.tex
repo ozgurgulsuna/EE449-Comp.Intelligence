@@ -163,11 +163,11 @@
 
 
 
-\author[a]{Ozgur Gulsuna} 
+\author[]{Ozgur Gulsuna} 
 %\author[b]{Second Author}
 %\author[a,b]{Third Author\corref{cor1}}
 
-\address[a]{Middle East Technical University, Electrical and Electronics Engineering, Ankara, Turkey}
+\address[]{Middle East Technical University, Electrical and Electronics Engineering, Ankara, Turkey}
 %\address[b]{Second affiliation, Address, City and Postcode, Country}
 
 \begin{abstract}
@@ -233,13 +233,27 @@ This form is also known as the negative log-like function.
 \subsection{\textbf{Gradient Computation}}
 \subsection{\textbf{Some Training Parameters and Basic Parameter Calculations}}
 \begin{enumerate}
-    \item The epoch of a training process is the number of times the entire training set is used to update the weights of the network.
-    \item other factors in the training process are the learning rate, the batch size, the number of hidden layers, the number of neurons in each hidden layer, the activation function, the loss function, the optimizer, the number of epochs, the number of training samples, the number of validation samples, the number of test samples, the number of classes, the number of features, the number of parameters, the number of trainable parameters, the number of non-trainable parameters, the number of layers, the number of layers with weights, the number of layers with biases, the number of layers with weights and biases, the number of layers with weights and biases and the number of layers with weights and biases.
-    \item The number of parameters of a neural network is the number of weights and biases in the network.
+    \item The batch refers to a subset of the training data that is used to compute the weights for one iteration. More specifically, the batch size is the number of training samples in a batch.
+ The epoch on the other hand refers to the number of times the entire training data is used to update the weights. In training, there are generally multiple epoch iterations where the weights are updated with different batches/subsets of the training data.
+    \item For the $N$ number of training samples, the number of batches per epoch is $N/B$, where $B$ is the batch size. A little side note that the solution is rounded up to the higher integer if $N/B$ is not an integer.
+    \item For the loss calculation iterations, such as SGD, for $E$ number of epochs, the total number of iterations is $E \times N/B$. Again, a practical side note states that the $N/B$ is rounded up to the higher integer.
 \end{enumerate}
 \subsection{\textbf{Computing Number of Parameters of ANN Classifiers}}
 \begin{enumerate}
-    \item First point
+    \item Starting from the initial layer of the MLP, we have $D_{in}$ number of input neurons and $H_1$ number of neurons in first hidden layer. Also there are biases associated with 
+each neuron. Therefore, the number of parameters of the each layer is,
+    \vspace{-0.75cm}
+    \begin{equation*}
+    \begin{array}{r}
+    \textrm{Input Layer} = D_{in} \cdotp H_{1} \ +\ H_{1} \\
+    \textrm{Hidden Layers}= H_1 \cdot H_2 + H_2\\
+    \cdot \cdot \cdot \hspace{2em} \\
+    \textrm{More Hidden Layers} = H_{k-1} \cdot H_k + H_k\\
+    \textrm{Output Layer} = H_{k} \cdotp D_{out} \ +\ D_{out} \\
+    \end{array}
+    \end{equation*}
+
+    The total sum can be written as, $D_{in}\cdot H_1 + \sum_{k=2}^{K} (H_{k-1} \cdot H_k + H_k) + H_k \cdot D_{out} +  D_{out}$, where $K$ is the number of hidden layers.
     \item Second point
 \end{enumerate}
 

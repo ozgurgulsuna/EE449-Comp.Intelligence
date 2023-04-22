@@ -4,8 +4,7 @@ from operator import add
 import numpy as np
 from matplotlib import pyplot as plt
 
-models = ["mlp_1", "mlp_2", "cnn_3", "cnn_4"]
-# models = ["mlp_1","mlp_2","cnn_3","cnn_4","cnn_5"]
+models = ["mlp_1","mlp_2","cnn_3","cnn_4","cnn_5"]
 
 # results = [[],[],[],[],[]]
 results = []

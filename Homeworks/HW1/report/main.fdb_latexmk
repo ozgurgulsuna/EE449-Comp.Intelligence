@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1681304901 "d:/2022-23/Okul/Dersler/EE449/Homeworks/HW1/report/main.tex" "main.pdf" "main" 1681304903 0
+["pdflatex"] 1682178903 "d:/2022-23/Okul/Dersler/EE449/Homeworks/HW1/report/main.tex" "main.pdf" "main" 1682178905 0
   "C:/Users/ozgur/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1681208976 84186 fb563f689df077002752e2a77b332dca ""
   "C:/Users/ozgur/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1680704521 23176373 b5cfb6c2a0c3d45ceafb0e8aef465910 ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -90,16 +90,16 @@
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/txfonts/utxexa.fd" 977342760 310 1b00b0b05685b816e4c6caccce437e0d ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/txfonts/utxmia.fd" 977342760 334 87436a82076ca2e35cd305f852507afc ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/txfonts/utxsyc.fd" 977342760 310 4b5d6fe830337242ef847b3bff48ba21 ""
-  "d:/2022-23/Okul/Dersler/EE449/Homeworks/HW1/report/main.tex" 1681304896 21667 41e91b8be7c84abe9b2c4a8fc6603e83 ""
+  "d:/2022-23/Okul/Dersler/EE449/Homeworks/HW1/report/main.tex" 1682178903 22386 b82f443d6b55d7b9d745c4cb2d7167cf ""
   "ecrc.sty" 1681224817 15719 4bc2b743710aaf3b5fec3305fdbda8cd ""
-  "elsarticle.cls" 1681134770 30860 c9f3167ecd064a3bf228b1721173e6c0 ""
+  "elsarticle.cls" 1682176808 30860 c9f3167ecd064a3bf228b1721173e6c0 ""
   "figures/HW1-ART.png" 1681134054 134106 c3ec1cb51ba3606316f26797221ef78f ""
   "figures/SDlogo-3p.pdf" 1681134054 81518 d6ebc5f77105bceaafbb8e45c230a750 ""
   "figures/odtu-py.pdf" 1681134054 233712 db850dfc545f3db4154175eabf96da91 ""
   "framed.sty" 1681134044 22449 7ec15c16d0d66790f28e90343c5434a3 ""
-  "main.aux" 1681304902 2856 9b96f402b54a0309a4f475ba64849e34 "pdflatex"
-  "main.spl" 1681304902 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1681304896 21667 41e91b8be7c84abe9b2c4a8fc6603e83 ""
+  "main.aux" 1682178905 2855 cc2d29450869a74487e66b3f742006c7 "pdflatex"
+  "main.spl" 1682178904 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1682178903 22386 b82f443d6b55d7b9d745c4cb2d7167cf ""
   (generated)
   "main.aux"
   "main.log"
