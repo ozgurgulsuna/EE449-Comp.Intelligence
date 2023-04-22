@@ -39,21 +39,17 @@ import json
 validation_ratio = 0.1
 batch_size = 50
 epoch_size = 15
-runs = 5
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 model_name = 'mlp_1'
 
-DISPLAY = False
+DISPLAY = True
 
 # Record ----------------------------------------------------------------------------------------------------------------------------------------------#
 save = True
 save_path = './HamsNET.pt'
 training_loss_record = []
-validation_loss_record = []
-training_acc_record = []
-validation_acc_record = []
+training_loss_gradient_record = []
 test_acc_record = []
-
 
 
 # Transformations ------------------------------------------------------------------------------------------------------------------------------------#
@@ -93,8 +89,8 @@ print('test_data: ', len(test_data))
 
 # Data loader ----------------------------------------------------------------------------------------------------------------------------------------#
 train_generator = torch.utils.data.DataLoader(train_data, batch_size = batch_size, shuffle = True)
-val_generator = torch.utils.data.DataLoader(val_data, batch_size = batch_size, shuffle = True)
-test_generator = torch.utils.data.DataLoader(test_data, batch_size = batch_size, shuffle = True)
+val_generator = torch.utils.data.DataLoader(val_data, batch_size = batch_size )
+test_generator = torch.utils.data.DataLoader(test_data, batch_size = batch_size )
 
 # Architectures ---------------------------------------------------------------------------------------------------------------------------------------#
 # "mlp_1" is a simple multi-layer perceptron with one hidden layer
@@ -244,8 +240,8 @@ else:
 criterion = torch.nn.CrossEntropyLoss()
 
 # create optimizer
-# optimizer = torch.optim.SGD(model_mlp.parameters(), lr = 0.01, momentum = 0.0)
-optimizer = torch.optim.Adam(model.parameters(), lr = 0.001)
+optimizer = torch.optim.SGD(model.parameters(), lr = 0.01, momentum = 0.0)
+# optimizer = torch.optim.Adam(model.parameters(), lr = 0.001)
 
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -263,10 +259,10 @@ def train(model, iterator, optimizer, criterion, device):
     epoch_acc = 0
     step_loss = 0
     step_acc = 0
+    step_loss_gradient = 0
     model.train()
     i = 0
-    for (x, y) in tqdm(iterator, disable=True):
-        i += 1
+    for (x, y) in iterator:
         x = x.to(device)
         y = y.to(device)
         optimizer.zero_grad()
@@ -279,20 +275,23 @@ def train(model, iterator, optimizer, criterion, device):
         epoch_acc += acc.item()
         step_loss += loss.item()
         step_acc += acc.item()
+        if model_name == "mlp_1" or model_name == "mlp_2":
+            step_loss_gradient += torch.norm(model.fc[0].weight.grad).item()
+        elif model_name == "cnn_3" or model_name == "cnn_4" or model_name == "cnn_5":
+            step_loss_gradient += torch.norm(model.conv1.weight.grad).item()
         if i % 10 == 9:
-            if DISPLAY is True:                                                          # print every 10 mini-batches
+            if DISPLAY is True:                                                        # print every 10 mini-batches
                 print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
                 print('training accuracy: %.2f' % (step_acc*100 / (10)) )            # printed at 10 step intervals
-            training_loss_record[run].append(step_loss / 10)                          # save training loss with 10 step intervals
-            training_acc_record[run].append(step_acc*100 / 10)                        # save training accuracy with 10 step intervals
+            training_loss_record.append(step_loss / 10)                          # save training loss with 10 step intervals
+            training_loss_gradient_record.append(step_loss_gradient / 10)            # save training loss gradient with 10 step intervals
             step_loss = 0
-            step_acc = 0 
-        if i % 100 == 99:
-            evaluate(model, val_generator, criterion, device, sv=1)       
+            step_acc = 0
+            step_loss_gradient = 0 
+        i += 1
     return epoch_loss / len(iterator), epoch_acc / len(iterator)
 
 def evaluate(model, iterator, criterion, device,sv=0):
-    global best_valid_loss
     epoch_loss = 0
     epoch_acc = 0
     step_loss = 0
@@ -315,12 +314,6 @@ def evaluate(model, iterator, criterion, device,sv=0):
                 if DISPLAY is True:                                                      # print every 10 mini-batches
                     print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss/10))    # each epoch has 5000/50 = 100 steps
                     print('validation accuracy: %.2f' % (step_acc*100/10) )          # printed at 10 step intervals
-                if sv == 1:
-                    validation_loss_record[run].append(step_loss/10 )                        # save validation loss with 10 step intervals
-                    validation_acc_record[run].append(step_acc*100/10 )                      # save validation accuracy with 10 step intervals
-                    if (step_loss/10) < best_valid_loss:
-                        best_valid_loss = (step_loss/10)
-                        torch.save(model.state_dict(),'./results/trained_models/'+ model_name+'[' +str(run)+'].pt')
                 step_loss = 0
                 step_acc = 0
     return epoch_loss / len(iterator), epoch_acc / len(iterator)
@@ -332,80 +325,52 @@ def epoch_time(start_time, end_time):
     return elapsed_mins, elapsed_secs
 
 # Training loop ---------------------------------------------------------------------------------------------------------------------------------------#
-torch.save(model.state_dict(), 'empty.pt')
 
-for run in range(runs):
+best_valid_loss = float('inf')
 
-    best_valid_loss = float('inf')
-    model.load_state_dict(torch.load('empty.pt'))
+for epoch in trange(epoch_size,disable=True):
 
-    training_acc_record.append([])
-    training_loss_record.append([])
-    validation_acc_record.append([])
-    validation_loss_record.append([])
-    test_acc_record.append([])
+    start_time = time.monotonic()
 
-    for epoch in trange(epoch_size,disable=True):
+    train_loss, train_acc = train(model, train_generator, optimizer, criterion, device)
+    valid_loss, valid_acc = evaluate(model, val_generator, criterion, device, sv=0)
 
-        start_time = time.monotonic()
+    if valid_loss < best_valid_loss:
+        best_valid_loss = valid_loss
+        torch.save(model.state_dict(), './results/trained_models/'+ model_name+'['+'ReLU-AF'+'].pt')
 
-        train_loss, train_acc = train(model, train_generator, optimizer, criterion, device)
-        valid_loss, valid_acc = evaluate(model, val_generator, criterion, device, sv=0)
+    end_time = time.monotonic()
 
-        end_time = time.monotonic()
-
-        epoch_mins, epoch_secs = epoch_time(start_time, end_time)
-        print(f'+---------------------------------------+')
-        print(f'Run: {run+1:02}  Epoch: {epoch+1:02} | Epoch Time: {epoch_mins}m {epoch_secs}s')
-        print(f'Train Loss: {train_loss:.3f} |  Train Acc: {train_acc*100:.2f} %')
-        print(f'Val.  Loss: {valid_loss:.3f} |   Val. Acc: {valid_acc*100:.2f} %')
-        print(f'+---------------------------------------+')
-    
-    # Testing-----------------------------------------------------------------------------------------------------------------------------------------------#
-    # Load the best model in run
-    model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'[' +str(run)+'].pt'))
-
-    # Evaluate the model on the test set
-    test_loss, test_acc = evaluate(model, test_generator, criterion, device, sv=0)
+    epoch_mins, epoch_secs = epoch_time(start_time, end_time)
     print(f'+---------------------------------------+')
-    print(f'Test Loss: {test_loss:.3f} | Test Acc: {test_acc*100:.2f}%')
+    print(f'Epoch:        {epoch+1:02} | Epoch Time: {epoch_mins}m {epoch_secs}s')
+    print(f'Train Loss: {train_loss:.3f} |  Train Acc: {train_acc*100:.2f} %')
+    print(f'Val.  Loss: {valid_loss:.3f} |   Val. Acc: {valid_acc*100:.2f} %')
     print(f'+---------------------------------------+')
-    test_acc_record[run].append(test_acc*100)
+
+# Testing-----------------------------------------------------------------------------------------------------------------------------------------------#
+# Load the best model in run
+model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'['+'ReLU-AF'+'].pt'))
+
+# Evaluate the model on the test set
+test_loss, test_acc = evaluate(model, test_generator, criterion, device, sv=0)
+print(f'+---------------------------------------+')
+print(f'Test Loss: {test_loss:.3f} | Test Acc: {test_acc*100:.2f}%')
+print(f'+---------------------------------------+')
+test_acc_record = test_acc*100
 
 # End of training loop ----------------------------------------------------------------------------------------------------------------------------------#
 
 # Load the best model in run -----------------------------------------------------------------------------------------------------------------------------#
-model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'[' +str(np.array(test_acc_record).argmax())+'].pt'))
-
-# Save the first layer weights ---------------------------------------------------------------------------------------------------------------------#
-# get the weights of first layer [1024x32] as numpy array
-# we used sequential model, so we can access the layers by index: model_mlp.fc[0].weight.data.numpy()
-# we added the .cpu() to move the tensor to cpu memory
-
-if model_name == 'mlp_1':
-    weights = model.fc[0].weight.cpu().data.numpy()
-elif model_name == 'mlp_2':
-    weights = model.fc[0].weight.cpu().data.numpy()
-elif model_name == 'cnn_3':
-    weights = model.conv1.weight.cpu().data.numpy()
-elif model_name == 'cnn_4':
-    weights = model.conv1.weight.cpu().data.numpy()
-elif model_name == 'cnn_5':
-    weights = model.conv1.weight.cpu().data.numpy()
+model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'['+'ReLU-AF'+'].pt'))
 
 # Save the results ----------------------------------------------------------------------------------------------------------------------------------#
-with open("./results/["+ model_name +']training_loss_record', "w") as fp:
+with open("./results/["+ model_name +']ReLU-AF_training_loss_record', "w") as fp:
     json.dump(training_loss_record, fp)
-with open("./results/["+ model_name +']training_acc_record', "w") as fp:
-    json.dump(training_acc_record, fp)
-with open("./results/["+ model_name +']validation_loss_record', "w") as fp:
-    json.dump(validation_loss_record, fp)
-with open("./results/["+ model_name +']validation_acc_record', "w") as fp:
-    json.dump(validation_acc_record, fp)
-with open("./results/["+ model_name +']test_acc_record', "w") as fp:
+with open("./results/["+ model_name +']ReLU-AF_test_acc_record', "w") as fp:
     json.dump(test_acc_record, fp)
-with open("./results/["+ model_name +']weights.npy', "wb") as fp:
-    np.save(fp, weights)
+with open("./results/["+ model_name +']ReLU-AF_training_loss_gradient_record', "w") as fp:
+    json.dump(training_loss_gradient_record, fp)
 
 
 # FMI : for my information

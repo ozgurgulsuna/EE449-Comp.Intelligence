@@ -93,8 +93,8 @@ print('test_data: ', len(test_data))
 
 # Data loader ----------------------------------------------------------------------------------------------------------------------------------------#
 train_generator = torch.utils.data.DataLoader(train_data, batch_size = batch_size, shuffle = True)
-val_generator = torch.utils.data.DataLoader(val_data, batch_size = batch_size, shuffle = True)
-test_generator = torch.utils.data.DataLoader(test_data, batch_size = batch_size, shuffle = True)
+val_generator = torch.utils.data.DataLoader(val_data, batch_size = batch_size )
+test_generator = torch.utils.data.DataLoader(test_data, batch_size = batch_size ) 
 
 # Architectures ---------------------------------------------------------------------------------------------------------------------------------------#
 # "mlp_1" is a simple multi-layer perceptron with one hidden layer
@@ -266,7 +266,6 @@ def train(model, iterator, optimizer, criterion, device):
     model.train()
     i = 0
     for (x, y) in tqdm(iterator, disable=True):
-        i += 1
         x = x.to(device)
         y = y.to(device)
         optimizer.zero_grad()
@@ -288,7 +287,8 @@ def train(model, iterator, optimizer, criterion, device):
             step_loss = 0
             step_acc = 0 
         if i % 100 == 99:
-            evaluate(model, val_generator, criterion, device, sv=1)       
+            evaluate(model, val_generator, criterion, device, sv=1)
+        i += 1      
     return epoch_loss / len(iterator), epoch_acc / len(iterator)
 
 def evaluate(model, iterator, criterion, device,sv=0):
@@ -301,7 +301,6 @@ def evaluate(model, iterator, criterion, device,sv=0):
     with torch.no_grad():
         i = 0
         for (x, y) in tqdm(iterator, disable=True):
-            i += 1
             x = x.to(device)
             y = y.to(device)
             y_pred = model(x)
@@ -323,6 +322,7 @@ def evaluate(model, iterator, criterion, device,sv=0):
                         torch.save(model.state_dict(),'./results/trained_models/'+ model_name+'[' +str(run)+'].pt')
                 step_loss = 0
                 step_acc = 0
+            i += 1
     return epoch_loss / len(iterator), epoch_acc / len(iterator)
 
 def epoch_time(start_time, end_time):
