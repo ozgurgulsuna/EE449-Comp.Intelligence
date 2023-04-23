@@ -43,6 +43,12 @@
 \usepackage{float}
 
 
+\newcommand{\subf}[2]{%
+  {\small\begin{tabular}[t]{@{}c@{}}
+  #1\\#2
+  \end{tabular}}%
+}
+
 %% The ecrc package defines commands needed for running heads and logos.
 %% For running heads, you can set the journal name, the volume, the starting page and the authors
 
@@ -402,12 +408,24 @@ Performance comparison plots will be created, and the weights of the first layer
     \item The depth of the architecture is also relevelant with the distribution of the parameters, how they organized in an architecture. The models with more depth are able to learn more complex features as well, however they are harder to train in terms of computation.
     The extremum of depth parameter results in not overfitting but underfitting. This is because the model is not able to learn the features of the data in depth and generalize well.
 
-    \begin{figure}[H]
+    \begin{figure}
         \centering
-        \includegraphics[width=0.9\textwidth, trim={0 0cm 0 0cm}]{figures/aa.png}
-        \caption{Performance Comparison Plots for the ANN Architectures} 
-        \label{fig:perf}
+        \begin{tabular}{c c}
+        \subf{\includegraphics[width=72mm]{figures/mlp_1_weights.png}}{a) mlp\_1}
+        &
+        \subf{\includegraphics[width=72mm]{figures/mlp_2_weights.png}}{b) mlp\_2}
+        \\
+        \end{tabular}
+        \begin{tabular}{c c c}
+        \subf{\includegraphics[width=45mm]{figures/cnn_3_weights.png}}{c) cnn\_3}
+        &
+        \subf{\includegraphics[width=45mm]{figures/cnn_4_weights.png}}{d) cnn\_4}
+        &
+        \subf{\includegraphics[width=45mm]{figures/cnn_5_weights.png}}{e) cnn\_5}
+        \\
+        \end{tabular}
     \end{figure}
+    \label{fig:weights}
 
 \end{enumerate}
 

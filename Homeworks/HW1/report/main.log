@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  23 APR 2023 15:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  23 APR 2023 16:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -533,7 +533,7 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 \rot@float@box=\box61
 \rot@mess@toks=\toks27
 )
-LaTeX Font Info:    Trying to load font information for OT1+txr on input line 129.
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 135.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 ) (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
@@ -542,44 +542,41 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box62
 ) (main.aux
 
-LaTeX Warning: Label `fig:perf' multiply defined.
-
-
 Package natbib Warning: Citation `' multiply defined.
 
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 129.
-LaTeX Font Info:    Trying to load font information for OML+txmi on input line 129.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 135.
+LaTeX Font Info:    Trying to load font information for OML+txmi on input line 135.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 129.
-LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 129.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 135.
+LaTeX Font Info:    Trying to load font information for OMS+txsy on input line 135.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 129.
-LaTeX Font Info:    Trying to load font information for OMX+txex on input line 129.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 135.
+LaTeX Font Info:    Trying to load font information for OMX+txex on input line 135.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 129.
-LaTeX Font Info:    Trying to load font information for U+txexa on input line 129.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 135.
+LaTeX Font Info:    Trying to load font information for U+txexa on input line 135.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    ... okay on input line 135.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count284
@@ -636,48 +633,48 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <9> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 175.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 181.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <17> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 191.
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 191.
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 191.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 197.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 197.
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 197.
 (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 191.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 197.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 191.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 197.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 191.
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 197.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <10> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 204.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 210.
 LaTeX Font Info:    Font shape `OT1/txr/b/it' in size <10> not available
-(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 217.
+(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 223.
 <figures/odtu-py.pdf, id=1, 119.50162pt x 79.66772pt>
 File: figures/odtu-py.pdf Graphic file (type pdf)
 <use figures/odtu-py.pdf>
-Package pdftex.def Info: figures/odtu-py.pdf  used on input line 248.
+Package pdftex.def Info: figures/odtu-py.pdf  used on input line 254.
 (pdftex.def)             Requested size: 77.67511pt x 51.78339pt.
 <figures/SDlogo-3p.pdf, id=2, 119.52159pt x 52.265pt>
 File: figures/SDlogo-3p.pdf Graphic file (type pdf)
 <use figures/SDlogo-3p.pdf>
-Package pdftex.def Info: figures/SDlogo-3p.pdf  used on input line 248.
+Package pdftex.def Info: figures/SDlogo-3p.pdf  used on input line 254.
 (pdftex.def)             Requested size: 143.42517pt x 62.71767pt.
 <figures/HW1-ART.png, id=3, 234.1247pt x 194.97844pt>
 File: figures/HW1-ART.png Graphic file (type png)
 <use figures/HW1-ART.png>
-Package pdftex.def Info: figures/HW1-ART.png  used on input line 248.
+Package pdftex.def Info: figures/HW1-ART.png  used on input line 254.
 (pdftex.def)             Requested size: 81.94485pt x 68.24347pt.
 File: figures/odtu-py.pdf Graphic file (type pdf)
 <use figures/odtu-py.pdf>
-Package pdftex.def Info: figures/odtu-py.pdf  used on input line 248.
+Package pdftex.def Info: figures/odtu-py.pdf  used on input line 254.
 (pdftex.def)             Requested size: 77.67511pt x 51.78339pt.
 
 Overfull \hbox (20.0pt too wide) has occurred while \output is active
@@ -686,11 +683,11 @@ Overfull \hbox (20.0pt too wide) has occurred while \output is active
 
 File: figures/SDlogo-3p.pdf Graphic file (type pdf)
 <use figures/SDlogo-3p.pdf>
-Package pdftex.def Info: figures/SDlogo-3p.pdf  used on input line 248.
+Package pdftex.def Info: figures/SDlogo-3p.pdf  used on input line 254.
 (pdftex.def)             Requested size: 143.42517pt x 62.71767pt.
 File: figures/HW1-ART.png Graphic file (type png)
 <use figures/HW1-ART.png>
-Package pdftex.def Info: figures/HW1-ART.png  used on input line 248.
+Package pdftex.def Info: figures/HW1-ART.png  used on input line 254.
 (pdftex.def)             Requested size: 81.94485pt x 68.24347pt.
 
 Overfull \hbox (27.5pt too wide) has occurred while \output is active
@@ -700,7 +697,7 @@ Overfull \hbox (27.5pt too wide) has occurred while \output is active
 
 Overfull \vbox (44.71767pt too high) has occurred while \output is active []
 
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 248.
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 254.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
@@ -715,35 +712,53 @@ pdfTeX warning: pdflatex (file ./figures/SDlogo-3p.pdf): PDF inclusion: multiple
 <figures/output.png, id=43, 578.16pt x 578.16pt>
 File: figures/output.png Graphic file (type png)
 <use figures/output.png>
-Package pdftex.def Info: figures/output.png  used on input line 342.
+Package pdftex.def Info: figures/output.png  used on input line 348.
 (pdftex.def)             Requested size: 234.0pt x 118.83983pt.
  [2]
 <figures/aa.png, id=48, 1387.584pt x 710.4141pt>
 File: figures/aa.png Graphic file (type png)
 <use figures/aa.png>
-Package pdftex.def Info: figures/aa.png  used on input line 379.
+Package pdftex.def Info: figures/aa.png  used on input line 385.
 (pdftex.def)             Requested size: 421.19714pt x 215.64075pt.
  [3 <./figures/output.png>]
-File: figures/aa.png Graphic file (type png)
-<use figures/aa.png>
-Package pdftex.def Info: figures/aa.png  used on input line 407.
-(pdftex.def)             Requested size: 421.19714pt x 215.64075pt.
+<figures/mlp_1_weights.png, id=53, 462.528pt x 346.896pt>
+File: figures/mlp_1_weights.png Graphic file (type png)
+<use figures/mlp_1_weights.png>
+Package pdftex.def Info: figures/mlp_1_weights.png  used on input line 414.
+(pdftex.def)             Requested size: 204.85983pt x 153.6457pt.
+<figures/mlp_2_weights.png, id=54, 462.528pt x 346.896pt>
+File: figures/mlp_2_weights.png Graphic file (type png)
+<use figures/mlp_2_weights.png>
+Package pdftex.def Info: figures/mlp_2_weights.png  used on input line 416.
+(pdftex.def)             Requested size: 204.85983pt x 153.6457pt.
+<figures/cnn_3_weights.png, id=55, 462.528pt x 346.896pt>
+File: figures/cnn_3_weights.png Graphic file (type png)
+<use figures/cnn_3_weights.png>
+Package pdftex.def Info: figures/cnn_3_weights.png  used on input line 420.
+(pdftex.def)             Requested size: 128.0374pt x 96.02922pt.
+<figures/cnn_4_weights.png, id=56, 462.528pt x 346.896pt>
+File: figures/cnn_4_weights.png Graphic file (type png)
+<use figures/cnn_4_weights.png>
+Package pdftex.def Info: figures/cnn_4_weights.png  used on input line 422.
+(pdftex.def)             Requested size: 128.0374pt x 96.02922pt.
+<figures/cnn_5_weights.png, id=57, 462.528pt x 346.896pt>
+File: figures/cnn_5_weights.png Graphic file (type png)
+<use figures/cnn_5_weights.png>
+Package pdftex.def Info: figures/cnn_5_weights.png  used on input line 424.
+(pdftex.def)             Requested size: 128.0374pt x 96.02922pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4 <./figures/aa.png>]
-Underfull \vbox (badness 4940) has occurred while \output is active []
-
- [5] [6]
+ [4 <./figures/aa.png>] [5 <./figures/mlp_1_weights.png> <./figures/mlp_2_weights.png> <./figures/cnn_3_weights.png> <./figures/cnn_4_weights.png> <./figures/cnn_5_weights.png>] [6]
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <8> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 509.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 527.
  [7]
-Underfull \hbox (badness 10000) in alignment at lines 549--552
+Underfull \hbox (badness 10000) in alignment at lines 567--570
 [][]
  []
 
 
-Overfull \hbox (2.0pt too wide) in paragraph at lines 549--553
+Overfull \hbox (2.0pt too wide) in paragraph at lines 567--571
 []| [] 
  []
 
@@ -757,23 +772,19 @@ Package natbib Warning: There were multiply defined citations.
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
 
-)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+) ) 
 Here is how much of TeX's memory you used:
- 5185 strings out of 476334
- 76714 string characters out of 5787972
+ 5230 strings out of 476334
+ 77826 string characters out of 5787972
  1860382 words of memory out of 5000000
- 25487 multiletter control sequences out of 15000+600000
- 567027 words of font info for 159 fonts, out of 8000000 for 9000
+ 25527 multiletter control sequences out of 15000+600000
+ 569102 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,16n,76p,919b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,18n,76p,919b,495s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtcxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txex.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (8 pages, 875245 bytes).
+Output written on main.pdf (8 pages, 1039093 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
+ 119 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
