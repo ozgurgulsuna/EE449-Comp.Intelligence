@@ -68,10 +68,13 @@ for model_name in models:
     result['val_acc_curve'] = validation_acc_record_average
     result['test_acc'] = test_acc_record_best
     result['weights'] = weights.tolist()
+    utils.visualizeWeights(weights, save_dir="./out/", filename=model_name+"_weights")
+
 
     results.append(result.copy())
 
-utils.part3Plots(results, save_dir="./results/",filename="aa",show_plot=True)
+# utils.part3Plots(results, save_dir="./results/",filename="aa",show_plot=True)
+
 
 
 

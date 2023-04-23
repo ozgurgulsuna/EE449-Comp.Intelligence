@@ -366,8 +366,52 @@ The generated output for the convolution over the MNIST dataset is shown in Figu
      This is similar to human behaviour as we associate the similar patterns to the general inputs and this is the importance of the convolutaional layers, the features can be learned in a sense.
 \end{enumerate}
 
-\subsection{General guidelines for the preparation of your text}
-Avoid hyphenation at the end of a line. Symbols denoting vectors and matrices should be indicated in bold type. Scalar variable names should normally be expressed using italics. Weights and measures should be expressed in SI units. All non-standard abbreviations or symbols must be defined when first mentioned, or a glossary provided.
+\section{\textbf{Experimenting ANN Architectures}}
+
+\subsection{\textbf{Experimental Work}}
+
+This experimental work focuses on testing various Artificial Neural Network (ANN) architectures for a classification task. The models will use adaptive moment estimation (Adam) with default parameters for the optimizer. The datasets will be preprocessed and split into three sets: training, validation, and testing. The ANN architectures to be tested are ‘mlp 1’, ‘mlp 2’, ‘cnn 3’, ‘cnn 4’, and ‘cnn 5’, each with their specific layers.
+For each architecture, the ANN will be trained for 15 epochs, and training loss, accuracy, validation accuracy, and test accuracy will be recorded. The best test accuracy and weights of the first layer will be recorded, and a dictionary object will be created and saved for each architecture.
+Performance comparison plots will be created, and the weights of the first layer of all architectures will be visualized.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth, trim={0 0cm 0 0cm}]{figures/aa.png}
+    \caption{Performance Comparison Plots for the ANN Architectures} 
+    \label{fig:perf}
+\end{figure}
+
+\subsection{\textbf{Results and Discussion}}
+\begin{enumerate}
+    \item Generalization performance refers to the ability of the model to to classify the unseen data. It is used as the ability to recognize patterns and apply this knowledge to the new data.
+    \item The plots showing the results with the "test" data show the generalization performance since the test data is not used in the training process and the model is not familiar with the test data.
+    Validation data is also seemed to be a good indicator of the generalization performance. However, altough  the validation data is not directly used in training process, it is used to tune the parameters of the model. Therefore, the model is familiar with the validation data in a sense.
+    The first two curves and the last x-y plot give hint about the comparative generalization performance since these show the results with the validation data.
+    The third scatter plot on the other hand is used with the test data, hence have the correct generalization performance. However it only shows the best run hence the variety of the results are a topic of discussion and the plot does not show that information.
+
+    \item Copmarative results show that the convolutional architectures perform better than the multi-layer perceptron architectures. This is because the convolutional layers are able to extract spatial features from the data with more grasping ability.
+    The "mlp\_1" and "mlp\_2" are very similar in terms of performance although they have different size of parameters and number of layers.
+    The "cnn\_3" and "cnn\_4" are also very similar again the latter has more layers. 
+    The "cnn\_5" is more of a slow learner and could not get to the same level of performance as the "cnn\_4" but with more epochs it is seem to be able to surpass the "cnn\_4" since the gradient of the accuracy is increasing.
+
+    \item Higher the number of parameters, it is generally easier for model to learn complex features. However it also means that the model is more prone to overfitting.
+    This is because the model is able to learn the training data in more depth, like its noise characteristics not the required features. Hence, it is not able to generalize well.
+    This is called overfitting, the models with higher parameters have more "memory" that they can memorize the unwanted characteristics that is specific to the training data.
+    Another aspect is the distribution of the parameters, the convolutaional layers use the parameters more eficiently and make more of the increased number of parameters without easily falling into overfitting trap.
+    
+    \item The depth of the architecture is also relevelant with the distribution of the parameters, how they organized in an architecture. The models with more depth are able to learn more complex features as well, however they are harder to train in terms of computation.
+    The extremum of depth parameter results in not overfitting but underfitting. This is because the model is not able to learn the features of the data in depth and generalize well.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth, trim={0 0cm 0 0cm}]{figures/aa.png}
+        \caption{Performance Comparison Plots for the ANN Architectures} 
+        \label{fig:perf}
+    \end{figure}
+
+\end{enumerate}
+
+    Avoid hyphenation at the end of a line. Symbols denoting vectors and matrices should be indicated in bold type. Scalar variable names should normally be expressed using italics. Weights and measures should be expressed in SI units. All non-standard abbreviations or symbols must be defined when first mentioned, or a glossary provided.
 
 \subsection{File naming and delivery}
 Please title your files in this order `procedia acronym\_conference acronym\_authorslastname'.  Submit both the source file and the PDF to the Guest Editor.

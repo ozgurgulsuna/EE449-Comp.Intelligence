@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  23 APR 2023 13:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  23 APR 2023 15:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -542,6 +542,9 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box62
 ) (main.aux
 
+LaTeX Warning: Label `fig:perf' multiply defined.
+
+
 Package natbib Warning: Citation `' multiply defined.
 
 )
@@ -714,42 +717,63 @@ File: figures/output.png Graphic file (type png)
 <use figures/output.png>
 Package pdftex.def Info: figures/output.png  used on input line 342.
 (pdftex.def)             Requested size: 234.0pt x 118.83983pt.
- [2] [3 <./figures/output.png>] [4]
+ [2]
+<figures/aa.png, id=48, 1387.584pt x 710.4141pt>
+File: figures/aa.png Graphic file (type png)
+<use figures/aa.png>
+Package pdftex.def Info: figures/aa.png  used on input line 379.
+(pdftex.def)             Requested size: 421.19714pt x 215.64075pt.
+ [3 <./figures/output.png>]
+File: figures/aa.png Graphic file (type png)
+<use figures/aa.png>
+Package pdftex.def Info: figures/aa.png  used on input line 407.
+(pdftex.def)             Requested size: 421.19714pt x 215.64075pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <./figures/aa.png>]
+Underfull \vbox (badness 4940) has occurred while \output is active []
+
+ [5] [6]
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <8> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 465.
- [5]
-Underfull \hbox (badness 10000) in alignment at lines 505--508
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 509.
+ [7]
+Underfull \hbox (badness 10000) in alignment at lines 549--552
 [][]
  []
 
 
-Overfull \hbox (2.0pt too wide) in paragraph at lines 505--509
+Overfull \hbox (2.0pt too wide) in paragraph at lines 549--553
 []| [] 
  []
 
 
 Package natbib Warning: There were multiply defined citations.
 
-[6
+[8
 
 ] (main.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
 
-) ) 
+)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5178 strings out of 476334
- 76585 string characters out of 5787972
- 1861382 words of memory out of 5000000
- 25480 multiletter control sequences out of 15000+600000
+ 5185 strings out of 476334
+ 76714 string characters out of 5787972
+ 1860382 words of memory out of 5000000
+ 25487 multiletter control sequences out of 15000+600000
  567027 words of font info for 159 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,16n,76p,919b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtcxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txex.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 626895 bytes).
+Output written on main.pdf (8 pages, 875245 bytes).
 PDF statistics:
- 99 PDF objects out of 1000 (max. 8388607)
+ 109 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

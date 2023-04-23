@@ -41,7 +41,7 @@ batch_size = 50
 epoch_size = 15
 runs = 5
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
-model_name = 'cnn_4'
+model_name = 'cnn_5'
 
 DISPLAY = False
 
