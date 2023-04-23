@@ -40,7 +40,7 @@ validation_ratio = 0.1
 batch_size = 50
 epoch_size = 15
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
-model_name = 'mlp_1[Sigmoid]'
+model_name = 'mlp_2[Sigmoid]'
 
 DISPLAY = False
 
