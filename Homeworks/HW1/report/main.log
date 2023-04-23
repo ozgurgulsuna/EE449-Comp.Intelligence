@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  23 APR 2023 17:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  23 APR 2023 19:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -656,25 +656,25 @@ File: utxsyc.fd 2000/12/15 v3.1
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <10> not available
 (Font)              Font shape `OT1/txr/bx/n' tried instead on input line 210.
 LaTeX Font Info:    Font shape `OT1/txr/b/it' in size <10> not available
-(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 223.
+(Font)              Font shape `OT1/txr/bx/it' tried instead on input line 215.
 <figures/odtu-py.pdf, id=1, 119.50162pt x 79.66772pt>
 File: figures/odtu-py.pdf Graphic file (type pdf)
 <use figures/odtu-py.pdf>
-Package pdftex.def Info: figures/odtu-py.pdf  used on input line 254.
+Package pdftex.def Info: figures/odtu-py.pdf  used on input line 249.
 (pdftex.def)             Requested size: 77.67511pt x 51.78339pt.
 <figures/SDlogo-3p.pdf, id=2, 119.52159pt x 52.265pt>
 File: figures/SDlogo-3p.pdf Graphic file (type pdf)
 <use figures/SDlogo-3p.pdf>
-Package pdftex.def Info: figures/SDlogo-3p.pdf  used on input line 254.
+Package pdftex.def Info: figures/SDlogo-3p.pdf  used on input line 249.
 (pdftex.def)             Requested size: 143.42517pt x 62.71767pt.
 <figures/HW1-ART.png, id=3, 234.1247pt x 194.97844pt>
 File: figures/HW1-ART.png Graphic file (type png)
 <use figures/HW1-ART.png>
-Package pdftex.def Info: figures/HW1-ART.png  used on input line 254.
+Package pdftex.def Info: figures/HW1-ART.png  used on input line 249.
 (pdftex.def)             Requested size: 81.94485pt x 68.24347pt.
 File: figures/odtu-py.pdf Graphic file (type pdf)
 <use figures/odtu-py.pdf>
-Package pdftex.def Info: figures/odtu-py.pdf  used on input line 254.
+Package pdftex.def Info: figures/odtu-py.pdf  used on input line 249.
 (pdftex.def)             Requested size: 77.67511pt x 51.78339pt.
 
 Overfull \hbox (20.0pt too wide) has occurred while \output is active
@@ -683,11 +683,11 @@ Overfull \hbox (20.0pt too wide) has occurred while \output is active
 
 File: figures/SDlogo-3p.pdf Graphic file (type pdf)
 <use figures/SDlogo-3p.pdf>
-Package pdftex.def Info: figures/SDlogo-3p.pdf  used on input line 254.
+Package pdftex.def Info: figures/SDlogo-3p.pdf  used on input line 249.
 (pdftex.def)             Requested size: 143.42517pt x 62.71767pt.
 File: figures/HW1-ART.png Graphic file (type png)
 <use figures/HW1-ART.png>
-Package pdftex.def Info: figures/HW1-ART.png  used on input line 254.
+Package pdftex.def Info: figures/HW1-ART.png  used on input line 249.
 (pdftex.def)             Requested size: 81.94485pt x 68.24347pt.
 
 Overfull \hbox (27.5pt too wide) has occurred while \output is active
@@ -697,7 +697,7 @@ Overfull \hbox (27.5pt too wide) has occurred while \output is active
 
 Overfull \vbox (44.71767pt too high) has occurred while \output is active []
 
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 254.
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 249.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
@@ -709,82 +709,81 @@ Overfull \vbox (15.45999pt too high) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file ./figures/SDlogo-3p.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./figures/HW1-ART.png>]
-<figures/output.png, id=43, 578.16pt x 578.16pt>
+Overfull \hbox (2.87622pt too wide) detected at line 306
+ [] \OT1/txr/m/n/10 = [(\OML/txmi/m/it/10 H[] \OMS/txsy/m/n/10 ^^@ \OML/txmi/m/it/10 H[] \OT1/txr/m/n/10 + 1) \OMS/txsy/m/n/10 ^^B \OT1/txr/m/n/10 (\OML/txmi/m/it/10 W[] \OMS/txsy/m/n/10 ^^@ \OML/txmi/m/it/10 W[] \OT1/txr/m/n/10 + 1) \OMS/txsy/m/n/10 ^^B \OML/txmi/m/it/10 C[] \OMS/txsy/m/n/10 ^^B \OML/txmi/m/it/10 C[]\OT1/txr/m/n/10 ] + \OML/txmi/m/it/10 C[] \OT1/txr/m/n/10 + [][(\OML/txmi/m/it/10 H[] \OMS/txsy/m/n/10 ^^@ \OML/txmi/m/it/10 H[] \OT1/txr/m/n/10 + 1) \OMS/txsy/m/n/10 ^^B \OT1/txr/m/n/10 (\OML/txmi/m/it/10 W[] \OMS/txsy/m/n/10 ^^@ \OML/txmi/m/it/10 W[] \OT1/txr/m/n/10 + 1) \OMS/txsy/m/n/10 ^^B \OML/txmi/m/it/10 C[] \OMS/txsy/m/n/10 ^^B \OML/txmi/m/it/10 C[]\OT1/txr/m/n/10 ] + \OML/txmi/m/it/10 C[]
+ []
+
+[2]
+<figures/output.png, id=47, 578.16pt x 578.16pt>
 File: figures/output.png Graphic file (type png)
 <use figures/output.png>
-Package pdftex.def Info: figures/output.png  used on input line 348.
+Package pdftex.def Info: figures/output.png  used on input line 354.
 (pdftex.def)             Requested size: 234.0pt x 118.83983pt.
- [2]
-<figures/aa.png, id=48, 1387.584pt x 710.4141pt>
+ [3 <./figures/output.png>]
+<figures/aa.png, id=52, 1387.584pt x 710.4141pt>
 File: figures/aa.png Graphic file (type png)
 <use figures/aa.png>
-Package pdftex.def Info: figures/aa.png  used on input line 385.
+Package pdftex.def Info: figures/aa.png  used on input line 391.
 (pdftex.def)             Requested size: 421.19714pt x 215.64075pt.
- [3 <./figures/output.png>]
-<figures/mlp_1_weights.png, id=53, 462.528pt x 346.896pt>
+
+Underfull \vbox (badness 5908) has occurred while \output is active []
+
+ [4 <./figures/aa.png>]
+<figures/mlp_1_weights.png, id=57, 462.528pt x 346.896pt>
 File: figures/mlp_1_weights.png Graphic file (type png)
 <use figures/mlp_1_weights.png>
-Package pdftex.def Info: figures/mlp_1_weights.png  used on input line 414.
+Package pdftex.def Info: figures/mlp_1_weights.png  used on input line 420.
 (pdftex.def)             Requested size: 204.85983pt x 153.6457pt.
-<figures/mlp_2_weights.png, id=54, 462.528pt x 346.896pt>
+<figures/mlp_2_weights.png, id=58, 462.528pt x 346.896pt>
 File: figures/mlp_2_weights.png Graphic file (type png)
 <use figures/mlp_2_weights.png>
-Package pdftex.def Info: figures/mlp_2_weights.png  used on input line 416.
+Package pdftex.def Info: figures/mlp_2_weights.png  used on input line 422.
 (pdftex.def)             Requested size: 204.85983pt x 153.6457pt.
-<figures/cnn_3_weights.png, id=55, 462.528pt x 346.896pt>
+<figures/cnn_3_weights.png, id=59, 462.528pt x 346.896pt>
 File: figures/cnn_3_weights.png Graphic file (type png)
 <use figures/cnn_3_weights.png>
-Package pdftex.def Info: figures/cnn_3_weights.png  used on input line 420.
+Package pdftex.def Info: figures/cnn_3_weights.png  used on input line 426.
 (pdftex.def)             Requested size: 128.0374pt x 96.02922pt.
-<figures/cnn_4_weights.png, id=56, 462.528pt x 346.896pt>
+<figures/cnn_4_weights.png, id=60, 462.528pt x 346.896pt>
 File: figures/cnn_4_weights.png Graphic file (type png)
 <use figures/cnn_4_weights.png>
-Package pdftex.def Info: figures/cnn_4_weights.png  used on input line 422.
+Package pdftex.def Info: figures/cnn_4_weights.png  used on input line 428.
 (pdftex.def)             Requested size: 128.0374pt x 96.02922pt.
-<figures/cnn_5_weights.png, id=57, 462.528pt x 346.896pt>
+<figures/cnn_5_weights.png, id=61, 462.528pt x 346.896pt>
 File: figures/cnn_5_weights.png Graphic file (type png)
 <use figures/cnn_5_weights.png>
-Package pdftex.def Info: figures/cnn_5_weights.png  used on input line 424.
+Package pdftex.def Info: figures/cnn_5_weights.png  used on input line 430.
 (pdftex.def)             Requested size: 128.0374pt x 96.02922pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4 <./figures/aa.png>] [5 <./figures/mlp_1_weights.png> <./figures/mlp_2_weights.png> <./figures/cnn_3_weights.png> <./figures/cnn_4_weights.png> <./figures/cnn_5_weights.png>] [6]
+<figures/bb.png, id=62, 1386.1386pt x 573.8238pt>
+File: figures/bb.png Graphic file (type png)
+<use figures/bb.png>
+Package pdftex.def Info: figures/bb.png  used on input line 456.
+(pdftex.def)             Requested size: 421.19714pt x 157.07224pt.
+ [5 <./figures/mlp_1_weights.png> <./figures/mlp_2_weights.png> <./figures/cnn_3_weights.png> <./figures/cnn_4_weights.png> <./figures/cnn_5_weights.png>]
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <8> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 538.
- [7]
-Underfull \hbox (badness 10000) in alignment at lines 578--581
-[][]
- []
-
-
-Overfull \hbox (2.0pt too wide) in paragraph at lines 578--582
-[]| [] 
- []
-
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 562.
+ [6 <./figures/bb.png>]
 
 Package natbib Warning: There were multiply defined citations.
 
-[8
-
-] (main.aux
+(main.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
 
 ) ) 
 Here is how much of TeX's memory you used:
- 5230 strings out of 476334
- 77826 string characters out of 5787972
+ 5234 strings out of 476334
+ 77919 string characters out of 5787972
  1862382 words of memory out of 5000000
- 25527 multiletter control sequences out of 15000+600000
- 569102 words of font info for 167 fonts, out of 8000000 for 9000
+ 25531 multiletter control sequences out of 15000+600000
+ 568501 words of font info for 165 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,18n,76p,919b,495s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,18n,76p,902b,495s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtcxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txex.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (8 pages, 1040214 bytes).
+Output written on main.pdf (6 pages, 1271737 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
+ 113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
