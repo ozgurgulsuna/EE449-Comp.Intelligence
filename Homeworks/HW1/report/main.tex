@@ -352,6 +352,18 @@ The generated output for the convolution over the MNIST dataset is shown in Figu
     Second, the CNN is able to learn the spatial features of the input image. This also means that the CNN is able to learn and extract the features of the input image without any manual work.
     CNN's are also able to recognize the features of the input image even if the input image is rotated or scaled.
     Since the features are extracted from image, partial occlusion of the image affect the performance of the CNN less.
+    \item The kernel of a Convolutional Layer  is essentially a matrix of weights that is convolved (inversely correlated) over with the input data to extract features.
+    The size of the kernel refers to the number of rows and columns in the matrix. It corresponds to the reception of the filter, meaning that higher sizes can extract more complex features. 
+    
+    \item The output image shows that the convolution of pre-presented kernels for the number 8 of the MNIST dataset. Basically each filter is convoled over the images to grasp different meanings. Each column is another kernel with each row is different input image.
+    
+    \item The numbers in the same column look like each other since they both have a representation of the same number and the same kernel is able to extract the features related to the number 8 other than the specific image.
+    
+    \item The numbers in the same row look different althougn the input image the same. This is because the kernels are different and they are able to extract different features from the same image.
+    
+    \item For more specific examples, the third column kernel represents that an 8 has two "islands" of white patches in the middle but the size, shape and location of these pathes differ for each 8 altough all of them represent the same thing in a different manner.
+     Another column such as 6, implies the white track like feature of the number 8. In this sense some features are more dinstinctive than other however when different of these combined make the action work even though they do not seem to represent a clear feature.
+     This is similar to human behaviour as we associate the similar patterns to the general inputs and this is the importance of the convolutaional layers, the features can be learned in a sense.
 \end{enumerate}
 
 \subsection{General guidelines for the preparation of your text}

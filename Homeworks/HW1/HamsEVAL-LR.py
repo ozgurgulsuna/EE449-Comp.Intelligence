@@ -36,4 +36,4 @@ result['val_acc_curve_1'] = RL1_validation_acc_record
 result['val_acc_curve_01'] = RL01_validation_acc_record
 result['val_acc_curve_001'] = RL001_validation_acc_record
 
-utils.part5Plots(results, save_dir="./results/", filename='cc', show_plot=True)
+utils.part5Plots(result, save_dir="./results/", filename='cc', show_plot=True)

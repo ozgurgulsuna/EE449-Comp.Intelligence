@@ -239,7 +239,7 @@ else:
 criterion = torch.nn.CrossEntropyLoss()
 
 # create optimizer
-optimizer1 = torch.optim.SGD(model.parameters(), lr = 0.1, momentum = 0.0)
+optimizer1 = torch.optim.SGD(model.parameters(), lr = 0.001, momentum = 0.0)
 optimizer2 = torch.optim.SGD(model.parameters(), lr = 0.01, momentum = 0.0)
 optimizer3 = torch.optim.SGD(model.parameters(), lr = 0.001, momentum = 0.0)
 # optimizer = torch.optim.Adam(model.parameters(), lr = 0.001)
@@ -314,7 +314,7 @@ def evaluate(model, iterator, criterion, device,sv=0):
                     validation_acc_record.append(step_acc*100/10 )                      # save validation accuracy with 10 step intervals
                     if (step_loss/10) < best_valid_loss:
                         best_valid_loss = (step_loss/10)
-                        torch.save(model.state_dict(),'./results/trained_models/'+ model_name+'[RL1].pt')
+                        torch.save(model.state_dict(),'./results/trained_models/'+ model_name+'[RL001].pt')
                 step_loss = 0
                 step_acc = 0
             i += 1
@@ -347,7 +347,7 @@ for epoch in trange(epoch_size,disable=True):
 
 # Testing-----------------------------------------------------------------------------------------------------------------------------------------------#
 # Load the best model in run
-model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'[RL1].pt'))
+model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'[RL001].pt'))
 
 # Evaluate the model on the test set
 test_loss, test_acc = evaluate(model, test_generator, criterion, device, sv=0)
@@ -357,10 +357,10 @@ print(f'+---------------------------------------+')
 
 
 # Save the results ----------------------------------------------------------------------------------------------------------------------------------#
-with open("./results/["+ model_name +']RL1_training_loss_record', "w") as fp:
+with open("./results/["+ model_name +']RL001_training_loss_record', "w") as fp:
     json.dump(training_loss_record, fp)
 
-with open("./results/["+ model_name +']RL1_validation_acc_record', "w") as fp:
+with open("./results/["+ model_name +']RL001_validation_acc_record', "w") as fp:
     json.dump(validation_acc_record, fp)
 
 
