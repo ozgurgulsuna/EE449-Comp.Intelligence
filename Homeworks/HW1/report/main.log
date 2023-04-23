@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  23 APR 2023 20:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  23 APR 2023 20:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -793,207 +793,19 @@ Package pdftex.def Info: figures/cc.png  used on input line 557.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./figures/bb.png>]
-<figures/cnn_4_SC_validation_acc.png, id=76, 1383.2478pt x 346.896pt>
-File: figures/cnn_4_SC_validation_acc.png Graphic file (type png)
-<use figures/cnn_4_SC_validation_acc.png>
-Package pdftex.def Info: figures/cnn_4_SC_validation_acc.png  used on input line 576.
-(pdftex.def)             Requested size: 444.59857pt x 93.20595pt.
-<figures/cnn_4_SC_training_loss.png, id=77, 1384.6932pt x 346.896pt>
-File: figures/cnn_4_SC_training_loss.png Graphic file (type png)
-<use figures/cnn_4_SC_training_loss.png>
-Package pdftex.def Info: figures/cnn_4_SC_training_loss.png  used on input line 583.
-(pdftex.def)             Requested size: 444.59857pt x 93.1086pt.
- (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-) [7 <./figures/cc.png> <./figures/cnn_4_SC_validation_acc.png> <./figures/cnn_4_SC_training_loss.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8]
-LaTeX Font Info:    Trying to load font information for OML+txr on input line 753.
- (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omltxr.fd
-File: omltxr.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Font shape `OML/txr/m/n' in size <7> not available
-(Font)              Font shape `OML/txmi/m/it' tried instead on input line 753.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11]
-LaTeX Font Info:    Trying to load font information for OMS+txr on input line 975.
- (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\omstxr.fd
-File: omstxr.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <7> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 975.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
-Underfull \vbox (badness 2689) has occurred while \output is active []
-
- [13]
-Underfull \vbox (badness 2689) has occurred while \output is active []
-
- [14]
-Overfull \hbox (144.20602pt too wide) in paragraph at lines 1184--1185
-[][][][] 
- []
-
-
-Overfull \hbox (110.60568pt too wide) in paragraph at lines 1199--1200
-[][][][] 
- []
-
-
-Overfull \hbox (152.60611pt too wide) in paragraph at lines 1208--1209
-[][][][] 
- []
-
-
-Overfull \hbox (110.60568pt too wide) in paragraph at lines 1215--1216
-[][][][] 
- []
-
-
-Overfull \hbox (152.60611pt too wide) in paragraph at lines 1223--1224
-[][][][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15]
-Overfull \hbox (127.40585pt too wide) in paragraph at lines 1238--1239
-[][][][] 
- []
-
-
-Overfull \hbox (123.20581pt too wide) in paragraph at lines 1243--1244
-[][][][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [16]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
-Overfull \hbox (144.20602pt too wide) in paragraph at lines 1371--1373
-[][][][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18]
-Overfull \hbox (123.20581pt too wide) in paragraph at lines 1478--1480
-[][][][] 
- []
-
-
-Overfull \hbox (156.80615pt too wide) in paragraph at lines 1497--1498
-[][][][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19]
-Overfull \hbox (102.2056pt too wide) in paragraph at lines 1508--1509
-[][][][] 
- []
-
-
-Overfull \hbox (144.20602pt too wide) in paragraph at lines 1525--1526
-[][][][] 
- []
-
-
-Overfull \hbox (110.60568pt too wide) in paragraph at lines 1540--1541
-[][][][] 
- []
-
-
-Overfull \hbox (152.60611pt too wide) in paragraph at lines 1549--1550
-[][][][] 
- []
-
-
-Overfull \hbox (110.60568pt too wide) in paragraph at lines 1556--1557
-[][][][] 
- []
-
-
-Overfull \hbox (152.60611pt too wide) in paragraph at lines 1564--1565
-[][][][] 
- []
-
-
-Underfull \vbox (badness 2689) has occurred while \output is active []
-
- [20]
-Overfull \hbox (127.40585pt too wide) in paragraph at lines 1580--1581
-[][][][] 
- []
-
-
-Overfull \hbox (123.20581pt too wide) in paragraph at lines 1585--1586
-[][][][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21]
-Overfull \hbox (144.20602pt too wide) in paragraph at lines 1713--1715
-[][][][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23]
-Overfull \hbox (123.20581pt too wide) in paragraph at lines 1820--1822
-[][][][] 
- []
-
-
-Overfull \hbox (156.80615pt too wide) in paragraph at lines 1845--1846
-[][][][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [24]
-Overfull \hbox (102.2056pt too wide) in paragraph at lines 1856--1857
-[][][][] 
- []
-
-[25] [26] (main.aux) ) 
+ [6 <./figures/bb.png>] [7 <./figures/cc.png>] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 7376 strings out of 476334
- 107609 string characters out of 5787972
- 2542382 words of memory out of 5000000
- 27643 multiletter control sequences out of 15000+600000
- 567223 words of font info for 164 fonts, out of 8000000 for 9000
+ 6678 strings out of 476334
+ 99590 string characters out of 5787972
+ 1862382 words of memory out of 5000000
+ 26958 multiletter control sequences out of 15000+600000
+ 566562 words of font info for 162 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,18n,76p,902b,1844s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,18n,76p,902b,496s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtcxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txex.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (26 pages, 1710805 bytes).
+Output written on main.pdf (7 pages, 1418857 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
+ 120 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
