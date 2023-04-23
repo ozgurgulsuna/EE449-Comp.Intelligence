@@ -40,15 +40,15 @@ validation_ratio = 0.1
 batch_size = 50
 epoch_size = 15
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
-model_name = 'mlp_1'
+model_name = 'mlp_1[Sigmoid]'
 
-DISPLAY = True
+DISPLAY = False
 
 # Record ----------------------------------------------------------------------------------------------------------------------------------------------#
 save = True
 save_path = './HamsNET.pt'
 training_loss_record = []
-training_loss_gradient_record = []
+training_grad_record = []
 test_acc_record = []
 
 
@@ -93,10 +93,10 @@ val_generator = torch.utils.data.DataLoader(val_data, batch_size = batch_size )
 test_generator = torch.utils.data.DataLoader(test_data, batch_size = batch_size )
 
 # Architectures ---------------------------------------------------------------------------------------------------------------------------------------#
-# "mlp_1" is a simple multi-layer perceptron with one hidden layer
-class mlp_1(nn.Module):
+# "mlp_1[ReLU]" is a simple multi-layer perceptron with one hidden layer
+class mlp_1_ReLU(nn.Module):
     def __init__(self, input_size, output_size):
-        super(mlp_1,self).__init__()
+        super(mlp_1_ReLU,self).__init__()
         self.input_size = input_size
         self.fc = nn.Sequential(
             nn.Linear(input_size, 32),                      # 1024x32
@@ -108,11 +108,27 @@ class mlp_1(nn.Module):
         x = self.fc(x)
         x = self.prediction_layer(x)
         return x
-    
-# "mlp_2" is a simple multi-layer perceptron with two hidden layers
-class mlp_2(nn.Module):
+
+# "mlp_1[Sigmoid]" is a simple multi-layer perceptron with one hidden layer
+class mlp_1_Sigmoid(nn.Module):
     def __init__(self, input_size, output_size):
-        super(mlp_2,self).__init__()
+        super(mlp_1_Sigmoid,self).__init__()
+        self.input_size = input_size
+        self.fc = nn.Sequential(
+            nn.Linear(input_size, 32),                      # 1024x32
+            nn.Sigmoid())                                      
+        self.prediction_layer = nn.Linear(32, output_size)  # 32x10
+    
+    def forward(self, x):
+        x = x.view(-1, self.input_size)
+        x = self.fc(x)
+        x = self.prediction_layer(x)
+        return x
+    
+# "mlp_2[ReLU]" is a simple multi-layer perceptron with two hidden layers
+class mlp_2_ReLU(nn.Module):
+    def __init__(self, input_size, output_size):
+        super(mlp_2_ReLU,self).__init__()
         self.input_size = input_size
         self.fc = nn.Sequential(
             nn.Linear(input_size, 32),                      # 1024x32
@@ -125,11 +141,28 @@ class mlp_2(nn.Module):
         x = self.fc(x)
         x = self.prediction_layer(x)
         return x
+
+# "mlp_2[Sigmoid]" is a simple multi-layer perceptron with two hidden layers
+class mlp_2_Sigmoid(nn.Module):
+    def __init__(self, input_size, output_size):
+        super(mlp_2_Sigmoid,self).__init__()
+        self.input_size = input_size
+        self.fc = nn.Sequential(
+            nn.Linear(input_size, 32),                      # 1024x32
+            nn.Sigmoid(),
+            nn.Linear(32, 64))                              # 32x64
+        self.prediction_layer = nn.Linear(64, output_size)  # 64x10
     
-# "cnn_3" is a simple convolutional neural network with three convolutional layers
-class cnn_3(nn.Module):
+    def forward(self, x):
+        x = x.view(-1, self.input_size)
+        x = self.fc(x)
+        x = self.prediction_layer(x)
+        return x
+    
+# "cnn_3[ReLU]" is a simple convolutional neural network with three convolutional layers
+class cnn_3_ReLU(nn.Module):
     def __init__(self, output_size):
-        super(cnn_3,self).__init__()
+        super(cnn_3_ReLU,self).__init__()
         self.conv1 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, padding=1)  # 1x32x32 -> 16x32x32
         self.relu1 = nn.ReLU()
         self.conv2 = nn.Conv2d(in_channels=16, out_channels=8, kernel_size=5, padding=2)  # 16x32x32 -> 8x32x32
@@ -151,10 +184,35 @@ class cnn_3(nn.Module):
         x = self.prediction_layer(x)
         return x
     
-# "cnn_4" is a simple convolutional neural network with four convolutional layers
-class cnn_4(nn.Module):
+# "cnn_3[Sigmoid]" is a simple convolutional neural network with three convolutional layers
+class cnn_3_Sigmoid(nn.Module):
     def __init__(self, output_size):
-        super(cnn_4,self).__init__()
+        super(cnn_3_Sigmoid,self).__init__()
+        self.conv1 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, padding=1)  # 1x32x32 -> 16x32x32
+        self.sigmoid1 = nn.Sigmoid()
+        self.conv2 = nn.Conv2d(in_channels=16, out_channels=8, kernel_size=5, padding=2)  # 16x32x32 -> 8x32x32
+        self.sigmoid2 = nn.Sigmoid()
+        self.maxpool1 = nn.MaxPool2d(kernel_size=2)                                       # 8x32x32 -> 8x16x16                        
+        self.conv3 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=7, padding=3)  # 8x16x16 -> 16x16x16
+        self.maxpool2 = nn.MaxPool2d(kernel_size=2)                                       # 16x16x16 -> 16x8x8
+        self.prediction_layer = nn.Linear(16 * 8 * 8, output_size)                        # 16x8x8 -> 10
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.sigmoid1(x)
+        x = self.conv2(x)
+        x = self.sigmoid2(x)
+        x = self.maxpool1(x)
+        x = self.conv3(x)
+        x = self.maxpool2(x)
+        x = x.view(x.size(0), -1)
+        x = self.prediction_layer(x)
+        return x
+
+# "cnn_4[ReLU]" is a simple convolutional neural network with four convolutional layers
+class cnn_4_ReLU(nn.Module):
+    def __init__(self, output_size):
+        super(cnn_4_ReLU,self).__init__()
         self.conv1 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, padding=1)  # 1x32x32 -> 16x32x32
         self.relu1 = nn.ReLU()
         self.conv2 = nn.Conv2d(in_channels=16, out_channels=8, kernel_size=3, padding=1)  # 16x32x32 -> 8x32x32
@@ -180,10 +238,40 @@ class cnn_4(nn.Module):
         x = self.prediction_layer(x)
         return x
     
-# "cnn_5" is a simple convolutional neural network with six convolutional layers
-class cnn_5(nn.Module):
+# "cnn_4[Sigmoid]" is a simple convolutional neural network with four convolutional layers
+class cnn_4_Sigmoid(nn.Module):
     def __init__(self, output_size):
-        super(cnn_5,self).__init__()
+        super(cnn_4_Sigmoid,self).__init__()
+        self.conv1 = nn.Conv2d(in_channels=1, out_channels=16, kernel_size=3, padding=1)  # 1x32x32 -> 16x32x32
+        self.sigmoid1 = nn.Sigmoid()
+        self.conv2 = nn.Conv2d(in_channels=16, out_channels=8, kernel_size=3, padding=1)  # 16x32x32 -> 8x32x32
+        self.sigmoid2 = nn.Sigmoid()
+        self.conv3 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=5, padding=2)  # 8x32x32 -> 16x32x32
+        self.sigmoid3 = nn.Sigmoid()
+        self.maxpool1 = nn.MaxPool2d(kernel_size=2)                                       # 16x32x32 -> 16x16x16
+        self.conv4 = nn.Conv2d(in_channels=16, out_channels=16, kernel_size=5, padding=2) # 16x16x16 -> 16x16x16
+        self.maxpool2 = nn.MaxPool2d(kernel_size=2)                                       # 16x16x16 -> 16x8x8
+        self.prediction_layer = nn.Linear(16 * 8 * 8, output_size)                        # 16x8x8 -> 10
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.sigmoid1(x)
+        x = self.conv2(x)
+        x = self.sigmoid2(x)
+        x = self.conv3(x)
+        x = self.sigmoid3(x)
+        x = self.maxpool1(x)
+        x = self.conv4(x)
+        x = self.maxpool2(x)
+        x = x.view(x.size(0), -1)
+        x = self.prediction_layer(x)
+        return x
+    
+
+# "cnn_5[ReLU]" is a simple convolutional neural network with six convolutional layers
+class cnn_5_ReLU(nn.Module):
+    def __init__(self, output_size):
+        super(cnn_5_ReLU,self).__init__()
         self.conv1 = nn.Conv2d(in_channels=1, out_channels=8, kernel_size=3, padding=1)   # 1x32x32 -> 8x32x32
         self.relu1 = nn.ReLU()
         self.conv2 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=3, padding=1)  # 8x32x32 -> 16x32x32
@@ -219,20 +307,69 @@ class cnn_5(nn.Module):
         x = self.prediction_layer(x)
         return x
 
+# "cnn_5[Sigmoid]" is a simple convolutional neural network with six convolutional layers
+class cnn_5_Sigmoid(nn.Module):
+    def __init__(self, output_size):
+        super(cnn_5_Sigmoid,self).__init__()
+        self.conv1 = nn.Conv2d(in_channels=1, out_channels=8, kernel_size=3, padding=1)   # 1x32x32 -> 8x32x32
+        self.sigmoid1 = nn.Sigmoid()
+        self.conv2 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=3, padding=1)  # 8x32x32 -> 16x32x32
+        self.sigmoid2 = nn.Sigmoid()
+        self.conv3 = nn.Conv2d(in_channels=16, out_channels=8, kernel_size=3, padding=1)  # 16x32x32 -> 8x32x32
+        self.sigmoid3 = nn.Sigmoid()
+        self.conv4 = nn.Conv2d(in_channels=8, out_channels=16, kernel_size=3, padding=1)  # 8x32x32 -> 16x32x32
+        self.sigmoid4 = nn.Sigmoid()
+        self.maxpool1 = nn.MaxPool2d(kernel_size=2)                                       # 16x32x32 -> 16x16x16
+        self.conv5 = nn.Conv2d(in_channels=16, out_channels=16, kernel_size=3, padding=1) # 16x16x16 -> 16x16x16
+        self.sigmoid5 = nn.Sigmoid()
+        self.conv6 = nn.Conv2d(in_channels=16, out_channels=8, kernel_size=3, padding=1)  # 16x16x16 -> 8x16x16 
+        self.sigmoid6 = nn.Sigmoid()
+        self.maxpool2 = nn.MaxPool2d(kernel_size=2)                                       # 8x16x16 -> 8x8x8
+        self.prediction_layer = nn.Linear(8 * 8 * 8, output_size)                         # 8x8x8 -> 10
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.sigmoid1(x)
+        x = self.conv2(x)
+        x = self.sigmoid2(x)
+        x = self.conv3(x)
+        x = self.sigmoid3(x)
+        x = self.conv4(x)
+        x = self.sigmoid4(x)
+        x = self.maxpool1(x)
+        x = self.conv5(x)
+        x = self.sigmoid5(x)
+        x = self.conv6(x)
+        x = self.sigmoid6(x)
+        x = self.maxpool2(x)
+        x = x.view(x.size(0), -1)
+        x = self.prediction_layer(x)
+        return x
+
 
 # Training --------------------------------------------------------------------------------------------------------------------------------------------#
 
 # initialize your model
-if model_name == "mlp_1":
-    model = mlp_1(input_size=32*32, output_size=10)
-elif model_name == "mlp_2":
-    model = mlp_2(input_size=32*32, output_size=10)
-elif model_name == "cnn_3":
-    model = cnn_3(output_size=10)
-elif model_name == "cnn_4":
-    model = cnn_4(output_size=10)
-elif model_name == "cnn_5":
-    model = cnn_5(output_size=10)
+if model_name == "mlp_1[ReLU]":
+    model = mlp_1_ReLU(input_size=32*32, output_size=10)
+elif model_name == "mlp_1[Sigmoid]":
+    model = mlp_1_Sigmoid(input_size=32*32, output_size=10)
+elif model_name == "mlp_2[ReLU]":
+    model = mlp_2_ReLU(input_size=32*32, output_size=10)
+elif model_name == "mlp_2[Sigmoid]":
+    model = mlp_2_Sigmoid(input_size=32*32, output_size=10)
+elif model_name == "cnn_3[ReLU]":
+    model = cnn_3_ReLU(output_size=10)
+elif model_name == "cnn_3[Sigmoid]":
+    model = cnn_3_Sigmoid(output_size=10)
+elif model_name == "cnn_4[ReLU]":
+    model = cnn_4_ReLU(output_size=10)
+elif model_name == "cnn_4[Sigmoid]":
+    model = cnn_4_Sigmoid(output_size=10)
+elif model_name == "cnn_5[ReLU]":
+    model = cnn_5_ReLU(output_size=10)
+elif model_name == "cnn_5[Sigmoid]":
+    model = cnn_5_Sigmoid(output_size=10)
 else:
     print("Error: model name is not correct!")
 
@@ -275,16 +412,16 @@ def train(model, iterator, optimizer, criterion, device):
         epoch_acc += acc.item()
         step_loss += loss.item()
         step_acc += acc.item()
-        if model_name == "mlp_1" or model_name == "mlp_2":
+        if model_name[0:3] == "mlp":
             step_loss_gradient += torch.norm(model.fc[0].weight.grad).item()
-        elif model_name == "cnn_3" or model_name == "cnn_4" or model_name == "cnn_5":
+        elif model_name[0:3] == "cnn":
             step_loss_gradient += torch.norm(model.conv1.weight.grad).item()
         if i % 10 == 9:
             if DISPLAY is True:                                                        # print every 10 mini-batches
                 print('[%d, %5d] loss: %.3f' %(epoch + 1, (i+1), step_loss / 10))    # each epoch has 5000/50 = 100 steps
                 print('training accuracy: %.2f' % (step_acc*100 / (10)) )            # printed at 10 step intervals
             training_loss_record.append(step_loss / 10)                          # save training loss with 10 step intervals
-            training_loss_gradient_record.append(step_loss_gradient / 10)            # save training loss gradient with 10 step intervals
+            training_grad_record.append(step_loss_gradient / 10)            # save training loss gradient with 10 step intervals
             step_loss = 0
             step_acc = 0
             step_loss_gradient = 0 
@@ -300,7 +437,6 @@ def evaluate(model, iterator, criterion, device,sv=0):
     with torch.no_grad():
         i = 0
         for (x, y) in tqdm(iterator, disable=True):
-            i += 1
             x = x.to(device)
             y = y.to(device)
             y_pred = model(x)
@@ -316,6 +452,7 @@ def evaluate(model, iterator, criterion, device,sv=0):
                     print('validation accuracy: %.2f' % (step_acc*100/10) )          # printed at 10 step intervals
                 step_loss = 0
                 step_acc = 0
+            i += 1
     return epoch_loss / len(iterator), epoch_acc / len(iterator)
 
 def epoch_time(start_time, end_time):
@@ -337,20 +474,26 @@ for epoch in trange(epoch_size,disable=True):
 
     if valid_loss < best_valid_loss:
         best_valid_loss = valid_loss
-        torch.save(model.state_dict(), './results/trained_models/'+ model_name+'['+'ReLU-AF'+'].pt')
+        if model_name == 'mlp_1[ReLU]' or model_name == 'mlp_2[ReLU]' or model_name == 'cnn_3[ReLU]' or model_name == 'cnn_4[ReLU]' or model_name == 'cnn_5[ReLU]':
+            torch.save(model.state_dict(), './results/trained_models/'+ model_name+'.pt')
+        elif model_name == 'mlp_1[Sigmoid]' or model_name == 'mlp_2[Sigmoid]' or model_name == 'cnn_3[Sigmoid]' or model_name == 'cnn_4[Sigmoid]' or model_name == 'cnn_5[Sigmoid]':
+            torch.save(model.state_dict(), './results/trained_models/'+ model_name+'.pt')
+        else:
+            print("ERROR: model name not found")
 
     end_time = time.monotonic()
 
     epoch_mins, epoch_secs = epoch_time(start_time, end_time)
     print(f'+---------------------------------------+')
-    print(f'Epoch:        {epoch+1:02} | Epoch Time: {epoch_mins}m {epoch_secs}s')
+    print(f'Epoch:         {epoch+1:02} |  Epoch Time: {epoch_mins}m {epoch_secs}s')
     print(f'Train Loss: {train_loss:.3f} |  Train Acc: {train_acc*100:.2f} %')
     print(f'Val.  Loss: {valid_loss:.3f} |   Val. Acc: {valid_acc*100:.2f} %')
     print(f'+---------------------------------------+')
 
 # Testing-----------------------------------------------------------------------------------------------------------------------------------------------#
 # Load the best model in run
-model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'['+'ReLU-AF'+'].pt'))
+model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'.pt'))
+
 
 # Evaluate the model on the test set
 test_loss, test_acc = evaluate(model, test_generator, criterion, device, sv=0)
@@ -359,18 +502,13 @@ print(f'Test Loss: {test_loss:.3f} | Test Acc: {test_acc*100:.2f}%')
 print(f'+---------------------------------------+')
 test_acc_record = test_acc*100
 
-# End of training loop ----------------------------------------------------------------------------------------------------------------------------------#
-
-# Load the best model in run -----------------------------------------------------------------------------------------------------------------------------#
-model.load_state_dict(torch.load('./results/trained_models/'+ model_name+'['+'ReLU-AF'+'].pt'))
-
 # Save the results ----------------------------------------------------------------------------------------------------------------------------------#
-with open("./results/["+ model_name +']ReLU-AF_training_loss_record', "w") as fp:
+with open("./results/["+ model_name +']training_loss_record', "w") as fp:
     json.dump(training_loss_record, fp)
-with open("./results/["+ model_name +']ReLU-AF_test_acc_record', "w") as fp:
+with open("./results/["+ model_name +']test_acc_record', "w") as fp:
     json.dump(test_acc_record, fp)
-with open("./results/["+ model_name +']ReLU-AF_training_loss_gradient_record', "w") as fp:
-    json.dump(training_loss_gradient_record, fp)
+with open("./results/["+ model_name +']training_grad_record', "w") as fp:
+    json.dump(training_grad_record, fp)
 
 
 # FMI : for my information

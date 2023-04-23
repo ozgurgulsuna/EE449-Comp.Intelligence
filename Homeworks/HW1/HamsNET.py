@@ -37,8 +37,8 @@ import json
 
 # Parameters ------------------------------------------------------------------------------------------------------------------------------------#
 validation_ratio = 0.1
-batch_size = 50
-epoch_size = 15
+batch_size = 100
+epoch_size = 2
 runs = 5
 classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 model_name = 'mlp_1'
@@ -356,7 +356,7 @@ for run in range(runs):
 
         epoch_mins, epoch_secs = epoch_time(start_time, end_time)
         print(f'+---------------------------------------+')
-        print(f'Run: {run+1:02}  Epoch: {epoch+1:02} | Epoch Time: {epoch_mins}m {epoch_secs}s')
+        print(f'Run: {run+1:02} Epoch: {epoch+1:02} | Epoch Time: {epoch_mins}m {epoch_secs}s')
         print(f'Train Loss: {train_loss:.3f} |  Train Acc: {train_acc*100:.2f} %')
         print(f'Val.  Loss: {valid_loss:.3f} |   Val. Acc: {valid_acc*100:.2f} %')
         print(f'+---------------------------------------+')
