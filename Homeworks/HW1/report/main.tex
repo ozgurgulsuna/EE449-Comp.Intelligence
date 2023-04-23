@@ -427,7 +427,18 @@ Performance comparison plots will be created, and the weights of the first layer
     \end{figure}
     \label{fig:weights}
 
+    \item The first layer weights of the MLP structure has high resolution, and can be interpreted as some curves and horizontal lines are perceived.
+    for the CNN structures the weights are more abstract but these architectures have more depth hence a meaning can be found when these are all evaluated together.
+    \item It is early to say that the units are related with the classes with initial layer weights but horizontal lines can be the plane wing identifier with the tail and body sections are interpreted in the latter layers.
+    \item At this stage, with the more information on MLP's first layer, it is more interpretable.
+    \item For each arhchiecture, the depth is increased as explained in previous sections. CNN have an advantage in classification of an image input over the MLP. The higher depth suggests that the CNN is able to learn more complex features and generalize better.
+    \item I would go with the CNN architecture for image classification task. More specifically "cnn\_4" which performs around the same as others with faster training and less parameters as "cnn\_5".
+    
 \end{enumerate}
+
+\section{\textbf{Experimenting Activation Functions}}
+
+\subsection{\textbf{Experimental Work}}
 
     Avoid hyphenation at the end of a line. Symbols denoting vectors and matrices should be indicated in bold type. Scalar variable names should normally be expressed using italics. Weights and measures should be expressed in SI units. All non-standard abbreviations or symbols must be defined when first mentioned, or a glossary provided.
 
