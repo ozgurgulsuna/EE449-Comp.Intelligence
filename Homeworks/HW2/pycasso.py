@@ -12,24 +12,34 @@
 import cv2
 import numpy as np
 import random
-import math
-import sys
-import os
+# import math
+# import sys
+# import os
 
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
+# from PIL import Image
+# from PIL import ImageDraw
+# from PIL import ImageFont
 
-from datetime import datetime
+# from datetime import datetime
 
-from multiprocessing import Pool
+# from multiprocessing import Pool
 
 # Global variables
+source_image_path = "images/"
+source_image_name = "cafe_terrace_at_night.png"
+source_image = cv2.imread(source_image_path + source_image_name)
+# cv2.imshow("image", image)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
+
+
+
+
 num_inds = 100   # Individual Number
 num_genes = 1000 # Gene Number
 num_generations = 1000 # Generation Number
 
-tm_size = 100 # Template Size
+tm_size = 100 # Tournament size
 frac_elites = 0.1 # Fraction of elites
 frac_parents = 0.1 # Fraction of parents
 mutation_prob = 0.1 # Mutation probability
@@ -91,6 +101,12 @@ def init_population():
         population.append(Individual(genes, 0))
     return population
 
+# Individual Evaluation
+def evaluate_individual(individual):
+    image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
+    image.fill(255)
+    for gene in individual.genes:
+
 # TODO: Drawing order for circles
 
 
@@ -99,7 +115,10 @@ def init_population():
 
 
 
-
+# image = Image(source_image.shape[0], source_image.shape[1], np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8))
+cv2.imshow("image", image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 
