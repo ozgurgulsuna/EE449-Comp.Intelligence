@@ -54,9 +54,10 @@ class Individual:
 
 # Class for gene
 class Gene:
-    def __init__(self, x, y, r, g, b, a):
+    def __init__(self, x, y, s, r, g, b, a):
         self.x = x
         self.y = y
+        self.s = s
         self.r = r
         self.g = g
         self.b = b
@@ -64,9 +65,10 @@ class Gene:
 
 # Class for template
 class Template:
-    def __init__(self, x, y, r, g, b, a):
+    def __init__(self, x, y, s, r, g, b, a):
         self.x = x
         self.y = y
+        self.s = s
         self.r = r
         self.g = g
         self.b = b
@@ -106,10 +108,33 @@ def evaluate_individual(individual):
     image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
     image.fill(255)
     for gene in individual.genes:
+        cv2.circle(image, gene.x, gene.y, gene.s, gene.r, gene.g, gene.b, gene.a)
+    fitness = 0
+    for i in range(source_image.shape[0]):
+        for j in range(source_image.shape[1]):
+            fitness += abs(source_image[i][j][0] - image[i][j][0])
+            fitness += abs(source_image[i][j][1] - image[i][j][1])
+            fitness += abs(source_image[i][j][2] - image[i][j][2])
+    individual.fitness = fitness
+    return individual
 
 # TODO: Drawing order for circles
 
 
+Gene.x = 0
+Gene.y = 0
+Gene.s = 100
+Gene.r = 0
+Gene.g = 0
+Gene.b = 0
+Gene.a = 0.05
+
+
+image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
+image.fill(255)
+overlay = image.copy()
+cv2.circle(overlay, (Gene.x, Gene.y), Gene.s, (Gene.r, Gene.g, Gene.b), -1)
+image = cv2.addWeighted(overlay, Gene.a, image, 1 - Gene.a, 0)
 
 
 
