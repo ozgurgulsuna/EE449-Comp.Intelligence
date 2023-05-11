@@ -28,6 +28,8 @@ import random
 source_image_path = "images/"
 source_image_name = "cafe_terrace_at_night.png"
 source_image = cv2.imread(source_image_path + source_image_name)
+h = source_image.shape[0]
+w = source_image.shape[1]
 # cv2.imshow("image", image)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
@@ -63,17 +65,6 @@ class Gene:
         self.b = b
         self.a = a
 
-# Class for template
-class Template:
-    def __init__(self, x, y, s, r, g, b, a):
-        self.x = x
-        self.y = y
-        self.s = s
-        self.r = r
-        self.g = g
-        self.b = b
-        self.a = a
-
 # Class for image
 class Image:
     def __init__(self, width, height, genes):
@@ -81,25 +72,20 @@ class Image:
         self.height = height
         self.genes = genes
 
-# Class for fitness
-class Fitness:
-    def __init__(self, image, template):
-        self.image = image
-        self.template = template
-
 # Population initialization
 def init_population():
     population = []
     for i in range(num_inds):
         genes = []
         for j in range(num_genes):
-            x = random.randint(0, tm_size)
-            y = random.randint(0, tm_size)
+            x = random.randint(0, h)
+            y = random.randint(0, w)
+            s = random.randint(0, 10)
             r = random.randint(0, 255)
             g = random.randint(0, 255)
             b = random.randint(0, 255)
-            a = random.random(0,1)
-            genes.append(Gene(x, y, r, g, b, a))
+            a = random.uniform(0,1)
+            genes.append(Gene(x, y, s, r, g, b, a))
         population.append(Individual(genes, 0))
     return population
 
@@ -107,43 +93,116 @@ def init_population():
 def evaluate_individual(individual):
     image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
     image.fill(255)
+    overlay = image.copy()
     for gene in individual.genes:
-        cv2.circle(image, gene.x, gene.y, gene.s, gene.r, gene.g, gene.b, gene.a)
+        cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
+        image = cv2.addWeighted(overlay, gene.a, image, 1 - gene.a, 0)
     fitness = 0
     for i in range(source_image.shape[0]):
         for j in range(source_image.shape[1]):
-            fitness += abs(source_image[i][j][0] - image[i][j][0])
-            fitness += abs(source_image[i][j][1] - image[i][j][1])
-            fitness += abs(source_image[i][j][2] - image[i][j][2])
-    individual.fitness = fitness
+            fitness += (source_image[i][j][0] - image[i][j][0])^2
+            fitness += (source_image[i][j][1] - image[i][j][1])^2
+            fitness += (source_image[i][j][2] - image[i][j][2])^2
+    individual.fitness = -1*fitness
     return individual
 
 # TODO: Drawing order for circles
 
+# Tournament selection
+def tournament_selection(population):
+    tournament = []
+    for i in range(tm_size):
+        tournament.append(random.choice(population))
+    best = tournament[0]
+    for i in range(tm_size):
+        if tournament[i].fitness > best.fitness:
+            best = tournament[i]
+    return best
 
-Gene.x = 0
-Gene.y = 0
-Gene.s = 100
-Gene.r = 0
-Gene.g = 0
-Gene.b = 0
-Gene.a = 0.05
+# Elitism
+def elitism(population):
+    elites = []
+    for i in range(int(frac_elites*num_inds)):
+        best = population[0]
+        for j in range(num_inds):
+            if population[j].fitness > best.fitness:
+                best = population[j]
+        elites.append(best)
+        population.remove(best)
+    return elites
+
+# Parent selection
+def parent_selection(population):
+    parents = []
+    for i in range(int(frac_parents*num_inds)):
+        parents.append(tournament_selection(population))
+    return parents
+
+# Crossover
+def crossover(parents):
+    children = []
+    for i in range(int(frac_parents*num_inds)):
+        child_genes = []
+        for j in range(num_genes):
+            if random.random() < 0.5:
+                child_genes.append(parents[i].genes[j])
+            else:
+                child_genes.append(parents[i+1].genes[j])
+        children.append(Individual(child_genes, 0))
+    return children
+
+# Mutation
+def mutation(children):
+    for child in children:
+        for gene in child.genes:
+            if random.random() < mutation_prob:
+                if mutation_type == 0:
+                    gene.x = random.randint(0, tm_size)
+                    gene.y = random.randint(0, tm_size)
+                elif mutation_type == 1:
+                    gene.s = random.randint(0, tm_size)
+                elif mutation_type == 2:
+                    gene.r = random.randint(0, 255)
+                    gene.g = random.randint(0, 255)
+                    gene.b = random.randint(0, 255)
+                elif mutation_type == 3:
+                    gene.a = random.random(0,1)
+    return children
+
+# Main
+def main():
+    population = init_population()
+    for i in range(num_generations):
+        for individual in population:
+            evaluate_individual(individual)
+        elites = elitism(population)
+        parents = parent_selection(population)
+        children = crossover(parents)
+        children = mutation(children)
+        population = elites + children
+    best = population[0]
+    for individual in population:
+        if individual.fitness > best.fitness:
+            best = individual
+    return best
+
+# Run
+best_case = main()
+print(best_case.fitness)
 
 
-image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
-image.fill(255)
-overlay = image.copy()
-cv2.circle(overlay, (Gene.x, Gene.y), Gene.s, (Gene.r, Gene.g, Gene.b), -1)
-image = cv2.addWeighted(overlay, Gene.a, image, 1 - Gene.a, 0)
+
+
+
 
 
 
 
 
 # image = Image(source_image.shape[0], source_image.shape[1], np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8))
-cv2.imshow("image", image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# cv2.imshow("image", image)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
 
 
 
