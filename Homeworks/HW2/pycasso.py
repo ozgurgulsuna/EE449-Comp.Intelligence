@@ -103,19 +103,21 @@ def init_population():
                 gene.s = random.randint(0, s_max)
     print("Collisions checked, Sorting population...")
 
-    # Sort population by size
-    for individual in population:
-        for gene in individual.genes:
-            try:
-                sorted(gene, key=lambda item: item.s)
-            except:
-                print("Error sorting population")
-    print("Population sorted, returning...")
+    # # Sort population by size
+    # for individual in population:
+    #     for gene in individual.genes:
+    #         try:
+    #             sorted(gene, key=lambda item: item.s)
+    #         except:
+    #             # print("Error sorting population")
+    #             pass
+    # print("Population sorted, returning...")
 
     # for individual in population:
     #     for gene in individual.genes:
     #         print(gene.s)
-    # return population
+    
+    return population
 
 # Check if a circle is inside the image
 # https://stackoverflow.com/questions/75231142/collision-detection-between-circle-and-rectangle
