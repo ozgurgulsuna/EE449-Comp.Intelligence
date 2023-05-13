@@ -103,15 +103,15 @@ def init_population():
                 gene.s = random.randint(0, s_max)
     print("Collisions checked, Sorting population...")
 
-    # # Sort population by size
-    # for individual in population:
-    #     for gene in individual.genes:
-    #         try:
-    #             sorted(gene, key=lambda item: item.s)
-    #         except:
-    #             # print("Error sorting population")
-    #             pass
-    # print("Population sorted, returning...")
+    # Sort population by size
+    for individual in population:
+        for gene in individual.genes:
+            try:
+                sorted(gene, key=lambda x: x.s)
+            except:
+                # print("Error sorting population")
+                pass
+    print("Population sorted, returning...")
 
     # for individual in population:
     #     for gene in individual.genes:
@@ -148,11 +148,15 @@ def check_circle(gene):
 def evaluate_individual(individual):
     image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
     image.fill(255)
-    overlay = image.copy()
     for gene in individual.genes:
+        overlay = image.copy()
         cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
         image = cv2.addWeighted(overlay, gene.a, image, 1 - gene.a, 0)
+        # cv2.imshow("image", image)
+        # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
     fitness = 0
+
     for i in range(source_image.shape[0]):
         for j in range(source_image.shape[1]):
             fitness += (source_image[i][j][0] - image[i][j][0])^2
