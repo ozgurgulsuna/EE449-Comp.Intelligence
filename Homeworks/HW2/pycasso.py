@@ -7,12 +7,14 @@
 #   |  /              | |    |   |      | /   \ |  ____| |   ____| |  \___/
 #   |/                |_|     \____ \   |/     \| |______|  |______|
 #                                   \)
-# Evolutainary algorithm for the automatic generation of paintings. 
+#
+# https://www.petercollingridge.co.uk/blog/evolving-images/
+
 
 import cv2
 import numpy as np
 import random
-# import math
+import math
 # import sys
 # import os
 
@@ -30,6 +32,9 @@ source_image_name = "cafe_terrace_at_night.png"
 source_image = cv2.imread(source_image_path + source_image_name)
 h = source_image.shape[0]
 w = source_image.shape[1]
+s_max = int(math.sqrt(h**2+w**2))   # Maximum circle size, diagonal of the image, radius
+h_margin = 1*h               # Horizontal margin
+w_margin = 1*w               # Vertical margin
 # cv2.imshow("image", image)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
@@ -37,9 +42,9 @@ w = source_image.shape[1]
 
 
 
-num_inds = 100   # Individual Number
-num_genes = 1000 # Gene Number
-num_generations = 1000 # Generation Number
+num_inds = 10   # Individual Number
+num_genes = 10 # Gene Number
+num_generations = 10 # Generation Number
 
 tm_size = 100 # Tournament size
 frac_elites = 0.1 # Fraction of elites
@@ -78,16 +83,64 @@ def init_population():
     for i in range(num_inds):
         genes = []
         for j in range(num_genes):
-            x = random.randint(0, h)
-            y = random.randint(0, w)
-            s = random.randint(0, 10)
+            x = random.randint(-h_margin, h+h_margin)
+            y = random.randint(-w_margin, w+w_margin)
+            s = random.randint(0, s_max)
             r = random.randint(0, 255)
             g = random.randint(0, 255)
             b = random.randint(0, 255)
             a = random.uniform(0,1)
             genes.append(Gene(x, y, s, r, g, b, a))
         population.append(Individual(genes, 0))
-    return population
+    print("Population initialized, checking collisions...")
+
+    # Check for collisions
+    for individual in population:
+        for gene in individual.genes:
+            while not check_circle(gene):
+                gene.x = random.randint(-h_margin, h+h_margin)
+                gene.y = random.randint(-w_margin, w+w_margin)
+                gene.s = random.randint(0, s_max)
+    print("Collisions checked, Sorting population...")
+
+    # Sort population by size
+    for individual in population:
+        for gene in individual.genes:
+            try:
+                sorted(gene, key=lambda item: item.s)
+            except:
+                print("Error sorting population")
+    print("Population sorted, returning...")
+
+    # for individual in population:
+    #     for gene in individual.genes:
+    #         print(gene.s)
+    # return population
+
+# Check if a circle is inside the image
+# https://stackoverflow.com/questions/75231142/collision-detection-between-circle-and-rectangle
+
+## First method is crude, do dot capture all cases. (bounding box)
+# def check_circle(gene):
+#     if gene.x + gene.s > 0 and gene.x - gene.s < h and gene.y + gene.s > 0 and gene.y - gene.s < w:
+#         return True
+#     else:
+#         return False
+
+# Second method is more accurate, but slower. (distance)
+def check_circle(gene):
+    # nearest point on rectangle to circle
+    nearest_x = max(0, min(gene.x, h))
+    nearest_y = max(0, min(gene.y, w))
+
+    # distance from circle center to nearest point
+    dx = nearest_x - gene.x 
+    dy = nearest_y - gene.y 
+
+    # if distance is less than circle radius, there is a collision
+    return (dx**2 + dy**2) < (gene.s**2)
+
+
 
 # Individual Evaluation
 def evaluate_individual(individual):
@@ -172,23 +225,25 @@ def mutation(children):
 # Main
 def main():
     population = init_population()
-    for i in range(num_generations):
-        for individual in population:
-            evaluate_individual(individual)
-        elites = elitism(population)
-        parents = parent_selection(population)
-        children = crossover(parents)
-        children = mutation(children)
-        population = elites + children
-    best = population[0]
-    for individual in population:
-        if individual.fitness > best.fitness:
-            best = individual
-    return best
+    return population
+    # for i in range(num_generations):
+    #     for individual in population:
+    #         evaluate_individual(individual)
+    #     elites = elitism(population)
+    #     parents = parent_selection(population)
+    #     children = crossover(parents)
+    #     children = mutation(children)
+    #     population = elites + children
+    # best = population[0]
+    # for individual in population:
+    #     if individual.fitness > best.fitness:
+    #         best = individual
+    # return best
 
 # Run
 best_case = main()
-print(best_case.fitness)
+# print(best_case[0].fitness)
+# print(best_case.fitness)
 
 
 
@@ -204,6 +259,8 @@ print(best_case.fitness)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
 
+
+#
 
 
 
