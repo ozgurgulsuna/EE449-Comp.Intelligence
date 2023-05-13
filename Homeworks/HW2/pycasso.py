@@ -42,9 +42,9 @@ w_margin = 1*w               # Vertical margin
 
 
 
-num_inds = 10   # Individual Number
+num_inds = 20   # Individual Number
 num_genes = 10 # Gene Number
-num_generations = 10 # Generation Number
+num_generations = 1 # Generation Number
 
 tm_size = 100 # Tournament size
 frac_elites = 0.1 # Fraction of elites
@@ -75,7 +75,7 @@ class Image:
     def __init__(self, width, height, genes):
         self.width = width
         self.height = height
-        self.genes = genes
+        self.genes = genes.astype('int32')
 
 # Population initialization
 def init_population():
@@ -106,10 +106,6 @@ def init_population():
     # Sort population by size
     for individual in population:
         individual.genes.sort(key=lambda x: x.s, reverse=True)
-
-    # for individual in population:
-    #     for gene in individual.genes:
-    #         print(gene.s)
     
     return population
 
@@ -157,18 +153,24 @@ def evaluate_individual(individual):
     individual.fitness = -1*fitness
     return individual
 
-# TODO: Drawing order for circles
-
 # Tournament selection
 def tournament_selection(population):
     tournament = []
     for i in range(tm_size):
         tournament.append(random.choice(population))
     best = tournament[0]
-    for i in range(tm_size):
-        if tournament[i].fitness > best.fitness:
-            best = tournament[i]
+    for individual in tournament:
+        if individual.fitness > best.fitness:
+            best = individual
     return best
+
+    # for i in range(tm_size):
+    #     tournament.append(random.choice(population))
+    # best = tournament[0]
+    # for i in range(tm_size):
+    #     if tournament[i].fitness > best.fitness:
+    #         best = tournament[i]
+    # return best
 
 # Elitism
 def elitism(population):
@@ -179,7 +181,7 @@ def elitism(population):
             if population[j].fitness > best.fitness:
                 best = population[j]
         elites.append(best)
-        population.remove(best)
+        # population.remove(best)
     return elites
 
 # Parent selection
@@ -192,15 +194,31 @@ def parent_selection(population):
 # Crossover
 def crossover(parents):
     children = []
-    for i in range(int(frac_parents*num_inds)):
-        child_genes = []
+    for i in range(int((num_inds - frac_elites*num_inds - frac_parents*num_inds)/2)):
+        parent1 = random.choice(parents)
+        parent2 = random.choice(parents)
+        child1 = []
+        child2 = []
         for j in range(num_genes):
             if random.random() < 0.5:
-                child_genes.append(parents[i].genes[j])
+                child1.append(parent1.genes[j])
+                child2.append(parent2.genes[j])
             else:
-                child_genes.append(parents[i+1].genes[j])
-        children.append(Individual(child_genes, 0))
+                child1.append(parent2.genes[j])
+                child2.append(parent1.genes[j])
+        children.append(Individual(child1, 0))
+        children.append(Individual(child2, 0))
     return children
+
+    # for i in range(int(frac_parents*num_inds)):
+    #     child_genes = []
+    #     for j in range(num_genes):
+    #         if random.random() < 0.5:
+    #             child_genes.append(parents[i].genes[j])
+    #         else:
+    #             child_genes.append(parents[i+1].genes[j])
+    #     children.append(Individual(child_genes, 0))
+    # return children
 
 # Mutation
 def mutation(children):
@@ -208,48 +226,67 @@ def mutation(children):
         for gene in child.genes:
             if random.random() < mutation_prob:
                 if mutation_type == 0:
-                    gene.x = random.randint(0, tm_size)
-                    gene.y = random.randint(0, tm_size)
-                elif mutation_type == 1:
-                    gene.s = random.randint(0, tm_size)
-                elif mutation_type == 2:
+                    gene.x = random.randint(-h_margin, h+h_margin)
+                    gene.y = random.randint(-w_margin, w+w_margin)
+                    gene.s = random.randint(0, s_max)
                     gene.r = random.randint(0, 255)
                     gene.g = random.randint(0, 255)
                     gene.b = random.randint(0, 255)
+                    gene.a = random.uniform(0,1)
+                elif mutation_type == 1:
+                    gene.x = random.randint(-h_margin, h+h_margin)
+                    gene.y = random.randint(-w_margin, w+w_margin)
+                elif mutation_type == 2:
+                    gene.s = random.randint(0, s_max)
                 elif mutation_type == 3:
-                    gene.a = random.random(0,1)
+                    gene.r = random.randint(0, 255)
+                    gene.g = random.randint(0, 255)
+                    gene.b = random.randint(0, 255)
+                elif mutation_type == 4:
+                    gene.a = random.uniform(0,1)
     return children
+
 
 # Main
 def main():
     population = init_population()
-    return population
-    # for i in range(num_generations):
-    #     for individual in population:
-    #         evaluate_individual(individual)
-    #     elites = elitism(population)
-    #     parents = parent_selection(population)
-    #     children = crossover(parents)
-    #     children = mutation(children)
-    #     population = elites + children
-    # best = population[0]
-    # for individual in population:
-    #     if individual.fitness > best.fitness:
-    #         best = individual
-    # return best
+    for i in range(num_generations):
+        for individual in population:
+            evaluate_individual(individual)
+            print(individual.fitness)
+        elites = elitism(population)
+        parents = parent_selection(population)
+        children = crossover(parents)
+        children = mutation(children)
+        population = elites + children
+    best = population[0]
+    print(best.fitness)
+    for individual in population:
+        print(individual.fitness)
+        if individual.fitness > best.fitness:
+            best = individual
+            print(best.fitness)
+    return best
 
 # Run
 best_case = main()
 
-for individual in best_case:
-    for gene in individual.genes:
-        print(gene.s)
+# for individual in best_case:
+#     print(individual.fitness)
 
 # print(best_case[0].fitness)
 # print(best_case.fitness)
 
 
-
+image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
+image.fill(255)
+for gene in best_case.genes:
+    overlay = image.copy()
+    cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
+    image = cv2.addWeighted(overlay, gene.a, image, 1 - gene.a, 0)
+    cv2.imshow("image", image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
 
 
 
