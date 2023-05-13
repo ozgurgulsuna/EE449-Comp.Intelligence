@@ -105,13 +105,7 @@ def init_population():
 
     # Sort population by size
     for individual in population:
-        for gene in individual.genes:
-            try:
-                sorted(gene, key=lambda x: x.s)
-            except:
-                # print("Error sorting population")
-                pass
-    print("Population sorted, returning...")
+        individual.genes.sort(key=lambda x: x.s, reverse=True)
 
     # for individual in population:
     #     for gene in individual.genes:
@@ -141,8 +135,6 @@ def check_circle(gene):
 
     # if distance is less than circle radius, there is a collision
     return (dx**2 + dy**2) < (gene.s**2)
-
-
 
 # Individual Evaluation
 def evaluate_individual(individual):
@@ -248,6 +240,11 @@ def main():
 
 # Run
 best_case = main()
+
+for individual in best_case:
+    for gene in individual.genes:
+        print(gene.s)
+
 # print(best_case[0].fitness)
 # print(best_case.fitness)
 
