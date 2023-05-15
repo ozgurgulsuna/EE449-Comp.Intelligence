@@ -33,8 +33,8 @@ source_image = cv2.imread(source_image_path + source_image_name)
 h = source_image.shape[0]
 w = source_image.shape[1]
 s_max = int(math.sqrt(h**2+w**2))   # Maximum circle size, diagonal of the image, radius
-h_margin = 1*h               # Horizontal margin
-w_margin = 1*w               # Vertical margin
+h_margin = 0.5*h               # Horizontal margin
+w_margin = 0.5*w               # Vertical margin
 # cv2.imshow("image", image)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
@@ -142,6 +142,10 @@ def check_circle(gene):
 def evaluate_individual(individual):
     image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
     image.fill(255)
+    
+    # Sort genes by size
+    individual.genes.sort(key=lambda x: x.s, reverse=True)
+
     for gene in individual.genes:
         overlay = image.copy()
         cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
@@ -155,19 +159,30 @@ def evaluate_individual(individual):
             for k in range(3):
                 # fitness += abs(int(image[i][j][k]) - int(source_image[i][j][k]))
                 fitness += (int(image[i][j][k]) - int(source_image[i][j][k]))**2
-    individual.fitness = fitness
+    individual.fitness = -1*fitness
 
     return individual
 
 # Tournament selection
 def tournament_selection(population):
     tournament = []
-    for i in range(tm_size):
-        tournament.append(random.choice(population))
+    candidates = population.copy()
+    
+    # for high number of individuals, tournament size is limited to the number of individuals
+    size = tm_size
+    if tm_size > len(candidates):
+        size = len(candidates)
+
+    # main tournament loop
+    for i in range(size) :
+        tournament.append(random.choice(candidates))
+        candidates.remove(tournament[i])
+        # print("kisi",i, ":", tournament[i].fitness)
     best = tournament[0]
     for individual in tournament:
         if individual.fitness > best.fitness:
             best = individual
+    # print("best: ", best.fitness)
     return best
 
     # for i in range(tm_size):
@@ -216,11 +231,11 @@ def crossover(parents):
         child2 = []
         for j in range(num_genes):
             if random.random() < 0.5:
-                child1.append(parents[i].genes[j])
-                child2.append(parents[i+1].genes[j])
+                child1.append(parents[2*i].genes[j])
+                child2.append(parents[2*i+1].genes[j])
             else:
-                child1.append(parents[i+1].genes[j])
-                child2.append(parents[i].genes[j])
+                child1.append(parents[2*i+1].genes[j])
+                child2.append(parents[2*i].genes[j])
         children.append(Individual(child1, 0))
         children.append(Individual(child2, 0))
     return children
@@ -315,8 +330,10 @@ def main():
         for individual in population:
             evaluate_individual(individual)
             # print(individual)
-            if print_info == True: 
-                print(individual.fitness)
+
+            # if print_info == True: 
+            #     print(individual.fitness)
+
             # print(individual.fitness)
         # print("population length: ", len(population))
         elites = elitism(population)
@@ -327,8 +344,6 @@ def main():
         population = elites + children + population
         if print_info == True:
             print("Generation: ", i)
-
-
 
 
     best = population[0]
@@ -347,12 +362,12 @@ best_case = main()
 # for individual in best_case:
 #     print(individual.fitness)
 
-# print(best_case[0].fitness)
-# print(best_case.fitness)
+print(best_case.fitness)
 
 
 image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
 image.fill(255)
+best_case.genes.sort(key=lambda x: x.s, reverse=True)
 for gene in best_case.genes:
     overlay = image.copy()
     cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
