@@ -31,13 +31,14 @@ import matplotlib.pyplot as plt
 
 # Global variables
 source_image_path = "images/"
-source_image_name = "cafe_terrace_at_night.png"
+source_image_name = "mon_alisa.png"
 source_image = cv2.imread(source_image_path + source_image_name)
 h = source_image.shape[0]
 w = source_image.shape[1]
-s_max = int(math.sqrt(h**2+w**2))   # Maximum circle size, diagonal of the image, radius
+#s_max = int(math.sqrt(h**2+w**2))   # Maximum circle size, diagonal of the image, radius
+s_max = 0.5*min(h,w)
 h_margin = 1*h               # Horizontal margin
-w_margin = 1*w               # Vertical margin
+w_margin = 1*w               # Vertical margin 
 
 # cv2.imshow("image", image)
 # cv2.waitKey(0)
@@ -50,14 +51,14 @@ print_info = True
 
 
 
-num_inds = 20   # Individual Number
-num_genes = 50 # Gene Number
-num_generations = 1000 # Generation Number
+num_inds = 10   # Individual Number
+num_genes = 10 # Gene Number
+num_generations = 20000 # Generation Number
 
 tm_size = 5 # Tournament size
 frac_elites = 0.2 # Fraction of elites
 frac_parents = 0.3 # Fraction of parents
-mutation_prob = 0.8  # Mutation probability
+mutation_prob = 0.6  # Mutation probability
 mutation_type = 1 # Mutation type
 
 
@@ -153,7 +154,7 @@ def evaluate_individual(individual):
         # cv2.destroyAllWindows()
 
     fitness = 0
-    fitness = np.sum((image.astype(np.int32)-source_image.astype(np.int32))**2)
+    fitness = np.sum((image.astype(np.int64)-source_image.astype(np.int64))**2)
 
     # fitness = 0
     # for i in range(h):
@@ -212,7 +213,11 @@ def elitism(population):
     return elites
 
 
-
+def natural_selection(population):
+    best = []
+    for i in range(math.ceil(num_inds - frac_elites*num_inds)):
+        best.append(tournament_selection(population))
+    return best
 
 def parent_selection(population):
     parents = []
@@ -285,8 +290,6 @@ def within_limits(phenotype, upper_lim, lower_lim,range):
     return phenotype
         
 
-
-
 # Mutation
 def mutation(population):
     for individual in population:
@@ -303,7 +306,7 @@ def mutation(population):
                     gene.a = random.uniform(0,1)
                 elif mutation_type == 1:
                     while not check_circle(gene):
-                        gene.x = int(ithin_limits(gene.x, w+w_margin, -w_margin, w/4))
+                        gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
                         gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
                         gene.s = int(within_limits(gene.s, s_max, 0, 10))
                     gene.r = int(within_limits(gene.r, 255, 0, 64))
@@ -314,76 +317,59 @@ def mutation(population):
 
 # TODO : mutate only one phenotype, eg color, size, position, etc. 
 
-# def mutation(children):
-#     for child in children:
-#         for gene in child.genes:
-#             if random.random() < mutation_prob:
-#                 if mutation_type == 0:
-#                     gene.x = random.randint(-h_margin, h+h_margin)
-#                     gene.y = random.randint(-w_margin, w+w_margin)
-#                     gene.s = random.randint(0, s_max)
-#                     gene.r = random.randint(0, 255)
-#                     gene.g = random.randint(0, 255)
-#                     gene.b = random.randint(0, 255)
-#                     gene.a = random.uniform(0,1)
-#                 elif mutation_type == 1:
-#                     gene.x = random.randint(-h_margin, h+h_margin)
-#                     gene.y = random.randint(-w_margin, w+w_margin)
-#                 elif mutation_type == 2:
-#                     gene.s = random.randint(0, s_max)
-#                 elif mutation_type == 3:
-#                     gene.r = random.randint(0, 255)
-#                     gene.g = random.randint(0, 255)
-#                     gene.b = random.randint(0, 255)
-#                 elif mutation_type == 4:
-#                     gene.a = random.uniform(0,1)
-#     return children
-
-
 # Main
 def main():
     que = []
     start_time = time.time()
     population = init_population()
     for i in range(num_generations):
-        # print(population)
         for individual in population:
             evaluate_individual(individual)
-            # print(individual)
+##
+        best = population[0]
+        for individual in population:
+            if (individual.fitness > best.fitness) and (individual.fitness < 0):
+                best = individual
+        if print_info == True and i%10 == 0:
+            print("Generation: ", i, "Best fitness: ", best.fitness)
 
-            # if print_info == True: 
-            #     print(individual.fitness)
-            # print(individual.fitness)
-        # print("population length: ", len(population))
+        if i%10 == 0:
+            que.append(best.fitness)
+            plt.plot(que)
+            plt.draw()
+            plt.pause(0.1)
+            plt.clf()
+
+        best_temp = population[1]
+        if best.fitness > best_temp.fitness:
+            best_temp = best
+            image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
+            image.fill(255)
+            best.genes.sort(key=lambda x: x.s, reverse=True)
+            for gene in best.genes:
+                overlay = image.copy()
+                cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
+                image = cv2.addWeighted(overlay, gene.a, image, 1 - gene.a, 0)
+                cv2.imshow("image", image)
+                # cv2.waitKey(1)
+                # cv2.destroyAllWindows()
+            cv2.waitKey(1)
+
         elites = elitism(population)
+
+        # population = natural_selection(population+elites)
 
         parents = parent_selection(population)
 
         children = crossover(parents)
 
-
-        # children = mutation(children)
+        children = mutation(children)
 
         population = mutation(population)
 
-        population = elites + children + population
-        
-
-        best = population[1]
-        # print("Best fitness: ", best.fitness)
-        for individual in population:
-            if (individual.fitness > best.fitness) and (individual.fitness < 0):
-                best = individual
-            # print(best.fitness)
-        if print_info == True and i%10 == 0:
-            print("Generation: ", i, "Best fitness: ", best.fitness)
+        population = population + elites + children 
 
 
-        # que.append(best.fitness)
-        # plt.plot(que)
-        # plt.draw()
-        # plt.pause(0.1)
-        # plt.clf()
 
     end_time = time.time()
     print("Elapsed time: ", end_time - start_time)
@@ -395,17 +381,12 @@ def main():
             best = individual
             print(best.fitness)
     return best
-    # return parents 
+
+
+
 
 # Run
 best_case = main()
-
-# for individual in best_case:
-#     print(individual.fitness)
-
-print(best_case.fitness)
-
-
 image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
 image.fill(255)
 best_case.genes.sort(key=lambda x: x.s, reverse=True)
@@ -418,47 +399,7 @@ for gene in best_case.genes:
     # cv2.destroyAllWindows()
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
-
-
-
-
-# image = Image(source_image.shape[0], source_image.shape[1], np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8))
-# cv2.imshow("image", image)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
-
-
 #
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #       _____                _____            __  __  __
 #      /\    \              /\    \          /\ \/ / /\ \
 #     /::\    \            /::\____\        /::\  / /  \ \
