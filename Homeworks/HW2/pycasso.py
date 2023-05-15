@@ -15,6 +15,9 @@ import cv2
 import numpy as np
 import random
 import math
+import time
+import matplotlib.pyplot as plt
+
 # import sys
 # import os
 
@@ -33,8 +36,9 @@ source_image = cv2.imread(source_image_path + source_image_name)
 h = source_image.shape[0]
 w = source_image.shape[1]
 s_max = int(math.sqrt(h**2+w**2))   # Maximum circle size, diagonal of the image, radius
-h_margin = 0.5*h               # Horizontal margin
-w_margin = 0.5*w               # Vertical margin
+h_margin = 1*h               # Horizontal margin
+w_margin = 1*w               # Vertical margin
+
 # cv2.imshow("image", image)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
@@ -46,15 +50,15 @@ print_info = True
 
 
 
-num_inds = 10   # Individual Number
-num_genes = 30 # Gene Number
-num_generations = 100 # Generation Number
+num_inds = 20   # Individual Number
+num_genes = 50 # Gene Number
+num_generations = 1000 # Generation Number
 
 tm_size = 5 # Tournament size
 frac_elites = 0.2 # Fraction of elites
 frac_parents = 0.3 # Fraction of parents
-mutation_prob = 0.2 # Mutation probability
-mutation_type = 0 # Mutation type
+mutation_prob = 0.8  # Mutation probability
+mutation_type = 1 # Mutation type
 
 
 # Class for individual	
@@ -118,13 +122,6 @@ def init_population():
 # Check if a circle is inside the image
 # https://stackoverflow.com/questions/75231142/collision-detection-between-circle-and-rectangle
 
-## First method is crude, do dot capture all cases. (bounding box)
-# def check_circle(gene):
-#     if gene.x + gene.s > 0 and gene.x - gene.s < h and gene.y + gene.s > 0 and gene.y - gene.s < w:
-#         return True
-#     else:
-#         return False
-
 # Second method is more accurate, but slower. (distance)
 def check_circle(gene):
     # nearest point on rectangle to circle
@@ -142,6 +139,7 @@ def check_circle(gene):
 def evaluate_individual(individual):
     image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
     image.fill(255)
+
     
     # Sort genes by size
     individual.genes.sort(key=lambda x: x.s, reverse=True)
@@ -153,12 +151,20 @@ def evaluate_individual(individual):
         # cv2.imshow("image", image)
         # cv2.waitKey(0)
         # cv2.destroyAllWindows()
-    fitness = int(0)
-    for i in range(h):
-        for j in range(w):
-            for k in range(3):
-                # fitness += abs(int(image[i][j][k]) - int(source_image[i][j][k]))
-                fitness += (int(image[i][j][k]) - int(source_image[i][j][k]))**2
+
+    fitness = 0
+    fitness = np.sum((image.astype(np.int32)-source_image.astype(np.int32))**2)
+
+    # fitness = 0
+    # for i in range(h):
+    #     for j in range(w):
+    #         for k in range(3):
+    #             # fitness += abs(int(image[i][j][k]) - int(source_image[i][j][k]))
+    #             fitness += (int(image[i][j][k]) - int(source_image[i][j][k]))**2
+    
+
+
+
     individual.fitness = -1*fitness
 
     return individual
@@ -269,6 +275,18 @@ def crossover(parents):
 #     #     children.append(Individual(child_genes, 0))
 #     # return children
 
+#check the negative limits and correct them
+def within_limits(phenotype, upper_lim, lower_lim,range):
+    while True:
+        phenotype_calc = phenotype + random.uniform(-range, range)
+        if phenotype_calc < upper_lim and phenotype_calc > lower_lim:
+            phenotype = phenotype_calc
+            break
+    return phenotype
+        
+
+
+
 # Mutation
 def mutation(population):
     for individual in population:
@@ -276,25 +294,25 @@ def mutation(population):
             if random.random() < mutation_prob:
                 if mutation_type == 0:
                     while not check_circle(gene):
-                        gene.x = random.randint(-h_margin, h+h_margin)
-                        gene.y = random.randint(-w_margin, w+w_margin)
+                        gene.x = random.randint(-w_margin, w+w_margin)
+                        gene.y = random.randint(-h_margin, h+h_margin)
                         gene.s = random.randint(0, s_max)
                     gene.r = random.randint(0, 255)
                     gene.g = random.randint(0, 255)
                     gene.b = random.randint(0, 255)
                     gene.a = random.uniform(0,1)
                 elif mutation_type == 1:
-                    gene.x = random.randint(-h_margin, h+h_margin)
-                    gene.y = random.randint(-w_margin, w+w_margin)
-                elif mutation_type == 2:
-                    gene.s = random.randint(0, s_max)
-                elif mutation_type == 3:
-                    gene.r = random.randint(0, 255)
-                    gene.g = random.randint(0, 255)
-                    gene.b = random.randint(0, 255)
-                elif mutation_type == 4:
-                    gene.a = random.uniform(0,1)
+                    while not check_circle(gene):
+                        gene.x = int(ithin_limits(gene.x, w+w_margin, -w_margin, w/4))
+                        gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
+                        gene.s = int(within_limits(gene.s, s_max, 0, 10))
+                    gene.r = int(within_limits(gene.r, 255, 0, 64))
+                    gene.g = int(within_limits(gene.g, 255, 0, 64))
+                    gene.b = int(within_limits(gene.b, 255, 0, 64))
+                    gene.a = within_limits(gene.a, 1, 0, 0.1)
     return population
+
+# TODO : mutate only one phenotype, eg color, size, position, etc. 
 
 # def mutation(children):
 #     for child in children:
@@ -324,6 +342,8 @@ def mutation(population):
 
 # Main
 def main():
+    que = []
+    start_time = time.time()
     population = init_population()
     for i in range(num_generations):
         # print(population)
@@ -333,26 +353,47 @@ def main():
 
             # if print_info == True: 
             #     print(individual.fitness)
-
             # print(individual.fitness)
         # print("population length: ", len(population))
         elites = elitism(population)
+
         parents = parent_selection(population)
+
         children = crossover(parents)
-        children = mutation(children)
+
+
+        # children = mutation(children)
+
         population = mutation(population)
+
         population = elites + children + population
-        if print_info == True:
-            print("Generation: ", i)
+        
+
+        best = population[1]
+        # print("Best fitness: ", best.fitness)
+        for individual in population:
+            if (individual.fitness > best.fitness) and (individual.fitness < 0):
+                best = individual
+            # print(best.fitness)
+        if print_info == True and i%10 == 0:
+            print("Generation: ", i, "Best fitness: ", best.fitness)
 
 
+        # que.append(best.fitness)
+        # plt.plot(que)
+        # plt.draw()
+        # plt.pause(0.1)
+        # plt.clf()
+
+    end_time = time.time()
+    print("Elapsed time: ", end_time - start_time)
     best = population[0]
     # print(best.fitness)
     for individual in population:
         # print(individual.fitness)
         if individual.fitness > best.fitness:
             best = individual
-            # print(best.fitness)
+            print(best.fitness)
     return best
     # return parents 
 
@@ -373,10 +414,10 @@ for gene in best_case.genes:
     cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
     image = cv2.addWeighted(overlay, gene.a, image, 1 - gene.a, 0)
     cv2.imshow("image", image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-
-
+    cv2.waitKey(100)
+    # cv2.destroyAllWindows()
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 
