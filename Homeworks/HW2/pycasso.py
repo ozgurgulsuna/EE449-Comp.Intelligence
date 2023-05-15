@@ -51,14 +51,14 @@ print_info = True
 
 
 
-num_inds = 10   # Individual Number
-num_genes = 10 # Gene Number
+num_inds = 20   # Individual Number
+num_genes = 50 # Gene Number
 num_generations = 20000 # Generation Number
 
 tm_size = 5 # Tournament size
 frac_elites = 0.2 # Fraction of elites
 frac_parents = 0.3 # Fraction of parents
-mutation_prob = 0.6  # Mutation probability
+mutation_prob = 0.2  # Mutation probability
 mutation_type = 1 # Mutation type
 
 
@@ -325,6 +325,7 @@ def main():
     for i in range(num_generations):
         for individual in population:
             evaluate_individual(individual)
+            # print("fitness:", individual.fitness)
 ##
         best = population[0]
         for individual in population:
@@ -355,22 +356,22 @@ def main():
                 # cv2.destroyAllWindows()
             cv2.waitKey(1)
 
-        print("population size: ", len(population))
-        print(population)
+        # print("population size: ", len(population))
+        # print(population)
         elites = elitism(population)
-        print("population size: ", len(population))
-        population = natural_selection(population+elites)
-        print("population size: ", len(population))
+        # print("population size: ", len(population))
+        # population = population+elites
+        # print("population size: ", len(population))
         parents = parent_selection(population)
-        print("population size: ", len(population))
+        # print("population size: ", len(population))
         children = crossover(parents)
-        print("population size: ", len(population))
+        # print("population size: ", len(population))
         children = mutation(children)
-        print("population size: ", len(population))
+        # print("population size: ", len(population))
         population = mutation(population)
-        print("population size: ", len(population))
+        # print("population size: ", len(population))
         population = population + elites + children 
-        print("population size: ", len(population))
+        # print("population size: ", len(population))
 
 
     end_time = time.time()
