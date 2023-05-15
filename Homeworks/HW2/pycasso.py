@@ -355,20 +355,22 @@ def main():
                 # cv2.destroyAllWindows()
             cv2.waitKey(1)
 
+        print("population size: ", len(population))
+        print(population)
         elites = elitism(population)
-
-        # population = natural_selection(population+elites)
-
+        print("population size: ", len(population))
+        population = natural_selection(population+elites)
+        print("population size: ", len(population))
         parents = parent_selection(population)
-
+        print("population size: ", len(population))
         children = crossover(parents)
-
+        print("population size: ", len(population))
         children = mutation(children)
-
+        print("population size: ", len(population))
         population = mutation(population)
-
+        print("population size: ", len(population))
         population = population + elites + children 
-
+        print("population size: ", len(population))
 
 
     end_time = time.time()
