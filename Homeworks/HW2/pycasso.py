@@ -42,13 +42,13 @@ w_margin = 1*w               # Vertical margin
 
 
 
-num_inds = 20   # Individual Number
-num_genes = 10 # Gene Number
-num_generations = 1 # Generation Number
+num_inds = 5   # Individual Number
+num_genes = 15 # Gene Number
+num_generations = 20 # Generation Number
 
-tm_size = 100 # Tournament size
-frac_elites = 0.1 # Fraction of elites
-frac_parents = 0.1 # Fraction of parents
+tm_size = 2 # Tournament size
+frac_elites = 0.04 # Fraction of elites
+frac_parents = 0.15 # Fraction of parents
 mutation_prob = 0.1 # Mutation probability
 mutation_type = 0 # Mutation type
 
@@ -143,14 +143,14 @@ def evaluate_individual(individual):
         # cv2.imshow("image", image)
         # cv2.waitKey(0)
         # cv2.destroyAllWindows()
-    fitness = 0
+    fitness = int(0)
+    for i in range(h):
+        for j in range(w):
+            for k in range(3):
+                # fitness += abs(int(image[i][j][k]) - int(source_image[i][j][k]))
+                fitness += (int(image[i][j][k]) - int(source_image[i][j][k]))**2
+    individual.fitness = fitness
 
-    for i in range(source_image.shape[0]):
-        for j in range(source_image.shape[1]):
-            fitness += (source_image[i][j][0] - image[i][j][0])^2
-            fitness += (source_image[i][j][1] - image[i][j][1])^2
-            fitness += (source_image[i][j][2] - image[i][j][2])^2
-    individual.fitness = -1*fitness
     return individual
 
 # Tournament selection
@@ -181,44 +181,71 @@ def elitism(population):
             if population[j].fitness > best.fitness:
                 best = population[j]
         elites.append(best)
-        # population.remove(best)
+        population.remove(best)
     return elites
 
-# Parent selection
+
 def parent_selection(population):
     parents = []
-    for i in range(int(frac_parents*num_inds)):
+    for i in range(math.ceil(frac_parents*num_inds)*2):
         parents.append(tournament_selection(population))
+        print("Parent selected")
+        population.remove(parents[i])
     return parents
+# for <num_inds> = 5, <frac_parents> = 0.15 then <num_parents> = 0.75, which is rounded to 1 couple (1*2).
+
 
 # Crossover
+# Parent selection
+# <num parents> number of individuals will be used for crossover. The parents are chosen among the best
+# individuals which do not advance to the next generation directly. Two parents will create two children.
+# Exchange of each gene is calculated individually with equal probability. The probabilities of child 1
+# having genei of parent 1 or parent 2 have equal probability, that is 0.5; child 2 gets the genei
+# from the other parent which is not chosen for child 1, where 0 ⩽ i < <num genes>.
 def crossover(parents):
     children = []
-    for i in range(int((num_inds - frac_elites*num_inds - frac_parents*num_inds)/2)):
-        parent1 = random.choice(parents)
-        parent2 = random.choice(parents)
+    for i in range(math.ceil(frac_parents*num_inds)):
         child1 = []
         child2 = []
         for j in range(num_genes):
             if random.random() < 0.5:
-                child1.append(parent1.genes[j])
-                child2.append(parent2.genes[j])
+                child1.append(parents[i].genes[j])
+                child2.append(parents[i+1].genes[j])
             else:
-                child1.append(parent2.genes[j])
-                child2.append(parent1.genes[j])
+                child1.append(parents[i+1].genes[j])
+                child2.append(parents[i].genes[j])
         children.append(Individual(child1, 0))
         children.append(Individual(child2, 0))
     return children
 
-    # for i in range(int(frac_parents*num_inds)):
-    #     child_genes = []
-    #     for j in range(num_genes):
-    #         if random.random() < 0.5:
-    #             child_genes.append(parents[i].genes[j])
-    #         else:
-    #             child_genes.append(parents[i+1].genes[j])
-    #     children.append(Individual(child_genes, 0))
-    # return children
+# def crossover(parents):
+#     children = []
+#     for i in range(int((num_inds - frac_elites*num_inds - frac_parents*num_inds)/2)):
+#         parent1 = random.choice(parents)
+#         parent2 = random.choice(parents)
+#         child1 = []
+#         child2 = []
+#         for j in range(num_genes):
+#             if random.random() < 0.5:
+#                 child1.append(parent1.genes[j])
+#                 child2.append(parent2.genes[j])
+#             else:
+#                 child1.append(parent2.genes[j])
+#                 child2.append(parent1.genes[j])
+#         children.append(Individual(child1, 0))
+#         children.append(Individual(child2, 0))
+#     return children
+
+
+#     # for i in range(int(frac_parents*num_inds)):
+#     #     child_genes = []
+#     #     for j in range(num_genes):
+#     #         if random.random() < 0.5:
+#     #             child_genes.append(parents[i].genes[j])
+#     #         else:
+#     #             child_genes.append(parents[i+1].genes[j])
+#     #     children.append(Individual(child_genes, 0))
+#     # return children
 
 # Mutation
 def mutation(children):
@@ -251,22 +278,33 @@ def mutation(children):
 def main():
     population = init_population()
     for i in range(num_generations):
+        # print(population)
         for individual in population:
             evaluate_individual(individual)
+            # print(individual)
             print(individual.fitness)
+            # print(individual.fitness)
+        # print("population length: ", len(population))
         elites = elitism(population)
         parents = parent_selection(population)
         children = crossover(parents)
         children = mutation(children)
-        population = elites + children
+        population = mutation(population)
+        population = elites + children + population
+        print("Generation: ", i)
+
+
+
+
     best = population[0]
-    print(best.fitness)
+    # print(best.fitness)
     for individual in population:
-        print(individual.fitness)
+        # print(individual.fitness)
         if individual.fitness > best.fitness:
             best = individual
-            print(best.fitness)
+            # print(best.fitness)
     return best
+    # return parents 
 
 # Run
 best_case = main()
