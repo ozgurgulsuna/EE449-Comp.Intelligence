@@ -195,18 +195,27 @@ def elitism(population):
         elites.append(best)
         attendees.remove(best)
     print("best index: ", best_index)
-    for j in sorted(best_index, reverse=True):
-        del population[j]
+    # for j in sorted(best_index, reverse=True):
+    #     del population[j]
     return elites
 
 
+# def natural_selection(population):
+#     best = []
+#     participants = population.copy()
+#     for i in range(math.ceil(num_inds - math.ceil(frac_elites*num_inds)- math.ceil(frac_parents*num_inds))):
+#         best.append(tournament_selection(participants))
+#         participants.remove(best[i])
+#     return best
+
 def natural_selection(population):
-    best = []
-    participants = population.copy()
+    parents = []
+    testants = population
     for i in range(math.ceil(num_inds - math.ceil(frac_elites*num_inds)- math.ceil(frac_parents*num_inds))):
-        best.append(tournament_selection(participants))
-        participants.remove(best[i])
-    return best
+        parents.append(tournament_selection(testants))
+        testants.remove(parents[i])
+        # population.remove(parents[i])
+    return parents
 
 def parent_selection(population):
     parents = []
@@ -380,6 +389,10 @@ def main():
         # Crossover
         children = crossover(parents)
         print("population size2: ", len(population), "children size:", len(children))
+
+        # Natural selection
+        population = natural_selection(population)
+
         # Mutation
         children = mutation(children)
         population = mutation(population)
