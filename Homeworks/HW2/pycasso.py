@@ -43,14 +43,14 @@ print_info = True
 
 
 
-num_inds = 5 #20  # Individual Number
-num_genes = 15 #50 # Gene Number
+num_inds = 20 #20  # Individual Number
+num_genes = 50 #50 # Gene Number
 num_generations = 10000 # Generation Number
 
-tm_size = 2 # Tournament size
-frac_elites = 0.04 # Fraction of elites
-frac_parents = 0.15 # Fraction of parents
-mutation_prob = 0.1  # Mutation probability
+tm_size = 5 # Tournament size
+frac_elites = 0.2 # Fraction of elites
+frac_parents = 0.6 # Fraction of parents
+mutation_prob = 0.2  # Mutation probability
 mutation_type = 1 # Mutation type
 
 
@@ -182,7 +182,7 @@ def elitism(population):
     attendees = copy.deepcopy(population)
     elites = []
     best_index = []
-    for i in range(math.ceil(frac_elites*num_inds)):
+    for i in range(int(frac_elites*num_inds)):
         j = 0
         k = 0
         best = attendees[0]
@@ -195,8 +195,8 @@ def elitism(population):
         elites.append(best)
         attendees.remove(best)
     # print("best index: ", best_index)
-    for j in sorted(best_index, reverse=True):
-        del population[j]
+    # for j in sorted(best_index, reverse=True):
+    #     del population[j]
     return elites
 
 
@@ -211,19 +211,19 @@ def elitism(population):
 def natural_selection(population):
     parents = []
     testants = population
-    for i in range(math.ceil(num_inds - math.ceil(frac_elites*num_inds)- math.ceil(frac_parents*num_inds))):
+    for i in range(int(num_inds - int(frac_elites*num_inds)- int(frac_parents*num_inds))):
         parents.append(tournament_selection(testants))
         testants.remove(parents[i])
-        # population.remove(parents[i])
+        ### population.remove(parents[i])
     return parents
 
 def parent_selection(population):
     parents = []
     testants = population
-    for i in range(math.ceil(frac_parents*num_inds)):
+    for i in range(int(frac_parents*num_inds)):
         parents.append(tournament_selection(testants))
         testants.remove(parents[i])
-        # population.remove(parents[i])
+        ### population.remove(parents[i])
     return parents
 
 
@@ -239,7 +239,7 @@ def parent_selection(population):
 # from the other parent which is not chosen for child 1, where 0 ⩽ i < <num genes>.
 def crossover(parents):
     children = []
-    for i in range(math.ceil(frac_parents*num_inds/2)):
+    for i in range(int(frac_parents*num_inds/2)):
         child1 = []
         child2 = []
         for j in range(num_genes):
@@ -342,12 +342,12 @@ def main():
     best_temp = population[0]
     for i in range(num_generations):
         a = 0 
-        # print("START")
+        print("START")
         for individual in population:
             a += 1
-            # print("individual:",a,"fitness:",  individual.fitness)
+            print("individual:",a,"fitness:",  individual.fitness)
             evaluate_individual(individual)
-            # print("individual:",a,"fitness:",  individual.fitness)
+            print("individual:",a,"fitness:",  individual.fitness)
 
 
 ##
@@ -391,7 +391,7 @@ def main():
         # print("population size2: ", len(population), "children size:", len(children))
 
         # Natural selection
-        # population = natural_selection(population)
+        population = natural_selection(population)
 
         # Mutation
         children = mutation(children)
