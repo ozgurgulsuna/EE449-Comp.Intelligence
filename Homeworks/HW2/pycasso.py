@@ -24,14 +24,14 @@ import copy
 
 # Global variables
 source_image_path = "images/"
-source_image_name = "test.png"
+source_image_name = "cafe_terrace_at_night.png"
 source_image = cv2.imread(source_image_path + source_image_name)
 test = cv2.imread("images/test.png")
 test_image = cv2.imread("images/test_son.png")
 h = source_image.shape[0]
 w = source_image.shape[1]
-#s_max = int(math.sqrt(h**2+w**2))   # Maximum circle size, diagonal of the image, radius
-s_max = 0.3*min(h,w)
+s_max = int(math.sqrt(h**2+w**2)*0.3)   # Maximum circle size, diagonal of the image, radius
+# s_max = 0.2*min(h,w)
 h_margin = 1*h               # Horizontal margin
 w_margin = 1*w               # Vertical margin 
 
@@ -43,14 +43,14 @@ print_info = True
 
 
 
-num_inds = 20 #20  # Individual Number
-num_genes = 50 #50 # Gene Number
+num_inds = 5 #20  # Individual Number
+num_genes = 15 #50 # Gene Number
 num_generations = 10000 # Generation Number
 
-tm_size = 5 # Tournament size
-frac_elites = 0.2 # Fraction of elites
-frac_parents = 0.6 # Fraction of parents
-mutation_prob = 0.2  # Mutation probability
+tm_size = 2 # Tournament size
+frac_elites = 0.04 # Fraction of elites
+frac_parents = 0.15 # Fraction of parents
+mutation_prob = 0.1  # Mutation probability
 mutation_type = 1 # Mutation type
 
 
@@ -105,7 +105,7 @@ def init_population():
     
     for individual in population:
         evaluate_individual(individual)  
-        print("individual fitness: ", individual.fitness)
+        # print("individual fitness: ", individual.fitness)
           
     return population
 
@@ -194,9 +194,9 @@ def elitism(population):
         best_index.append(k)
         elites.append(best)
         attendees.remove(best)
-    print("best index: ", best_index)
-    # for j in sorted(best_index, reverse=True):
-    #     del population[j]
+    # print("best index: ", best_index)
+    for j in sorted(best_index, reverse=True):
+        del population[j]
     return elites
 
 
@@ -342,12 +342,12 @@ def main():
     best_temp = population[0]
     for i in range(num_generations):
         a = 0 
-        print("START")
+        # print("START")
         for individual in population:
             a += 1
-            print("individual:",a,"fitness:",  individual.fitness)
+            # print("individual:",a,"fitness:",  individual.fitness)
             evaluate_individual(individual)
-            print("individual:",a,"fitness:",  individual.fitness)
+            # print("individual:",a,"fitness:",  individual.fitness)
 
 
 ##
@@ -382,24 +382,24 @@ def main():
 
         # Elites selected, isolated from the population
         elites = elitism(population)
-        print("population size1: ", len(population), "elite size:", len(elites))
+        # print("population size1: ", len(population), "elite size:", len(elites))
         # Parents selected, isolated from the population
         parents = parent_selection(population)
-        print("population size1: ", len(population), "parent size:", len(parents))
+        # print("population size1: ", len(population), "parent size:", len(parents))
         # Crossover
         children = crossover(parents)
-        print("population size2: ", len(population), "children size:", len(children))
+        # print("population size2: ", len(population), "children size:", len(children))
 
         # Natural selection
-        population = natural_selection(population)
+        # population = natural_selection(population)
 
         # Mutation
         children = mutation(children)
         population = mutation(population)
-        print("population size3: ", len(population))
+        # print("population size3: ", len(population))
         population = elites + children + population
 
-        print("population size4: ", len(population))
+        # print("population size4: ", len(population))
 
 
 
