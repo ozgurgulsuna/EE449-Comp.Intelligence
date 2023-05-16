@@ -31,12 +31,14 @@ import matplotlib.pyplot as plt
 
 # Global variables
 source_image_path = "images/"
-source_image_name = "mon_alisa.png"
+source_image_name = "test.png"
 source_image = cv2.imread(source_image_path + source_image_name)
+test = cv2.imread("images/test.png")
+test_image = cv2.imread("images/test_son.png")
 h = source_image.shape[0]
 w = source_image.shape[1]
 #s_max = int(math.sqrt(h**2+w**2))   # Maximum circle size, diagonal of the image, radius
-s_max = 0.5*min(h,w)
+s_max = 0.2*min(h,w)
 h_margin = 1*h               # Horizontal margin
 w_margin = 1*w               # Vertical margin 
 
@@ -154,6 +156,8 @@ def evaluate_individual(individual):
         # cv2.destroyAllWindows()
 
     fitness = 0
+    # test_fitness = np.sum((test_image.astype(np.int64)-test.astype(np.int64))**2)
+    # print("test fitness: ", test_fitness)
     fitness = np.sum((image.astype(np.int64)-source_image.astype(np.int64))**2)
 
     # fitness = 0
@@ -162,9 +166,6 @@ def evaluate_individual(individual):
     #         for k in range(3):
     #             # fitness += abs(int(image[i][j][k]) - int(source_image[i][j][k]))
     #             fitness += (int(image[i][j][k]) - int(source_image[i][j][k]))**2
-    
-
-
 
     individual.fitness = -1*fitness
 
@@ -294,25 +295,38 @@ def within_limits(phenotype, upper_lim, lower_lim,range):
 def mutation(population):
     for individual in population:
         for gene in individual.genes:
-            if random.random() < mutation_prob:
-                if mutation_type == 0:
-                    while not check_circle(gene):
+            if mutation_type == 0:
+                while not check_circle(gene):
+                    if random.random() < mutation_prob:
                         gene.x = random.randint(-w_margin, w+w_margin)
+                    if random.random() < mutation_prob:
                         gene.y = random.randint(-h_margin, h+h_margin)
+                    if random.random() < mutation_prob:
                         gene.s = random.randint(0, s_max)
+                if random.random() < mutation_prob:
                     gene.r = random.randint(0, 255)
+                if random.random() < mutation_prob:
                     gene.g = random.randint(0, 255)
+                if random.random() < mutation_prob:
                     gene.b = random.randint(0, 255)
+                if random.random() < mutation_prob:
                     gene.a = random.uniform(0,1)
-                elif mutation_type == 1:
-                    while not check_circle(gene):
+            elif mutation_type == 1:
+                while not check_circle(gene):
+                    if random.random() < mutation_prob:
                         gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
+                    if random.random() < mutation_prob:
                         gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
+                    if random.random() < mutation_prob:
                         gene.s = int(within_limits(gene.s, s_max, 0, 10))
+                if random.random() < mutation_prob:
                     gene.r = int(within_limits(gene.r, 255, 0, 64))
+                if random.random() < mutation_prob:
                     gene.g = int(within_limits(gene.g, 255, 0, 64))
+                if random.random() < mutation_prob:
                     gene.b = int(within_limits(gene.b, 255, 0, 64))
-                    gene.a = within_limits(gene.a, 1, 0, 0.1)
+                if random.random() < mutation_prob:
+                    gene.a = within_limits(gene.a, 1, 0, 0.25)
     return population
 
 # TODO : mutate only one phenotype, eg color, size, position, etc. 
