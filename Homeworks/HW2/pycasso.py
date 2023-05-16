@@ -102,7 +102,7 @@ def init_population():
             b = random.randint(0, 255)
             a = random.uniform(0,1)
             genes.append(Gene(x, y, s, r, g, b, a))
-        population.append(Individual(genes, 0))
+        population.append(Individual(genes, 1))
     if print_info == True:
         print("Population initialized, checking collisions...")
 
@@ -246,14 +246,15 @@ def crossover(parents):
         child2 = []
         for j in range(num_genes):
             if random.random() < 0.5:
-                child1.append(parents[2*i].genes[j])
-                child2.append(parents[2*i+1].genes[j])
+                child1.append(parents[i].genes[j])
+                child2.append(parents[i+1].genes[j])
             else:
-                child1.append(parents[2*i+1].genes[j])
-                child2.append(parents[2*i].genes[j])
-        children.append(Individual(child1, 0))
-        children.append(Individual(child2, 0))
+                child1.append(parents[i+1].genes[j])
+                child2.append(parents[i].genes[j])
+        children.append(Individual(child1, 2))
+        children.append(Individual(child2, 2))
     return children
+
 
 
 #check the negative limits and correct them
@@ -266,29 +267,50 @@ def within_limits(phenotype, upper_lim, lower_lim,range):
     return phenotype
         
 def mutation(population):
-    for individual in population:
+    popul = population.copy()
+    for individual in popul:
         individual.fitness = 1    # mutated individuals are not evaluated
         for gene in individual.genes:
             if random.random() < mutation_prob:
-                if mutation_type == 0:
-                    while not check_circle(gene):
-                        gene.x = random.randint(-w_margin, w+w_margin)
-                        gene.y = random.randint(-h_margin, h+h_margin)
-                        gene.s = random.randint(0, s_max)
-                    gene.r = random.randint(0, 255)
-                    gene.g = random.randint(0, 255)
-                    gene.b = random.randint(0, 255)
-                    gene.a = random.uniform(0,1)
-                elif mutation_type == 1:
-                    while not check_circle(gene):
-                        gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
-                        gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
-                        gene.s = int(within_limits(gene.s, s_max, 0, 10))
-                    gene.r = int(within_limits(gene.r, 255, 0, 64))
-                    gene.g = int(within_limits(gene.g, 255, 0, 64))
-                    gene.b = int(within_limits(gene.b, 255, 0, 64))
-                    gene.a = within_limits(gene.a, 1, 0, 0.25)
-    return population
+                while not check_circle(gene):
+                    gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
+                    gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
+                    gene.s = int(within_limits(gene.s, s_max, 0, 10))
+                gene.r = int(within_limits(gene.r, 255, 0, 64))
+                gene.g = int(within_limits(gene.g, 255, 0, 64))
+                gene.b = int(within_limits(gene.b, 255, 0, 64))
+                gene.a = within_limits(gene.a, 1, 0, 0.25)
+    return popul
+
+
+
+# def mutation(population):
+#     popul = population.copy()
+#     for individual in popul:
+#         individual.fitness = 1    # mutated individuals are not evaluated
+#         for gene in individual.genes:
+#             if random.random() < mutation_prob:
+#                 if mutation_type == 0:
+#                     while not check_circle(gene):
+#                         gene.x = random.randint(-w_margin, w+w_margin)
+#                         gene.y = random.randint(-h_margin, h+h_margin)
+#                         gene.s = random.randint(0, s_max)
+#                     gene.r = random.randint(0, 255)
+#                     gene.g = random.randint(0, 255)
+#                     gene.b = random.randint(0, 255)
+#                     gene.a = random.uniform(0,1)
+#                 elif mutation_type == 1:
+#                     while not check_circle(gene):
+#                         gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
+#                         gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
+#                         gene.s = int(within_limits(gene.s, s_max, 0, 10))
+#                     gene.r = int(within_limits(gene.r, 255, 0, 64))
+#                     gene.g = int(within_limits(gene.g, 255, 0, 64))
+#                     gene.b = int(within_limits(gene.b, 255, 0, 64))
+#                     gene.a = within_limits(gene.a, 1, 0, 0.25)
+#     return popul
+
+
 
 # # Mutation : single phenotype
 # def mutation(population):
@@ -341,10 +363,10 @@ def main():
         print("START")
         for individual in population:
             a += 1
-            if individual.fitness == 1:
-                print("individual:",a,"fitness:",  individual.fitness)
-                individual = evaluate_individual(individual)
-                print("individual:",a,"fitness:",  individual.fitness)
+            # if individual.fitness == 1:
+            print("individual:",a,"fitness:",  individual.fitness)
+            individual = evaluate_individual(individual)
+            print("individual:",a,"fitness:",  individual.fitness)
 
 
 ##
@@ -366,7 +388,7 @@ def main():
             best_temp = best
             image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
             image.fill(255)
-            best.genes.sort(key=lambda x: x.s, reverse=True)
+            best.genes.sort(key=lambda x: x.s, reverse=True)   ####
             for gene in best.genes:
                 overlay = image.copy()
                 cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
@@ -378,26 +400,28 @@ def main():
 
         # print("population size: ", len(population))
         # print(population)
+        inc_elites = population.copy()
+
         elites = elitism(population)
-        for elite in elites:
-            print("elite fitness: ", elite.fitness)
-        for individual in population:
-            print("population fitness: ", individual.fitness)
         
         # print("population size: ", len(population))
 
         elitless = population.copy()
-        population = population.copy()+elites.copy()
+        # population = population.copy()+elites.copy()
 
         # print("population size: ", len(population))
-        parents = parent_selection(population)
+        parents = parent_selection(inc_elites)
         # print("population size: ", len(population))
         children = crossover(parents)
         # print("population size: ", len(population))
-        children = mutation(children)
+        # children = mutation(children)
+
         # print("population size: ", len(population))
-        population = natural_selection(population)
-        population = mutation(population)
+
+        population = natural_selection(elitless)
+
+        # population = mutation(population)
+
         # print("population size: ", len(population))
         populationa =  elites.copy() + children.copy() + population.copy() 
         for individual in populationa:
