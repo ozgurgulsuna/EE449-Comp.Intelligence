@@ -38,7 +38,7 @@ test_image = cv2.imread("images/test_son.png")
 h = source_image.shape[0]
 w = source_image.shape[1]
 #s_max = int(math.sqrt(h**2+w**2))   # Maximum circle size, diagonal of the image, radius
-s_max = 0.2*min(h,w)
+s_max = 0.3*min(h,w)
 h_margin = 1*h               # Horizontal margin
 w_margin = 1*w               # Vertical margin 
 
@@ -53,9 +53,9 @@ print_info = True
 
 
 
-num_inds = 20   # Individual Number
-num_genes = 50 # Gene Number
-num_generations = 20000 # Generation Number
+num_inds = 10 #20  # Individual Number
+num_genes = 10 #50 # Gene Number
+num_generations = 20 # Generation Number
 
 tm_size = 5 # Tournament size
 frac_elites = 0.2 # Fraction of elites
@@ -143,7 +143,6 @@ def evaluate_individual(individual):
     image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
     image.fill(255)
 
-    
     # Sort genes by size
     individual.genes.sort(key=lambda x: x.s, reverse=True)
 
@@ -216,8 +215,9 @@ def elitism(population):
 
 def natural_selection(population):
     best = []
-    for i in range(math.ceil(num_inds - frac_elites*num_inds)):
+    for i in range(math.ceil(num_inds - math.ceil(frac_elites*num_inds)- math.ceil(frac_parents*num_inds)*2)):
         best.append(tournament_selection(population))
+        population.remove(best[i])
     return best
 
 def parent_selection(population):
@@ -252,34 +252,6 @@ def crossover(parents):
         children.append(Individual(child2, 0))
     return children
 
-# def crossover(parents):
-#     children = []
-#     for i in range(int((num_inds - frac_elites*num_inds - frac_parents*num_inds)/2)):
-#         parent1 = random.choice(parents)
-#         parent2 = random.choice(parents)
-#         child1 = []
-#         child2 = []
-#         for j in range(num_genes):
-#             if random.random() < 0.5:
-#                 child1.append(parent1.genes[j])
-#                 child2.append(parent2.genes[j])
-#             else:
-#                 child1.append(parent2.genes[j])
-#                 child2.append(parent1.genes[j])
-#         children.append(Individual(child1, 0))
-#         children.append(Individual(child2, 0))
-#     return children
-
-
-#     # for i in range(int(frac_parents*num_inds)):
-#     #     child_genes = []
-#     #     for j in range(num_genes):
-#     #         if random.random() < 0.5:
-#     #             child_genes.append(parents[i].genes[j])
-#     #         else:
-#     #             child_genes.append(parents[i+1].genes[j])
-#     #     children.append(Individual(child_genes, 0))
-#     # return children
 
 #check the negative limits and correct them
 def within_limits(phenotype, upper_lim, lower_lim,range):
@@ -290,62 +262,90 @@ def within_limits(phenotype, upper_lim, lower_lim,range):
             break
     return phenotype
         
-
-# Mutation
 def mutation(population):
     for individual in population:
+        individual.fitness = 1    # mutated individuals are not evaluated
         for gene in individual.genes:
-            if mutation_type == 0:
-                while not check_circle(gene):
-                    if random.random() < mutation_prob:
+            if random.random() < mutation_prob:
+                if mutation_type == 0:
+                    while not check_circle(gene):
                         gene.x = random.randint(-w_margin, w+w_margin)
-                    if random.random() < mutation_prob:
                         gene.y = random.randint(-h_margin, h+h_margin)
-                    if random.random() < mutation_prob:
                         gene.s = random.randint(0, s_max)
-                if random.random() < mutation_prob:
                     gene.r = random.randint(0, 255)
-                if random.random() < mutation_prob:
                     gene.g = random.randint(0, 255)
-                if random.random() < mutation_prob:
                     gene.b = random.randint(0, 255)
-                if random.random() < mutation_prob:
                     gene.a = random.uniform(0,1)
-            elif mutation_type == 1:
-                while not check_circle(gene):
-                    if random.random() < mutation_prob:
+                elif mutation_type == 1:
+                    while not check_circle(gene):
                         gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
-                    if random.random() < mutation_prob:
                         gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
-                    if random.random() < mutation_prob:
                         gene.s = int(within_limits(gene.s, s_max, 0, 10))
-                if random.random() < mutation_prob:
                     gene.r = int(within_limits(gene.r, 255, 0, 64))
-                if random.random() < mutation_prob:
                     gene.g = int(within_limits(gene.g, 255, 0, 64))
-                if random.random() < mutation_prob:
                     gene.b = int(within_limits(gene.b, 255, 0, 64))
-                if random.random() < mutation_prob:
                     gene.a = within_limits(gene.a, 1, 0, 0.25)
     return population
 
-# TODO : mutate only one phenotype, eg color, size, position, etc. 
+# # Mutation : single phenotype
+# def mutation(population):
+#     for individual in population:
+#         for gene in individual.genes:
+#             if mutation_type == 0:
+#                 while not check_circle(gene):
+#                     if random.random() < mutation_prob:
+#                         gene.x = random.randint(-w_margin, w+w_margin)
+#                     if random.random() < mutation_prob:
+#                         gene.y = random.randint(-h_margin, h+h_margin)
+#                     if random.random() < mutation_prob:
+#                         gene.s = random.randint(0, s_max)
+#                 if random.random() < mutation_prob:
+#                     gene.r = random.randint(0, 255)
+#                 if random.random() < mutation_prob:
+#                     gene.g = random.randint(0, 255)
+#                 if random.random() < mutation_prob:
+#                     gene.b = random.randint(0, 255)
+#                 if random.random() < mutation_prob:
+#                     gene.a = random.uniform(0,1)
+#             elif mutation_type == 1:
+#                 while not check_circle(gene):
+#                     if random.random() < mutation_prob:
+#                         gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
+#                     if random.random() < mutation_prob:
+#                         gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
+#                     if random.random() < mutation_prob:
+#                         gene.s = int(within_limits(gene.s, s_max, 0, 10))
+#                 if random.random() < mutation_prob:
+#                     gene.r = int(within_limits(gene.r, 255, 0, 64))
+#                 if random.random() < mutation_prob:
+#                     gene.g = int(within_limits(gene.g, 255, 0, 64))
+#                 if random.random() < mutation_prob:
+#                     gene.b = int(within_limits(gene.b, 255, 0, 64))
+#                 if random.random() < mutation_prob:
+#                     gene.a = within_limits(gene.a, 1, 0, 0.25)
+#     return population
+# DONE : mutate only one phenotype, eg color, size, position, etc. 
 
 # Main
 def main():
     que = []
     start_time = time.time()
     population = init_population()
+    best = population[0]
+    best_temp = population[1]
     for i in range(num_generations):
+        a = 0 
+        print("START")
         for individual in population:
+            a += 1
+            print("individual:",a,"fitness:",  individual.fitness)
             evaluate_individual(individual)
-            # print("fitness:", individual.fitness)
+            print("individual:",a,"fitness:",  individual.fitness)
 ##
-        best = population[0]
         for individual in population:
             if (individual.fitness > best.fitness) and (individual.fitness < 0):
                 best = individual
-        if print_info == True and i%10 == 0:
+        if print_info == True and i%1 == 0:
             print("Generation: ", i, "Best fitness: ", best.fitness)
 
         if i%10 == 0:
@@ -355,7 +355,7 @@ def main():
             plt.pause(0.1)
             plt.clf()
 
-        best_temp = population[1]
+        
         if best.fitness > best_temp.fitness:
             best_temp = best
             image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
@@ -373,8 +373,16 @@ def main():
         # print("population size: ", len(population))
         # print(population)
         elites = elitism(population)
+        for elite in elites:
+            print("elite fitness: ", elite.fitness)
+        for individual in population:
+            print("population fitness: ", individual.fitness)
+        
         # print("population size: ", len(population))
-        # population = population+elites
+
+        elitless = population.copy()
+        population = population.copy()+elites.copy()
+
         # print("population size: ", len(population))
         parents = parent_selection(population)
         # print("population size: ", len(population))
@@ -382,10 +390,15 @@ def main():
         # print("population size: ", len(population))
         children = mutation(children)
         # print("population size: ", len(population))
+        population = natural_selection(population)
         population = mutation(population)
         # print("population size: ", len(population))
-        population = population + elites + children 
+        populationa =  elites.copy() + children.copy() + population.copy() 
+        for individual in populationa:
+            print("population fitness at end: ", individual.fitness)
         # print("population size: ", len(population))
+        population = []
+        population = populationa.copy()
 
 
     end_time = time.time()
