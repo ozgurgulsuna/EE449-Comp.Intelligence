@@ -53,9 +53,9 @@ print_info = True
 
 
 
-num_inds = 10 #20  # Individual Number
-num_genes = 10 #50 # Gene Number
-num_generations = 20 # Generation Number
+num_inds = 20 #20  # Individual Number
+num_genes = 50 #50 # Gene Number
+num_generations = 10000 # Generation Number
 
 tm_size = 5 # Tournament size
 frac_elites = 0.2 # Fraction of elites
@@ -86,7 +86,7 @@ class Image:
     def __init__(self, width, height, genes):
         self.width = width
         self.height = height
-        self.genes = genes.astype('int32')
+        self.genes = genes.astype('int64')
 
 # Population initialization
 def init_population():
@@ -117,8 +117,11 @@ def init_population():
         print("Collisions checked, Sorting population...")
 
     # Sort population by size
+    # for individual in population:
+    #     individual.genes.sort(key=lambda x: x.s, reverse=True)
+    
     for individual in population:
-        individual.genes.sort(key=lambda x: x.s, reverse=True)
+        individual = evaluate_individual(individual)    
     
     return population
 
@@ -157,7 +160,7 @@ def evaluate_individual(individual):
     fitness = 0
     # test_fitness = np.sum((test_image.astype(np.int64)-test.astype(np.int64))**2)
     # print("test fitness: ", test_fitness)
-    fitness = np.sum((image.astype(np.int64)-source_image.astype(np.int64))**2)
+    fitness = np.sum(np.square(image.astype(np.int64)-source_image.astype(np.int64)))
 
     # fitness = 0
     # for i in range(h):
@@ -166,7 +169,7 @@ def evaluate_individual(individual):
     #             # fitness += abs(int(image[i][j][k]) - int(source_image[i][j][k]))
     #             fitness += (int(image[i][j][k]) - int(source_image[i][j][k]))**2
 
-    individual.fitness = -1*fitness
+    individual.fitness = -1*fitness.copy()
 
     return individual
 
@@ -332,15 +335,18 @@ def main():
     start_time = time.time()
     population = init_population()
     best = population[0]
-    best_temp = population[1]
+    best_temp = population[0]
     for i in range(num_generations):
         a = 0 
         print("START")
         for individual in population:
             a += 1
-            print("individual:",a,"fitness:",  individual.fitness)
-            evaluate_individual(individual)
-            print("individual:",a,"fitness:",  individual.fitness)
+            if individual.fitness == 1:
+                print("individual:",a,"fitness:",  individual.fitness)
+                individual = evaluate_individual(individual)
+                print("individual:",a,"fitness:",  individual.fitness)
+
+
 ##
         for individual in population:
             if (individual.fitness > best.fitness) and (individual.fitness < 0):
