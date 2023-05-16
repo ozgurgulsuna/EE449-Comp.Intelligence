@@ -53,8 +53,8 @@ print_info = True
 
 
 
-num_inds = 20 #20  # Individual Number
-num_genes = 50 #50 # Gene Number
+num_inds = 10 #20  # Individual Number
+num_genes = 10 #50 # Gene Number
 num_generations = 10000 # Generation Number
 
 tm_size = 5 # Tournament size
@@ -266,11 +266,15 @@ def within_limits(phenotype, upper_lim, lower_lim,range):
             break
     return phenotype
         
-def mutation(population):
-    popul = population.copy()
+
+
+def mutation(anan):
+    popul = anan.copy()
     for individual in popul:
+        # print("muttuobe indivv :", individual)
         individual.fitness = 1    # mutated individuals are not evaluated
         for gene in individual.genes:
+            # print("muttuobe gene :", gene)
             if random.random() < mutation_prob:
                 while not check_circle(gene):
                     gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
@@ -281,6 +285,22 @@ def mutation(population):
                 gene.b = int(within_limits(gene.b, 255, 0, 64))
                 gene.a = within_limits(gene.a, 1, 0, 0.25)
     return popul
+
+# def mutation(population):
+#     popul = population.copy()
+#     for individual in popul:
+#         individual.fitness = 1    # mutated individuals are not evaluated
+#         for gene in individual.genes:
+#             if random.random() < mutation_prob:
+#                 while not check_circle(gene):
+#                     gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
+#                     gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
+#                     gene.s = int(within_limits(gene.s, s_max, 0, 10))
+#                 gene.r = int(within_limits(gene.r, 255, 0, 64))
+#                 gene.g = int(within_limits(gene.g, 255, 0, 64))
+#                 gene.b = int(within_limits(gene.b, 255, 0, 64))
+#                 gene.a = within_limits(gene.a, 1, 0, 0.25)
+#     return popul
 
 
 
@@ -312,7 +332,7 @@ def mutation(population):
 
 
 
-# # Mutation : single phenotype
+# # # Mutation : single phenotype
 # def mutation(population):
 #     for individual in population:
 #         for gene in individual.genes:
@@ -400,35 +420,45 @@ def main():
 
         # print("population size: ", len(population))
         # print(population)
-        inc_elites = population.copy()
+
 
         elites = elitism(population)
         
         # print("population size: ", len(population))
 
-        elitless = population.copy()
+        # elitless = population.copy()
+        # population_all = population.copy() 
         # population = population.copy()+elites.copy()
 
         # print("population size: ", len(population))
-        parents = parent_selection(inc_elites)
+        parents = parent_selection(population)
         # print("population size: ", len(population))
         children = crossover(parents)
         # print("population size: ", len(population))
-        # children = mutation(children)
 
         # print("population size: ", len(population))
 
-        population = natural_selection(elitless)
+        # selected = natural_selection(inc_elites)
+
+        # inc_elites = []
 
         # population = mutation(population)
+        pop = mutation(population)
+        # mutation(children)
+        # mutated =children+population
+ 
+        population  =  elites + children+pop
+        children = []
+        elites = []
+        mutated = []
 
         # print("population size: ", len(population))
-        populationa =  elites.copy() + children.copy() + population.copy() 
-        for individual in populationa:
+
+        for individual in population:
             print("population fitness at end: ", individual.fitness)
         # print("population size: ", len(population))
-        population = []
-        population = populationa.copy()
+        # population = []
+        # population = populationa.copy()
 
 
     end_time = time.time()
