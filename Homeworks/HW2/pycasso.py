@@ -245,10 +245,10 @@ def within_limits(phenotype, upper_lim, lower_lim,range):
 
 
 def mutation(population):
-    popul = population.copy()
-    for individual in popul:
+    popul = []
+    for individual in population:
         # print("muttuobe indivv :", individual)
-        individual.fitness = 1    # mutated individuals are not evaluated
+        individual.fitness = 15    # mutated individuals are not evaluated
         for gene in individual.genes:
             # print("muttuobe gene :", gene)
             if random.random() < mutation_prob:
@@ -260,7 +260,9 @@ def mutation(population):
                 gene.g = int(within_limits(gene.g, 255, 0, 64))
                 gene.b = int(within_limits(gene.b, 255, 0, 64))
                 gene.a = within_limits(gene.a, 1, 0, 0.25)
-    return 
+        popul.append(individual)
+
+    return popul 
 
 # # # Mutation : single phenotype
 # def mutation(population):
@@ -374,7 +376,14 @@ def main():
 
         selected = natural_selection(population).copy()
 
-        mutation(selected)
+        for individual in selected:
+            print("selected fitness: ", individual.fitness)
+
+        selected = mutation(selected)
+
+        for individual in selected:
+            print("selected fitness: ", individual.fitness)
+            
         population = []
         population = (ellam + children + selected).copy()
 
