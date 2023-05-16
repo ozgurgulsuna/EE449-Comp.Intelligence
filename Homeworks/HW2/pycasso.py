@@ -14,20 +14,12 @@
 import cv2
 import numpy as np
 import random
+
 import math
 import time
+
 import matplotlib.pyplot as plt
 
-# import sys
-# import os
-
-# from PIL import Image
-# from PIL import ImageDraw
-# from PIL import ImageFont
-
-# from datetime import datetime
-
-# from multiprocessing import Pool
 
 # Global variables
 source_image_path = "images/"
@@ -42,9 +34,6 @@ s_max = 0.3*min(h,w)
 h_margin = 1*h               # Horizontal margin
 w_margin = 1*w               # Vertical margin 
 
-# cv2.imshow("image", image)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
 
 ##----------------------------------------------------------------------------##
 # Information Display
@@ -81,13 +70,6 @@ class Gene:
         self.b = b
         self.a = a
 
-# Class for image
-class Image:
-    def __init__(self, width, height, genes):
-        self.width = width
-        self.height = height
-        self.genes = genes.astype('int64')
-
 # Population initialization
 def init_population():
     population = []
@@ -121,8 +103,9 @@ def init_population():
     #     individual.genes.sort(key=lambda x: x.s, reverse=True)
     
     for individual in population:
-        individual = evaluate_individual(individual)    
-    
+        evaluate_individual(individual)  
+        print("individual fitness: ", individual.fitness)
+          
     return population
 
 # Check if a circle is inside the image
@@ -143,12 +126,11 @@ def check_circle(gene):
 
 # Individual Evaluation
 def evaluate_individual(individual):
-    image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
-    image.fill(255)
-
     # Sort genes by size
     individual.genes.sort(key=lambda x: x.s, reverse=True)
 
+    image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
+    image.fill(255)
     for gene in individual.genes:
         overlay = image.copy()
         cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
@@ -170,8 +152,7 @@ def evaluate_individual(individual):
     #             fitness += (int(image[i][j][k]) - int(source_image[i][j][k]))**2
 
     individual.fitness = -1*fitness.copy()
-
-    return individual
+    return 
 
 # Tournament selection
 def tournament_selection(population):
@@ -195,39 +176,34 @@ def tournament_selection(population):
     # print("best: ", best.fitness)
     return best
 
-    # for i in range(tm_size):
-    #     tournament.append(random.choice(population))
-    # best = tournament[0]
-    # for i in range(tm_size):
-    #     if tournament[i].fitness > best.fitness:
-    #         best = tournament[i]
-    # return best
-
 # Elitism
 def elitism(population):
+    attendees = population.copy()
     elites = []
     for i in range(math.ceil(frac_elites*num_inds)):
-        best = population[0]
-        for individual in population:
+        best = attendees[0]
+        for individual in attendees:
             if individual.fitness > best.fitness:
                 best = individual
         elites.append(best)
-        population.remove(best)
+        attendees.remove(best)
     return elites
 
 
 def natural_selection(population):
     best = []
+    participants = population.copy()
     for i in range(math.ceil(num_inds - math.ceil(frac_elites*num_inds)- math.ceil(frac_parents*num_inds)*2)):
-        best.append(tournament_selection(population))
-        population.remove(best[i])
+        best.append(tournament_selection(participants))
+        participants.remove(best[i])
     return best
 
 def parent_selection(population):
     parents = []
+    testants = population.copy()
     for i in range(math.ceil(frac_parents*num_inds)*2):
-        parents.append(tournament_selection(population))
-        population.remove(parents[i])
+        parents.append(tournament_selection(testants))
+        testants.remove(parents[i])
     return parents
 # for <num_inds> = 5, <frac_parents> = 0.15 then <num_parents> = 0.75, which is rounded to 1 couple (1*2).
 
@@ -268,8 +244,8 @@ def within_limits(phenotype, upper_lim, lower_lim,range):
         
 
 
-def mutation(anan):
-    popul = anan.copy()
+def mutation(population):
+    popul = population.copy()
     for individual in popul:
         # print("muttuobe indivv :", individual)
         individual.fitness = 1    # mutated individuals are not evaluated
@@ -284,53 +260,7 @@ def mutation(anan):
                 gene.g = int(within_limits(gene.g, 255, 0, 64))
                 gene.b = int(within_limits(gene.b, 255, 0, 64))
                 gene.a = within_limits(gene.a, 1, 0, 0.25)
-    return popul
-
-# def mutation(population):
-#     popul = population.copy()
-#     for individual in popul:
-#         individual.fitness = 1    # mutated individuals are not evaluated
-#         for gene in individual.genes:
-#             if random.random() < mutation_prob:
-#                 while not check_circle(gene):
-#                     gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
-#                     gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
-#                     gene.s = int(within_limits(gene.s, s_max, 0, 10))
-#                 gene.r = int(within_limits(gene.r, 255, 0, 64))
-#                 gene.g = int(within_limits(gene.g, 255, 0, 64))
-#                 gene.b = int(within_limits(gene.b, 255, 0, 64))
-#                 gene.a = within_limits(gene.a, 1, 0, 0.25)
-#     return popul
-
-
-
-# def mutation(population):
-#     popul = population.copy()
-#     for individual in popul:
-#         individual.fitness = 1    # mutated individuals are not evaluated
-#         for gene in individual.genes:
-#             if random.random() < mutation_prob:
-#                 if mutation_type == 0:
-#                     while not check_circle(gene):
-#                         gene.x = random.randint(-w_margin, w+w_margin)
-#                         gene.y = random.randint(-h_margin, h+h_margin)
-#                         gene.s = random.randint(0, s_max)
-#                     gene.r = random.randint(0, 255)
-#                     gene.g = random.randint(0, 255)
-#                     gene.b = random.randint(0, 255)
-#                     gene.a = random.uniform(0,1)
-#                 elif mutation_type == 1:
-#                     while not check_circle(gene):
-#                         gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
-#                         gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
-#                         gene.s = int(within_limits(gene.s, s_max, 0, 10))
-#                     gene.r = int(within_limits(gene.r, 255, 0, 64))
-#                     gene.g = int(within_limits(gene.g, 255, 0, 64))
-#                     gene.b = int(within_limits(gene.b, 255, 0, 64))
-#                     gene.a = within_limits(gene.a, 1, 0, 0.25)
-#     return popul
-
-
+    return 
 
 # # # Mutation : single phenotype
 # def mutation(population):
@@ -385,7 +315,7 @@ def main():
             a += 1
             # if individual.fitness == 1:
             print("individual:",a,"fitness:",  individual.fitness)
-            individual = evaluate_individual(individual)
+            evaluate_individual(individual)
             print("individual:",a,"fitness:",  individual.fitness)
 
 
@@ -406,9 +336,9 @@ def main():
         
         if best.fitness > best_temp.fitness:
             best_temp = best
+            best.genes.sort(key=lambda x: x.s, reverse=True)   ####
             image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
             image.fill(255)
-            best.genes.sort(key=lambda x: x.s, reverse=True)   ####
             for gene in best.genes:
                 overlay = image.copy()
                 cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
@@ -421,20 +351,34 @@ def main():
         # print("population size: ", len(population))
         # print(population)
 
+        print("ID POP", id(population))
 
         elites = elitism(population)
-        
+        print("ID ELITES", id(elites))
+        ellam = elites.copy()
         # print("population size: ", len(population))
 
         # elitless = population.copy()
         # population_all = population.copy() 
         # population = population.copy()+elites.copy()
+        # print("population size: ", len(population))
+        
+        parents = parent_selection(population).copy()
 
+        print("ID parents", id(parents))
         # print("population size: ", len(population))
-        parents = parent_selection(population)
+        children = crossover(parents).copy()
         # print("population size: ", len(population))
-        children = crossover(parents)
-        # print("population size: ", len(population))
+
+        # mutation(children)
+
+        selected = natural_selection(population).copy()
+
+        mutation(selected)
+        population = []
+        population = (ellam + children + selected).copy()
+
+
 
         # print("population size: ", len(population))
 
@@ -443,14 +387,14 @@ def main():
         # inc_elites = []
 
         # population = mutation(population)
-        pop = mutation(population)
+        # pop = mutation(population)
         # mutation(children)
         # mutated =children+population
  
-        population  =  elites + children+pop
-        children = []
-        elites = []
-        mutated = []
+        # population  =  elites + children+pop
+        # children = []
+        # elites = []
+        # mutated = []
 
         # print("population size: ", len(population))
 
