@@ -24,7 +24,7 @@ import copy
 
 # Global variables
 source_image_path = "images/"
-source_image_name = "cafe_terrace_at_night.png"
+source_image_name = "mon_alisa.png"
 source_image = cv2.imread(source_image_path + source_image_name)
 test = cv2.imread("images/test.png")
 test_image = cv2.imread("images/test_son.png")
@@ -38,19 +38,19 @@ w_margin = 1*w               # Vertical margin
 
 ##----------------------------------------------------------------------------##
 # Information Display
-print_info = True
+print_info = False
 
 
 
 
-num_inds = 20 #20  # Individual Number
-num_genes = 50 #50 # Gene Number
-num_generations = 10000 # Generation Number
+num_inds = 30 #20  # Individual Number
+num_genes = 60 #50 # Gene Number
+num_generations = 20000 # Generation Number
 
 tm_size = 5 # Tournament size
 frac_elites = 0.2 # Fraction of elites
 frac_parents = 0.6 # Fraction of parents
-mutation_prob = 0.2  # Mutation probability
+mutation_prob = 0.4  # Mutation probability
 mutation_type = 1 # Mutation type
 
 
@@ -341,21 +341,24 @@ def main():
     best = population[0]
     best_temp = population[0]
     for i in range(num_generations):
-        a = 0 
-        print("START")
+        a = 0
+        if print_info == True and i%1 == 0:
+            print("START")
         for individual in population:
             a += 1
-            print("individual:",a,"fitness:",  individual.fitness)
+            if print_info == True and i%1 == 0:
+                print("individual:",a,"fitness:",  individual.fitness)
             evaluate_individual(individual)
-            print("individual:",a,"fitness:",  individual.fitness)
+            if print_info == True and i%1 == 0:
+                print("individual:",a,"fitness:",  individual.fitness)
 
 
 ##
         for individual in population:
             if (individual.fitness > best.fitness) and (individual.fitness < 0):
                 best = individual
-        if print_info == True and i%1 == 0:
-            print("Generation: ", i, "Best fitness: ", best.fitness)
+        
+        print("Generation: ", i, "Best fitness: ", best.fitness)
 
         if i%10 == 0:
             que.append(best.fitness)
@@ -432,17 +435,17 @@ def main():
 
 # Run
 best_case = main()
-image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
-image.fill(255)
-best_case.genes.sort(key=lambda x: x.s, reverse=True)
-for gene in best_case.genes:
-    overlay = image.copy()
-    cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
-    image = cv2.addWeighted(overlay, gene.a, image, 1 - gene.a, 0)
-    cv2.imshow("image", image)
-    cv2.waitKey(100)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
+# image.fill(255)
+# best_case.genes.sort(key=lambda x: x.s, reverse=True)
+# for gene in best_case.genes:
+#     overlay = image.copy()
+#     cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
+#     image = cv2.addWeighted(overlay, gene.a, image, 1 - gene.a, 0)
+#     cv2.imshow("image", image)
+#     cv2.waitKey(100)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
 #
 #       _____                _____            __  __  __
 #      /\    \              /\    \          /\ \/ / /\ \
