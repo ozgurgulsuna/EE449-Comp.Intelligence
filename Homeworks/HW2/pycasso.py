@@ -24,7 +24,7 @@ import copy
 
 # Global variables
 source_image_path = "images/"
-source_image_name = "mon_alisa.png"
+source_image_name = "atam.jpg"
 source_image = cv2.imread(source_image_path + source_image_name)
 test = cv2.imread("images/test.png")
 test_image = cv2.imread("images/test_son.png")
@@ -43,14 +43,14 @@ print_info = False
 
 
 
-num_inds = 30 #20  # Individual Number
-num_genes = 60 #50 # Gene Number
+num_inds =20 #20  # Individual Number
+num_genes =500 #50 # Gene Number
 num_generations = 20000 # Generation Number
 
 tm_size = 5 # Tournament size
 frac_elites = 0.2 # Fraction of elites
-frac_parents = 0.6 # Fraction of parents
-mutation_prob = 0.4  # Mutation probability
+frac_parents = 0.4 # Fraction of parents
+mutation_prob = 0.2  # Mutation probability
 mutation_type = 1 # Mutation type
 
 
@@ -278,7 +278,7 @@ def mutation(population):
                     while not check_circle(gene):
                         gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
                         gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
-                        gene.s = int(within_limits(gene.s, s_max, 0, 10))
+                        gene.s = int(within_limits(gene.s, s_max, 0, 100))
                     gene.r = int(within_limits(gene.r, 255, 0, 64))
                     gene.g = int(within_limits(gene.g, 255, 0, 64))
                     gene.b = int(within_limits(gene.b, 255, 0, 64))
@@ -296,6 +296,7 @@ def mutation(population):
 
 # # # Mutation : single phenotype
 # def mutation(population):
+#     population = copy.deepcopy(population)
 #     for individual in population:
 #         for gene in individual.genes:
 #             if mutation_type == 0:
