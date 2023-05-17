@@ -30,7 +30,7 @@ test = cv2.imread("images/test.png")
 test_image = cv2.imread("images/test_son.png")
 h = source_image.shape[0]
 w = source_image.shape[1]
-s_max = int(math.sqrt(h**2+w**2)*0.3)   # Maximum circle size, diagonal of the image, radius
+s_max = int(math.sqrt(h**2+w**2)*0.2)   # Maximum circle size, diagonal of the image, radius
 # s_max = 0.2*min(h,w)
 h_margin = 1*h               # Horizontal margin
 w_margin = 1*w               # Vertical margin 
@@ -44,7 +44,7 @@ print_info = False
 
 
 num_inds =20 #20  # Individual Number
-num_genes =500 #50 # Gene Number
+num_genes =1500 #50 # Gene Number
 num_generations = 20000 # Generation Number
 
 tm_size = 5 # Tournament size
@@ -81,8 +81,8 @@ def init_population():
             y = random.randint(-w_margin, w+w_margin)
             s = random.randint(0, s_max)
             r = random.randint(0, 255)
-            g = random.randint(0, 255)
-            b = random.randint(0, 255)
+            g = r
+            b = r
             a = random.uniform(0,1)
             genes.append(Gene(x, y, s, r, g, b, a))
         population.append(Individual(genes, 1))
@@ -280,8 +280,8 @@ def mutation(population):
                         gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
                         gene.s = int(within_limits(gene.s, s_max, 0, 100))
                     gene.r = int(within_limits(gene.r, 255, 0, 64))
-                    gene.g = int(within_limits(gene.g, 255, 0, 64))
-                    gene.b = int(within_limits(gene.b, 255, 0, 64))
+                    gene.g = gene.r
+                    gene.b = gene.r
                     gene.a = within_limits(gene.a, 1, 0, 0.25)
                 if mutation_type == 0:
                     while not check_circle(gene):
