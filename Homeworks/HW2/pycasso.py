@@ -43,7 +43,7 @@ save = True
 
 # Variables------------------------------------------------------------------##
 num_inds = 20 #20  # Individual Number
-num_genes = 50 #50 # Gene Number
+num_genes = 30 #50 # Gene Number
 num_generations = 10000 # Generation Number
 
 tm_size = 5 # Tournament size
@@ -333,7 +333,7 @@ def main():
             init_fit.append(best.fitness)
             plt.plot(init_fit)
             # plt.draw()
-            plt.title("Fitness Plot from Generation 1 to 1000")
+            plt.title("Fitness Plot from Generation 1 to 10000")
             plt.ylabel('Fitness')
             plt.xlabel('Generation')
             if i%100 == 0 and save == True:
