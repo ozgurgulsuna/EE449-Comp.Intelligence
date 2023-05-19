@@ -24,13 +24,13 @@ import copy
 
 # Global variables
 source_image_path = "images/"
-source_image_name = "atam.jpg"
+source_image_name = "mon-alisa-128.png"
 source_image = cv2.imread(source_image_path + source_image_name)
 test = cv2.imread("images/test.png")
 test_image = cv2.imread("images/test_son.png")
 h = source_image.shape[0]
 w = source_image.shape[1]
-s_max = int(math.sqrt(h**2+w**2)*0.2)   # Maximum circle size, diagonal of the image, radius
+s_max = int(math.sqrt(h**2+w**2)*0.8)   # Maximum circle size, diagonal of the image, radius
 # s_max = 0.2*min(h,w)
 h_margin = 1*h               # Horizontal margin
 w_margin = 1*w               # Vertical margin 
@@ -43,8 +43,8 @@ print_info = False
 
 
 
-num_inds =20 #20  # Individual Number
-num_genes =1500 #50 # Gene Number
+num_inds =200 #20  # Individual Number
+num_genes =20 #50 # Gene Number
 num_generations = 20000 # Generation Number
 
 tm_size = 5 # Tournament size
@@ -273,6 +273,24 @@ def mutation(population):
         individual.fitness = 1    # mutated individuals are not evaluated
         for gene in individual.genes:
             # print("muttuobe gene :", gene)
+            if mutation_type == 2:
+                if random.random() < mutation_prob:
+                    while not check_circle(gene):
+                        gene.x = int(random.gauss(-w_margin, w+w_margin))
+                        gene.y = int(random.gauss(-h_margin, h+h_margin))
+                        gene.s = int(random.gauss(0, s_max))
+                    col_to_update = int(random.random()*2) #only update one of the colours
+                    if(col_to_update == 0):
+                        gene.r =  int ( gene.r + random.gauss(0,255))
+                        gene.b =  gene.r
+                        gene.g =  gene.r
+                    if(col_to_update == 1):
+                        gene.a =  gene.a + random.gauss(0,1)
+                        # gene.g =  int ( gene.g + random.gauss(0,255))
+                    # if(col_to_update == 2):
+                        # gene.b =  int ( gene.b + random.gauss(0,255))
+                    # if(col_to_update == 3):
+                        # gene.a =  gene.a + random.gauss(0,1)
             if random.random() < mutation_prob:
                 if mutation_type == 1:
                     while not check_circle(gene):
