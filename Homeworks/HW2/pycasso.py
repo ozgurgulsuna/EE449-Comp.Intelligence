@@ -19,40 +19,45 @@ import math
 import time
 
 import matplotlib.pyplot as plt
+from matplotlib import rc
 import copy
+import os
 
 
 # Global variables
 source_image_path = "images/"
-source_image_name = "atam.jpg"
+source_image_name = "cafe_terrace_at_night.png"
 source_image = cv2.imread(source_image_path + source_image_name)
-test = cv2.imread("images/test.png")
-test_image = cv2.imread("images/test_son.png")
+# test = cv2.imread("images/test.png")
+# test_image = cv2.imread("images/test_son.png")
 h = source_image.shape[0]
 w = source_image.shape[1]
-s_max = int(math.sqrt(h**2+w**2)*0.3)   # Maximum circle size, diagonal of the image, radius
-# s_max = 0.2*min(h,w)
+s_max = int(math.sqrt(h**2+w**2)*0.35)   # Maximum circle size, diagonal of the image, radius
 h_margin = 1*h               # Horizontal margin
 w_margin = 1*w               # Vertical margin 
 
+# Information Display---------------------------------------------------------##
+print_info = True
+print_intervals = 10000
+save = True
 
-##----------------------------------------------------------------------------##
-# Information Display
-print_info = False
-
-
-
-
-num_inds =20 #20  # Individual Number
-num_genes =500 #50 # Gene Number
-num_generations = 20000 # Generation Number
+# Variables------------------------------------------------------------------##
+num_inds = 20 #20  # Individual Number
+num_genes = 50 #50 # Gene Number
+num_generations = 10000 # Generation Number
 
 tm_size = 5 # Tournament size
 frac_elites = 0.2 # Fraction of elites
-frac_parents = 0.4 # Fraction of parents
+frac_parents = 0.6 # Fraction of parents
 mutation_prob = 0.2  # Mutation probability
-mutation_type = 1 # Mutation type
+mutation_type = 1 # Mutation type 0 = unguided(random), 1 = guided (within limits)
 
+output_path = "outputs/"+str(num_inds)+"_"+str(num_genes)+"_"+str(tm_size)+"_"+str(frac_elites)+"_"+str(frac_parents)+"_"+str(mutation_prob)+"_"+str(mutation_type)+"/"
+
+# rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
+# rc('text', usetex=True)
+
+plt.rcParams['figure.figsize'] = [8, 4]
 
 # Class for individual	
 class Individual:
@@ -97,16 +102,14 @@ def init_population():
                 gene.y = random.randint(-w_margin, w+w_margin)
                 gene.s = random.randint(0, s_max)
     if print_info == True:
-        print("Collisions checked, Sorting population...")
+        print("Collisions checked, Evaluating population...")
 
-    # Sort population by size
-    # for individual in population:
-    #     individual.genes.sort(key=lambda x: x.s, reverse=True)
-    
+    # Evaluate population
     for individual in population:
-        evaluate_individual(individual)  
-        # print("individual fitness: ", individual.fitness)
-          
+        evaluate_individual(individual)
+    if print_info == True:
+        print("Population evaluated, returning population...")
+
     return population
 
 # Check if a circle is inside the image
@@ -141,16 +144,7 @@ def evaluate_individual(individual):
         # cv2.destroyAllWindows()
 
     fitness = 0
-    # test_fitness = np.sum((test_image.astype(np.int64)-test.astype(np.int64))**2)
-    # print("test fitness: ", test_fitness)
     fitness = np.sum(np.square(image.astype(np.int64)-source_image.astype(np.int64)))
-
-    # fitness = 0
-    # for i in range(h):
-    #     for j in range(w):
-    #         for k in range(3):
-    #             # fitness += abs(int(image[i][j][k]) - int(source_image[i][j][k]))
-    #             fitness += (int(image[i][j][k]) - int(source_image[i][j][k]))**2
 
     individual.fitness = -1*fitness
     return 
@@ -169,12 +163,10 @@ def tournament_selection(population):
     for i in range(size) :
         tournament.append(random.choice(candidates))
         candidates.remove(tournament[i])
-        # print("kisi",i, ":", tournament[i].fitness)
     best = tournament[0]
     for individual in tournament:
         if individual.fitness > best.fitness:
             best = individual
-    # print("best: ", best.fitness)
     return best
 
 # Elitism
@@ -200,14 +192,6 @@ def elitism(population):
     return elites
 
 
-# def natural_selection(population):
-#     best = []
-#     participants = population.copy()
-#     for i in range(math.ceil(num_inds - math.ceil(frac_elites*num_inds)- math.ceil(frac_parents*num_inds))):
-#         best.append(tournament_selection(participants))
-#         participants.remove(best[i])
-#     return best
-
 def natural_selection(population):
     parents = []
     testants = population
@@ -226,17 +210,7 @@ def parent_selection(population):
         ### population.remove(parents[i])
     return parents
 
-
-# for <num_inds> = 5, <frac_parents> = 0.15 then <num_parents> = 0.75, which is rounded to 1 couple (1*2).
-
-
 # Crossover
-# Parent selection
-# <num parents> number of individuals will be used for crossover. The parents are chosen among the best
-# individuals which do not advance to the next generation directly. Two parents will create two children.
-# Exchange of each gene is calculated individually with equal probability. The probabilities of child 1
-# having genei of parent 1 or parent 2 have equal probability, that is 0.5; child 2 gets the genei
-# from the other parent which is not chosen for child 1, where 0 ⩽ i < <num genes>.
 def crossover(parents):
     children = []
     for i in range(int(frac_parents*num_inds/2)):
@@ -253,8 +227,6 @@ def crossover(parents):
         children.append(Individual(child2, 2))
     return children
 
-
-
 #check the negative limits and correct them
 def within_limits(phenotype, upper_lim, lower_lim,range):
     while True:
@@ -263,16 +235,13 @@ def within_limits(phenotype, upper_lim, lower_lim,range):
             phenotype = phenotype_calc
             break
     return phenotype
-        
 
 
 def mutation(population):
     population = copy.deepcopy(population)
     for individual in population:
-        # print("muttuobe indivv :", individual)
         individual.fitness = 1    # mutated individuals are not evaluated
         for gene in individual.genes:
-            # print("muttuobe gene :", gene)
             if random.random() < mutation_prob:
                 if mutation_type == 1:
                     while not check_circle(gene):
@@ -336,63 +305,88 @@ def mutation(population):
 
 # Main
 def main():
-    que = []
+    if not os.path.exists(output_path):
+        os.mkdir(output_path)
+    init_fit = []
+    later_fit = []
     start_time = time.time()
     population = init_population()
     best = population[0]
     best_temp = population[0]
     for i in range(num_generations):
         a = 0
-        if print_info == True and i%1 == 0:
+        if print_info == True and i%print_intervals == 0:
             print("START")
         for individual in population:
             a += 1
-            if print_info == True and i%1 == 0:
-                print("individual:",a,"fitness:",  individual.fitness)
             evaluate_individual(individual)
-            if print_info == True and i%1 == 0:
+            if print_info == True and i%print_intervals == 0:
                 print("individual:",a,"fitness:",  individual.fitness)
 
-
-##
         for individual in population:
             if (individual.fitness > best.fitness) and (individual.fitness < 0):
                 best = individual
         
         print("Generation: ", i, "Best fitness: ", best.fitness)
 
-        if i%10 == 0:
-            que.append(best.fitness)
-            plt.plot(que)
-            plt.draw()
-            plt.pause(0.1)
+        if i<10000:
+            init_fit.append(best.fitness)
+            plt.plot(init_fit)
+            # plt.draw()
+            plt.title("Fitness Plot from Generation 1 to 1000")
+            plt.ylabel('Fitness')
+            plt.xlabel('Generation')
+            if i%100 == 0 and save == True:
+                plt.savefig(output_path+source_image_name[:-4]+"_fitness.png",dpi=200)
+            # plt.pause(0.1)
             plt.clf()
-
+        if i>1000 and i<10000:
+            later_fit.append(best.fitness)
+            plt.plot(later_fit)
+            # plt.draw()
+            plt.title("Fitness Plot from Generation 1000 to 10000")
+            plt.ylabel('Fitness')
+            plt.xlabel('Generation')
+            if i%100 == 0 and save == True:
+                plt.savefig(output_path+source_image_name[:-4]+"_fitness_1000.png",dpi=200)
+            # plt.pause(0.1)
+            plt.clf()
+        
         
         if best.fitness > best_temp.fitness:
             best_temp = best
-            best.genes.sort(key=lambda x: x.s, reverse=True)   ####
+            best.genes.sort(key=lambda x: x.s, reverse=True)   
             image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
             image.fill(255)
             for gene in best.genes:
                 overlay = image.copy()
                 cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
                 image = cv2.addWeighted(overlay, gene.a, image, 1 - gene.a, 0)
-                cv2.imshow("image", image)
-                # cv2.waitKey(1)
-                # cv2.destroyAllWindows()
-            cv2.waitKey(1)
+                # cv2.imshow("image", image)
+            # cv2.waitKey(1)
+        
+        if i%1000 == 999 or i == 0:
+            best.genes.sort(key=lambda x: x.s, reverse=True)   
+            image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.uint8)
+            image.fill(255)
+            for gene in best.genes:
+                overlay = image.copy()
+                cv2.circle(overlay, (gene.x, gene.y), gene.s, (gene.r, gene.g, gene.b), -1)
+                image = cv2.addWeighted(overlay, gene.a, image, 1 - gene.a, 0)
+            # cv2.waitKey(1)
+            if save == True:
+                cv2.imwrite(output_path+source_image_name[:-4]+"_gen_"+str(i)+".png", image)
+                cv2.imwrite(output_path+source_image_name[:-4]+"_best.png", image)
 
 
         # Elites selected, isolated from the population
         elites = elitism(population)
-        # print("population size1: ", len(population), "elite size:", len(elites))
+
         # Parents selected, isolated from the population
         parents = parent_selection(population)
-        # print("population size1: ", len(population), "parent size:", len(parents))
+
         # Crossover
         children = crossover(parents)
-        # print("population size2: ", len(population), "children size:", len(children))
 
         # Natural selection
         population = natural_selection(population)
@@ -400,27 +394,8 @@ def main():
         # Mutation
         children = mutation(children)
         population = mutation(population)
-        # print("population size3: ", len(population))
+
         population = elites + children + population
-
-        # print("population size4: ", len(population))
-
-
-
-
-        # population = elites
-
-
-
-
-
-
-
-
-
-
-
-
 
     end_time = time.time()
     print("Elapsed time: ", end_time - start_time)
