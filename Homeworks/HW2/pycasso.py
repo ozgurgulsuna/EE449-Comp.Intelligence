@@ -32,7 +32,7 @@ source_image = cv2.imread(source_image_path + source_image_name)
 # test_image = cv2.imread("images/test_son.png")
 h = source_image.shape[0]
 w = source_image.shape[1]
-s_max = int(math.sqrt(h**2+w**2)*0.35)   # Maximum circle size, diagonal of the image, radius
+s_max = int(math.sqrt(h**2+w**2)*0.4)   # Maximum circle size, diagonal of the image, radius  int(math.sqrt(h**2+w**2)*0.35)
 h_margin = 1*h               # Horizontal margin
 w_margin = 1*w               # Vertical margin 
 
@@ -43,11 +43,11 @@ save = True
 
 # Variables------------------------------------------------------------------##
 num_inds = 20 #20  # Individual Number
-num_genes = 30 #50 # Gene Number
+num_genes = 50 #50 # Gene Number
 num_generations = 10000 # Generation Number
 
 tm_size = 5 # Tournament size
-frac_elites = 0.2 # Fraction of elites
+frac_elites = 0.35 # Fraction of elites
 frac_parents = 0.6 # Fraction of parents
 mutation_prob = 0.2  # Mutation probability
 mutation_type = 1 # Mutation type 0 = unguided(random), 1 = guided (within limits)
@@ -247,7 +247,7 @@ def mutation(population):
                     while not check_circle(gene):
                         gene.x = int(within_limits(gene.x, w+w_margin, -w_margin, w/4))
                         gene.y = int(within_limits(gene.y, h+h_margin, -h_margin, h/4))
-                        gene.s = int(within_limits(gene.s, s_max, 0, 100))
+                        gene.s = int(within_limits(gene.s, s_max, 0, 10))
                     gene.r = int(within_limits(gene.r, 255, 0, 64))
                     gene.g = int(within_limits(gene.g, 255, 0, 64))
                     gene.b = int(within_limits(gene.b, 255, 0, 64))
@@ -327,7 +327,8 @@ def main():
             if (individual.fitness > best.fitness) and (individual.fitness < 0):
                 best = individual
         
-        print("Generation: ", i, "Best fitness: ", best.fitness)
+        if print_info == True and i%(print_intervals/100) == 0:
+            print("Generation: ", i, "Best fitness: ", best.fitness)
 
         if i<10000:
             init_fit.append(best.fitness)
