@@ -45,6 +45,11 @@
 \usepackage{color}
 \usepackage{caption}
 \usepackage{multicol}
+\usepackage{titlesec}
+
+% \titleformat*{\section}{\LARGE\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
 
 \captionsetup[figure]{font=normalsize}
 
@@ -296,14 +301,14 @@ Here an experiment is conducted to see the effect of these parameters on the out
 The default parameters are set as follows:
 \begin{multicols}{3}
     \begin{itemize}
-    \item Pop. Size: 20 
-    \item Number of Genes: 50  
-    \item Tournament Size: 5   
-    \item Fraction of Elites: 0.2  
-    \item Fraction of Parents: 0.6
-    \item Mutation Prob.: 0.2
-    \item Mutation Type: guided
-    \item Generation Size: 10000 
+    \item Pop. Size: \textbf{20}
+    \item Number of Genes: \textbf{50}  
+    \item Tournament Size: \textbf{5}  
+    \item Fraction of Elites: \textbf{0.2}
+    \item Fraction of Parents: \textbf{0.6}
+    \item Mutation Prob.: \textbf{0.2}
+    \item Mutation Type: \textbf{guided}
+    \item Generation Size: \textbf{10000}
     \end{itemize}
 \end{multicols}
 \begin{figure}[H]
@@ -354,11 +359,12 @@ The default parameters are set as follows:
 
 
 
-\subsection{\textbf{Number of Individuals \(<num\_inds>\)}}
+\subsection{\textbf{\Large Number of Individuals \(<num\_inds>\)}}
 
 The number of individuals is the size of the population. The individuals are used to generate next generation.
 Higher the number of individuals, the more diverse the starting population is.
 
+\subsubsection{\textbf{Number of Individuals  = 5}}
 
 \begin{figure}[H]
     \centering
@@ -406,142 +412,147 @@ Higher the number of individuals, the more diverse the starting population is.
 \normalsize
 \end{figure}
 
+\subsubsection{\textbf{Number of Individuals  = 10}}
 
 \begin{figure}[H]
     \centering
     \begin{tabular}{c c c c c c}
-          \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_0.png}}{gens 0}
+          \subf{\includegraphics[width=20mm]{figures/ind-10/cafe_terrace_at_night_gen_0.png}}{gens 0}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        \subf{\includegraphics[width=20mm]{figures/ind-10/cafe_terrace_at_night_gen_999.png}}{gens 1000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        \subf{\includegraphics[width=20mm]{figures/ind-10/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        \subf{\includegraphics[width=20mm]{figures/ind-10/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        \subf{\includegraphics[width=20mm]{figures/ind-10/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \subf{\includegraphics[width=20mm]{figures/ind-10/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
         \\
         \end{tabular}
     \begin{tabular}{c c c c c c}
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        \subf{\includegraphics[width=20mm]{figures/ind-10/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        \subf{\includegraphics[width=20mm]{figures/ind-10/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        \subf{\includegraphics[width=20mm]{figures/ind-10/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        \subf{\includegraphics[width=20mm]{figures/ind-10/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        \subf{\includegraphics[width=20mm]{figures/ind-10/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
         &
         \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
         \\
         \end{tabular}
-\caption{ Best Images for $<num\_inds>$ = 5}
+\caption{ Best Images for $<num\_inds>$ = 10}
 \normalsize
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \begin{tabular}{c c}
-        \subf{\includegraphics[width=75mm]{figures/ind-5/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        \subf{\includegraphics[width=75mm]{figures/ind-10/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
         &
-        \subf{\includegraphics[width=75mm]{figures/ind-5/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \subf{\includegraphics[width=75mm]{figures/ind-10/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
         \\
         \end{tabular}
-\caption{ Fitness Plots for $<num\_inds>$ = 5}
+\caption{ Fitness Plots for $<num\_inds>$ = 10}
 \normalsize
 \end{figure}
+
+\subsubsection{\textbf{Number of Individuals  = 40}}
 
 \begin{figure}[H]
     \centering
     \begin{tabular}{c c c c c c}
-          \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_0.png}}{gens 0}
+          \subf{\includegraphics[width=20mm]{figures/ind-40/cafe_terrace_at_night_gen_0.png}}{gens 0}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        \subf{\includegraphics[width=20mm]{figures/ind-40/cafe_terrace_at_night_gen_999.png}}{gens 1000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        \subf{\includegraphics[width=20mm]{figures/ind-40/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        \subf{\includegraphics[width=20mm]{figures/ind-40/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        \subf{\includegraphics[width=20mm]{figures/ind-40/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \subf{\includegraphics[width=20mm]{figures/ind-40/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
         \\
         \end{tabular}
     \begin{tabular}{c c c c c c}
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        \subf{\includegraphics[width=20mm]{figures/ind-40/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        \subf{\includegraphics[width=20mm]{figures/ind-40/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        \subf{\includegraphics[width=20mm]{figures/ind-40/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        \subf{\includegraphics[width=20mm]{figures/ind-40/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        \subf{\includegraphics[width=20mm]{figures/ind-40/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
         &
         \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
         \\
         \end{tabular}
-\caption{ Best Images for $<num\_inds>$ = 5}
+\caption{ Best Images for $<num\_inds>$ = 40}
 \normalsize
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \begin{tabular}{c c}
-        \subf{\includegraphics[width=75mm]{figures/ind-5/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        \subf{\includegraphics[width=75mm]{figures/ind-40/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
         &
-        \subf{\includegraphics[width=75mm]{figures/ind-5/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \subf{\includegraphics[width=75mm]{figures/ind-40/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
         \\
         \end{tabular}
-\caption{ Fitness Plots for $<num\_inds>$ = 5}
+\caption{ Fitness Plots for $<num\_inds>$ = 40}
 \normalsize
 \end{figure}
+
+\subsubsection{\textbf{Number of Individuals  = 60}}
 
 \begin{figure}[H]
     \centering
     \begin{tabular}{c c c c c c}
-          \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_0.png}}{gens 0}
+          \subf{\includegraphics[width=20mm]{figures/ind-60/cafe_terrace_at_night_gen_0.png}}{gens 0}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        \subf{\includegraphics[width=20mm]{figures/ind-60/cafe_terrace_at_night_gen_999.png}}{gens 1000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        \subf{\includegraphics[width=20mm]{figures/ind-60/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        \subf{\includegraphics[width=20mm]{figures/ind-60/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        \subf{\includegraphics[width=20mm]{figures/ind-60/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \subf{\includegraphics[width=20mm]{figures/ind-60/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
         \\
         \end{tabular}
     \begin{tabular}{c c c c c c}
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        \subf{\includegraphics[width=20mm]{figures/ind-60/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        \subf{\includegraphics[width=20mm]{figures/ind-60/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        \subf{\includegraphics[width=20mm]{figures/ind-60/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        \subf{\includegraphics[width=20mm]{figures/ind-60/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
         &
-        \subf{\includegraphics[width=20mm]{figures/ind-5/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        \subf{\includegraphics[width=20mm]{figures/ind-60/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
         &
         \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
         \\
         \end{tabular}
-\caption{ Best Images for $<num\_inds>$ = 5}
+\caption{ Best Images for $<num\_inds>$ = 60}
 \normalsize
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \begin{tabular}{c c}
-        \subf{\includegraphics[width=75mm]{figures/ind-5/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        \subf{\includegraphics[width=75mm]{figures/ind-60/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
         &
-        \subf{\includegraphics[width=75mm]{figures/ind-5/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \subf{\includegraphics[width=75mm]{figures/ind-60/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
         \\
         \end{tabular}
-\caption{ Fitness Plots for $<num\_inds>$ = 5}
+\caption{ Fitness Plots for $<num\_inds>$ = 60}
 \normalsize
 \end{figure}
 
@@ -549,12 +560,858 @@ A larger population size has better chance in exploring the solution space and f
 However, it also means that the algorithm will take more time to converge.
 The smaller population size has better advantage in exploitation, that is searching around the promising regions of the solution space.
 
+\medskip
 
 
 A larger population size helps a faster convergence, that means that the algorithm is able to find the optimal solution in less number of generations, eventhougn the algorithm takes more processing power.
-
+\medskip
 
 Solution quality is also affected by the population size, we can see from the examples that the fitness plots of the larger population size is more smooth and predictable.
+
+\subsection{\textbf{\Large Number of Genes \(<num\_genes>\)}}
+
+The number of individuals is the size of the population. The individuals are used to generate next generation.
+Higher the number of individuals, the more diverse the starting population is.
+
+\subsubsection{\textbf{Number of Genes  = 15}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/genes-15/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-15/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-15/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-15/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-15/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-15/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/genes-15/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-15/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-15/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-15/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-15/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<num\_genes>$ = 15}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/genes-15/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/genes-15/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<num\_genes>$ = 15}
+\normalsize
+\end{figure}
+
+\subsubsection{\textbf{Number of Genes  = 30}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/genes-30/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-30/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-30/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-30/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-30/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-30/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/genes-30/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-30/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-30/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-30/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-30/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<num\_genes>$ = 30}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/genes-30/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/genes-30/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<num\_genes>$ = 30}
+\normalsize
+\end{figure}
+
+\subsubsection{\textbf{Number of Genes  = 80}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/genes-80/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-80/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-80/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-80/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-80/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-80/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/genes-80/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-80/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-80/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-80/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-80/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<num\_genes>$ = 80}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/genes-80/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/genes-80/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<num\_genes>$ = 80}
+\normalsize
+\end{figure}
+
+\subsubsection{\textbf{Number of Genes  = 120}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/genes-120/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-120/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-120/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-120/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-120/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-120/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/genes-120/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-120/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-120/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-120/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/genes-120/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<num\_genes>$ = 120}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/genes-120/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/genes-120/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<num\_genes>$ = 120}
+\normalsize
+\end{figure}
+
+
+
+
+
+
+
+
+
+\subsection{\Large \textbf{Tournament Size \(<tm\_size>\)}}
+\normalsize
+
+The number of individuals is the size of the population. The individuals are used to generate next generation.
+Higher the number of individuals, the more diverse the starting population is.
+
+\subsubsection{\textbf{Tournament Size = 2}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/tm-2/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-2/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-2/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-2/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-2/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-2/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/tm-2/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-2/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-2/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-2/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-2/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<tm\_size>$ = 2}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/tm-2/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/tm-2/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<tm\_size>$ = 2}
+\normalsize
+\end{figure}
+
+\subsubsection{\textbf{Tournament Size = 8}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/tm-8/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-8/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-8/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-8/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-8/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-8/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/tm-8/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-8/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-8/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-8/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-8/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<tm\_size>$ = 8}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/tm-8/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/tm-8/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<tm\_size>$ = 8}
+\normalsize
+\end{figure}
+
+\subsubsection{\textbf{Tournament Size = 16}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/tm-16/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-16/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-16/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-16/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-16/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-16/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/tm-16/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-16/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-16/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-16/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/tm-16/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<tm\_size>$ = 16}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/tm-16/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/tm-16/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<tm\_size>$ = 16}
+\normalsize
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\subsection{\Large \textbf{Fraction of Elites \(<frac\_elites>\)}}
+\normalsize
+
+The number of individuals is the size of the population. The individuals are used to generate next generation.
+Higher the number of individuals, the more diverse the starting population is.
+
+\subsubsection{\textbf{Fraction of Elites = 0.04}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/elites-0.04/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.04/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.04/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.04/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.04/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.04/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/elites-0.04/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.04/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.04/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.04/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.04/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<frac\_elites>$ = 0.04}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/elites-0.04/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/elites-0.04/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<frac\_elites>$ = 0.04}
+\normalsize
+\end{figure}
+
+
+\subsubsection{\textbf{Fraction of Elites = 0.35}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/elites-0.35/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.35/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.35/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.35/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.35/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.35/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/elites-0.35/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.35/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.35/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.35/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/elites-0.35/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<frac\_elites>$ = 0.35}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/elites-0.35/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/elites-0.35/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<frac\_elites>$ = 0.35}
+\normalsize
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\subsection{\Large \textbf{Fraction of Parents \(<frac\_parents>\)}}
+\normalsize
+
+The number of individuals is the size of the population. The individuals are used to generate next generation.
+Higher the number of individuals, the more diverse the starting population is.
+
+\subsubsection{\textbf{Fraction of Parents = 0.15}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/parents-0.15/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.15/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.15/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.15/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.15/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.15/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/parents-0.15/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.15/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.15/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.15/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.15/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<frac\_parents>$ = 0.15}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/parents-0.15/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/parents-0.15/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<frac\_parents>$ = 0.15}
+\normalsize
+\end{figure}
+
+
+\subsubsection{\textbf{Fraction of Parents = 0.3}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/parents-0.3/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.3/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.3/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.3/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.3/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.3/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/parents-0.3/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.3/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.3/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.3/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.3/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<frac\_parents>$ = 0.3}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/parents-0.3/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/parents-0.3/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<frac\_parents>$ = 0.3}
+\normalsize
+\end{figure}
+
+
+\subsubsection{\textbf{Fraction of Parents = 0.75}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/parents-0.75/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.75/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.75/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.75/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.75/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.75/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/parents-0.75/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.75/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.75/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.75/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/parents-0.75/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<frac\_parents>$ = 0.75}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/parents-0.75/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/parents-0.75/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<frac\_parents>$ = 0.75}
+\normalsize
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\subsection{\Large \textbf{Mutation Probability \(<mutation\_prob>\)}}
+\normalsize
+
+The number of individuals is the size of the population. The individuals are used to generate next generation.
+Higher the number of individuals, the more diverse the starting population is.
+
+\subsubsection{\textbf{Mutation Probability = 0.1}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/prob-0.1/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.1/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.1/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.1/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.1/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.1/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/prob-0.1/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.1/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.1/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.1/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.1/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<mutation\_prob>$ = 0.1}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/prob-0.1/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/prob-0.1/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<mutation\_prob>$ = 0.1}
+\normalsize
+\end{figure}
+
+\subsubsection{\textbf{Mutation Probability = 0.4}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/prob-0.4/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.4/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.4/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.4/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.4/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.4/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/prob-0.4/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.4/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.4/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.4/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.4/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<mutation\_prob>$ = 0.4}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/prob-0.4/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/prob-0.4/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<mutation\_prob>$ = 0.4}
+\normalsize
+\end{figure}
+
+\subsubsection{\textbf{Mutation Probability = 0.75}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/prob-0.75/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.75/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.75/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.75/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.75/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.75/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/prob-0.75/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.75/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.75/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.75/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/prob-0.75/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<mutation\_prob>$ = 0.75}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/prob-0.75/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/prob-0.75/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<mutation\_prob>$ = 0.75}
+\normalsize
+\end{figure}
+
+
+
+
+
+
+\subsection{\Large \textbf{Mutation Type \(<mutation\_type>\)}}
+\normalsize
+
+The number of individuals is the size of the population. The individuals are used to generate next generation.
+Higher the number of individuals, the more diverse the starting population is.
+
+\subsubsection{\textbf{Mutation Type = unguided}}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c}
+          \subf{\includegraphics[width=20mm]{figures/type-1/cafe_terrace_at_night_gen_0.png}}{gens 0}
+        &
+        \subf{\includegraphics[width=20mm]{figures/type-1/cafe_terrace_at_night_gen_999.png}}{gens 1000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/type-1/cafe_terrace_at_night_gen_1999.png}}{gens 2000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/type-1/cafe_terrace_at_night_gen_2999.png}}{gens 3000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/type-1/cafe_terrace_at_night_gen_3999.png}}{gens 4000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/type-1/cafe_terrace_at_night_gen_4999.png}}{gens 5000}
+        \\
+        \end{tabular}
+    \begin{tabular}{c c c c c c}
+        \subf{\includegraphics[width=20mm]{figures/type-1/cafe_terrace_at_night_gen_5999.png}}{gens 6000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/type-1/cafe_terrace_at_night_gen_6999.png}}{gens 7000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/type-1/cafe_terrace_at_night_gen_7999.png}}{gens 8000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/type-1/cafe_terrace_at_night_gen_8999.png}}{gens 9000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/type-1/cafe_terrace_at_night_gen_9999.png}}{gens 10000}
+        &
+        \subf{\includegraphics[width=20mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+        \end{tabular}
+\caption{ Best Images for $<mutation\_type>$ = unguided}
+\normalsize
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \subf{\includegraphics[width=75mm]{figures/type-1/cafe_terrace_at_night_fitness.png}}{gens 1 to 10000}
+        &
+        \subf{\includegraphics[width=75mm]{figures/type-1/cafe_terrace_at_night_fitness_1000.png}}{gens 1000 to 10000}
+        \\
+        \end{tabular}
+\caption{ Fitness Plots for $<mutation\_type>$ = unguided}
+\normalsize
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -696,12 +1553,12 @@ The generated output for the convolution over the MNIST dataset is shown in Figu
 
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth, trim={0 5cm 0 5cm}]{figures/output.png}
-    \caption{Convolution over the number 8 of the MNIST dataset}
-    \label{fig:output}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.5\textwidth, trim={0 5cm 0 5cm}]{figures/output.png}
+%     \caption{Convolution over the number 8 of the MNIST dataset}
+%     \label{fig:output}
+% \end{figure}
 
 \vspace{-0.5cm}
 \subsection{\textbf{Results and Discussion}}
@@ -733,12 +1590,12 @@ This experimental work focuses on testing various Artificial Neural Network (ANN
 For each architecture, the ANN will be trained for 15 epochs, and training loss, accuracy, validation accuracy, and test accuracy will be recorded. The best test accuracy and weights of the first layer will be recorded, and a dictionary object will be created and saved for each architecture.
 Performance comparison plots will be created, and the weights of the first layer of all architectures will be visualized.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth, trim={0 0cm 0 0cm}]{figures/aa.png}
-    \caption{Performance Comparison Plots for the ANN Architectures} 
-    \label{fig:perf}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth, trim={0 0cm 0 0cm}]{figures/aa.png}
+%     \caption{Performance Comparison Plots for the ANN Architectures} 
+%     \label{fig:perf}
+% \end{figure}
 
 \subsection{\textbf{Results and Discussion}}
 \begin{enumerate}
@@ -761,24 +1618,24 @@ Performance comparison plots will be created, and the weights of the first layer
     \item The depth of the architecture is also relevelant with the distribution of the parameters, how they organized in an architecture. The models with more depth are able to learn more complex features as well, however they are harder to train in terms of computation.
     The extremum of depth parameter results in not overfitting but underfitting. This is because the model is not able to learn the features of the data in depth and generalize well.
 
-    \begin{figure}
-        \centering
-        \begin{tabular}{c c}
-        \subf{\includegraphics[width=72mm]{figures/mlp_1_weights.png}}{a) mlp\_1}
-        &
-        \subf{\includegraphics[width=72mm]{figures/mlp_2_weights.png}}{b) mlp\_2}
-        \\
-        \end{tabular}
-        \begin{tabular}{c c c}
-        \subf{\includegraphics[width=45mm]{figures/cnn_3_weights.png}}{c) cnn\_3}
-        &
-        \subf{\includegraphics[width=45mm]{figures/cnn_4_weights.png}}{d) cnn\_4}
-        &
-        \subf{\includegraphics[width=45mm]{figures/cnn_5_weights.png}}{e) cnn\_5}
-        \\
-        \end{tabular}
-    \end{figure}
-    \label{fig:weights}
+    % \begin{figure}
+    %     \centering
+    %     \begin{tabular}{c c}
+    %     \subf{\includegraphics[width=72mm]{figures/mlp_1_weights.png}}{a) mlp\_1}
+    %     &
+    %     \subf{\includegraphics[width=72mm]{figures/mlp_2_weights.png}}{b) mlp\_2}
+    %     \\
+    %     \end{tabular}
+    %     \begin{tabular}{c c c}
+    %     \subf{\includegraphics[width=45mm]{figures/cnn_3_weights.png}}{c) cnn\_3}
+    %     &
+    %     \subf{\includegraphics[width=45mm]{figures/cnn_4_weights.png}}{d) cnn\_4}
+    %     &
+    %     \subf{\includegraphics[width=45mm]{figures/cnn_5_weights.png}}{e) cnn\_5}
+    %     \\
+    %     \end{tabular}
+    % \end{figure}
+    % \label{fig:weights}
 
     \item The first layer weights of the MLP structure has high resolution, and can be interpreted as some curves and horizontal lines are perceived.
     for the CNN structures the weights are more abstract but these architectures have more depth hence a meaning can be found when these are all evaluated together.
@@ -798,12 +1655,12 @@ For each architecture in section 3.1, two torch.nn.Module objects are created wi
 The results are saved as dictionary objects with filenames prefixed with 'part4'.
 Finally, performance comparison plots are generated.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth, trim={0 1cm 0 1cm}]{figures/bb.png}
-    \caption{Performance Comparison Plots for the Different Activation Functions over the Different Architectures.} 
-    \label{fig:act_fun}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth, trim={0 1cm 0 1cm}]{figures/bb.png}
+%     \caption{Performance Comparison Plots for the Different Activation Functions over the Different Architectures.} 
+%     \label{fig:act_fun}
+% \end{figure}
 
 \subsection{\textbf{Results and Discussion}}
 \begin{enumerate}
@@ -822,12 +1679,12 @@ Finally, performance comparison plots are generated.
 This section explores the effect of varying learning rates in the stochastic gradient descent (SGD) optimization method with a ReLU activation function, 0.0 momentum, and batch size of 50 samples. Three torch.nn.Module objects are created with initial learning rates of 0.1, 0.01, and 0.001, respectively, and trained for 20 epochs. The training loss and validation accuracy are recorded every 10 steps to form loss and accuracy curves.
 Scheduled learning rate is then explored by training a classifier with a 0.1 learning rate until the epoch step where the validation accuracy stops increasing. The learning rate is then reduced and training continues for another 30 epochs. Finally, the test accuracy of the trained model is compared to the same model trained with Adam in section 3.1.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth, trim={0 1cm 0 1cm}]{figures/cc.png}
-    \caption{Performance Comparison Plots for the Different Learning Rates of "cnn\_4".} 
-    \label{fig:LR}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth, trim={0 1cm 0 1cm}]{figures/cc.png}
+%     \caption{Performance Comparison Plots for the Different Learning Rates of "cnn\_4".} 
+%     \label{fig:LR}
+% \end{figure}
 
 \subsection{\textbf{Results and Discussion}}
 \begin{enumerate}
