@@ -47,9 +47,9 @@
 \usepackage{multicol}
 \usepackage{titlesec}
 
-% \titleformat*{\section}{\LARGE\bfseries}
-\titleformat*{\subsection}{\Large\bfseries}
-\titleformat*{\subsubsection}{\large\bfseries}
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\normalsize\bfseries}
 
 \captionsetup[figure]{font=normalsize}
 
@@ -569,10 +569,8 @@ A larger population size helps a faster convergence, that means that the algorit
 Solution quality is also affected by the population size, we can see from the examples that the fitness plots of the larger population size is more smooth and predictable.
 
 \subsection{\textbf{\Large Number of Genes \(<num\_genes>\)}}
-
-The number of individuals is the size of the population. The individuals are used to generate next generation.
-Higher the number of individuals, the more diverse the starting population is.
-
+Gene size is the number of circles that are used to generate the image. The more circles there are, the more detailed the image is. 
+The higher computational cost and harder the problem becomes when the number of genes increases.
 \subsubsection{\textbf{Number of Genes  = 15}}
 \begin{figure}[H]
     \centering
@@ -607,7 +605,6 @@ Higher the number of individuals, the more diverse the starting population is.
 \caption{ Best Images for $<num\_genes>$ = 15}
 \normalsize
 \end{figure}
-
 \begin{figure}[H]
     \centering
     \begin{tabular}{c c}
@@ -761,19 +758,16 @@ Higher the number of individuals, the more diverse the starting population is.
 \normalsize
 \end{figure}
 
-
-
-
-
-
-
+For very low number of genes, the algorithm is not able to generate the image properly.
+As the number of genes increases, with increased computational cost, the algorithm is able to generate the image with better fitness.
+The best fitness is achieved with 120 genes.
 
 
 \subsection{\Large \textbf{Tournament Size \(<tm\_size>\)}}
 \normalsize
 
-The number of individuals is the size of the population. The individuals are used to generate next generation.
-Higher the number of individuals, the more diverse the starting population is.
+Tournament size is the number of individuals that are selected for the tournament. The higher the tournament size, the higher the probability of selecting the best individual for the tournament.
+
 
 \subsubsection{\textbf{Tournament Size = 2}}
 \begin{figure}[H]
@@ -856,7 +850,7 @@ Higher the number of individuals, the more diverse the starting population is.
 \caption{ Best Images for $<tm\_size>$ = 8}
 \normalsize
 \end{figure}
-
+\vspace{-0.5cm}
 \begin{figure}[H]
     \centering
     \begin{tabular}{c c}
@@ -868,7 +862,7 @@ Higher the number of individuals, the more diverse the starting population is.
 \caption{ Fitness Plots for $<tm\_size>$ = 8}
 \normalsize
 \end{figure}
-
+\vspace{-0.5cm}
 \subsubsection{\textbf{Tournament Size = 16}}
 \begin{figure}[H]
     \centering
@@ -917,20 +911,20 @@ Higher the number of individuals, the more diverse the starting population is.
 \end{figure}
 
 
+The results seem similar, and the results are highly dependent on the random seed.
 
+\medskip
 
-
-
-
-
-
+What can be deducted is the tournament size 2 is favored by the exploitation and finds a good enough solution around a minimum.
+The tournament size 16 is favored by the exploration and finds a better solution around the global minimum but it takes a lot more effort.
+The inbetween tournament size 8, which performs very similar to size 5,  is a good compromise between the two.
 
 \subsection{\Large \textbf{Fraction of Elites \(<frac\_elites>\)}}
-\normalsize
-
-The number of individuals is the size of the population. The individuals are used to generate next generation.
-Higher the number of individuals, the more diverse the starting population is.
-
+Elites are very effective in keeping the population fit, since they are directly copied to the next generation.
+The fraction of elites is the percentage of the population that is copied to the next generation.
+The elites are also included in the reproduction process, so they can be mutated and crossed over.
+This approach gives more chance to the elites to be replaced by better individuals.
+% \vspace{-0.5cm}
 \subsubsection{\textbf{Fraction of Elites = 0.04}}
 \begin{figure}[H]
     \centering
@@ -965,7 +959,7 @@ Higher the number of individuals, the more diverse the starting population is.
 \caption{ Best Images for $<frac\_elites>$ = 0.04}
 \normalsize
 \end{figure}
-
+\vspace{-0.5cm}
 \begin{figure}[H]
     \centering
     \begin{tabular}{c c}
@@ -977,8 +971,7 @@ Higher the number of individuals, the more diverse the starting population is.
 \caption{ Fitness Plots for $<frac\_elites>$ = 0.04}
 \normalsize
 \end{figure}
-
-
+\vspace{-0.5cm}
 \subsubsection{\textbf{Fraction of Elites = 0.35}}
 \begin{figure}[H]
     \centering
@@ -1025,22 +1018,17 @@ Higher the number of individuals, the more diverse the starting population is.
 \caption{ Fitness Plots for $<frac\_elites>$ = 0.35}
 \normalsize
 \end{figure}
-
-
-
-
-
-
-
-
-
+\vspace{-0.5cm}
+The most important aspect of the elites are the preservation of the best individuals.
+The first case is where elite number is zero. It can be seen that the random chance factor is high and the fitness plot is blocky.
+The second case is the default case, where the elites are 20\% of the population. It is better than the first case, but the fitness plot is still discrete.
+The third case is where the every 1/3rd individual is an elite. The fitness plot is smooth and the best individual is better than the previous cases.
 
 \subsection{\Large \textbf{Fraction of Parents \(<frac\_parents>\)}}
-\normalsize
-
-The number of individuals is the size of the population. The individuals are used to generate next generation.
-Higher the number of individuals, the more diverse the starting population is.
-
+The number of parents is the number of individuals that are selected for reproduction.
+The genetic reproduction is done by crossing over the genes of the parents.
+The elites are also included in the reproduction process.
+% \vspace{-0.5cm}
 \subsubsection{\textbf{Fraction of Parents = 0.15}}
 \begin{figure}[H]
     \centering
@@ -1075,7 +1063,7 @@ Higher the number of individuals, the more diverse the starting population is.
 \caption{ Best Images for $<frac\_parents>$ = 0.15}
 \normalsize
 \end{figure}
-
+\vspace{-0.5cm}
 \begin{figure}[H]
     \centering
     \begin{tabular}{c c}
@@ -1184,20 +1172,17 @@ Higher the number of individuals, the more diverse the starting population is.
 \normalsize
 \end{figure}
 
-
-
-
-
-
-
-
-
+The first observations are that the fitness plot is smoother for middle range of parents.
+Smaller number of parents are not able to explore the search space well and the process depends on the random mutation.
+Higher number of parents are able to explore more but exploit less. This means that the process is slower.
+The middle range of parents are able to explore and exploit well. The best is the case where 30\% of the population is selected as parents.
 
 \subsection{\Large \textbf{Mutation Probability \(<mutation\_prob>\)}}
 \normalsize
-
-The number of individuals is the size of the population. The individuals are used to generate next generation.
-Higher the number of individuals, the more diverse the starting population is.
+The mutation probability is the probability that a gene is mutated.
+The mutation is done by changing the value of the gene to a random value.
+It is required for two reasons. The first is to introduce new genes to the population and overcome the population converging to a thoroughbred form.
+The second is to have a chance to generate a better individual from a worse one.
 
 \subsubsection{\textbf{Mutation Probability = 0.1}}
 \begin{figure}[H]
@@ -1340,16 +1325,16 @@ Higher the number of individuals, the more diverse the starting population is.
 \normalsize
 \end{figure}
 
-
-
-
-
+The mutation probability is the probability that a gene is mutated. The higher mutation rates change the populations more genes hence the good genes individuals are lost.
+The lower mutation rates change the population less and the process is slower.
+Again middle to smaller range of mutation rates are better. The best is experimentally found to be 0.2.
 
 \subsection{\Large \textbf{Mutation Type \(<mutation\_type>\)}}
 \normalsize
 
-The number of individuals is the size of the population. The individuals are used to generate next generation.
-Higher the number of individuals, the more diverse the starting population is.
+There is two types of mutation. The first is the guided mutation. The second is the unguided mutation.
+The guided mutation is the mutation where the mutation is done by changing the gene slightly.
+The unguided mutation is the mutation where the mutation is done by changing the gene to a complete random value.
 
 \subsubsection{\textbf{Mutation Type = unguided}}
 \begin{figure}[H]
@@ -1398,305 +1383,197 @@ Higher the number of individuals, the more diverse the starting population is.
 \normalsize
 \end{figure}
 
+The results clearly show that the guided mutation is better. The reason is thought to be move the genes into more correct locations or deviate around the correct colors.
+The complete random mutation is not able to do this since a somewhat necessary gene is completely changed to a random value.
+
+
+\section{\textbf{Discussions}}
+The results show that the genetic algorithm is able to generate images that are similar to the original image.
+However, the results can be improved by doing modifications to the algorithm/process.
+
+\subsection{\Large \textbf{Multiple Passes}}
+
+The observations of the fitness plots show that the fitness is not increasing after a certain number of generations.
+The algorithm deviates around the near correct colors but the improvement is very slow.
+\medskip
+The proposed method is to do multiple passes. The first pass is to generate the image with the best fitness with smaller number of generations (fast).
+Then the next passes take the previous best image as input and overlay a complete new population on top of it.
+Then the second population try to evolve to correct the previous image.
+\medskip
+The overlayed number of genes are collected over the whole process and the resultant image seem like it has higher number of genes.
+The number of genes for each pass is reduced to increase the speed of the process. Other parameters are kept the same.
+\medskip
+
+The parameters for this process is given below.
+\begin{multicols}{3}
+    \begin{itemize}
+    \item Pop. Size: \textbf{20}
+    \item \textbf{Number of Genes: \textbf{10}}
+    \item Tournament Size: \textbf{5}  
+    \item Fraction of Elites: \textbf{0.2}
+    \item Fraction of Parents: \textbf{0.6}
+    \item Mutation Prob.: \textbf{0.2}
+    \item Mutation Type: \textbf{guided}
+    \item Generation Size: \textbf{500}
+    \item \textbf{Number of Passes: 50}
+    \end{itemize}
+\end{multicols}
+
+The results are given below.
+
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c c c c c c c c c c c c}
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_night_gen_pass00.png}
+        
+          \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass0_best.png}
+          
+          \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass1_best.png}
+          
+          \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass2_best.png}
+          
+          \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass3_best.png}
+          
+          \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass4_best.png}
+          
+          \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass5_best.png}
+          
+          \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass6_best.png}
+          
+          \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass7_best.png}
+            
+          \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass8_best.png}
+          
+          \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass9_best.png}
+          
+          \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass10_best.png}
+          
+          \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass11_best.png}
+          \\
+    \end{tabular}
+    \begin{tabular}{c c c c c c c c c c c c c}
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass12_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass13_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass14_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass15_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass16_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass17_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass18_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass19_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass20_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass21_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass22_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass23_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass24_best.png}
+        \\
+    \end{tabular}
+    \begin{tabular}{c c c c c c c c c c c c c}
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass25_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass26_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass27_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass28_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass29_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass30_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass31_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass32_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass33_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass34_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass35_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass36_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass37_best.png}
+        \\
+    \end{tabular}
+    \begin{tabular}{c c c c c c c c c c c c c}
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass38_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass39_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass40_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass41_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass42_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass43_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass44_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass45_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass46_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass47_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass48_best.png}
+        
+        \includegraphics[width=12mm]{figures/mul/cafe_terrace_at_nightpass49_best.png}
+        
+        \subf{\includegraphics[width=12mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+    \end{tabular} 
+    \begin{tabular}{c c}
+        \includegraphics[width=30mm]{figures/mul/cafe_terrace_at_nightpass49_best.png}
+        &
+        \subf{\includegraphics[width=30mm]{figures/cafe_terrace_at_night.png}}{original}
+        \\
+    \end{tabular}   
+\caption{ All the passes of the multipass process}
+\normalsize
+\end{figure}
+
+The detail level is more than the previous results with fitness value reaching -128303874.
+The process is around the median value in the evaluation time with 2302.0123467445374 seconds total.
+A better solution with same amount of processing power at 50 passes.
+
+
+\subsection{\Large \textbf{Monochromatic Images}}
+The monochromatic images are faster to produce since the solution space is more limited.
+The results are given below.
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c c}
+        \includegraphics[width=30mm]{figures/1.jpg}
+        &
+        \subf{\includegraphics[width=30mm]{figures/4.png}}
+        \\
+    \end{tabular}  
+    \begin{tabular}{c c}
+        \includegraphics[width=40mm]{figures/2.png}
+        &
+        \subf{\includegraphics[width=40mm]{figures/3.png}}
+        \\
+    \end{tabular}  
+\caption{ All the passes of the multipass process}
+\normalsize
+\end{figure}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.9\textwidth, trim={0 0cm 0 0cm}]{figures/num_inds.png}
-%     \caption{Effect of the number of individuals on the output quality}
-%     \label{fig:inds}
-
-
-
-
-% An ANNs classifier trained with cross-entropy loss approximates a conditional probability distribution. Specifically, given an input vector, the classifier outputs a probability distribution over the possible classes that the input could belong to. The cross-entropy loss is defined as the negative log-likelihood of the correct class given the input.
-% The reason why cross-entropy loss is used to approximate this function is that it is well-suited for optimizing models that output probability distributions. The loss encourages the model to assign a high probability to the correct class and low probabilities to the incorrect classes, which is exactly what we want from a classifier. The negative log-likelihood also has desirable properties such as being continuous and differentiable, making it easier to optimize using gradient-based methods.
-
-% Bulleted lists may be included and should look like this:
-% \begin{itemize}[]
-% \item First point
-% \item Second point
-% \item And so on
-% \end{itemize}
-
-\vspace{-0.5em}
-\subsection{\textbf{Gradient Computation}}
-High number of iterations, when the difference between the weights are small, the gradient calculation can be made with basic slope calculation.
-\vspace{-0.7em}
-\begin{equation*}
-    \begin{array}{l}
-         \textrm{$ \textstyle  \gamma \nabla \mathcal{L}_{\omega_{k}} = \omega_{k} - \omega_{k+1}  $} \\
-        \hspace{10em} hence, \\
-         \displaystyle \textrm{$  \nabla_{\omega} \mathcal{L}\big\rvert_{\omega = \omega_{k}} = \frac{\omega_{k} - \omega_{k+1}}{\gamma}$}   \\
-    \end{array}
-\end{equation*}
-
-\subsection{\textbf{Some Training Parameters and Basic Parameter Calculations}}
-\begin{enumerate}
-    \item The batch refers to a subset of the training data that is used to compute the weights for one iteration. More specifically, the batch size is the number of training samples in a batch.
- The epoch on the other hand refers to the number of times the entire training data is used to update the weights. In training, there are generally multiple epoch iterations where the weights are updated with different batches/subsets of the training data.
-    \item For the $N$ number of training samples, the number of batches per epoch is $N/B$, where $B$ is the batch size. A little side note that the solution is rounded up to the higher integer if $N/B$ is not an integer.
-    \item For the optimization iterations, such as SGD, for $E$ number of epochs, the total number of iterations is $E \times N/B$. Again, a practical side note states that the $N/B$ is rounded up to the higher integer.
-\end{enumerate}
-\subsection{\textbf{Computing Number of Parameters of ANN Classifiers}}
-\begin{enumerate}
-    \item Starting from the initial layer of the MLP, we have $D_{in}$ number of input neurons and $H_1$ number of neurons in first hidden layer. Also there are biases associated with 
-each neuron. Therefore, the number of parameters of the each layer is,
-    \vspace{-0.5cm}
-    \begin{equation*}
-    \begin{array}{r}
-    \textrm{Input Layer} = D_{in} \times H_{1} \ +\ H_{1} \\
-    \textrm{Hidden Layers}= H_1 \times H_2 + H_2\\
-    \cdot \cdot \cdot \hspace{2em} \\
-    \textrm{More Hidden Layers} = H_{k-1} \times H_k + H_k\\
-    \textrm{Output Layer} = H_{k} \times D_{out} \ +\ D_{out} \\
-    \end{array}
-    \end{equation*}
-
-    \vspace{-0.25cm}
-    The total sum can be written as, where $K$ is the number of hidden layers.
-    \vspace{-0.5cm}
-    \begin{equation*}
-        \textrm{Total Number of Parameters} = D_{in}\times H_1 + \sum_{k=2}^{K} (H_{k-1} \times H_k + H_k) + H_k \times D_{out} +  D_{out}
-    \end{equation*}
-    \vspace{-0.25cm}
-
-    \item CNN structure is more complicated. The number of parameters of a CNN layer is calculated as follows:
-    
-    For the input layer, the number of parameters is,
-    \vspace{-0.5cm}
-    \begin{equation*}
-        \textrm{Input Layer} = [(H_{in}-H_1+1) \times (W_{in}-W_1+1)\times C_{in} \times C_1 ]+ C_1
-    \end{equation*}
-
-    \vspace{-0.25cm}
-    where $H_{in}$ and $W_{in}$ are the height and width of the input image, and $C_{in}$ is the number of channels of the input image.
-    Each input of layer is the output of the previous layer.
-    There exist also biases associated with each neuron added.
-    For the convolutional layers, the number of parameters is calculated as,
-    \vspace{-0.5cm}
-    \begin{equation*}
-        \begin{array}{c}
-            \displaystyle \textrm{Convolutional Layer} = [(H_k-H_{k+1}+1) \times (W_k-W_{k+1}+1) \times C_{k} \times C_{k+1}] + C_{k+1} \\
-            \\
-            \displaystyle \textrm{Combination of all layers is,} \\
-            \displaystyle \textrm{Convolutional Layers} = \sum_{k=1}^{K} [(H_k-H_{k+1}+1) \times (W_k-W_{k+1}+1) \times C_{k} \times C_{k+1}] + C_{k+1} \\ 
-        \end{array}
-    \end{equation*}
-
-    \vspace{-0.25cm}
-    Here all the parameters are summed up. The output is assumed to be the last index of the array.
-    The final equation for the total number of parameters is,
-    \vspace{-0.5cm}
-
-    
-    \begin{equation*}
-        \hspace{-1cm} \textrm{Total Parameters} = [(H_k-H_{k+1}+1) \times (W_k-W_{k+1}+1) \times C_{k} \times C_{k+1}] + C_{k+1} + \sum_{k=1}^{K} [(H_k-H_{k+1}+1) \times (W_k-W_{k+1}+1) \times C_{k} \times C_{k+1}] + C_{k+1}
-    \end{equation*}
-
-    \vspace{-0.25cm}
-
-\end{enumerate}
-
-% All tables should be numbered with Arabic numerals. Every table should have a caption. Headings should be placed above tables, left justified. Only horizontal lines should be used within a table, to distinguish the column headings from the body of the table, and immediately above and below the table. Tables must be embedded into the text and not supplied separately. Below is an example which the authors may find useful.
-
-% \begin{table}[h]
-% \caption{ An example of a table.}
-% \begin{tabular*}{\hsize}{@{\extracolsep{\fill}}lll@{}}
-% \toprule
-% An example of a column heading & Column A ({\it{t}}) & Column B ({\it{t}})\\
-% \colrule
-% And an entry &   1 &  2\\
-% And another entry  & 3 &  4\\
-% And another entry &  5 &  6\\
-% \botrule
-% \end{tabular*}
-% \end{table}
-
-% %\enlargethispage{12pt}
-
-\section{\textbf{Implementing a Convolutional Layer with NumPy}}
-
-The section involves implementing conv2d function using NumPy for forward propagation and testing it on a small batch of MNIST dataset.
-We downloaded and loaded input and kernel files, and created an output image using the part2Plots function.
-The implementation code can be found in the appendix named my\_conv2d.py.
-We confirmed the correctness of our implementation by the output image.
-% References must be listed at the end of the paper. Do not begin them on a new page unless this is absolutely necessary. Authors should ensure that every reference in the text appears in the list of references and vice versa. Indicate references by \cite{Massimo2011} or \cite{Massimo2012} or \cite{Thomas2015} in the text.
-% Some examples of how your references should be listed are given at the end of this template in the `References' section, which will allow you to assemble your reference list according to the correct format and font size.
-
-% Reference generation by using bibliography style commands for LaTeX template only.
-
-% The author may use ``elsarticle-harv.bst'' as per the style required in document. The sample bib file could be referred. 
-% If the author may using bibstyle for providing references author must comment the bibliography section in TeX file, Bibtex will generate the reference automatically.
-
-% If the author may not able to view the references in output same could be done by copying the bibliography section from ``filename.bbl'' file and paste in TeX file.
-
-
-
-\subsection{\textbf{Experimental Work}}
-The generated output for the convolution over the MNIST dataset is shown in Figure \ref{fig:output}.
-
-
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.5\textwidth, trim={0 5cm 0 5cm}]{figures/output.png}
-%     \caption{Convolution over the number 8 of the MNIST dataset}
-%     \label{fig:output}
-% \end{figure}
-
-\vspace{-0.5cm}
-\subsection{\textbf{Results and Discussion}}
-\begin{enumerate}
-    \item The Convolutional Neural Networks are important for couple of reasons.
-    First of all, when the input shape of the CNN is selected as 2D, it is well suited image processing.
-    Second, the CNN is able to learn the spatial features of the input image. This also means that the CNN is able to learn and extract the features of the input image without any manual work.
-    CNN's are also able to recognize the features of the input image even if the input image is rotated or scaled.
-    Since the features are extracted from image, partial occlusion of the image affect the performance of the CNN less.
-    \item The kernel of a Convolutional Layer  is essentially a matrix of weights that is convolved (inversely correlated) over with the input data to extract features.
-    The size of the kernel refers to the number of rows and columns in the matrix. It corresponds to the reception of the filter, meaning that higher sizes can extract more complex features. 
-    
-    \item The output image shows that the convolution of pre-presented kernels for the number 8 of the MNIST dataset. Basically each filter is convoled over the images to grasp different meanings. Each column is another kernel with each row is different input image.
-    
-    \item The numbers in the same column look like each other since they both have a representation of the same number and the same kernel is able to extract the features related to the number 8 other than the specific image.
-    
-    \item The numbers in the same row look different althougn the input image the same. This is because the kernels are different and they are able to extract different features from the same image.
-    
-    \item For more specific examples, the third column kernel represents that an 8 has two "islands" of white patches in the middle but the size, shape and location of these pathes differ for each 8 altough all of them represent the same thing in a different manner.
-     Another column such as 6, implies the white track like feature of the number 8. In this sense some features are more dinstinctive than other however when different of these combined make the action work even though they do not seem to represent a clear feature.
-     This is similar to human behaviour as we associate the similar patterns to the general inputs and this is the importance of the convolutaional layers, the features can be learned in a sense.
-\end{enumerate}
-
-\section{\textbf{Experimenting ANN Architectures}}
-
-\subsection{\textbf{Experimental Work}}
-
-This experimental work focuses on testing various Artificial Neural Network (ANN) architectures for a classification task. The models will use adaptive moment estimation (Adam) with default parameters for the optimizer. The datasets will be preprocessed and split into three sets: training, validation, and testing. The ANN architectures to be tested are ‘mlp 1’, ‘mlp 2’, ‘cnn 3’, ‘cnn 4’, and ‘cnn 5’, each with their specific layers.
-For each architecture, the ANN will be trained for 15 epochs, and training loss, accuracy, validation accuracy, and test accuracy will be recorded. The best test accuracy and weights of the first layer will be recorded, and a dictionary object will be created and saved for each architecture.
-Performance comparison plots will be created, and the weights of the first layer of all architectures will be visualized.
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.9\textwidth, trim={0 0cm 0 0cm}]{figures/aa.png}
-%     \caption{Performance Comparison Plots for the ANN Architectures} 
-%     \label{fig:perf}
-% \end{figure}
-
-\subsection{\textbf{Results and Discussion}}
-\begin{enumerate}
-    \item Generalization performance refers to the ability of the model to to classify the unseen data. It is used as the ability to recognize patterns and apply this knowledge to the new data.
-    \item The plots showing the results with the "test" data show the generalization performance since the test data is not used in the training process and the model is not familiar with the test data.
-    Validation data is also seemed to be a good indicator of the generalization performance. However, altough  the validation data is not directly used in training process, it is used to tune the parameters of the model. Therefore, the model is familiar with the validation data in a sense.
-    The first two curves and the last x-y plot give hint about the comparative generalization performance since these show the results with the validation data.
-    The third scatter plot on the other hand is used with the test data, hence have the correct generalization performance. However it only shows the best run hence the variety of the results are a topic of discussion and the plot does not show that information.
-
-    \item Copmarative results show that the convolutional architectures perform better than the multi-layer perceptron architectures. This is because the convolutional layers are able to extract spatial features from the data with more grasping ability.
-    The "mlp\_1" and "mlp\_2" are very similar in terms of performance although they have different size of parameters and number of layers.
-    The "cnn\_3" and "cnn\_4" are also very similar again the latter has more layers. 
-    The "cnn\_5" is more of a slow learner and could not get to the same level of performance as the "cnn\_4" but with more epochs it is seem to be able to surpass the "cnn\_4" since the gradient of the accuracy is increasing.
-
-    \item Higher the number of parameters, it is generally easier for model to learn complex features. However it also means that the model is more prone to overfitting.
-    This is because the model is able to learn the training data in more depth, like its noise characteristics not the required features. Hence, it is not able to generalize well.
-    This is called overfitting, the models with higher parameters have more "memory" that they can memorize the unwanted characteristics that is specific to the training data.
-    Another aspect is the distribution of the parameters, the convolutaional layers use the parameters more eficiently and make more of the increased number of parameters without easily falling into overfitting trap.
-    
-    \item The depth of the architecture is also relevelant with the distribution of the parameters, how they organized in an architecture. The models with more depth are able to learn more complex features as well, however they are harder to train in terms of computation.
-    The extremum of depth parameter results in not overfitting but underfitting. This is because the model is not able to learn the features of the data in depth and generalize well.
-
-    % \begin{figure}
-    %     \centering
-    %     \begin{tabular}{c c}
-    %     \subf{\includegraphics[width=72mm]{figures/mlp_1_weights.png}}{a) mlp\_1}
-    %     &
-    %     \subf{\includegraphics[width=72mm]{figures/mlp_2_weights.png}}{b) mlp\_2}
-    %     \\
-    %     \end{tabular}
-    %     \begin{tabular}{c c c}
-    %     \subf{\includegraphics[width=45mm]{figures/cnn_3_weights.png}}{c) cnn\_3}
-    %     &
-    %     \subf{\includegraphics[width=45mm]{figures/cnn_4_weights.png}}{d) cnn\_4}
-    %     &
-    %     \subf{\includegraphics[width=45mm]{figures/cnn_5_weights.png}}{e) cnn\_5}
-    %     \\
-    %     \end{tabular}
-    % \end{figure}
-    % \label{fig:weights}
-
-    \item The first layer weights of the MLP structure has high resolution, and can be interpreted as some curves and horizontal lines are perceived.
-    for the CNN structures the weights are more abstract but these architectures have more depth hence a meaning can be found when these are all evaluated together.
-    \item It is early to say that the units are related with the classes with initial layer weights but horizontal lines can be the plane wing identifier with the tail and body sections are interpreted in the latter layers.
-    \item At this stage, with the more information on MLP's first layer, it is more interpretable.
-    \item For each arhchiecture, the depth is increased as explained in previous sections. CNN have an advantage in classification of an image input over the MLP. The higher depth suggests that the CNN is able to learn more complex features and generalize better.
-    \item I would go with the CNN architecture for image classification task. More specifically "cnn\_4" which performs around the same as others with faster training and less parameters as "cnn\_5".
-    
-\end{enumerate}
-
-\section{\textbf{Experimenting Activation Functions}}
-
-\subsection{\textbf{Experimental Work}}
-
-This section compares the performance of artificial neural networks (ANNs) using the rectified linear unit (ReLU) and logistic sigmoid activation functions, trained with stochastic gradient descent (SGD) on a constant learning rate of 0.01, 0.0 momentum, and a batch size of 50 samples.
-For each architecture in section 3.1, two torch.nn.Module objects are created with ReLU and logistic sigmoid activations respectively. The ANNs are trained for 15 epochs, recording the training loss and magnitude of the loss gradient at every 10 steps.
-The results are saved as dictionary objects with filenames prefixed with 'part4'.
-Finally, performance comparison plots are generated.
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.9\textwidth, trim={0 1cm 0 1cm}]{figures/bb.png}
-%     \caption{Performance Comparison Plots for the Different Activation Functions over the Different Architectures.} 
-%     \label{fig:act_fun}
-% \end{figure}
-
-\subsection{\textbf{Results and Discussion}}
-\begin{enumerate}
-    \item As the depth increases, the normalized gradient of the loss decreases. Also for the further steps it does not change much,
-    meaning that the learning gets slower.
-    The most complex model "cnn\_5" has the lower gradient of the lost for starting epochs. At a point, also loss gradient reduces after a peak value. This also suggests that the training will get slower.
-    The shallow models "mlp\_1" and "mlp\_2" have relatively high gradients of loss. However, from the minimum loss plot, it is seen that the loss is not decreasing much after a point. This is due model is not deep enough to learn more of the features.
-
-    \item Increasing with the depth, gradients start to become harder to calculate. This is because the gradients are calculated by backpropagation and the gradients of the previous layers are needed to calculate the gradients of the current layer. Increasing the complexity at each iteration.
-    \item Bonus: Since the gradients are calculated from the weights, the unnormalized input can cause gradients to become very small and the learning could take longer.
-    Also for different scales of inputs, the model can give bias to one or more features, which can also reduce the performance of both the training process and the overall system.
-\end{enumerate}
-\section{\textbf{Experimenting Learning Rate}}
-
-\subsection{\textbf{Experimental Work}}
-This section explores the effect of varying learning rates in the stochastic gradient descent (SGD) optimization method with a ReLU activation function, 0.0 momentum, and batch size of 50 samples. Three torch.nn.Module objects are created with initial learning rates of 0.1, 0.01, and 0.001, respectively, and trained for 20 epochs. The training loss and validation accuracy are recorded every 10 steps to form loss and accuracy curves.
-Scheduled learning rate is then explored by training a classifier with a 0.1 learning rate until the epoch step where the validation accuracy stops increasing. The learning rate is then reduced and training continues for another 30 epochs. Finally, the test accuracy of the trained model is compared to the same model trained with Adam in section 3.1.
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.9\textwidth, trim={0 1cm 0 1cm}]{figures/cc.png}
-%     \caption{Performance Comparison Plots for the Different Learning Rates of "cnn\_4".} 
-%     \label{fig:LR}
-% \end{figure}
-
-\subsection{\textbf{Results and Discussion}}
-\begin{enumerate}
-    \item Higher learning rates lead to faster convergence, however the model can skip the global minimum. Lower learning rates can lead to a slower convergernce.
-    \item High learning rate might not get to the minimum point but oscillate around it. Lower has better chance to get to the minimum point.
-    \item The scheduled learning rate iteratively reduces the learning rate, promising a better convergence with a better step count.
-    \item With the scheduled learning rate, there is a jump at the epoch 7, which is the point where the learning rate is reduced.
-    The next jump is at epoch 17, however the performance does not increase much after that, suggesting a minimal point is reached.
-    One thing to notice that the training accuracy is higher than the respected model in part 3.1.
-    But the validation accuracy is around the same at 66\%.
-
-\end{enumerate}
 
 % \begin{figure}[H]
 %     \centering

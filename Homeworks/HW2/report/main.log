@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  21 MAY 2023 22:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.5)  21 MAY 2023 23:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -784,12 +784,14 @@ LaTeX Font Info:    Trying to load font information for U+txsyc on input line 28
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <10> not available
+LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <14.4> not available
 (Font)              Font shape `OT1/txr/bx/n' tried instead on input line 295.
 LaTeX Font Info:    Trying to load font information for TS1+txr on input line 304.
  (C:\Users\ozgur\AppData\Local\Programs\MiKTeX\tex/latex/txfonts\ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
+LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <10> not available
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 304.
 <figures/def/cafe_terrace_at_night_gen_0.png, id=1, 180.675pt x 180.675pt>
 File: figures/def/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/def/cafe_terrace_at_night_gen_0.png>
@@ -909,12 +911,10 @@ Overfull \vbox (15.45999pt too high) has occurred while \output is active []
 
 pdfTeX warning: pdflatex (file ./figures/SDlogo-3p.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 > <./figures/HW2-ART.png> <./figures/def/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/def/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/def/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/def/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/def/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/def/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/def/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/def/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/def/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/def/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/def/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/cafe_terrace_at_night.png>]
-LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <14.4> not available
+LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <12> not available
 (Font)              Font shape `OT1/txr/bx/n' tried instead on input line 362.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <7> not available
 (Font)              Font shape `OT1/txr/bx/n' tried instead on input line 362.
-LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <12> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 367.
 <figures/ind-5/cafe_terrace_at_night_gen_0.png, id=54, 180.675pt x 180.675pt>
 File: figures/ind-5/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/ind-5/cafe_terrace_at_night_gen_0.png>
@@ -1044,7 +1044,7 @@ File: figures/cafe_terrace_at_night.png Graphic file (type png)
 Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 444.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 
-Underfull \vbox (badness 1253) has occurred while \output is active []
+Underfull \vbox (badness 2393) has occurred while \output is active []
 
  [2 <./figures/def/cafe_terrace_at_night_fitness.png> <./figures/def/cafe_terrace_at_night_fitness_1000.png> <./figures/ind-5/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/ind-5/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/ind-5/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/ind-5/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/ind-5/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/ind-5/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/ind-5/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/ind-5/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/ind-5/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/ind-5/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/ind-5/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/ind-5/cafe_terrace_at_night_fitness.png> <./figures/ind-5/cafe_terrace_at_night_fitness_1000.png>]
 <figures/ind-10/cafe_terrace_at_night_fitness.png, id=87, 1204.5pt x 602.25pt>
@@ -1203,428 +1203,425 @@ Package pdftex.def Info: figures/ind-60/cafe_terrace_at_night_fitness_1000.png  
 <figures/genes-15/cafe_terrace_at_night_gen_0.png, id=127, 180.675pt x 180.675pt>
 File: figures/genes-15/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_0.png  used on input line 580.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_0.png  used on input line 578.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-15/cafe_terrace_at_night_gen_999.png, id=128, 180.675pt x 180.675pt>
 File: figures/genes-15/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_999.png  used on input line 582.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_999.png  used on input line 580.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-15/cafe_terrace_at_night_gen_1999.png, id=129, 180.675pt x 180.675pt>
 File: figures/genes-15/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_1999.png  used on input line 584.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_1999.png  used on input line 582.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-15/cafe_terrace_at_night_gen_2999.png, id=130, 180.675pt x 180.675pt>
 File: figures/genes-15/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_2999.png  used on input line 586.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_2999.png  used on input line 584.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-15/cafe_terrace_at_night_gen_3999.png, id=131, 180.675pt x 180.675pt>
 File: figures/genes-15/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_3999.png  used on input line 588.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_3999.png  used on input line 586.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-15/cafe_terrace_at_night_gen_4999.png, id=132, 180.675pt x 180.675pt>
 File: figures/genes-15/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_4999.png  used on input line 590.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_4999.png  used on input line 588.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-15/cafe_terrace_at_night_gen_5999.png, id=133, 180.675pt x 180.675pt>
 File: figures/genes-15/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_5999.png  used on input line 594.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_5999.png  used on input line 592.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-15/cafe_terrace_at_night_gen_6999.png, id=134, 180.675pt x 180.675pt>
 File: figures/genes-15/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_6999.png  used on input line 596.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_6999.png  used on input line 594.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-15/cafe_terrace_at_night_gen_7999.png, id=135, 180.675pt x 180.675pt>
 File: figures/genes-15/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_7999.png  used on input line 598.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_7999.png  used on input line 596.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-15/cafe_terrace_at_night_gen_8999.png, id=136, 180.675pt x 180.675pt>
 File: figures/genes-15/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_8999.png  used on input line 600.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_8999.png  used on input line 598.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-15/cafe_terrace_at_night_gen_9999.png, id=137, 180.675pt x 180.675pt>
 File: figures/genes-15/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_9999.png  used on input line 602.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_gen_9999.png  used on input line 600.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 604.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 602.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-15/cafe_terrace_at_night_fitness.png, id=138, 578.16pt x 289.08pt>
 File: figures/genes-15/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_fitness.png  used on input line 614.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_fitness.png  used on input line 611.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/genes-15/cafe_terrace_at_night_fitness_1000.png, id=139, 578.16pt x 289.08pt>
 File: figures/genes-15/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/genes-15/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_fitness_1000.png  used on input line 616.
+Package pdftex.def Info: figures/genes-15/cafe_terrace_at_night_fitness_1000.png  used on input line 613.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/genes-30/cafe_terrace_at_night_gen_0.png, id=140, 180.675pt x 180.675pt>
 File: figures/genes-30/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_0.png  used on input line 627.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_0.png  used on input line 624.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-30/cafe_terrace_at_night_gen_999.png, id=141, 180.675pt x 180.675pt>
 File: figures/genes-30/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_999.png  used on input line 629.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_999.png  used on input line 626.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-30/cafe_terrace_at_night_gen_1999.png, id=142, 180.675pt x 180.675pt>
 File: figures/genes-30/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_1999.png  used on input line 631.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_1999.png  used on input line 628.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-30/cafe_terrace_at_night_gen_2999.png, id=143, 180.675pt x 180.675pt>
 File: figures/genes-30/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_2999.png  used on input line 633.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_2999.png  used on input line 630.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-30/cafe_terrace_at_night_gen_3999.png, id=144, 180.675pt x 180.675pt>
 File: figures/genes-30/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_3999.png  used on input line 635.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_3999.png  used on input line 632.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-30/cafe_terrace_at_night_gen_4999.png, id=145, 180.675pt x 180.675pt>
 File: figures/genes-30/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_4999.png  used on input line 637.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_4999.png  used on input line 634.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-30/cafe_terrace_at_night_gen_5999.png, id=146, 180.675pt x 180.675pt>
 File: figures/genes-30/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_5999.png  used on input line 641.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_5999.png  used on input line 638.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-30/cafe_terrace_at_night_gen_6999.png, id=147, 180.675pt x 180.675pt>
 File: figures/genes-30/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_6999.png  used on input line 643.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_6999.png  used on input line 640.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-30/cafe_terrace_at_night_gen_7999.png, id=148, 180.675pt x 180.675pt>
 File: figures/genes-30/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_7999.png  used on input line 645.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_7999.png  used on input line 642.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-30/cafe_terrace_at_night_gen_8999.png, id=149, 180.675pt x 180.675pt>
 File: figures/genes-30/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_8999.png  used on input line 647.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_8999.png  used on input line 644.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-30/cafe_terrace_at_night_gen_9999.png, id=150, 180.675pt x 180.675pt>
 File: figures/genes-30/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_9999.png  used on input line 649.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_gen_9999.png  used on input line 646.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 651.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 648.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./figures/genes-15/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_fitness.png> <./figures/genes-15/cafe_terrace_at_night_fitness_1000.png>]
-<figures/genes-30/cafe_terrace_at_night_fitness.png, id=156, 578.16pt x 289.08pt>
+<figures/genes-30/cafe_terrace_at_night_fitness.png, id=151, 578.16pt x 289.08pt>
 File: figures/genes-30/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_fitness.png  used on input line 661.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_fitness.png  used on input line 658.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
-<figures/genes-30/cafe_terrace_at_night_fitness_1000.png, id=157, 578.16pt x 289.08pt>
+<figures/genes-30/cafe_terrace_at_night_fitness_1000.png, id=152, 578.16pt x 289.08pt>
 File: figures/genes-30/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/genes-30/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_fitness_1000.png  used on input line 663.
+Package pdftex.def Info: figures/genes-30/cafe_terrace_at_night_fitness_1000.png  used on input line 660.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
+ [5 <./figures/genes-15/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/genes-15/cafe_terrace_at_night_fitness.png> <./figures/genes-15/cafe_terrace_at_night_fitness_1000.png> <./figures/genes-30/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_9999.png (PNG copy)>]
 <figures/genes-80/cafe_terrace_at_night_gen_0.png, id=158, 180.675pt x 180.675pt>
 File: figures/genes-80/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_0.png  used on input line 674.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_0.png  used on input line 671.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-80/cafe_terrace_at_night_gen_999.png, id=159, 180.675pt x 180.675pt>
 File: figures/genes-80/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_999.png  used on input line 676.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_999.png  used on input line 673.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-80/cafe_terrace_at_night_gen_1999.png, id=160, 180.675pt x 180.675pt>
 File: figures/genes-80/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_1999.png  used on input line 678.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_1999.png  used on input line 675.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-80/cafe_terrace_at_night_gen_2999.png, id=161, 180.675pt x 180.675pt>
 File: figures/genes-80/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_2999.png  used on input line 680.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_2999.png  used on input line 677.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-80/cafe_terrace_at_night_gen_3999.png, id=162, 180.675pt x 180.675pt>
 File: figures/genes-80/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_3999.png  used on input line 682.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_3999.png  used on input line 679.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-80/cafe_terrace_at_night_gen_4999.png, id=163, 180.675pt x 180.675pt>
 File: figures/genes-80/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_4999.png  used on input line 684.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_4999.png  used on input line 681.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-80/cafe_terrace_at_night_gen_5999.png, id=164, 180.675pt x 180.675pt>
 File: figures/genes-80/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_5999.png  used on input line 688.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_5999.png  used on input line 685.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-80/cafe_terrace_at_night_gen_6999.png, id=165, 180.675pt x 180.675pt>
 File: figures/genes-80/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_6999.png  used on input line 690.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_6999.png  used on input line 687.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-80/cafe_terrace_at_night_gen_7999.png, id=166, 180.675pt x 180.675pt>
 File: figures/genes-80/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_7999.png  used on input line 692.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_7999.png  used on input line 689.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-80/cafe_terrace_at_night_gen_8999.png, id=167, 180.675pt x 180.675pt>
 File: figures/genes-80/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_8999.png  used on input line 694.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_8999.png  used on input line 691.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-80/cafe_terrace_at_night_gen_9999.png, id=168, 180.675pt x 180.675pt>
 File: figures/genes-80/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_9999.png  used on input line 696.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_gen_9999.png  used on input line 693.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 698.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 695.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/genes-80/cafe_terrace_at_night_fitness.png, id=169, 578.16pt x 289.08pt>
 File: figures/genes-80/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_fitness.png  used on input line 708.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_fitness.png  used on input line 705.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/genes-80/cafe_terrace_at_night_fitness_1000.png, id=170, 578.16pt x 289.08pt>
 File: figures/genes-80/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/genes-80/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_fitness_1000.png  used on input line 710.
+Package pdftex.def Info: figures/genes-80/cafe_terrace_at_night_fitness_1000.png  used on input line 707.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
+<figures/genes-120/cafe_terrace_at_night_gen_0.png, id=171, 180.675pt x 180.675pt>
+File: figures/genes-120/cafe_terrace_at_night_gen_0.png Graphic file (type png)
+<use figures/genes-120/cafe_terrace_at_night_gen_0.png>
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_0.png  used on input line 718.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/genes-120/cafe_terrace_at_night_gen_999.png, id=172, 180.675pt x 180.675pt>
+File: figures/genes-120/cafe_terrace_at_night_gen_999.png Graphic file (type png)
+<use figures/genes-120/cafe_terrace_at_night_gen_999.png>
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_999.png  used on input line 720.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/genes-120/cafe_terrace_at_night_gen_1999.png, id=173, 180.675pt x 180.675pt>
+File: figures/genes-120/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
+<use figures/genes-120/cafe_terrace_at_night_gen_1999.png>
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_1999.png  used on input line 722.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/genes-120/cafe_terrace_at_night_gen_2999.png, id=174, 180.675pt x 180.675pt>
+File: figures/genes-120/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
+<use figures/genes-120/cafe_terrace_at_night_gen_2999.png>
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_2999.png  used on input line 724.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/genes-120/cafe_terrace_at_night_gen_3999.png, id=175, 180.675pt x 180.675pt>
+File: figures/genes-120/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
+<use figures/genes-120/cafe_terrace_at_night_gen_3999.png>
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_3999.png  used on input line 726.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/genes-120/cafe_terrace_at_night_gen_4999.png, id=176, 180.675pt x 180.675pt>
+File: figures/genes-120/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
+<use figures/genes-120/cafe_terrace_at_night_gen_4999.png>
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_4999.png  used on input line 728.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/genes-120/cafe_terrace_at_night_gen_5999.png, id=177, 180.675pt x 180.675pt>
+File: figures/genes-120/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
+<use figures/genes-120/cafe_terrace_at_night_gen_5999.png>
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_5999.png  used on input line 732.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/genes-120/cafe_terrace_at_night_gen_6999.png, id=178, 180.675pt x 180.675pt>
+File: figures/genes-120/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
+<use figures/genes-120/cafe_terrace_at_night_gen_6999.png>
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_6999.png  used on input line 734.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/genes-120/cafe_terrace_at_night_gen_7999.png, id=179, 180.675pt x 180.675pt>
+File: figures/genes-120/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
+<use figures/genes-120/cafe_terrace_at_night_gen_7999.png>
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_7999.png  used on input line 736.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/genes-120/cafe_terrace_at_night_gen_8999.png, id=180, 180.675pt x 180.675pt>
+File: figures/genes-120/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
+<use figures/genes-120/cafe_terrace_at_night_gen_8999.png>
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_8999.png  used on input line 738.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/genes-120/cafe_terrace_at_night_gen_9999.png, id=181, 180.675pt x 180.675pt>
+File: figures/genes-120/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
+<use figures/genes-120/cafe_terrace_at_night_gen_9999.png>
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_9999.png  used on input line 740.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+File: figures/cafe_terrace_at_night.png Graphic file (type png)
+<use figures/cafe_terrace_at_night.png>
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 742.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./figures/genes-30/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/genes-30/cafe_terrace_at_night_fitness.png> <./figures/genes-30/cafe_terrace_at_night_fitness_1000.png> <./figures/genes-80/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_9999.png (PNG copy)>]
-<figures/genes-120/cafe_terrace_at_night_gen_0.png, id=176, 180.675pt x 180.675pt>
-File: figures/genes-120/cafe_terrace_at_night_gen_0.png Graphic file (type png)
-<use figures/genes-120/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_0.png  used on input line 721.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/genes-120/cafe_terrace_at_night_gen_999.png, id=177, 180.675pt x 180.675pt>
-File: figures/genes-120/cafe_terrace_at_night_gen_999.png Graphic file (type png)
-<use figures/genes-120/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_999.png  used on input line 723.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/genes-120/cafe_terrace_at_night_gen_1999.png, id=178, 180.675pt x 180.675pt>
-File: figures/genes-120/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
-<use figures/genes-120/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_1999.png  used on input line 725.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/genes-120/cafe_terrace_at_night_gen_2999.png, id=179, 180.675pt x 180.675pt>
-File: figures/genes-120/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
-<use figures/genes-120/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_2999.png  used on input line 727.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/genes-120/cafe_terrace_at_night_gen_3999.png, id=180, 180.675pt x 180.675pt>
-File: figures/genes-120/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
-<use figures/genes-120/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_3999.png  used on input line 729.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/genes-120/cafe_terrace_at_night_gen_4999.png, id=181, 180.675pt x 180.675pt>
-File: figures/genes-120/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
-<use figures/genes-120/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_4999.png  used on input line 731.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/genes-120/cafe_terrace_at_night_gen_5999.png, id=182, 180.675pt x 180.675pt>
-File: figures/genes-120/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
-<use figures/genes-120/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_5999.png  used on input line 735.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/genes-120/cafe_terrace_at_night_gen_6999.png, id=183, 180.675pt x 180.675pt>
-File: figures/genes-120/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
-<use figures/genes-120/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_6999.png  used on input line 737.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/genes-120/cafe_terrace_at_night_gen_7999.png, id=184, 180.675pt x 180.675pt>
-File: figures/genes-120/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
-<use figures/genes-120/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_7999.png  used on input line 739.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/genes-120/cafe_terrace_at_night_gen_8999.png, id=185, 180.675pt x 180.675pt>
-File: figures/genes-120/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
-<use figures/genes-120/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_8999.png  used on input line 741.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/genes-120/cafe_terrace_at_night_gen_9999.png, id=186, 180.675pt x 180.675pt>
-File: figures/genes-120/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
-<use figures/genes-120/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_gen_9999.png  used on input line 743.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-File: figures/cafe_terrace_at_night.png Graphic file (type png)
-<use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 745.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/genes-120/cafe_terrace_at_night_fitness.png, id=187, 578.16pt x 289.08pt>
+ [6 <./figures/genes-30/cafe_terrace_at_night_fitness.png> <./figures/genes-30/cafe_terrace_at_night_fitness_1000.png> <./figures/genes-80/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/genes-80/cafe_terrace_at_night_fitness.png> <./figures/genes-80/cafe_terrace_at_night_fitness_1000.png>]
+<figures/genes-120/cafe_terrace_at_night_fitness.png, id=189, 578.16pt x 289.08pt>
 File: figures/genes-120/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/genes-120/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_fitness.png  used on input line 755.
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_fitness.png  used on input line 752.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
-<figures/genes-120/cafe_terrace_at_night_fitness_1000.png, id=188, 578.16pt x 289.08pt>
+<figures/genes-120/cafe_terrace_at_night_fitness_1000.png, id=190, 578.16pt x 289.08pt>
 File: figures/genes-120/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/genes-120/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_fitness_1000.png  used on input line 757.
+Package pdftex.def Info: figures/genes-120/cafe_terrace_at_night_fitness_1000.png  used on input line 754.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
-<figures/tm-2/cafe_terrace_at_night_gen_0.png, id=189, 180.675pt x 180.675pt>
+<figures/tm-2/cafe_terrace_at_night_gen_0.png, id=191, 180.675pt x 180.675pt>
 File: figures/tm-2/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_0.png  used on input line 782.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_0.png  used on input line 776.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/tm-2/cafe_terrace_at_night_gen_999.png, id=190, 180.675pt x 180.675pt>
+<figures/tm-2/cafe_terrace_at_night_gen_999.png, id=192, 180.675pt x 180.675pt>
 File: figures/tm-2/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_999.png  used on input line 784.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_999.png  used on input line 778.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/tm-2/cafe_terrace_at_night_gen_1999.png, id=191, 180.675pt x 180.675pt>
+<figures/tm-2/cafe_terrace_at_night_gen_1999.png, id=193, 180.675pt x 180.675pt>
 File: figures/tm-2/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_1999.png  used on input line 786.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_1999.png  used on input line 780.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/tm-2/cafe_terrace_at_night_gen_2999.png, id=192, 180.675pt x 180.675pt>
+<figures/tm-2/cafe_terrace_at_night_gen_2999.png, id=194, 180.675pt x 180.675pt>
 File: figures/tm-2/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_2999.png  used on input line 788.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_2999.png  used on input line 782.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/tm-2/cafe_terrace_at_night_gen_3999.png, id=193, 180.675pt x 180.675pt>
+<figures/tm-2/cafe_terrace_at_night_gen_3999.png, id=195, 180.675pt x 180.675pt>
 File: figures/tm-2/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_3999.png  used on input line 790.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_3999.png  used on input line 784.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/tm-2/cafe_terrace_at_night_gen_4999.png, id=194, 180.675pt x 180.675pt>
+<figures/tm-2/cafe_terrace_at_night_gen_4999.png, id=196, 180.675pt x 180.675pt>
 File: figures/tm-2/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_4999.png  used on input line 792.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_4999.png  used on input line 786.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/tm-2/cafe_terrace_at_night_gen_5999.png, id=195, 180.675pt x 180.675pt>
+<figures/tm-2/cafe_terrace_at_night_gen_5999.png, id=197, 180.675pt x 180.675pt>
 File: figures/tm-2/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_5999.png  used on input line 796.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_5999.png  used on input line 790.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/tm-2/cafe_terrace_at_night_gen_6999.png, id=196, 180.675pt x 180.675pt>
+<figures/tm-2/cafe_terrace_at_night_gen_6999.png, id=198, 180.675pt x 180.675pt>
 File: figures/tm-2/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_6999.png  used on input line 798.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_6999.png  used on input line 792.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/tm-2/cafe_terrace_at_night_gen_7999.png, id=197, 180.675pt x 180.675pt>
+<figures/tm-2/cafe_terrace_at_night_gen_7999.png, id=199, 180.675pt x 180.675pt>
 File: figures/tm-2/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_7999.png  used on input line 800.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_7999.png  used on input line 794.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/tm-2/cafe_terrace_at_night_gen_8999.png, id=198, 180.675pt x 180.675pt>
+<figures/tm-2/cafe_terrace_at_night_gen_8999.png, id=200, 180.675pt x 180.675pt>
 File: figures/tm-2/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_8999.png  used on input line 802.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_8999.png  used on input line 796.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/tm-2/cafe_terrace_at_night_gen_9999.png, id=199, 180.675pt x 180.675pt>
+<figures/tm-2/cafe_terrace_at_night_gen_9999.png, id=201, 180.675pt x 180.675pt>
 File: figures/tm-2/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_9999.png  used on input line 804.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_gen_9999.png  used on input line 798.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 806.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 800.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 
-Underfull \vbox (badness 3449) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 <./figures/genes-80/cafe_terrace_at_night_fitness.png> <./figures/genes-80/cafe_terrace_at_night_fitness_1000.png> <./figures/genes-120/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_fitness.png> <./figures/genes-120/cafe_terrace_at_night_fitness_1000.png>]
+ [7 <./figures/genes-120/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/genes-120/cafe_terrace_at_night_fitness.png> <./figures/genes-120/cafe_terrace_at_night_fitness_1000.png>]
 <figures/tm-2/cafe_terrace_at_night_fitness.png, id=208, 578.16pt x 289.08pt>
 File: figures/tm-2/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_fitness.png  used on input line 816.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_fitness.png  used on input line 810.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/tm-2/cafe_terrace_at_night_fitness_1000.png, id=209, 578.16pt x 289.08pt>
 File: figures/tm-2/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/tm-2/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_fitness_1000.png  used on input line 818.
+Package pdftex.def Info: figures/tm-2/cafe_terrace_at_night_fitness_1000.png  used on input line 812.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/tm-8/cafe_terrace_at_night_gen_0.png, id=210, 180.675pt x 180.675pt>
 File: figures/tm-8/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_0.png  used on input line 829.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_0.png  used on input line 823.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-8/cafe_terrace_at_night_gen_999.png, id=211, 180.675pt x 180.675pt>
 File: figures/tm-8/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_999.png  used on input line 831.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_999.png  used on input line 825.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-8/cafe_terrace_at_night_gen_1999.png, id=212, 180.675pt x 180.675pt>
 File: figures/tm-8/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_1999.png  used on input line 833.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_1999.png  used on input line 827.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-8/cafe_terrace_at_night_gen_2999.png, id=213, 180.675pt x 180.675pt>
 File: figures/tm-8/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_2999.png  used on input line 835.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_2999.png  used on input line 829.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-8/cafe_terrace_at_night_gen_3999.png, id=214, 180.675pt x 180.675pt>
 File: figures/tm-8/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_3999.png  used on input line 837.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_3999.png  used on input line 831.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-8/cafe_terrace_at_night_gen_4999.png, id=215, 180.675pt x 180.675pt>
 File: figures/tm-8/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_4999.png  used on input line 839.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_4999.png  used on input line 833.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-8/cafe_terrace_at_night_gen_5999.png, id=216, 180.675pt x 180.675pt>
 File: figures/tm-8/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_5999.png  used on input line 843.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_5999.png  used on input line 837.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-8/cafe_terrace_at_night_gen_6999.png, id=217, 180.675pt x 180.675pt>
 File: figures/tm-8/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_6999.png  used on input line 845.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_6999.png  used on input line 839.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-8/cafe_terrace_at_night_gen_7999.png, id=218, 180.675pt x 180.675pt>
 File: figures/tm-8/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_7999.png  used on input line 847.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_7999.png  used on input line 841.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-8/cafe_terrace_at_night_gen_8999.png, id=219, 180.675pt x 180.675pt>
 File: figures/tm-8/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_8999.png  used on input line 849.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_8999.png  used on input line 843.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-8/cafe_terrace_at_night_gen_9999.png, id=220, 180.675pt x 180.675pt>
 File: figures/tm-8/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_9999.png  used on input line 851.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_gen_9999.png  used on input line 845.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 853.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 847.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-8/cafe_terrace_at_night_fitness.png, id=221, 578.16pt x 289.08pt>
 File: figures/tm-8/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_fitness.png  used on input line 863.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_fitness.png  used on input line 857.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/tm-8/cafe_terrace_at_night_fitness_1000.png, id=222, 578.16pt x 289.08pt>
 File: figures/tm-8/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/tm-8/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_fitness_1000.png  used on input line 865.
+Package pdftex.def Info: figures/tm-8/cafe_terrace_at_night_fitness_1000.png  used on input line 859.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1633,428 +1630,422 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <figures/tm-16/cafe_terrace_at_night_gen_0.png, id=228, 180.675pt x 180.675pt>
 File: figures/tm-16/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_0.png  used on input line 876.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_0.png  used on input line 870.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-16/cafe_terrace_at_night_gen_999.png, id=229, 180.675pt x 180.675pt>
 File: figures/tm-16/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_999.png  used on input line 878.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_999.png  used on input line 872.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-16/cafe_terrace_at_night_gen_1999.png, id=230, 180.675pt x 180.675pt>
 File: figures/tm-16/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_1999.png  used on input line 880.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_1999.png  used on input line 874.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-16/cafe_terrace_at_night_gen_2999.png, id=231, 180.675pt x 180.675pt>
 File: figures/tm-16/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_2999.png  used on input line 882.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_2999.png  used on input line 876.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-16/cafe_terrace_at_night_gen_3999.png, id=232, 180.675pt x 180.675pt>
 File: figures/tm-16/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_3999.png  used on input line 884.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_3999.png  used on input line 878.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-16/cafe_terrace_at_night_gen_4999.png, id=233, 180.675pt x 180.675pt>
 File: figures/tm-16/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_4999.png  used on input line 886.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_4999.png  used on input line 880.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-16/cafe_terrace_at_night_gen_5999.png, id=234, 180.675pt x 180.675pt>
 File: figures/tm-16/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_5999.png  used on input line 890.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_5999.png  used on input line 884.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-16/cafe_terrace_at_night_gen_6999.png, id=235, 180.675pt x 180.675pt>
 File: figures/tm-16/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_6999.png  used on input line 892.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_6999.png  used on input line 886.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-16/cafe_terrace_at_night_gen_7999.png, id=236, 180.675pt x 180.675pt>
 File: figures/tm-16/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_7999.png  used on input line 894.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_7999.png  used on input line 888.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-16/cafe_terrace_at_night_gen_8999.png, id=237, 180.675pt x 180.675pt>
 File: figures/tm-16/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_8999.png  used on input line 896.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_8999.png  used on input line 890.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-16/cafe_terrace_at_night_gen_9999.png, id=238, 180.675pt x 180.675pt>
 File: figures/tm-16/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_9999.png  used on input line 898.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_gen_9999.png  used on input line 892.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 900.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 894.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/tm-16/cafe_terrace_at_night_fitness.png, id=239, 578.16pt x 289.08pt>
 File: figures/tm-16/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_fitness.png  used on input line 910.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_fitness.png  used on input line 904.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/tm-16/cafe_terrace_at_night_fitness_1000.png, id=240, 578.16pt x 289.08pt>
 File: figures/tm-16/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/tm-16/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_fitness_1000.png  used on input line 912.
+Package pdftex.def Info: figures/tm-16/cafe_terrace_at_night_fitness_1000.png  used on input line 906.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
-<figures/elites-0.04/cafe_terrace_at_night_gen_0.png, id=241, 180.675pt x 180.675pt>
+
+Underfull \vbox (badness 3323) has occurred while \output is active []
+
+ [9 <./figures/tm-8/cafe_terrace_at_night_fitness.png> <./figures/tm-8/cafe_terrace_at_night_fitness_1000.png> <./figures/tm-16/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_fitness.png> <./figures/tm-16/cafe_terrace_at_night_fitness_1000.png>]
+<figures/elites-0.04/cafe_terrace_at_night_gen_0.png, id=248, 180.675pt x 180.675pt>
 File: figures/elites-0.04/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_0.png  used on input line 938.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_0.png  used on input line 932.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/elites-0.04/cafe_terrace_at_night_gen_999.png, id=242, 180.675pt x 180.675pt>
+<figures/elites-0.04/cafe_terrace_at_night_gen_999.png, id=249, 180.675pt x 180.675pt>
 File: figures/elites-0.04/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_999.png  used on input line 940.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_999.png  used on input line 934.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/elites-0.04/cafe_terrace_at_night_gen_1999.png, id=243, 180.675pt x 180.675pt>
+<figures/elites-0.04/cafe_terrace_at_night_gen_1999.png, id=250, 180.675pt x 180.675pt>
 File: figures/elites-0.04/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_1999.png  used on input line 942.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_1999.png  used on input line 936.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/elites-0.04/cafe_terrace_at_night_gen_2999.png, id=244, 180.675pt x 180.675pt>
+<figures/elites-0.04/cafe_terrace_at_night_gen_2999.png, id=251, 180.675pt x 180.675pt>
 File: figures/elites-0.04/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_2999.png  used on input line 944.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_2999.png  used on input line 938.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/elites-0.04/cafe_terrace_at_night_gen_3999.png, id=245, 180.675pt x 180.675pt>
+<figures/elites-0.04/cafe_terrace_at_night_gen_3999.png, id=252, 180.675pt x 180.675pt>
 File: figures/elites-0.04/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_3999.png  used on input line 946.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_3999.png  used on input line 940.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/elites-0.04/cafe_terrace_at_night_gen_4999.png, id=246, 180.675pt x 180.675pt>
+<figures/elites-0.04/cafe_terrace_at_night_gen_4999.png, id=253, 180.675pt x 180.675pt>
 File: figures/elites-0.04/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_4999.png  used on input line 948.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_4999.png  used on input line 942.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/elites-0.04/cafe_terrace_at_night_gen_5999.png, id=247, 180.675pt x 180.675pt>
+<figures/elites-0.04/cafe_terrace_at_night_gen_5999.png, id=254, 180.675pt x 180.675pt>
 File: figures/elites-0.04/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_5999.png  used on input line 952.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_5999.png  used on input line 946.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/elites-0.04/cafe_terrace_at_night_gen_6999.png, id=248, 180.675pt x 180.675pt>
+<figures/elites-0.04/cafe_terrace_at_night_gen_6999.png, id=255, 180.675pt x 180.675pt>
 File: figures/elites-0.04/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_6999.png  used on input line 954.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_6999.png  used on input line 948.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/elites-0.04/cafe_terrace_at_night_gen_7999.png, id=249, 180.675pt x 180.675pt>
+<figures/elites-0.04/cafe_terrace_at_night_gen_7999.png, id=256, 180.675pt x 180.675pt>
 File: figures/elites-0.04/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_7999.png  used on input line 956.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_7999.png  used on input line 950.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/elites-0.04/cafe_terrace_at_night_gen_8999.png, id=250, 180.675pt x 180.675pt>
+<figures/elites-0.04/cafe_terrace_at_night_gen_8999.png, id=257, 180.675pt x 180.675pt>
 File: figures/elites-0.04/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_8999.png  used on input line 958.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_8999.png  used on input line 952.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/elites-0.04/cafe_terrace_at_night_gen_9999.png, id=251, 180.675pt x 180.675pt>
+<figures/elites-0.04/cafe_terrace_at_night_gen_9999.png, id=258, 180.675pt x 180.675pt>
 File: figures/elites-0.04/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_9999.png  used on input line 960.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_gen_9999.png  used on input line 954.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 962.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 956.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-
-Underfull \vbox (badness 3449) has occurred while \output is active []
-
- [9 <./figures/tm-8/cafe_terrace_at_night_fitness.png> <./figures/tm-8/cafe_terrace_at_night_fitness_1000.png> <./figures/tm-16/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/tm-16/cafe_terrace_at_night_fitness.png> <./figures/tm-16/cafe_terrace_at_night_fitness_1000.png>]
 <figures/elites-0.04/cafe_terrace_at_night_fitness.png, id=259, 578.16pt x 289.08pt>
 File: figures/elites-0.04/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_fitness.png  used on input line 972.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_fitness.png  used on input line 966.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/elites-0.04/cafe_terrace_at_night_fitness_1000.png, id=260, 578.16pt x 289.08pt>
 File: figures/elites-0.04/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/elites-0.04/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_fitness_1000.png  used on input line 974.
+Package pdftex.def Info: figures/elites-0.04/cafe_terrace_at_night_fitness_1000.png  used on input line 968.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/elites-0.35/cafe_terrace_at_night_gen_0.png, id=261, 180.675pt x 180.675pt>
 File: figures/elites-0.35/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_0.png  used on input line 986.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_0.png  used on input line 979.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/elites-0.35/cafe_terrace_at_night_gen_999.png, id=262, 180.675pt x 180.675pt>
 File: figures/elites-0.35/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_999.png  used on input line 988.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_999.png  used on input line 981.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/elites-0.35/cafe_terrace_at_night_gen_1999.png, id=263, 180.675pt x 180.675pt>
 File: figures/elites-0.35/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_1999.png  used on input line 990.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_1999.png  used on input line 983.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/elites-0.35/cafe_terrace_at_night_gen_2999.png, id=264, 180.675pt x 180.675pt>
 File: figures/elites-0.35/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_2999.png  used on input line 992.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_2999.png  used on input line 985.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/elites-0.35/cafe_terrace_at_night_gen_3999.png, id=265, 180.675pt x 180.675pt>
 File: figures/elites-0.35/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_3999.png  used on input line 994.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_3999.png  used on input line 987.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/elites-0.35/cafe_terrace_at_night_gen_4999.png, id=266, 180.675pt x 180.675pt>
 File: figures/elites-0.35/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_4999.png  used on input line 996.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_4999.png  used on input line 989.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/elites-0.35/cafe_terrace_at_night_gen_5999.png, id=267, 180.675pt x 180.675pt>
 File: figures/elites-0.35/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_5999.png  used on input line 1000.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_5999.png  used on input line 993.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/elites-0.35/cafe_terrace_at_night_gen_6999.png, id=268, 180.675pt x 180.675pt>
 File: figures/elites-0.35/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_6999.png  used on input line 1002.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_6999.png  used on input line 995.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/elites-0.35/cafe_terrace_at_night_gen_7999.png, id=269, 180.675pt x 180.675pt>
 File: figures/elites-0.35/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_7999.png  used on input line 1004.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_7999.png  used on input line 997.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/elites-0.35/cafe_terrace_at_night_gen_8999.png, id=270, 180.675pt x 180.675pt>
 File: figures/elites-0.35/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_8999.png  used on input line 1006.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_8999.png  used on input line 999.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/elites-0.35/cafe_terrace_at_night_gen_9999.png, id=271, 180.675pt x 180.675pt>
 File: figures/elites-0.35/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_9999.png  used on input line 1008.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_gen_9999.png  used on input line 1001.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1010.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1003.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/elites-0.35/cafe_terrace_at_night_fitness.png, id=272, 578.16pt x 289.08pt>
 File: figures/elites-0.35/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_fitness.png  used on input line 1020.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_fitness.png  used on input line 1013.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/elites-0.35/cafe_terrace_at_night_fitness_1000.png, id=273, 578.16pt x 289.08pt>
 File: figures/elites-0.35/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/elites-0.35/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_fitness_1000.png  used on input line 1022.
+Package pdftex.def Info: figures/elites-0.35/cafe_terrace_at_night_fitness_1000.png  used on input line 1015.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [10 <./figures/elites-0.04/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/elites-0.04/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/elites-0.04/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/elites-0.04/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/elites-0.04/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/elites-0.04/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/elites-0.04/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/elites-0.04/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/elites-0.04/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/elites-0.04/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/elites-0.04/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/elites-0.04/cafe_terrace_at_night_fitness.png> <./figures/elites-0.04/cafe_terrace_at_night_fitness_1000.png> <./figures/elites-0.35/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/elites-0.35/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/elites-0.35/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/elites-0.35/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/elites-0.35/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/elites-0.35/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/elites-0.35/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/elites-0.35/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/elites-0.35/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/elites-0.35/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/elites-0.35/cafe_terrace_at_night_gen_9999.png (PNG copy)>]
 <figures/parents-0.15/cafe_terrace_at_night_gen_0.png, id=279, 180.675pt x 180.675pt>
 File: figures/parents-0.15/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_0.png  used on input line 1048.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_0.png  used on input line 1036.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.15/cafe_terrace_at_night_gen_999.png, id=280, 180.675pt x 180.675pt>
 File: figures/parents-0.15/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_999.png  used on input line 1050.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_999.png  used on input line 1038.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.15/cafe_terrace_at_night_gen_1999.png, id=281, 180.675pt x 180.675pt>
 File: figures/parents-0.15/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_1999.png  used on input line 1052.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_1999.png  used on input line 1040.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.15/cafe_terrace_at_night_gen_2999.png, id=282, 180.675pt x 180.675pt>
 File: figures/parents-0.15/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_2999.png  used on input line 1054.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_2999.png  used on input line 1042.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.15/cafe_terrace_at_night_gen_3999.png, id=283, 180.675pt x 180.675pt>
 File: figures/parents-0.15/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_3999.png  used on input line 1056.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_3999.png  used on input line 1044.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.15/cafe_terrace_at_night_gen_4999.png, id=284, 180.675pt x 180.675pt>
 File: figures/parents-0.15/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_4999.png  used on input line 1058.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_4999.png  used on input line 1046.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.15/cafe_terrace_at_night_gen_5999.png, id=285, 180.675pt x 180.675pt>
 File: figures/parents-0.15/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_5999.png  used on input line 1062.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_5999.png  used on input line 1050.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.15/cafe_terrace_at_night_gen_6999.png, id=286, 180.675pt x 180.675pt>
 File: figures/parents-0.15/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_6999.png  used on input line 1064.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_6999.png  used on input line 1052.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.15/cafe_terrace_at_night_gen_7999.png, id=287, 180.675pt x 180.675pt>
 File: figures/parents-0.15/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_7999.png  used on input line 1066.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_7999.png  used on input line 1054.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.15/cafe_terrace_at_night_gen_8999.png, id=288, 180.675pt x 180.675pt>
 File: figures/parents-0.15/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_8999.png  used on input line 1068.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_8999.png  used on input line 1056.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.15/cafe_terrace_at_night_gen_9999.png, id=289, 180.675pt x 180.675pt>
 File: figures/parents-0.15/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_9999.png  used on input line 1070.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_gen_9999.png  used on input line 1058.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1072.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1060.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.15/cafe_terrace_at_night_fitness.png, id=290, 578.16pt x 289.08pt>
 File: figures/parents-0.15/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_fitness.png  used on input line 1082.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_fitness.png  used on input line 1070.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/parents-0.15/cafe_terrace_at_night_fitness_1000.png, id=291, 578.16pt x 289.08pt>
 File: figures/parents-0.15/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/parents-0.15/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_fitness_1000.png  used on input line 1084.
+Package pdftex.def Info: figures/parents-0.15/cafe_terrace_at_night_fitness_1000.png  used on input line 1072.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/parents-0.3/cafe_terrace_at_night_gen_0.png, id=292, 180.675pt x 180.675pt>
 File: figures/parents-0.3/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_0.png  used on input line 1096.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_0.png  used on input line 1084.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.3/cafe_terrace_at_night_gen_999.png, id=293, 180.675pt x 180.675pt>
 File: figures/parents-0.3/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_999.png  used on input line 1098.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_999.png  used on input line 1086.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.3/cafe_terrace_at_night_gen_1999.png, id=294, 180.675pt x 180.675pt>
 File: figures/parents-0.3/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_1999.png  used on input line 1100.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_1999.png  used on input line 1088.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.3/cafe_terrace_at_night_gen_2999.png, id=295, 180.675pt x 180.675pt>
 File: figures/parents-0.3/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_2999.png  used on input line 1102.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_2999.png  used on input line 1090.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.3/cafe_terrace_at_night_gen_3999.png, id=296, 180.675pt x 180.675pt>
 File: figures/parents-0.3/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_3999.png  used on input line 1104.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_3999.png  used on input line 1092.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.3/cafe_terrace_at_night_gen_4999.png, id=297, 180.675pt x 180.675pt>
 File: figures/parents-0.3/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_4999.png  used on input line 1106.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_4999.png  used on input line 1094.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.3/cafe_terrace_at_night_gen_5999.png, id=298, 180.675pt x 180.675pt>
 File: figures/parents-0.3/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_5999.png  used on input line 1110.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_5999.png  used on input line 1098.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.3/cafe_terrace_at_night_gen_6999.png, id=299, 180.675pt x 180.675pt>
 File: figures/parents-0.3/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_6999.png  used on input line 1112.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_6999.png  used on input line 1100.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.3/cafe_terrace_at_night_gen_7999.png, id=300, 180.675pt x 180.675pt>
 File: figures/parents-0.3/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_7999.png  used on input line 1114.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_7999.png  used on input line 1102.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.3/cafe_terrace_at_night_gen_8999.png, id=301, 180.675pt x 180.675pt>
 File: figures/parents-0.3/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_8999.png  used on input line 1116.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_8999.png  used on input line 1104.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.3/cafe_terrace_at_night_gen_9999.png, id=302, 180.675pt x 180.675pt>
 File: figures/parents-0.3/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_9999.png  used on input line 1118.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_gen_9999.png  used on input line 1106.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1120.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1108.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-
-Underfull \vbox (badness 1253) has occurred while \output is active []
-
  [11 <./figures/elites-0.35/cafe_terrace_at_night_fitness.png> <./figures/elites-0.35/cafe_terrace_at_night_fitness_1000.png> <./figures/parents-0.15/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/parents-0.15/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/parents-0.15/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/parents-0.15/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/parents-0.15/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/parents-0.15/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/parents-0.15/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/parents-0.15/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/parents-0.15/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/parents-0.15/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/parents-0.15/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/parents-0.15/cafe_terrace_at_night_fitness.png> <./figures/parents-0.15/cafe_terrace_at_night_fitness_1000.png>]
 <figures/parents-0.3/cafe_terrace_at_night_fitness.png, id=310, 578.16pt x 289.08pt>
 File: figures/parents-0.3/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_fitness.png  used on input line 1130.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_fitness.png  used on input line 1118.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/parents-0.3/cafe_terrace_at_night_fitness_1000.png, id=311, 578.16pt x 289.08pt>
 File: figures/parents-0.3/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/parents-0.3/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_fitness_1000.png  used on input line 1132.
+Package pdftex.def Info: figures/parents-0.3/cafe_terrace_at_night_fitness_1000.png  used on input line 1120.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/parents-0.75/cafe_terrace_at_night_gen_0.png, id=312, 180.675pt x 180.675pt>
 File: figures/parents-0.75/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_0.png  used on input line 1144.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_0.png  used on input line 1132.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.75/cafe_terrace_at_night_gen_999.png, id=313, 180.675pt x 180.675pt>
 File: figures/parents-0.75/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_999.png  used on input line 1146.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_999.png  used on input line 1134.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.75/cafe_terrace_at_night_gen_1999.png, id=314, 180.675pt x 180.675pt>
 File: figures/parents-0.75/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_1999.png  used on input line 1148.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_1999.png  used on input line 1136.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.75/cafe_terrace_at_night_gen_2999.png, id=315, 180.675pt x 180.675pt>
 File: figures/parents-0.75/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_2999.png  used on input line 1150.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_2999.png  used on input line 1138.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.75/cafe_terrace_at_night_gen_3999.png, id=316, 180.675pt x 180.675pt>
 File: figures/parents-0.75/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_3999.png  used on input line 1152.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_3999.png  used on input line 1140.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.75/cafe_terrace_at_night_gen_4999.png, id=317, 180.675pt x 180.675pt>
 File: figures/parents-0.75/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_4999.png  used on input line 1154.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_4999.png  used on input line 1142.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.75/cafe_terrace_at_night_gen_5999.png, id=318, 180.675pt x 180.675pt>
 File: figures/parents-0.75/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_5999.png  used on input line 1158.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_5999.png  used on input line 1146.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.75/cafe_terrace_at_night_gen_6999.png, id=319, 180.675pt x 180.675pt>
 File: figures/parents-0.75/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_6999.png  used on input line 1160.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_6999.png  used on input line 1148.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.75/cafe_terrace_at_night_gen_7999.png, id=320, 180.675pt x 180.675pt>
 File: figures/parents-0.75/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_7999.png  used on input line 1162.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_7999.png  used on input line 1150.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.75/cafe_terrace_at_night_gen_8999.png, id=321, 180.675pt x 180.675pt>
 File: figures/parents-0.75/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_8999.png  used on input line 1164.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_8999.png  used on input line 1152.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.75/cafe_terrace_at_night_gen_9999.png, id=322, 180.675pt x 180.675pt>
 File: figures/parents-0.75/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_9999.png  used on input line 1166.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_gen_9999.png  used on input line 1154.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1168.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1156.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/parents-0.75/cafe_terrace_at_night_fitness.png, id=323, 578.16pt x 289.08pt>
 File: figures/parents-0.75/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_fitness.png  used on input line 1178.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_fitness.png  used on input line 1166.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/parents-0.75/cafe_terrace_at_night_fitness_1000.png, id=324, 578.16pt x 289.08pt>
 File: figures/parents-0.75/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/parents-0.75/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_fitness_1000.png  used on input line 1180.
+Package pdftex.def Info: figures/parents-0.75/cafe_terrace_at_night_fitness_1000.png  used on input line 1168.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2063,321 +2054,615 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <figures/prob-0.1/cafe_terrace_at_night_gen_0.png, id=330, 180.675pt x 180.675pt>
 File: figures/prob-0.1/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_0.png  used on input line 1206.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_0.png  used on input line 1191.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/prob-0.1/cafe_terrace_at_night_gen_999.png, id=331, 180.675pt x 180.675pt>
 File: figures/prob-0.1/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_999.png  used on input line 1208.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_999.png  used on input line 1193.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/prob-0.1/cafe_terrace_at_night_gen_1999.png, id=332, 180.675pt x 180.675pt>
 File: figures/prob-0.1/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_1999.png  used on input line 1210.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_1999.png  used on input line 1195.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/prob-0.1/cafe_terrace_at_night_gen_2999.png, id=333, 180.675pt x 180.675pt>
 File: figures/prob-0.1/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_2999.png  used on input line 1212.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_2999.png  used on input line 1197.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/prob-0.1/cafe_terrace_at_night_gen_3999.png, id=334, 180.675pt x 180.675pt>
 File: figures/prob-0.1/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_3999.png  used on input line 1214.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_3999.png  used on input line 1199.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/prob-0.1/cafe_terrace_at_night_gen_4999.png, id=335, 180.675pt x 180.675pt>
 File: figures/prob-0.1/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_4999.png  used on input line 1216.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_4999.png  used on input line 1201.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/prob-0.1/cafe_terrace_at_night_gen_5999.png, id=336, 180.675pt x 180.675pt>
 File: figures/prob-0.1/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_5999.png  used on input line 1220.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_5999.png  used on input line 1205.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/prob-0.1/cafe_terrace_at_night_gen_6999.png, id=337, 180.675pt x 180.675pt>
 File: figures/prob-0.1/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_6999.png  used on input line 1222.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_6999.png  used on input line 1207.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/prob-0.1/cafe_terrace_at_night_gen_7999.png, id=338, 180.675pt x 180.675pt>
 File: figures/prob-0.1/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_7999.png  used on input line 1224.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_7999.png  used on input line 1209.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/prob-0.1/cafe_terrace_at_night_gen_8999.png, id=339, 180.675pt x 180.675pt>
 File: figures/prob-0.1/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_8999.png  used on input line 1226.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_8999.png  used on input line 1211.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/prob-0.1/cafe_terrace_at_night_gen_9999.png, id=340, 180.675pt x 180.675pt>
 File: figures/prob-0.1/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_9999.png  used on input line 1228.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_gen_9999.png  used on input line 1213.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1230.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1215.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/prob-0.1/cafe_terrace_at_night_fitness.png, id=341, 578.16pt x 289.08pt>
 File: figures/prob-0.1/cafe_terrace_at_night_fitness.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_fitness.png  used on input line 1240.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_fitness.png  used on input line 1225.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/prob-0.1/cafe_terrace_at_night_fitness_1000.png, id=342, 578.16pt x 289.08pt>
 File: figures/prob-0.1/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
 <use figures/prob-0.1/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_fitness_1000.png  used on input line 1242.
-(pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
-<figures/prob-0.4/cafe_terrace_at_night_gen_0.png, id=343, 180.675pt x 180.675pt>
-File: figures/prob-0.4/cafe_terrace_at_night_gen_0.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_0.png  used on input line 1253.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.4/cafe_terrace_at_night_gen_999.png, id=344, 180.675pt x 180.675pt>
-File: figures/prob-0.4/cafe_terrace_at_night_gen_999.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_999.png  used on input line 1255.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.4/cafe_terrace_at_night_gen_1999.png, id=345, 180.675pt x 180.675pt>
-File: figures/prob-0.4/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_1999.png  used on input line 1257.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.4/cafe_terrace_at_night_gen_2999.png, id=346, 180.675pt x 180.675pt>
-File: figures/prob-0.4/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_2999.png  used on input line 1259.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.4/cafe_terrace_at_night_gen_3999.png, id=347, 180.675pt x 180.675pt>
-File: figures/prob-0.4/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_3999.png  used on input line 1261.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.4/cafe_terrace_at_night_gen_4999.png, id=348, 180.675pt x 180.675pt>
-File: figures/prob-0.4/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_4999.png  used on input line 1263.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.4/cafe_terrace_at_night_gen_5999.png, id=349, 180.675pt x 180.675pt>
-File: figures/prob-0.4/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_5999.png  used on input line 1267.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.4/cafe_terrace_at_night_gen_6999.png, id=350, 180.675pt x 180.675pt>
-File: figures/prob-0.4/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_6999.png  used on input line 1269.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.4/cafe_terrace_at_night_gen_7999.png, id=351, 180.675pt x 180.675pt>
-File: figures/prob-0.4/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_7999.png  used on input line 1271.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.4/cafe_terrace_at_night_gen_8999.png, id=352, 180.675pt x 180.675pt>
-File: figures/prob-0.4/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_8999.png  used on input line 1273.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.4/cafe_terrace_at_night_gen_9999.png, id=353, 180.675pt x 180.675pt>
-File: figures/prob-0.4/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_9999.png  used on input line 1275.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-File: figures/cafe_terrace_at_night.png Graphic file (type png)
-<use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1277.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-
-Underfull \vbox (badness 1253) has occurred while \output is active []
-
- [13 <./figures/parents-0.75/cafe_terrace_at_night_fitness.png> <./figures/parents-0.75/cafe_terrace_at_night_fitness_1000.png> <./figures/prob-0.1/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_fitness.png> <./figures/prob-0.1/cafe_terrace_at_night_fitness_1000.png>]
-<figures/prob-0.4/cafe_terrace_at_night_fitness.png, id=362, 578.16pt x 289.08pt>
-File: figures/prob-0.4/cafe_terrace_at_night_fitness.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_fitness.png  used on input line 1287.
-(pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
-<figures/prob-0.4/cafe_terrace_at_night_fitness_1000.png, id=363, 578.16pt x 289.08pt>
-File: figures/prob-0.4/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
-<use figures/prob-0.4/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_fitness_1000.png  used on input line 1289.
-(pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
-<figures/prob-0.75/cafe_terrace_at_night_gen_0.png, id=364, 180.675pt x 180.675pt>
-File: figures/prob-0.75/cafe_terrace_at_night_gen_0.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_0.png  used on input line 1300.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.75/cafe_terrace_at_night_gen_999.png, id=365, 180.675pt x 180.675pt>
-File: figures/prob-0.75/cafe_terrace_at_night_gen_999.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_999.png  used on input line 1302.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.75/cafe_terrace_at_night_gen_1999.png, id=366, 180.675pt x 180.675pt>
-File: figures/prob-0.75/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_1999.png  used on input line 1304.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.75/cafe_terrace_at_night_gen_2999.png, id=367, 180.675pt x 180.675pt>
-File: figures/prob-0.75/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_2999.png  used on input line 1306.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.75/cafe_terrace_at_night_gen_3999.png, id=368, 180.675pt x 180.675pt>
-File: figures/prob-0.75/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_3999.png  used on input line 1308.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.75/cafe_terrace_at_night_gen_4999.png, id=369, 180.675pt x 180.675pt>
-File: figures/prob-0.75/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_4999.png  used on input line 1310.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.75/cafe_terrace_at_night_gen_5999.png, id=370, 180.675pt x 180.675pt>
-File: figures/prob-0.75/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_5999.png  used on input line 1314.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.75/cafe_terrace_at_night_gen_6999.png, id=371, 180.675pt x 180.675pt>
-File: figures/prob-0.75/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_6999.png  used on input line 1316.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.75/cafe_terrace_at_night_gen_7999.png, id=372, 180.675pt x 180.675pt>
-File: figures/prob-0.75/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_7999.png  used on input line 1318.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.75/cafe_terrace_at_night_gen_8999.png, id=373, 180.675pt x 180.675pt>
-File: figures/prob-0.75/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_8999.png  used on input line 1320.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.75/cafe_terrace_at_night_gen_9999.png, id=374, 180.675pt x 180.675pt>
-File: figures/prob-0.75/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_9999.png  used on input line 1322.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-File: figures/cafe_terrace_at_night.png Graphic file (type png)
-<use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1324.
-(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/prob-0.75/cafe_terrace_at_night_fitness.png, id=375, 578.16pt x 289.08pt>
-File: figures/prob-0.75/cafe_terrace_at_night_fitness.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_fitness.png  used on input line 1334.
-(pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
-<figures/prob-0.75/cafe_terrace_at_night_fitness_1000.png, id=376, 578.16pt x 289.08pt>
-File: figures/prob-0.75/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
-<use figures/prob-0.75/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_fitness_1000.png  used on input line 1336.
+Package pdftex.def Info: figures/prob-0.1/cafe_terrace_at_night_fitness_1000.png  used on input line 1227.
 (pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <./figures/prob-0.4/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_fitness.png> <./figures/prob-0.4/cafe_terrace_at_night_fitness_1000.png> <./figures/prob-0.75/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_9999.png (PNG copy)>]
+ [13 <./figures/parents-0.75/cafe_terrace_at_night_fitness.png> <./figures/parents-0.75/cafe_terrace_at_night_fitness_1000.png> <./figures/prob-0.1/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/prob-0.1/cafe_terrace_at_night_gen_9999.png (PNG copy)>]
+<figures/prob-0.4/cafe_terrace_at_night_gen_0.png, id=349, 180.675pt x 180.675pt>
+File: figures/prob-0.4/cafe_terrace_at_night_gen_0.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_gen_0.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_0.png  used on input line 1238.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.4/cafe_terrace_at_night_gen_999.png, id=350, 180.675pt x 180.675pt>
+File: figures/prob-0.4/cafe_terrace_at_night_gen_999.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_gen_999.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_999.png  used on input line 1240.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.4/cafe_terrace_at_night_gen_1999.png, id=351, 180.675pt x 180.675pt>
+File: figures/prob-0.4/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_gen_1999.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_1999.png  used on input line 1242.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.4/cafe_terrace_at_night_gen_2999.png, id=352, 180.675pt x 180.675pt>
+File: figures/prob-0.4/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_gen_2999.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_2999.png  used on input line 1244.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.4/cafe_terrace_at_night_gen_3999.png, id=353, 180.675pt x 180.675pt>
+File: figures/prob-0.4/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_gen_3999.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_3999.png  used on input line 1246.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.4/cafe_terrace_at_night_gen_4999.png, id=354, 180.675pt x 180.675pt>
+File: figures/prob-0.4/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_gen_4999.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_4999.png  used on input line 1248.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.4/cafe_terrace_at_night_gen_5999.png, id=355, 180.675pt x 180.675pt>
+File: figures/prob-0.4/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_gen_5999.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_5999.png  used on input line 1252.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.4/cafe_terrace_at_night_gen_6999.png, id=356, 180.675pt x 180.675pt>
+File: figures/prob-0.4/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_gen_6999.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_6999.png  used on input line 1254.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.4/cafe_terrace_at_night_gen_7999.png, id=357, 180.675pt x 180.675pt>
+File: figures/prob-0.4/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_gen_7999.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_7999.png  used on input line 1256.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.4/cafe_terrace_at_night_gen_8999.png, id=358, 180.675pt x 180.675pt>
+File: figures/prob-0.4/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_gen_8999.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_8999.png  used on input line 1258.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.4/cafe_terrace_at_night_gen_9999.png, id=359, 180.675pt x 180.675pt>
+File: figures/prob-0.4/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_gen_9999.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_gen_9999.png  used on input line 1260.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+File: figures/cafe_terrace_at_night.png Graphic file (type png)
+<use figures/cafe_terrace_at_night.png>
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1262.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.4/cafe_terrace_at_night_fitness.png, id=360, 578.16pt x 289.08pt>
+File: figures/prob-0.4/cafe_terrace_at_night_fitness.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_fitness.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_fitness.png  used on input line 1272.
+(pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
+<figures/prob-0.4/cafe_terrace_at_night_fitness_1000.png, id=361, 578.16pt x 289.08pt>
+File: figures/prob-0.4/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
+<use figures/prob-0.4/cafe_terrace_at_night_fitness_1000.png>
+Package pdftex.def Info: figures/prob-0.4/cafe_terrace_at_night_fitness_1000.png  used on input line 1274.
+(pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
+<figures/prob-0.75/cafe_terrace_at_night_gen_0.png, id=362, 180.675pt x 180.675pt>
+File: figures/prob-0.75/cafe_terrace_at_night_gen_0.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_gen_0.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_0.png  used on input line 1285.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.75/cafe_terrace_at_night_gen_999.png, id=363, 180.675pt x 180.675pt>
+File: figures/prob-0.75/cafe_terrace_at_night_gen_999.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_gen_999.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_999.png  used on input line 1287.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.75/cafe_terrace_at_night_gen_1999.png, id=364, 180.675pt x 180.675pt>
+File: figures/prob-0.75/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_gen_1999.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_1999.png  used on input line 1289.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.75/cafe_terrace_at_night_gen_2999.png, id=365, 180.675pt x 180.675pt>
+File: figures/prob-0.75/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_gen_2999.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_2999.png  used on input line 1291.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.75/cafe_terrace_at_night_gen_3999.png, id=366, 180.675pt x 180.675pt>
+File: figures/prob-0.75/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_gen_3999.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_3999.png  used on input line 1293.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.75/cafe_terrace_at_night_gen_4999.png, id=367, 180.675pt x 180.675pt>
+File: figures/prob-0.75/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_gen_4999.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_4999.png  used on input line 1295.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.75/cafe_terrace_at_night_gen_5999.png, id=368, 180.675pt x 180.675pt>
+File: figures/prob-0.75/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_gen_5999.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_5999.png  used on input line 1299.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.75/cafe_terrace_at_night_gen_6999.png, id=369, 180.675pt x 180.675pt>
+File: figures/prob-0.75/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_gen_6999.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_6999.png  used on input line 1301.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.75/cafe_terrace_at_night_gen_7999.png, id=370, 180.675pt x 180.675pt>
+File: figures/prob-0.75/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_gen_7999.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_7999.png  used on input line 1303.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.75/cafe_terrace_at_night_gen_8999.png, id=371, 180.675pt x 180.675pt>
+File: figures/prob-0.75/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_gen_8999.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_8999.png  used on input line 1305.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+<figures/prob-0.75/cafe_terrace_at_night_gen_9999.png, id=372, 180.675pt x 180.675pt>
+File: figures/prob-0.75/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_gen_9999.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_gen_9999.png  used on input line 1307.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+File: figures/cafe_terrace_at_night.png Graphic file (type png)
+<use figures/cafe_terrace_at_night.png>
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1309.
+(pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./figures/prob-0.1/cafe_terrace_at_night_fitness.png> <./figures/prob-0.1/cafe_terrace_at_night_fitness_1000.png> <./figures/prob-0.4/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/prob-0.4/cafe_terrace_at_night_fitness.png> <./figures/prob-0.4/cafe_terrace_at_night_fitness_1000.png>]
+<figures/prob-0.75/cafe_terrace_at_night_fitness.png, id=380, 578.16pt x 289.08pt>
+File: figures/prob-0.75/cafe_terrace_at_night_fitness.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_fitness.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_fitness.png  used on input line 1319.
+(pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
+<figures/prob-0.75/cafe_terrace_at_night_fitness_1000.png, id=381, 578.16pt x 289.08pt>
+File: figures/prob-0.75/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
+<use figures/prob-0.75/cafe_terrace_at_night_fitness_1000.png>
+Package pdftex.def Info: figures/prob-0.75/cafe_terrace_at_night_fitness_1000.png  used on input line 1321.
+(pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 <figures/type-1/cafe_terrace_at_night_gen_0.png, id=382, 180.675pt x 180.675pt>
 File: figures/type-1/cafe_terrace_at_night_gen_0.png Graphic file (type png)
 <use figures/type-1/cafe_terrace_at_night_gen_0.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_0.png  used on input line 1358.
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_0.png  used on input line 1343.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/type-1/cafe_terrace_at_night_gen_999.png, id=383, 180.675pt x 180.675pt>
 File: figures/type-1/cafe_terrace_at_night_gen_999.png Graphic file (type png)
 <use figures/type-1/cafe_terrace_at_night_gen_999.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_999.png  used on input line 1360.
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_999.png  used on input line 1345.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/type-1/cafe_terrace_at_night_gen_1999.png, id=384, 180.675pt x 180.675pt>
 File: figures/type-1/cafe_terrace_at_night_gen_1999.png Graphic file (type png)
 <use figures/type-1/cafe_terrace_at_night_gen_1999.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_1999.png  used on input line 1362.
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_1999.png  used on input line 1347.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/type-1/cafe_terrace_at_night_gen_2999.png, id=385, 180.675pt x 180.675pt>
 File: figures/type-1/cafe_terrace_at_night_gen_2999.png Graphic file (type png)
 <use figures/type-1/cafe_terrace_at_night_gen_2999.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_2999.png  used on input line 1364.
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_2999.png  used on input line 1349.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/type-1/cafe_terrace_at_night_gen_3999.png, id=386, 180.675pt x 180.675pt>
 File: figures/type-1/cafe_terrace_at_night_gen_3999.png Graphic file (type png)
 <use figures/type-1/cafe_terrace_at_night_gen_3999.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_3999.png  used on input line 1366.
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_3999.png  used on input line 1351.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/type-1/cafe_terrace_at_night_gen_4999.png, id=387, 180.675pt x 180.675pt>
 File: figures/type-1/cafe_terrace_at_night_gen_4999.png Graphic file (type png)
 <use figures/type-1/cafe_terrace_at_night_gen_4999.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_4999.png  used on input line 1368.
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_4999.png  used on input line 1353.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/type-1/cafe_terrace_at_night_gen_5999.png, id=388, 180.675pt x 180.675pt>
 File: figures/type-1/cafe_terrace_at_night_gen_5999.png Graphic file (type png)
 <use figures/type-1/cafe_terrace_at_night_gen_5999.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_5999.png  used on input line 1372.
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_5999.png  used on input line 1357.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/type-1/cafe_terrace_at_night_gen_6999.png, id=389, 180.675pt x 180.675pt>
 File: figures/type-1/cafe_terrace_at_night_gen_6999.png Graphic file (type png)
 <use figures/type-1/cafe_terrace_at_night_gen_6999.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_6999.png  used on input line 1374.
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_6999.png  used on input line 1359.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/type-1/cafe_terrace_at_night_gen_7999.png, id=390, 180.675pt x 180.675pt>
 File: figures/type-1/cafe_terrace_at_night_gen_7999.png Graphic file (type png)
 <use figures/type-1/cafe_terrace_at_night_gen_7999.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_7999.png  used on input line 1376.
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_7999.png  used on input line 1361.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/type-1/cafe_terrace_at_night_gen_8999.png, id=391, 180.675pt x 180.675pt>
 File: figures/type-1/cafe_terrace_at_night_gen_8999.png Graphic file (type png)
 <use figures/type-1/cafe_terrace_at_night_gen_8999.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_8999.png  used on input line 1378.
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_8999.png  used on input line 1363.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 <figures/type-1/cafe_terrace_at_night_gen_9999.png, id=392, 180.675pt x 180.675pt>
 File: figures/type-1/cafe_terrace_at_night_gen_9999.png Graphic file (type png)
 <use figures/type-1/cafe_terrace_at_night_gen_9999.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_9999.png  used on input line 1380.
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_gen_9999.png  used on input line 1365.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
 File: figures/cafe_terrace_at_night.png Graphic file (type png)
 <use figures/cafe_terrace_at_night.png>
-Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1382.
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1367.
 (pdftex.def)             Requested size: 56.9055pt x 56.90465pt.
-<figures/type-1/cafe_terrace_at_night_fitness.png, id=393, 578.16pt x 289.08pt>
-File: figures/type-1/cafe_terrace_at_night_fitness.png Graphic file (type png)
-<use figures/type-1/cafe_terrace_at_night_fitness.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_fitness.png  used on input line 1392.
-(pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
-<figures/type-1/cafe_terrace_at_night_fitness_1000.png, id=394, 578.16pt x 289.08pt>
-File: figures/type-1/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
-<use figures/type-1/cafe_terrace_at_night_fitness_1000.png>
-Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_fitness_1000.png  used on input line 1394.
-(pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
 
-Underfull \vbox (badness 1253) has occurred while \output is active []
-
- [15 <./figures/prob-0.75/cafe_terrace_at_night_fitness.png> <./figures/prob-0.75/cafe_terrace_at_night_fitness_1000.png> <./figures/type-1/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_fitness.png> <./figures/type-1/cafe_terrace_at_night_fitness_1000.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]
-Overfull \hbox (2.87622pt too wide) detected at line 1510
- [] \OT1/txr/m/n/10 = [(\OML/txmi/m/it/10 H[] \OMS/txsy/m/n/10 ^^@ \OML/txmi/m/it/10 H[] \OT1/txr/m/n/10 + 1) \OMS/txsy/m/n/10 ^^B \OT1/txr/m/n/10 (\OML/txmi/m/it/10 W[] \OMS/txsy/m/n/10 ^^@ \OML/txmi/m/it/10 W[] \OT1/txr/m/n/10 + 1) \OMS/txsy/m/n/10 ^^B \OML/txmi/m/it/10 C[] \OMS/txsy/m/n/10 ^^B \OML/txmi/m/it/10 C[]\OT1/txr/m/n/10 ] + \OML/txmi/m/it/10 C[] \OT1/txr/m/n/10 + [][(\OML/txmi/m/it/10 H[] \OMS/txsy/m/n/10 ^^@ \OML/txmi/m/it/10 H[] \OT1/txr/m/n/10 + 1) \OMS/txsy/m/n/10 ^^B \OT1/txr/m/n/10 (\OML/txmi/m/it/10 W[] \OMS/txsy/m/n/10 ^^@ \OML/txmi/m/it/10 W[] \OT1/txr/m/n/10 + 1) \OMS/txsy/m/n/10 ^^B \OML/txmi/m/it/10 C[] \OMS/txsy/m/n/10 ^^B \OML/txmi/m/it/10 C[]\OT1/txr/m/n/10 ] + \OML/txmi/m/it/10 C[]
+ [15 <./figures/prob-0.75/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/prob-0.75/cafe_terrace_at_night_fitness.png> <./figures/prob-0.75/cafe_terrace_at_night_fitness_1000.png>]
+<figures/type-1/cafe_terrace_at_night_fitness.png, id=398, 578.16pt x 289.08pt>
+File: figures/type-1/cafe_terrace_at_night_fitness.png Graphic file (type png)
+<use figures/type-1/cafe_terrace_at_night_fitness.png>
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_fitness.png  used on input line 1377.
+(pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
+<figures/type-1/cafe_terrace_at_night_fitness_1000.png, id=399, 578.16pt x 289.08pt>
+File: figures/type-1/cafe_terrace_at_night_fitness_1000.png Graphic file (type png)
+<use figures/type-1/cafe_terrace_at_night_fitness_1000.png>
+Package pdftex.def Info: figures/type-1/cafe_terrace_at_night_fitness_1000.png  used on input line 1379.
+(pdftex.def)             Requested size: 213.39566pt x 106.69766pt.
+ [16 <./figures/type-1/cafe_terrace_at_night_gen_0.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_1999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_2999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_3999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_4999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_5999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_6999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_7999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_8999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_gen_9999.png (PNG copy)> <./figures/type-1/cafe_terrace_at_night_fitness.png> <./figures/type-1/cafe_terrace_at_night_fitness_1000.png>]
+<figures/mul/cafe_terrace_at_night_gen_pass00.png, id=405, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_night_gen_pass00.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_night_gen_pass00.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_night_gen_pass00.png  used on input line 1428.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass0_best.png, id=406, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass0_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass0_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass0_best.png  used on input line 1430.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass1_best.png, id=407, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass1_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass1_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass1_best.png  used on input line 1432.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass2_best.png, id=408, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass2_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass2_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass2_best.png  used on input line 1434.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass3_best.png, id=409, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass3_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass3_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass3_best.png  used on input line 1436.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass4_best.png, id=410, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass4_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass4_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass4_best.png  used on input line 1438.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass5_best.png, id=411, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass5_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass5_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass5_best.png  used on input line 1440.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass6_best.png, id=412, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass6_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass6_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass6_best.png  used on input line 1442.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass7_best.png, id=413, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass7_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass7_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass7_best.png  used on input line 1444.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass8_best.png, id=414, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass8_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass8_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass8_best.png  used on input line 1446.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass9_best.png, id=415, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass9_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass9_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass9_best.png  used on input line 1448.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass10_best.png, id=416, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass10_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass10_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass10_best.png  used on input line 1450.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass11_best.png, id=417, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass11_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass11_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass11_best.png  used on input line 1452.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass12_best.png, id=418, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass12_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass12_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass12_best.png  used on input line 1456.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass13_best.png, id=419, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass13_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass13_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass13_best.png  used on input line 1458.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass14_best.png, id=420, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass14_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass14_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass14_best.png  used on input line 1460.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass15_best.png, id=421, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass15_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass15_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass15_best.png  used on input line 1462.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass16_best.png, id=422, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass16_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass16_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass16_best.png  used on input line 1464.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass17_best.png, id=423, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass17_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass17_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass17_best.png  used on input line 1466.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass18_best.png, id=424, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass18_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass18_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass18_best.png  used on input line 1468.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass19_best.png, id=425, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass19_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass19_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass19_best.png  used on input line 1470.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass20_best.png, id=426, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass20_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass20_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass20_best.png  used on input line 1472.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass21_best.png, id=427, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass21_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass21_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass21_best.png  used on input line 1474.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass22_best.png, id=428, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass22_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass22_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass22_best.png  used on input line 1476.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass23_best.png, id=429, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass23_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass23_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass23_best.png  used on input line 1478.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass24_best.png, id=430, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass24_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass24_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass24_best.png  used on input line 1480.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass25_best.png, id=431, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass25_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass25_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass25_best.png  used on input line 1484.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass26_best.png, id=432, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass26_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass26_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass26_best.png  used on input line 1486.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass27_best.png, id=433, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass27_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass27_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass27_best.png  used on input line 1488.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass28_best.png, id=434, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass28_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass28_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass28_best.png  used on input line 1490.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass29_best.png, id=435, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass29_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass29_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass29_best.png  used on input line 1492.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass30_best.png, id=436, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass30_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass30_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass30_best.png  used on input line 1494.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass31_best.png, id=437, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass31_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass31_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass31_best.png  used on input line 1496.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass32_best.png, id=438, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass32_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass32_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass32_best.png  used on input line 1498.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass33_best.png, id=439, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass33_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass33_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass33_best.png  used on input line 1500.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass34_best.png, id=440, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass34_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass34_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass34_best.png  used on input line 1502.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass35_best.png, id=441, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass35_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass35_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass35_best.png  used on input line 1504.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass36_best.png, id=442, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass36_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass36_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass36_best.png  used on input line 1506.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass37_best.png, id=443, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass37_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass37_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass37_best.png  used on input line 1508.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass38_best.png, id=444, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass38_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass38_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass38_best.png  used on input line 1512.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass39_best.png, id=445, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass39_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass39_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass39_best.png  used on input line 1514.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass40_best.png, id=446, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass40_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass40_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass40_best.png  used on input line 1516.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass41_best.png, id=447, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass41_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass41_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass41_best.png  used on input line 1518.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass42_best.png, id=448, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass42_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass42_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass42_best.png  used on input line 1520.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass43_best.png, id=449, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass43_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass43_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass43_best.png  used on input line 1522.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass44_best.png, id=450, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass44_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass44_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass44_best.png  used on input line 1524.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass45_best.png, id=451, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass45_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass45_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass45_best.png  used on input line 1526.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass46_best.png, id=452, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass46_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass46_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass46_best.png  used on input line 1528.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass47_best.png, id=453, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass47_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass47_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass47_best.png  used on input line 1530.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass48_best.png, id=454, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass48_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass48_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass48_best.png  used on input line 1532.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+<figures/mul/cafe_terrace_at_nightpass49_best.png, id=455, 180.675pt x 180.675pt>
+File: figures/mul/cafe_terrace_at_nightpass49_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass49_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass49_best.png  used on input line 1534.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+File: figures/cafe_terrace_at_night.png Graphic file (type png)
+<use figures/cafe_terrace_at_night.png>
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1536.
+(pdftex.def)             Requested size: 34.1433pt x 34.14113pt.
+File: figures/mul/cafe_terrace_at_nightpass49_best.png Graphic file (type png)
+<use figures/mul/cafe_terrace_at_nightpass49_best.png>
+Package pdftex.def Info: figures/mul/cafe_terrace_at_nightpass49_best.png  used on input line 1540.
+(pdftex.def)             Requested size: 85.35826pt x 85.35835pt.
+File: figures/cafe_terrace_at_night.png Graphic file (type png)
+<use figures/cafe_terrace_at_night.png>
+Package pdftex.def Info: figures/cafe_terrace_at_night.png  used on input line 1542.
+(pdftex.def)             Requested size: 85.35826pt x 85.35835pt.
+
+Overfull \hbox (17.86285pt too wide) in paragraph at lines 1427--1545
+ [][] 
  []
 
 
-LaTeX Warning: Reference `fig:output' on page 17 undefined on input line 1552.
+Overfull \hbox (17.86285pt too wide) in paragraph at lines 1427--1545
+ [] 
+ []
 
-[17]
+
+Overfull \hbox (17.86285pt too wide) in paragraph at lines 1427--1545
+ [] 
+ []
+
+
+Overfull \hbox (17.86287pt too wide) in paragraph at lines 1427--1545
+ [] 
+ []
+
+<figures/1.jpg, id=456, 149.55875pt x 180.675pt>
+File: figures/1.jpg Graphic file (type jpg)
+<use figures/1.jpg>
+Package pdftex.def Info: figures/1.jpg  used on input line 1561.
+(pdftex.def)             Requested size: 85.35826pt x 103.11813pt.
+<figures/4.png, id=457, 112.16907pt x 135.50626pt>
+File: figures/4.png Graphic file (type png)
+<use figures/4.png>
+Package pdftex.def Info: figures/4.png  used on input line 1564.
+(pdftex.def)             Requested size: 85.35826pt x 103.12021pt.
+<figures/2.png, id=458, 96.36pt x 96.36pt>
+File: figures/2.png Graphic file (type png)
+<use figures/2.png>
+Package pdftex.def Info: figures/2.png  used on input line 1567.
+(pdftex.def)             Requested size: 113.81102pt x 113.81111pt.
+<figures/3.png, id=459, 96.36pt x 96.36pt>
+File: figures/3.png Graphic file (type png)
+<use figures/3.png>
+Package pdftex.def Info: figures/3.png  used on input line 1570.
+(pdftex.def)             Requested size: 113.81102pt x 113.81111pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18] [19] [20] (main.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+ [17 <./figures/mul/cafe_terrace_at_night_gen_pass00.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass0_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass1_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass2_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass3_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass4_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass5_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass6_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass7_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass8_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass9_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass10_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass11_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass12_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass13_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass14_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass15_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass16_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass17_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass18_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass19_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass20_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass21_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass22_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass23_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass24_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass25_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass26_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass27_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass28_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass29_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass30_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass31_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass32_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass33_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass34_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass35_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass36_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass37_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass38_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass39_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass40_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass41_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass42_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass43_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass44_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass45_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass46_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass47_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass48_best.png (PNG copy)> <./figures/mul/cafe_terrace_at_nightpass49_best.png (PNG copy)>] [18 <./figures/1.jpg> <./figures/4.png (PNG copy)> <./figures/2.png> <./figures/3.png (PNG copy)>] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 10060 strings out of 476334
- 224064 string characters out of 5787972
+ 10437 strings out of 476334
+ 242491 string characters out of 5787972
  1869382 words of memory out of 5000000
- 30290 multiletter control sequences out of 15000+600000
- 567599 words of font info for 159 fonts, out of 8000000 for 9000
+ 30616 multiletter control sequences out of 15000+600000
+ 563531 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,18n,76p,902b,465s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtcxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxb.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txex.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/txsy.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (20 pages, 6440934 bytes).
+ 72i,18n,76p,902b,468s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtcxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxb.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxmi.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/rtxr.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (18 pages, 7642615 bytes).
 PDF statistics:
- 459 PDF objects out of 1000 (max. 8388607)
+ 498 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1386 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1661 words of extra memory for PDF output out of 10000 (max. 10000000)
 
