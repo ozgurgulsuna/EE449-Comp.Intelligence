@@ -26,7 +26,7 @@ import os
 
 # Global variables
 source_image_path = "images/"
-source_image_name = "monalisa.jpg"
+source_image_name = "cafe_terrace_at_night.png"
 source_image = cv2.imread(source_image_path + source_image_name)
 # test = cv2.imread("images/test.png")
 # test_image = cv2.imread("images/test_son.png")
@@ -42,10 +42,10 @@ print_intervals = 10000
 save = True
 
 # Variables------------------------------------------------------------------##
-passes = 10
+passes = 50
 
-num_inds = 10 #20  # Individual Number
-num_genes = 12 #50 # Gene Number
+num_inds = 20 #20  # Individual Number
+num_genes = 10 #50 # Gene Number
 num_generations = 500 # Generation Number
 
 tm_size = 5 # Tournament size
@@ -316,7 +316,7 @@ def mutation(population):
 # DONE : mutate only one phenotype, eg color, size, position, etc. 
 
 # Main
-def main(best_img):
+def main(best_img,p):
     if not os.path.exists(output_path):
         os.mkdir(output_path)
     init_fit = []
@@ -350,7 +350,7 @@ def main(best_img):
             plt.ylabel('Fitness')
             plt.xlabel('Generation')
             if i == 0 or i%100 == 99 and save == True:
-                plt.savefig(output_path+source_image_name[:-4]+"_fitness.png",dpi=200)
+                plt.savefig(output_path+source_image_name[:-4]+"pass"+str(p)+"_fitness.png",dpi=200)
             # plt.pause(0.1)
             plt.clf()
         if i>1000 and i<10000:
@@ -361,7 +361,7 @@ def main(best_img):
             plt.ylabel('Fitness')
             plt.xlabel('Generation')
             if i%100 == 0 and save == True:
-                plt.savefig(output_path+source_image_name[:-4]+"_fitness_1000.png",dpi=200)
+                plt.savefig(output_path+source_image_name[:-4]+"pass"+str(p)+"_fitness_1000.png",dpi=200)
             # plt.pause(0.1)
             plt.clf()
         
@@ -387,8 +387,8 @@ def main(best_img):
                 best_image_2 = image
             # cv2.waitKey(1)
             if save == True:
-                cv2.imwrite(output_path+source_image_name[:-4]+"_gen_"+str(i)+".png", image)
-                cv2.imwrite(output_path+source_image_name[:-4]+"_best.png", image)
+                cv2.imwrite(output_path+source_image_name[:-4]+"_gen_"+"pass"+str(p)+str(i)+".png", image)
+                cv2.imwrite(output_path+source_image_name[:-4]+"pass"+str(p)+"_best.png", image)
 
 
         # Elites selected, isolated from the population
@@ -423,8 +423,8 @@ best_image = np.zeros([source_image.shape[0],source_image.shape[1],3],dtype=np.u
 best_image.fill(255)
 start_time = time.time()
 for i in range(passes):
-    best_image = main(best_image)
-    s_max = int(math.sqrt(h**2+w**2)*0.40/((i+1)/2))   # Maximum circle size, diagonal of the image, radius  int(math.sqrt(h**2+w**2)*0.35)
+    best_image = main(best_image,i)
+    # s_max = int(math.sqrt(h**2+w**2)*0.40/((i+1)/2))   # Maximum circle size, diagonal of the image, radius  int(math.sqrt(h**2+w**2)*0.35)
 end_time = time.time()
 print("Elapsed time: ", end_time - start_time)
 
