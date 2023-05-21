@@ -47,10 +47,10 @@ num_genes = 50 #50 # Gene Number
 num_generations = 10000 # Generation Number
 
 tm_size = 5 # Tournament size
-frac_elites = 0.35 # Fraction of elites
+frac_elites = 0.2 # Fraction of elites
 frac_parents = 0.6 # Fraction of parents
 mutation_prob = 0.2  # Mutation probability
-mutation_type = 1 # Mutation type 0 = unguided(random), 1 = guided (within limits)
+mutation_type = 0 # Mutation type 0 = unguided(random), 1 = guided (within limits)
 
 output_path = "outputs/"+str(num_inds)+"_"+str(num_genes)+"_"+str(tm_size)+"_"+str(frac_elites)+"_"+str(frac_parents)+"_"+str(mutation_prob)+"_"+str(mutation_type)+"/"
 
