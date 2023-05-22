@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1684702594 "d:/2022-23/Okul/Dersler/EE449/Homeworks/HW2/report/main.tex" "main.pdf" "main" 1684702604 0
+["pdflatex"] 1684703402 "d:/2022-23/Okul/Dersler/EE449/Homeworks/HW2/report/main.tex" "main.pdf" "main" 1684703412 0
   "C:/Users/ozgur/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1684687690 281292 b30b761b8fc2df5f1c97e15ccd30ee60 ""
   "C:/Users/ozgur/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1680704521 23176373 b5cfb6c2a0c3d45ceafb0e8aef465910 ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -96,7 +96,7 @@
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/txfonts/utxexa.fd" 977342760 310 1b00b0b05685b816e4c6caccce437e0d ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/txfonts/utxmia.fd" 977342760 334 87436a82076ca2e35cd305f852507afc ""
   "C:/Users/ozgur/AppData/Local/Programs/MiKTeX/tex/latex/txfonts/utxsyc.fd" 977342760 310 4b5d6fe830337242ef847b3bff48ba21 ""
-  "d:/2022-23/Okul/Dersler/EE449/Homeworks/HW2/report/main.tex" 1684702582 79290 9b5c5c05e07b6123203273f213da6b36 ""
+  "d:/2022-23/Okul/Dersler/EE449/Homeworks/HW2/report/main.tex" 1684703400 79294 5e6e914735968512f436ef6acbda2910 ""
   "ecrc.sty" 1684686285 15719 cb1032cc7e5770e3cffe49d38d06e37d ""
   "elsarticle.cls" 1682176808 30860 c9f3167ecd064a3bf228b1721173e6c0 ""
   "figures/1.jpg" 1684702453 11912 3ed3377692e48cfd20a5126e6572aa8a ""
@@ -432,9 +432,9 @@
   "figures/type-1/cafe_terrace_at_night_gen_999.png" 1684598943 12529 7148d5974e36eb82f030d5cec2f32433 ""
   "figures/type-1/cafe_terrace_at_night_gen_9999.png" 1684600855 12052 fa6fb7713adf4bd44e003c76b12b0012 ""
   "framed.sty" 1681134044 22449 7ec15c16d0d66790f28e90343c5434a3 ""
-  "main.aux" 1684702603 10873 2ef3de778493ed9ae863ed32e7acead4 "pdflatex"
-  "main.spl" 1684702594 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1684702582 79290 9b5c5c05e07b6123203273f213da6b36 ""
+  "main.aux" 1684703411 10873 8f4ae1ef06b0e755485f24bdb4336490 "pdflatex"
+  "main.spl" 1684703402 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1684703400 79294 5e6e914735968512f436ef6acbda2910 ""
   (generated)
   "main.aux"
   "main.log"
