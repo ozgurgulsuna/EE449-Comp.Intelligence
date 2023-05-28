@@ -26,8 +26,10 @@ R \circ S = \{(x, z) \in X \times Z | \exists y \in Y : (x, y) \in R \land (y, z
 $$
 
 Example:
-![Composition of Relations](images/FS03-stdcomp.png)
+![Composition of Relations](figures/FS03-stdcomp.png)
 
+Cont'd:
+![Composition of Relations](figures/FS03-stdcomp-cont.png)
 
 
 
