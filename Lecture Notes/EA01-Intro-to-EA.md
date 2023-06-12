@@ -1,4 +1,5 @@
 ## **Evolutionary Algorithms** ##
+-------------------------
 
 ### **Introduction** ###
 Fundamental approach to solving problems by mimicking the process of natural selection.
@@ -47,5 +48,22 @@ The N-Queens problem is a well-known problem in computer science. The goal is to
 
 constraint: no two queens can be in the same row
 
+Algorithm: General Scheme of an Evolutionary Algorithm
+```
+_____________________________________________________
 
-//// **CONTINUE WITH PAGE 12** ////
+Input: optimization problem (Ω, f ,≻)
+t ← 0
+pop(t) ← create the initial population of size μ
+evaluate pop(t)
+while not termination criterion {
+    pop 1 ← select parents of offsprings with size λ from pop(t)
+    pop2 ← create offspring by recombination of pop1
+    pop3 ← mutate individuals in pop2
+    evaluate pop3
+    t ← t + 1
+    pop(t) ← select μ individuals from pop3 ∪ pop(t − 1)
+}
+return best individual of pop(t)
+______________________________________________________
+```

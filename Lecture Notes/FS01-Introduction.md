@@ -1,8 +1,6 @@
 ## Fuzzy Systems ##
-
+-----
 ### Introduction ###
-----
-
 Motivation is to solve problems that are difficult to solve with traditional methods, reason is the linguistic nature of the problem, and the solution is to use fuzzy logic to solve the problem.
 
 **Example** - Sorites Paradox

@@ -1,4 +1,5 @@
 ## Neural Networks ##
+-------------------------
 
 The brain's method of storing and recalling information is not fully understood, but research has shown that neurons gradually modify their characteristics when exposed to stimuli. The changes mostly occur in the electrical and chemical properties of the synaptic junctions, which can alter the response of the post-synaptic neuron. This modification effectively changes the weighting of inputs to a neuron, affecting whether it will fire. The chapter will focus on learning in feedforward networks.
 
@@ -154,3 +155,63 @@ One problem with the process is that decition boundary may oscillate when the di
 -----
 
 
+ ### Backpropagation Algorithm ###
+-----
+ single-layer, multiple-output network
+ * The network has N inputs and M outputs.
+ * in vector notation weights are:
+    $$
+    \textbf{w} = \begin{bmatrix}
+    w_{11} & w_{12} & \cdots & w_{1M} \\
+    w_{21} & w_{22} & \cdots & w_{2M} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    w_{N1} & w_{N2} & \cdots & w_{NM} \\
+    \end{bmatrix}
+    $$
+* The output of the network is:
+    $$
+    \textbf{y} = \begin{bmatrix}
+    y_1 \\
+    y_2 \\
+    \vdots \\
+    y_M \\
+    \end{bmatrix}
+    $$
+* The input vector is:
+    $$
+    \textbf{u} = \begin{bmatrix}
+    u_1 \\
+    u_2 \\
+    \vdots \\
+    u_N \\
+    \end{bmatrix}
+    $$
+* The error can be defined as the desired outcome (y) minus the actual outcome (x):
+    $$
+    e_i^k = y_i^k - x_i^k
+    $$
+here the outcome can be replaced with the output of the network:
+    $$
+    e_i^k = y_i^k - \sum_{j=1}^N w_{ji}u_j^k
+    $$
+also in vector notation:
+    $$
+    \textbf{e}^k = \textbf{y}^k - \textbf{w}^T\textbf{u}^k
+    $$
+
+* The error function is the sum of the squared errors:
+    $$
+    E = \frac{1}{2}\sum_{k=1}^K\sum_{i=1}^M(e_i^k)^2
+    $$
+    - The factor of 1/2 is included for convenience in the gradient calculation.
+    - The error function is a function of the weights.
+    - The gradient of the error function is:
+        $$
+        \nabla E = \begin{bmatrix}
+        \frac{\partial E}{\partial w_{11}} & \frac{\partial E}{\partial w_{12}} & \cdots & \frac{\partial E}{\partial w_{1M}} \\
+        \frac{\partial E}{\partial w_{21}} & \frac{\partial E}{\partial w_{22}} & \cdots & \frac{\partial E}{\partial w_{2M}} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \frac{\partial E}{\partial w_{N1}} & \frac{\partial E}{\partial w_{N2}} & \cdots & \frac{\partial E}{\partial w_{NM}} \\
+        \end{bmatrix}
+        $$
+* 
