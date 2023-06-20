@@ -20,8 +20,14 @@ $$
 \end{bmatrix}
 $$
 
+Covariance is calculated as follows: 
 $$
-Cov[X_1, X_3] = -2 \\
-Cov[X_2, X_3] = -5
+Cov(X_i, X_j) = \frac{1}{N} \sum_{n=1}^{N} (x_{i,n} - \mu_i)(x_{j,n} - \mu_j)
+$$
+
+
+$$
+Cov(X_1, X_3) = -2 \\
+Cov(X_2, X_3) = -5
 $$
 
